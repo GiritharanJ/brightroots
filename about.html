@@ -542,11 +542,39 @@ p{color:var(--muted)}
 </footer>
 <a class="whatsapp-float" href="https://wa.me/918438142540?text=Hello%20BrightRoots%20Kids%20Care%2C%20I%20would%20like%20to%20know%20more%20about%20admission%20for%20my%20child." target="_blank" rel="noopener" aria-label="WhatsApp">💬</a>
 <script>
-document.getElementById('currentYear').textContent=new Date().getFullYear();
-const menu=document.getElementById('mobileNav'),open=document.getElementById('menuToggle'),close=document.getElementById('closeMenu');
-open.addEventListener('click',()=>menu.style.display='block');
-close.addEventListener('click',()=>menu.style.display='none');
-menu.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>menu.style.display='none'));
+document.addEventListener('DOMContentLoaded', function(){
+  const header = document.getElementById('header');
+  const menuToggle = document.getElementById('menuToggle');
+  const mobileMenu = document.getElementById('mobileMenu');
+  const mobileBackdrop = document.getElementById('mobileBackdrop');
+  const closeMenu = document.getElementById('closeMenu');
+
+  function setMenu(open){
+    mobileMenu.classList.toggle('open', open);
+    mobileBackdrop.classList.toggle('open', open);
+    mobileMenu.setAttribute('aria-hidden', String(!open));
+    menuToggle.setAttribute('aria-expanded', String(open));
+    document.body.classList.toggle('menu-open', open);
+  }
+
+  menuToggle.addEventListener('click', function(){ setMenu(true); });
+  closeMenu.addEventListener('click', function(){ setMenu(false); });
+  mobileBackdrop.addEventListener('click', function(){ setMenu(false); });
+
+  mobileMenu.querySelectorAll('a').forEach(function(link){
+    link.addEventListener('click', function(){ setMenu(false); });
+  });
+
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape') setMenu(false);
+  });
+
+  window.addEventListener('scroll', function(){
+    header.classList.toggle('scrolled', window.scrollY > 30);
+  }, {passive:true});
+
+  document.getElementById('year').textContent = new Date().getFullYear();
+});
 </script>
 
 </body>
