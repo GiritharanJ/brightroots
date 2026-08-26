@@ -1248,4 +1248,7 @@ ul {
     .admission-steps {
         grid-template-columns: 1fr;
     }
-    .
+    .values-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
