@@ -1,2031 +1,830 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>BrightRoots Kids Care | Preschool & Daycare in Tirupattur</title>
-    <meta name="description" content="BrightRoots Kids Care offers Play Group, Pre-KG, LKG, UKG and Day Care in Tirupattur with play-based learning, phonics and a safe, caring environment." />
-    <style>
-        /* ============================================================
-           BRIGHTROOTS KIDS CARE — COMPLETE SINGLE PAGE CSS
-           All styles embedded in one file — no external CSS needed
-           ============================================================ */
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BrightRoots Kids Care | Preschool & Daycare in Tirupattur</title>
+<meta name="description" content="BrightRoots Kids Care offers Play Group, Pre-KG, LKG, UKG and Day Care in Tirupattur with play-based learning, phonics and a safe, caring environment.">
 
-        /* ---------- Import Fonts ---------- */
-        @import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Nunito+Sans:wght@300;400;600;700;800&family=Poppins:wght@400;500;600;700;800&display=swap');
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Nunito+Sans:wght@400;600;700;800&family=Poppins:wght@500;600;700;800&display=swap');
 
-        /* ---------- CSS Variables ---------- */
-        :root {
-            --navy: #142A5A;
-            --pink: #D7195B;
-            --gold: #F5A400;
-            --green: #4A9B45;
-            --blue: #28A9D6;
-            --cream: #FFFCF8;
-            --white: #FFFFFF;
-            --navy-deep: #0a1a3a;
-            --pink-deep: #b01345;
-            --pink-tint: rgba(215, 25, 91, 0.08);
-            --gold-tint: rgba(245, 164, 0, 0.12);
-            --green-tint: rgba(74, 155, 69, 0.1);
-            --blue-tint: rgba(40, 169, 214, 0.1);
-            --navy-tint: rgba(20, 42, 90, 0.06);
-            --gray-50: #F8F9FA;
-            --gray-100: #F3F4F6;
-            --gray-200: #E5E7EB;
-            --gray-300: #D1D5DB;
-            --gray-400: #9CA3AF;
-            --gray-500: #6B7280;
-            --gray-600: #4B5563;
-            --gray-700: #374151;
-            --font-display: 'Baloo 2', cursive;
-            --font-label: 'Poppins', sans-serif;
-            --font-body: 'Nunito Sans', sans-serif;
-            --shadow: 0 4px 16px rgba(20, 42, 90, 0.08);
-            --shadow-lg: 0 20px 40px rgba(20, 42, 90, 0.16);
-            --shadow-xl: 0 25px 60px rgba(20, 42, 90, 0.22);
-            --shadow-pink: 0 10px 25px rgba(215, 25, 91, 0.28);
-            --radius-sm: 0.6rem;
-            --radius-md: 1.1rem;
-            --radius-lg: 1.75rem;
-            --radius-blob: 42% 58% 65% 35% / 45% 40% 60% 55%;
-            --radius-full: 9999px;
-            --transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
-            --transition-slow: all 0.6s cubic-bezier(.25, .8, .25, 1);
-        }
-
-        /* ---------- Reset & Base ---------- */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        html {
-            scroll-behavior: smooth;
-        }
-        body {
-            font-family: var(--font-body);
-            color: var(--gray-700);
-            background: var(--white);
-            overflow-x: hidden;
-            font-size: 1rem;
-            line-height: 1.6;
-        }
-        h1,
-        h2,
-        h3,
-        h4,
-        h5 {
-            font-family: var(--font-display);
-            color: var(--navy);
-            line-height: 1.15;
-        }
-        h1 {
-            font-size: clamp(2.4rem, 5vw, 3.75rem);
-            font-weight: 700;
-        }
-        h2 {
-            font-size: clamp(1.9rem, 3.4vw, 2.5rem);
-            font-weight: 700;
-        }
-        h3 {
-            font-size: 1.4rem;
-            font-weight: 600;
-        }
-        h4 {
-            font-size: 1.1rem;
-            font-weight: 600;
-        }
-        p {
-            color: var(--gray-600);
-        }
-        a {
-            text-decoration: none;
-            color: inherit;
-        }
-        img {
-            max-width: 100%;
-            height: auto;
-            display: block;
-        }
-        ul {
-            list-style: none;
-        }
-        :focus-visible {
-            outline: 3px solid var(--gold);
-            outline-offset: 3px;
-            border-radius: 4px;
-        }
-        @media (prefers-reduced-motion: reduce) {
-            *,
-            *::before,
-            *::after {
-                animation-duration: 0.001ms !important;
-                animation-iteration-count: 1 !important;
-                transition-duration: 0.001ms !important;
-                scroll-behavior: auto !important;
-            }
-        }
-
-        /* ---------- Utility ---------- */
-        .container {
-            max-width: 1280px;
-            margin: 0 auto;
-            padding: 0 1.5rem;
-        }
-        .section-padding {
-            padding: 5.5rem 0;
-            position: relative;
-        }
-        .section-title {
-            text-align: center;
-            margin-bottom: 3.25rem;
-        }
-        .section-title h2 {
-            margin-bottom: 0.9rem;
-        }
-        .section-title p {
-            color: var(--gray-500);
-            max-width: 600px;
-            margin: 0 auto;
-            font-size: 1.1rem;
-        }
-        .eyebrow {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            font-family: var(--font-label);
-            font-weight: 700;
-            font-size: 0.78rem;
-            letter-spacing: 0.09em;
-            text-transform: uppercase;
-            color: var(--pink);
-            background: var(--pink-tint);
-            padding: 0.4rem 1rem;
-            border-radius: var(--radius-full);
-            margin-bottom: 1.1rem;
-        }
-        .eyebrow.on-dark {
-            background: rgba(255, 255, 255, 0.1);
-            color: var(--gold);
-        }
-        .gradient-text {
-            background: linear-gradient(135deg, var(--pink), var(--gold));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-        .bg-cream {
-            background: var(--cream);
-        }
-        .text-center {
-            text-align: center;
-        }
-
-        /* ---------- Buttons ---------- */
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.55rem;
-            padding: 0.85rem 1.9rem;
-            border-radius: var(--radius-full);
-            font-family: var(--font-label);
-            font-weight: 600;
-            font-size: 0.98rem;
-            border: none;
-            cursor: pointer;
-            transition: var(--transition);
-            text-decoration: none;
-            white-space: nowrap;
-        }
-        .btn-primary {
-            background: linear-gradient(135deg, var(--pink) 0%, #ef2c72 100%);
-            color: var(--white);
-            box-shadow: var(--shadow-pink);
-        }
-        .btn-primary:hover {
-            transform: translateY(-3px) scale(1.03);
-            box-shadow: 0 14px 30px rgba(215, 25, 91, 0.38);
-        }
-        .btn-white {
-            background: var(--white);
-            color: var(--navy);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-        }
-        .btn-white:hover {
-            transform: translateY(-3px) scale(1.03);
-            box-shadow: 0 14px 30px rgba(0, 0, 0, 0.2);
-        }
-        .btn-outline {
-            background: transparent;
-            color: var(--pink);
-            border: 2px solid var(--pink);
-        }
-        .btn-outline:hover {
-            background: var(--pink);
-            color: var(--white);
-            transform: translateY(-3px) scale(1.03);
-        }
-        .btn-sm {
-            padding: 0.55rem 1.3rem;
-            font-size: 0.875rem;
-        }
-        .btn-lg {
-            padding: 1.05rem 2.5rem;
-            font-size: 1.1rem;
-        }
-        .btn-block {
-            display: flex;
-            justify-content: center;
-            width: 100%;
-        }
-        .pulse-btn {
-            animation: pulse-btn 2s ease-in-out infinite;
-        }
-        @keyframes pulse-btn {
-            0%,
-            100% {
-                box-shadow: 0 0 0 0 rgba(215, 25, 91, 0.4);
-            }
-            50% {
-                box-shadow: 0 0 0 15px rgba(215, 25, 91, 0);
-            }
-        }
-
-        /* ---------- Cards ---------- */
-        .card {
-            background: var(--white);
-            border-radius: var(--radius-lg);
-            padding: 1.75rem;
-            box-shadow: var(--shadow);
-            transition: var(--transition);
-            border: 1px solid var(--gray-100);
-        }
-        .card:hover {
-            box-shadow: var(--shadow-lg);
-            transform: translateY(-6px);
-            border-color: transparent;
-        }
-        .icon-circle {
-            width: 62px;
-            height: 62px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.75rem;
-            margin: 0 auto 1.1rem;
-            background: var(--pink-tint);
-            color: var(--pink);
-            transition: var(--transition);
-        }
-        .card:hover .icon-circle {
-            transform: rotate(-8deg) scale(1.08);
-        }
-
-        /* ---------- Header ---------- */
-        .header {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            z-index: 1000;
-            padding: 1.1rem 0;
-            transition: var(--transition);
-            background: rgba(255, 255, 255, 0);
-        }
-        .header-scrolled {
-            background: rgba(255, 255, 255, 0.88);
-            backdrop-filter: blur(14px);
-            -webkit-backdrop-filter: blur(14px);
-            box-shadow: var(--shadow);
-            padding: 0.6rem 0;
-        }
-        .header .container {
-            display: flex;
-            justify-content: flex-end;
-            align-items: center;
-        }
-    
-
-        /* Navigation */
-        .nav {
-            display: flex;
-            align-items: center;
-            gap: 0.3rem;
-            background: rgba(20, 42, 90, 0.04);
-            padding: 0.35rem;
-            border-radius: var(--radius-full);
-        }
-        .nav a:not(.btn) {
-            font-family: var(--font-label);
-            font-weight: 500;
-            font-size: 0.93rem;
-            color: var(--navy);
-            transition: var(--transition);
-            padding: 0.5rem 1rem;
-            border-radius: var(--radius-full);
-        }
-        .nav a:hover:not(.btn) {
-            color: var(--pink);
-            background: var(--white);
-        }
-        .nav a.active:not(.btn) {
-            color: var(--white);
-            font-weight: 600;
-            background: var(--pink);
-        }
-        .nav .btn {
-            margin-left: 0.5rem;
-        }
-
-        /* Mobile Menu */
-        .menu-toggle {
-            display: none;
-            background: var(--pink-tint);
-            border: none;
-            width: 44px;
-            height: 44px;
-            border-radius: 50%;
-            font-size: 1.35rem;
-            color: var(--pink);
-            cursor: pointer;
-        }
-        .mobile-nav {
-            display: none;
-            position: fixed;
-            top: 0;
-            right: 0;
-            bottom: 0;
-            width: 300px;
-            max-width: 85vw;
-            background: var(--white);
-            box-shadow: var(--shadow-xl);
-            padding: 2rem;
-            z-index: 1001;
-            transform: translateX(100%);
-            transition: transform 0.35s cubic-bezier(.25, .8, .25, 1);
-        }
-        .mobile-nav.open {
-            transform: translateX(0);
-        }
-        .mobile-nav .close-btn {
-            position: absolute;
-            top: 1rem;
-            right: 1rem;
-            background: var(--gray-100);
-            border: none;
-            width: 38px;
-            height: 38px;
-            border-radius: 50%;
-            font-size: 1.1rem;
-            cursor: pointer;
-        }
-        .mobile-nav a {
-            display: block;
-            padding: 0.85rem 0.25rem;
-            font-family: var(--font-label);
-            font-weight: 500;
-            color: var(--navy);
-            border-bottom: 1px solid var(--gray-100);
-        }
-        .mobile-nav a:hover,
-        .mobile-nav a.active {
-            color: var(--pink);
-        }
-        .mobile-nav .mobile-actions {
-            margin-top: 2rem;
-            padding-top: 1rem;
-            border-top: 1px solid var(--gray-200);
-            display: flex;
-            flex-direction: column;
-            gap: 0.6rem;
-        }
-        .mobile-nav .mobile-actions .btn {
-            width: 100%;
-            justify-content: center;
-        }
-        .overlay {
-            display: none;
-            position: fixed;
-            inset: 0;
-            background: rgba(10, 20, 45, 0.55);
-            backdrop-filter: blur(2px);
-            z-index: 1000;
-        }
-        .overlay.active {
-            display: block;
-        }
-
-        /* ---------- Hero ---------- */
-      
-/* ============================================================
-   SIMPLE HERO
-   Background image + two buttons only
-   No overlay
-   No animation
-   No floating chips
-   ============================================================ */
-
-.hero {
-    position: relative;
-    min-height: 92vh;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    background-image: url('images/hero-bg.jpg');
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-
-    overflow: hidden;
+:root{
+  --navy:#102653;
+  --navy-dark:#071a3d;
+  --pink:#d7195b;
+  --pink-light:#fce8f0;
+  --gold:#f5a400;
+  --green:#25b95a;
+  --white:#fff;
+  --cream:#fffaf5;
+  --text:#26334f;
+  --muted:#64708a;
+  --shadow:0 18px 45px rgba(7,26,61,.16);
+  --radius:24px;
 }
 
-/* Hero buttons */
-.hero-buttons {
-    position: relative;
-    z-index: 5;
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Nunito Sans',sans-serif;
+  color:var(--text);
+  background:var(--cream);
+  overflow-x:hidden;
+  line-height:1.6;
+}
+body.menu-open{overflow:hidden}
+a{text-decoration:none;color:inherit}
+img{max-width:100%;display:block}
+button{font:inherit}
+.container{width:min(1180px,calc(100% - 32px));margin:auto}
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    gap: 1rem;
-
-    margin-top: 5rem;
+/* ================= HEADER ================= */
+.header{
+  position:fixed;
+  top:0;left:0;right:0;
+  z-index:2000;
+  padding:14px 0;
+  transition:.25s ease;
+}
+.header.scrolled{
+  background:rgba(255,255,255,.94);
+  backdrop-filter:blur(14px);
+  box-shadow:0 8px 30px rgba(7,26,61,.12);
+}
+.header-inner{
+  display:flex;
+  align-items:center;
+  justify-content:flex-end;
+  gap:22px;
+}
+.nav{
+  display:flex;
+  align-items:center;
+  gap:4px;
+  background:rgba(255,255,255,.82);
+  border:1px solid rgba(16,38,83,.08);
+  border-radius:999px;
+  padding:5px;
+  box-shadow:0 8px 25px rgba(7,26,61,.08);
+}
+.nav a{
+  padding:10px 16px;
+  border-radius:999px;
+  font-family:Poppins,sans-serif;
+  font-size:.9rem;
+  font-weight:600;
+  color:var(--navy);
+}
+.nav a:hover,.nav a.active{
+  background:var(--pink);
+  color:#fff;
+}
+.menu-toggle{
+  display:none;
+  width:46px;height:46px;
+  border:0;border-radius:50%;
+  background:var(--pink);
+  color:#fff;
+  cursor:pointer;
+  font-size:24px;
+  box-shadow:0 8px 20px rgba(215,25,91,.3);
 }
 
-/* Common button */
-.hero-btn {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
+/* ================= MOBILE MENU ================= */
+.mobile-backdrop{
+  position:fixed;inset:0;
+  background:rgba(5,18,45,.48);
+  z-index:2090;
+  display:none;
+}
+.mobile-backdrop.open{display:block}
+.mobile-menu{
+  position:fixed;
+  top:0;right:0;bottom:0;
+  width:min(340px,88vw);
+  background:#fff;
+  z-index:2100;
+  padding:76px 24px 30px;
+  transform:translateX(100%);
+  transition:transform .25s ease;
+  box-shadow:-20px 0 50px rgba(0,0,0,.18);
+  overflow-y:auto;
+}
+.mobile-menu.open{transform:translateX(0)}
+.mobile-close{
+  position:absolute;
+  top:18px;right:18px;
+  width:42px;height:42px;
+  border:0;border-radius:50%;
+  background:#f1f3f7;
+  color:var(--navy);
+  cursor:pointer;
+  font-size:20px;
+}
+.mobile-menu a{
+  display:block;
+  padding:14px 4px;
+  border-bottom:1px solid #edf0f4;
+  font-family:Poppins,sans-serif;
+  font-weight:600;
+  color:var(--navy);
+}
+.mobile-menu a.active{color:var(--pink)}
+.mobile-actions{display:grid;gap:10px;margin-top:24px}
+.mobile-actions a{
+  border:0;
+  text-align:center;
+  border-radius:999px;
+  padding:13px 15px;
+  color:#fff;
+  background:var(--pink);
+}
+.mobile-actions a.whatsapp{background:var(--green)}
 
-    min-width: 220px;
+/* ================= COMMON ================= */
+.section{
+  min-height:760px;
+  position:relative;
+  display:flex;
+  align-items:center;
+  padding:100px 0;
+  background-size:cover;
+  background-position:center;
+  background-repeat:no-repeat;
+  background-attachment:fixed;
+}
+.section::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:rgba(255,255,255,.58);
+}
+.section.dark::before{background:rgba(7,26,61,.58)}
+.section-inner{position:relative;z-index:1;width:100%}
 
-    padding: 0.95rem 1.6rem;
+.panel{
+  background:rgba(255,255,255,.91);
+  border:1px solid rgba(255,255,255,.8);
+  border-radius:30px;
+  box-shadow:var(--shadow);
+  padding:42px;
+}
+.dark .panel{
+  background:rgba(7,26,61,.86);
+  border-color:rgba(255,255,255,.15);
+  color:#fff;
+}
+.eyebrow{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  padding:7px 14px;
+  border-radius:999px;
+  background:var(--pink-light);
+  color:var(--pink);
+  font-family:Poppins,sans-serif;
+  font-size:.76rem;
+  font-weight:800;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  margin-bottom:14px;
+}
+.eyebrow.gold{background:#fff1c9;color:#986600}
+.eyebrow.white{background:rgba(255,255,255,.12);color:#ffd36a}
+h1,h2,h3,h4{
+  font-family:'Baloo 2',cursive;
+  color:var(--navy);
+  line-height:1.08;
+}
+.dark h2,.dark h3,.dark h4{color:#fff}
+h2{font-size:clamp(2rem,4vw,3.1rem);margin-bottom:12px}
+h3{font-size:1.45rem}
+p{color:var(--muted)}
+.dark p{color:rgba(255,255,255,.8)}
+.gradient{
+  background:linear-gradient(135deg,var(--pink),var(--gold));
+  -webkit-background-clip:text;
+  background-clip:text;
+  -webkit-text-fill-color:transparent;
+}
+.section-heading{text-align:center;max-width:760px;margin:0 auto 30px}
+.section-heading p{font-size:1.08rem}
 
-    border-radius: 999px;
+/* ================= BUTTONS ================= */
+.buttons{display:flex;flex-wrap:wrap;gap:12px;margin-top:25px}
+.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+  min-height:50px;
+  padding:12px 22px;
+  border-radius:999px;
+  border:0;
+  cursor:pointer;
+  font-family:Poppins,sans-serif;
+  font-size:.94rem;
+  font-weight:700;
+  transition:.2s ease;
+}
+.btn:hover{transform:translateY(-2px)}
+.btn-pink{background:var(--pink);color:#fff;box-shadow:0 10px 25px rgba(215,25,91,.28)}
+.btn-green{background:var(--green);color:#fff;box-shadow:0 10px 25px rgba(37,185,90,.25)}
+.btn-white{background:#fff;color:var(--navy);box-shadow:0 10px 25px rgba(0,0,0,.15)}
 
-    font-family: var(--font-label);
-    font-size: 1rem;
-    font-weight: 700;
-
-    text-decoration: none;
-
-    transition: transform 0.2s ease,
-                box-shadow 0.2s ease;
+/* ================= HERO ================= */
+.hero{
+  min-height:100svh;
+  position:relative;
+  display:flex;
+  align-items:flex-end;
+  padding:110px 0 90px;
+  background:url('images/home1.jpg') center/cover no-repeat;
+}
+.hero::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(90deg,rgba(255,255,255,.78) 0%,rgba(255,255,255,.42) 46%,rgba(255,255,255,.08) 100%);
+}
+.hero-content{position:relative;z-index:1;max-width:610px}
+.hero-card{
+  background:rgba(255,255,255,.9);
+  border-radius:28px;
+  padding:30px;
+  box-shadow:var(--shadow);
+  border:1px solid rgba(255,255,255,.85);
+}
+.hero h1{font-size:clamp(2.5rem,6vw,4.8rem);margin-bottom:15px}
+.hero-subtitle{
+  font-size:1.16rem;
+  font-weight:700;
+  color:var(--navy);
+}
+.hero-list{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+  margin-top:16px;
+}
+.hero-list span{
+  background:#fff;
+  border-radius:999px;
+  padding:7px 12px;
+  font-size:.86rem;
+  font-weight:700;
+  color:var(--navy);
+  box-shadow:0 5px 14px rgba(7,26,61,.08);
 }
 
-/* Book Visit */
-.hero-btn-primary {
-    background: var(--pink);
-    color: var(--white);
+/* ================= WHY ================= */
+.why{
+  background-image:url('images/home2.jpg');
+}
+.cards{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:16px;
+}
+.card{
+  background:rgba(255,255,255,.94);
+  border-radius:22px;
+  padding:25px 20px;
+  box-shadow:0 12px 32px rgba(7,26,61,.11);
+  border:1px solid rgba(16,38,83,.06);
+}
+.icon{
+  width:54px;height:54px;
+  border-radius:50%;
+  display:grid;place-items:center;
+  background:var(--pink-light);
+  font-size:25px;
+  margin-bottom:14px;
+}
+.card:nth-child(2) .icon{background:#fff1cf}
+.card:nth-child(3) .icon{background:#e6f8ec}
+.card:nth-child(4) .icon{background:#e7f5fc}
+.card:nth-child(5) .icon{background:#f1e9ff}
+.card:nth-child(6) .icon{background:#fff0e0}
+.card p{font-size:.95rem;margin-top:7px}
 
-    box-shadow:
-        0 10px 25px rgba(215, 25, 91, 0.35);
+/* ================= PROGRAMS ================= */
+.programs{background-image:url('images/home3.jpg')}
+.program-grid{
+  display:grid;
+  grid-template-columns:repeat(5,1fr);
+  gap:14px;
+}
+.program{
+  text-align:center;
+  padding:25px 12px;
+  border-radius:22px;
+  background:rgba(255,255,255,.93);
+  box-shadow:0 12px 30px rgba(7,26,61,.12);
+}
+.program .emoji{font-size:38px;display:block;margin-bottom:8px}
+.program h3{font-size:1.2rem}
+.age{display:block;margin-top:5px;color:#7b8497;font-size:.82rem;font-weight:700}
+
+/* ================= APPROACH ================= */
+.approach{
+  background-image:url('images/home4.jpg');
+}
+.approach-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:16px;
+}
+.approach-card{
+  background:rgba(7,26,61,.86);
+  border-radius:22px;
+  padding:28px 20px;
+  color:#fff;
+  text-align:center;
+  box-shadow:0 14px 35px rgba(7,26,61,.2);
+}
+.approach-card .icon{margin:0 auto 12px;background:rgba(255,255,255,.12)}
+.approach-card h3{color:#fff;font-size:1.25rem}
+.approach-card p{margin-top:7px}
+
+/* ================= ENVIRONMENT ================= */
+.environment{background-image:url('images/home5.jpg')}
+.feature-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:18px;
+}
+.feature{
+  overflow:hidden;
+  border-radius:24px;
+  background:rgba(255,255,255,.94);
+  box-shadow:0 14px 35px rgba(7,26,61,.14);
+}
+.feature img{
+  width:100%;
+  height:220px;
+  object-fit:cover;
+}
+.feature-body{padding:20px}
+.feature-body h3{font-size:1.25rem}
+.feature-body p{margin-top:6px}
+
+/* ================= GALLERY / TRUST ================= */
+.gallery-section{background-image:url('images/home6.jpg')}
+.gallery-strip{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:16px;
+}
+.gallery-card{
+  min-height:230px;
+  border-radius:25px;
+  padding:24px;
+  display:flex;
+  align-items:flex-end;
+  color:#fff;
+  background:linear-gradient(180deg,rgba(7,26,61,.05),rgba(7,26,61,.82));
+  box-shadow:0 14px 35px rgba(7,26,61,.16);
+}
+.gallery-card h3{color:#fff}
+.gallery-card p{color:rgba(255,255,255,.88);font-size:.9rem}
+
+/* ================= FINAL CTA ================= */
+.cta{
+  background-image:url('images/home7.jpg');
+  min-height:650px;
+}
+.cta .panel{
+  max-width:760px;
+  margin:auto;
+  text-align:center;
+}
+.cta h2{font-size:clamp(2.2rem,5vw,3.7rem)}
+.cta p{font-size:1.08rem;margin-top:10px}
+.cta .buttons{justify-content:center}
+
+/* ================= FOOTER ================= */
+.footer{
+  background:var(--navy-dark);
+  color:#fff;
+  padding:55px 0 20px;
+}
+.footer-grid{
+  display:grid;
+  grid-template-columns:1.4fr 1fr 1fr 1.3fr;
+  gap:35px;
+}
+.footer-logo{
+  width:180px;
+  max-height:90px;
+  object-fit:contain;
+  object-position:left center;
+  border-radius:12px;
+  margin-bottom:12px;
+}
+.footer h3{
+  color:#fff;
+  font-family:Poppins,sans-serif;
+  font-size:.95rem;
+  text-transform:uppercase;
+  letter-spacing:.05em;
+  margin-bottom:15px;
+}
+.footer p,.footer a{color:rgba(255,255,255,.72);font-size:.93rem}
+.footer li{margin-bottom:9px}
+.footer a:hover{color:#fff}
+.footer-bottom{
+  margin-top:35px;
+  padding-top:18px;
+  border-top:1px solid rgba(255,255,255,.12);
+  text-align:center;
+}
+.footer-bottom p{font-size:.84rem}
+
+/* ================= MOBILE STICKY BAR ================= */
+.sticky-bar{
+  display:none;
+  position:fixed;
+  left:0;right:0;bottom:0;
+  z-index:1900;
+  background:rgba(255,255,255,.97);
+  border-top:1px solid #e5e8ee;
+  box-shadow:0 -8px 25px rgba(7,26,61,.1);
+}
+.sticky-grid{display:grid;grid-template-columns:repeat(3,1fr)}
+.sticky-grid a{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  min-height:66px;
+  font-size:.72rem;
+  font-family:Poppins,sans-serif;
+  font-weight:700;
+  color:var(--navy);
+}
+.sticky-grid a span{font-size:21px;line-height:1.2}
+.sticky-grid a.whatsapp{color:#16a34a}
+
+/* ================= FLOATING WHATSAPP ================= */
+.whatsapp-float{
+  position:fixed;
+  right:18px;
+  bottom:22px;
+  width:58px;height:58px;
+  display:grid;place-items:center;
+  border-radius:50%;
+  background:#25d366;
+  color:#fff;
+  font-size:27px;
+  z-index:1950;
+  box-shadow:0 10px 28px rgba(37,211,102,.35);
 }
 
-.hero-btn-primary:hover {
-    transform: translateY(-2px);
-
-    box-shadow:
-        0 14px 30px rgba(215, 25, 91, 0.45);
+/* ================= RESPONSIVE ================= */
+@media(max-width:1000px){
+  .program-grid{grid-template-columns:repeat(3,1fr)}
+  .approach-grid{grid-template-columns:repeat(2,1fr)}
+  .footer-grid{grid-template-columns:repeat(2,1fr)}
 }
-
-/* WhatsApp */
-.hero-btn-whatsapp {
-    background: #25D366;
-    color: var(--white);
-
-    box-shadow:
-        0 10px 25px rgba(37, 211, 102, 0.35);
+@media(max-width:760px){
+  .container{width:min(100% - 22px,600px)}
+  .nav{display:none}
+  .menu-toggle{display:block}
+  .header-inner{justify-content:flex-end}
+  .section{
+    min-height:auto;
+    padding:78px 0;
+    background-attachment:scroll;
+    background-position:center;
+  }
+  .section::before{background:rgba(255,255,255,.68)}
+  .dark::before{background:rgba(7,26,61,.58)}
+  .panel{padding:24px;border-radius:22px}
+  .hero{
+    min-height:100svh;
+    padding:100px 0 85px;
+    align-items:flex-end;
+    background-position:center center;
+  }
+  .hero::before{
+    background:linear-gradient(180deg,rgba(255,255,255,.18) 0%,rgba(255,255,255,.76) 58%,rgba(255,255,255,.95) 100%);
+  }
+  .hero-card{padding:22px}
+  .hero h1{font-size:clamp(2.2rem,10vw,3.3rem)}
+  .hero-subtitle{font-size:1rem}
+  .buttons{flex-direction:column}
+  .buttons .btn{width:100%}
+  .cards,.feature-grid,.gallery-strip{grid-template-columns:1fr}
+  .program-grid{grid-template-columns:repeat(2,1fr)}
+  .approach-grid{grid-template-columns:1fr}
+  .footer-grid{grid-template-columns:1fr}
+  .sticky-bar{display:block}
+  .whatsapp-float{bottom:78px;width:52px;height:52px;font-size:24px;right:12px}
+  .footer{padding-bottom:85px}
 }
-
-.hero-btn-whatsapp:hover {
-    transform: translateY(-2px);
-
-    box-shadow:
-        0 14px 30px rgba(37, 211, 102, 0.45);
+@media(max-width:430px){
+  .hero-list span{font-size:.78rem}
+  .program{padding:20px 8px}
+  .program .emoji{font-size:31px}
+  .program h3{font-size:1.05rem}
 }
-
-        /* Wave Divider */
-        .wave-divider {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            line-height: 0;
-            z-index: 2;
-        }
-        .wave-divider svg {
-            width: 100%;
-            height: 60px;
-            display: block;
-        }
-
-        /* ---------- Why Us ---------- */
-        .why-us {
-            background: var(--cream);
-        }
-        .why-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
-            gap: 1.6rem;
-        }
-        .why-card {
-            text-align: center;
-            padding: 2.2rem 1.6rem;
-        }
-        .why-card:nth-child(2) .icon-circle {
-            background: var(--gold-tint);
-            color: #a06800;
-        }
-        .why-card:nth-child(3) .icon-circle {
-            background: var(--pink-tint);
-            color: var(--pink);
-        }
-        .why-card:nth-child(4) .icon-circle {
-            background: var(--green-tint);
-            color: var(--green);
-        }
-        .why-card:nth-child(5) .icon-circle {
-            background: var(--blue-tint);
-            color: var(--blue);
-        }
-        .why-card:nth-child(6) .icon-circle {
-            background: var(--navy-tint);
-            color: var(--navy);
-        }
-        .why-card h3 {
-            font-size: 1.15rem;
-            margin-bottom: 0.5rem;
-        }
-        .why-card p {
-            font-size: 0.95rem;
-        }
-
-        /* ---------- Programs ---------- */
-        .programs-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
-            gap: 1.6rem;
-        }
-        .program-card {
-            text-align: center;
-            padding: 2.2rem 1.5rem;
-            border: 2px solid var(--gray-100);
-            position: relative;
-            overflow: hidden;
-        }
-        .program-card::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 5px;
-            background: linear-gradient(90deg, var(--pink), var(--gold));
-            transform: scaleX(0);
-            transition: var(--transition);
-        }
-        .program-card:hover {
-            border-color: transparent;
-            box-shadow: var(--shadow-lg);
-        }
-        .program-card:hover::before {
-            transform: scaleX(1);
-        }
-        .program-card .emoji {
-            font-size: 2.75rem;
-            display: block;
-            margin-bottom: 0.85rem;
-        }
-        .program-card h4 {
-            font-size: 1.15rem;
-            margin-bottom: 0.3rem;
-        }
-        .program-card .age {
-            font-family: var(--font-label);
-            font-size: 0.8rem;
-            font-weight: 600;
-            color: var(--gray-400);
-        }
-
-        /* ---------- Learning Approach ---------- */
-        .approach {
-            background: var(--navy);
-            color: var(--white);
-            position: relative;
-            overflow: hidden;
-        }
-        .approach::before,
-        .approach::after {
-            content: "";
-            position: absolute;
-            border-radius: 50%;
-            filter: blur(70px);
-            opacity: 0.25;
-        }
-        .approach::before {
-            width: 340px;
-            height: 340px;
-            background: var(--pink);
-            top: -100px;
-            right: -60px;
-        }
-        .approach::after {
-            width: 300px;
-            height: 300px;
-            background: var(--gold);
-            bottom: -120px;
-            left: -60px;
-        }
-        .approach .container {
-            position: relative;
-            z-index: 1;
-        }
-        .approach .section-title h2 {
-            color: var(--white);
-        }
-        .approach .section-title p {
-            color: rgba(255, 255, 255, 0.7);
-        }
-        .approach-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 1.6rem;
-        }
-        .approach-card {
-            background: rgba(255, 255, 255, 0.06);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.12);
-            padding: 1.75rem;
-            border-radius: var(--radius-md);
-            text-align: center;
-            transition: var(--transition);
-        }
-        .approach-card:hover {
-            background: rgba(255, 255, 255, 0.12);
-            transform: translateY(-6px);
-        }
-        .approach-card .icon {
-            font-size: 2.4rem;
-            margin-bottom: 0.85rem;
-        }
-        .approach-card h4 {
-            color: var(--white);
-            font-size: 1.1rem;
-            margin-bottom: 0.5rem;
-        }
-        .approach-card p {
-            color: rgba(255, 255, 255, 0.7);
-            font-size: 0.95rem;
-        }
-
-        /* ---------- Environment ---------- */
-        .env-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 1.6rem;
-        }
-        .env-card {
-            overflow: hidden;
-            padding: 0;
-        }
-        .env-card img {
-            width: 100%;
-            height: 210px;
-            object-fit: cover;
-        }
-        .env-card .content {
-            padding: 1.6rem;
-        }
-        .env-card h4 {
-            margin-bottom: 0.5rem;
-        }
-        .env-card p {
-            font-size: 0.95rem;
-        }
-
-        /* ---------- Gallery ---------- */
-        .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1.1rem;
-        }
-        .gallery-item {
-            border-radius: var(--radius-md);
-            overflow: hidden;
-            aspect-ratio: 1;
-            position: relative;
-            cursor: pointer;
-        }
-        .gallery-item:nth-child(even) {
-            border-radius: 38% 62% 63% 37% / 41% 44% 56% 59%;
-        }
-        .gallery-item img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: var(--transition-slow);
-        }
-        .gallery-item:hover img {
-            transform: scale(1.08);
-        }
-        .gallery-item .overlay {
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(135deg, rgba(215, 25, 91, 0.75), rgba(20, 42, 90, 0.75));
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            opacity: 0;
-            transition: var(--transition);
-        }
-        .gallery-item:hover .overlay {
-            opacity: 1;
-        }
-        .gallery-item .overlay span {
-            color: var(--white);
-            font-weight: 700;
-            font-family: var(--font-label);
-        }
-
-        /* ---------- Testimonials ---------- */
-        .testimonials {
-            background: var(--cream);
-        }
-        .testimonial-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 1.6rem;
-        }
-        .testimonial-card {
-            padding: 2.1rem;
-            position: relative;
-        }
-        .testimonial-card::before {
-            content: "\201C";
-            position: absolute;
-            top: 0.5rem;
-            right: 1.5rem;
-            font-family: Georgia, serif;
-            font-size: 4.5rem;
-            color: var(--pink-tint);
-            line-height: 1;
-        }
-        .testimonial-card .stars {
-            color: var(--gold);
-            font-size: 1.15rem;
-            margin-bottom: 0.85rem;
-            letter-spacing: 0.15em;
-        }
-        .testimonial-card blockquote {
-            font-size: 1.03rem;
-            line-height: 1.65;
-            color: var(--gray-700);
-            margin-bottom: 1.25rem;
-            position: relative;
-            z-index: 1;
-        }
-        .testimonial-card .author {
-            display: flex;
-            align-items: center;
-            gap: 0.85rem;
-        }
-        .testimonial-card .author .avatar {
-            width: 48px;
-            height: 48px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 700;
-            color: var(--white);
-            font-family: var(--font-label);
-        }
-        .testimonial-card:nth-child(1) .author .avatar {
-            background: var(--pink);
-        }
-        .testimonial-card:nth-child(2) .author .avatar {
-            background: var(--gold);
-        }
-        .testimonial-card:nth-child(3) .author .avatar {
-            background: var(--blue);
-        }
-        .testimonial-card .author .name {
-            font-weight: 700;
-            font-size: 0.95rem;
-            color: var(--navy);
-        }
-        .testimonial-card .author .role {
-            font-size: 0.85rem;
-            color: var(--gray-400);
-        }
-
-        /* ---------- Admission CTA ---------- */
-        .admission-cta {
-            background: linear-gradient(135deg, var(--pink) 0%, var(--pink-deep) 100%);
-            color: var(--white);
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-        .admission-cta::before {
-            content: "";
-            position: absolute;
-            width: 400px;
-            height: 400px;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.08);
-            top: -200px;
-            right: -100px;
-        }
-        .admission-cta .container {
-            position: relative;
-            z-index: 1;
-        }
-        .admission-cta h2 {
-            color: var(--white);
-        }
-        .admission-cta p {
-            color: rgba(255, 255, 255, 0.9);
-            max-width: 600px;
-            margin: 1rem auto 2rem;
-        }
-        .admission-cta .btn-white {
-            font-size: 1.1rem;
-        }
-
-        /* ---------- Footer ---------- */
-        .footer {
-            background: var(--navy-deep);
-            color: var(--white);
-            padding: 5.5rem 0 1.5rem;
-        }
-        .footer-grid {
-            display: grid;
-            grid-template-columns: 1.4fr 1fr 1fr 1.2fr;
-            gap: 2.5rem;
-            margin-bottom: 3rem;
-        }
-        .footer .logo-text {
-            color: var(--white);
-        }
-        .footer h4 {
-            color: var(--white);
-            font-family: var(--font-label);
-            font-size: 0.95rem;
-            letter-spacing: 0.04em;
-            text-transform: uppercase;
-            margin-bottom: 1.2rem;
-        }
-        .footer p,
-        .footer a {
-            color: rgba(255, 255, 255, 0.65);
-            font-size: 0.95rem;
-            transition: var(--transition);
-        }
-        .footer a:hover {
-            color: var(--gold);
-        }
-        .footer ul li {
-            margin-bottom: 0.65rem;
-        }
-        .footer .social {
-            display: flex;
-            gap: 0.75rem;
-            margin-top: 0.5rem;
-        }
-        .footer .social a {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.07);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.1rem;
-        }
-        .footer .social a:hover {
-            background: var(--pink);
-            color: var(--white);
-        }
-        .footer .contact-item {
-            display: flex;
-            gap: 0.75rem;
-            margin-bottom: 0.85rem;
-            align-items: flex-start;
-        }
-        .footer .contact-item .icon {
-            color: var(--gold);
-            flex-shrink: 0;
-        }
-        .footer-bottom {
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            padding-top: 1.5rem;
-            text-align: center;
-            color: rgba(255, 255, 255, 0.4);
-            font-size: 0.875rem;
-        }
-
-        /* ---------- Sticky Mobile Bar ---------- */
-        .sticky-bar {
-            display: none;
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            border-top: 1px solid var(--gray-200);
-            z-index: 100;
-            box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.08);
-        }
-        .sticky-bar .grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-        }
-        .sticky-bar a {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding: 0.75rem 0;
-            font-family: var(--font-label);
-            font-size: 0.72rem;
-            font-weight: 600;
-            color: var(--gray-600);
-            transition: var(--transition);
-        }
-        .sticky-bar a .icon {
-            font-size: 1.25rem;
-            margin-bottom: 0.2rem;
-        }
-        .sticky-bar a:hover {
-            color: var(--pink);
-        }
-        .sticky-bar a.whatsapp {
-            color: #25D366;
-        }
-        .sticky-bar a.whatsapp:hover {
-            color: #1da851;
-        }
-
-        /* ---------- WhatsApp Float ---------- */
-        .whatsapp-float {
-            position: fixed;
-            bottom: 5rem;
-            right: 1.5rem;
-            z-index: 100;
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            background: #25D366;
-            color: var(--white);
-            border: none;
-            font-size: 1.9rem;
-            cursor: pointer;
-            box-shadow: 0 4px 20px rgba(37, 211, 102, 0.45);
-            transition: var(--transition);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            animation: float 3s ease-in-out infinite;
-        }
-        .whatsapp-float:hover {
-            transform: scale(1.1);
-        }
-        @keyframes float {
-            0%,
-            100% {
-                transform: translateY(0);
-            }
-            50% {
-                transform: translateY(-10px);
-            }
-        }
-
-        /* ---------- Scroll Animation ---------- */
-        .scroll-animate {
-            opacity: 0;
-            transform: translateY(28px);
-            transition: opacity 0.7s ease, transform 0.7s ease;
-        }
-        .scroll-animate.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        /* ---------- Responsive ---------- */
-        @media (max-width: 1100px) {
-            .footer-grid {
-                grid-template-columns: 1fr 1fr;
-            }
-        }
-
-        @media (max-width: 768px) {
-            h2 {
-                font-size: 1.75rem;
-            }
-            .section-padding {
-                padding: 3.5rem 0;
-            }
-            .section-title {
-                margin-bottom: 2.25rem;
-            }
-            .nav {
-                display: none;
-            }
-            .menu-toggle {
-                display: flex;
-                align-items: center;
-                justify-content: center;
-            }
-            .mobile-nav {
-                display: block;
-            }
-            .hero {
-                min-height: auto;
-                padding: 7rem 0 4rem;
-            }
-            .sticky-bar {
-                display: block;
-            }
-            .whatsapp-float {
-                bottom: 5.5rem;
-                right: 1rem;
-                width: 52px;
-                height: 52px;
-                font-size: 1.5rem;
-            }
-            .footer-grid {
-                grid-template-columns: 1fr 1fr;
-                gap: 2rem;
-            }
-            .footer {
-                padding: 4rem 0 1.5rem;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .container {
-                padding: 0 1.15rem;
-            }
-            h1 {
-                font-size: 1.8rem;
-            }
-            h2 {
-                font-size: 1.55rem;
-            }
-            .section-title h2 {
-                font-size: 1.55rem;
-            }
-            .footer-grid {
-                grid-template-columns: 1fr;
-            }
-            .programs-grid {
-                grid-template-columns: 1fr 1fr;
-            }
-            .gallery-grid {
-                grid-template-columns: 1fr 1fr;
-            }
-            .env-grid {
-                grid-template-columns: 1fr;
-            }
-            .testimonial-grid {
-                grid-template-columns: 1fr;
-            }
-            .hero-buttons {
-                left: 1.15rem;
-                right: 1.15rem;
-                top: auto;
-                bottom: 3.5rem;
-                transform: none;
-                flex-direction: column;
-                align-items: stretch;
-            }
-
-            .hero-btn {
-                width: 100%;
-                min-width: 0;
-            }
-
-            .pulse-btn {
-                animation: none;
-            }
-        }
-    
-/* ============================================================
-   FINAL MOBILE / TOUCH FIXES
-   ============================================================ */
-
-html {
-    width: 100%;
-    min-height: 100%;
-    overflow-x: hidden;
-    overflow-y: auto;
-    -webkit-text-size-adjust: 100%;
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{transition:none!important}
 }
-
-body {
-    width: 100%;
-    min-height: 100%;
-    overflow-x: hidden;
-    overflow-y: auto !important;
-    -webkit-overflow-scrolling: touch;
-    overscroll-behavior-y: auto;
-}
-
-.header {
-    z-index: 1200;
-}
-
-.hero {
-    position: relative;
-    isolation: isolate;
-    min-height: 92vh;
-    min-height: 92svh;
-}
-
-.hero-buttons {
-    position: absolute;
-    z-index: 20;
-    left: 50%;
-    bottom: 7.5rem;
-    margin: 0;
-    transform: translateX(-50%);
-    width: min(100% - 2rem, 480px);
-    pointer-events: auto;
-    touch-action: manipulation;
-}
-
-.hero-btn {
-    position: relative;
-    z-index: 21;
-    pointer-events: auto;
-    touch-action: manipulation;
-    -webkit-tap-highlight-color: transparent;
-}
-
-.sticky-bar {
-    z-index: 1300;
-    pointer-events: auto;
-}
-
-.sticky-bar a {
-    pointer-events: auto;
-    touch-action: manipulation;
-    -webkit-tap-highlight-color: transparent;
-}
-
-.whatsapp-float {
-    z-index: 1350;
-    pointer-events: auto;
-    touch-action: manipulation;
-    -webkit-tap-highlight-color: transparent;
-}
-
-/* Dedicated mobile menu overlay — no conflict with gallery overlays */
-.mobile-overlay {
-    display: none;
-    position: fixed;
-    inset: 0;
-    background: rgba(10, 20, 45, 0.52);
-    z-index: 1250;
-}
-
-.mobile-overlay.active {
-    display: block;
-}
-
-.mobile-nav {
-    display: block;
-    position: fixed;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    width: min(320px, 86vw);
-    max-width: 100%;
-    background: #fff;
-    box-shadow: -15px 0 40px rgba(0,0,0,.18);
-    padding: 5.5rem 1.5rem 2rem;
-    z-index: 1300;
-    transform: translate3d(100%, 0, 0);
-    visibility: hidden;
-    transition: transform .28s ease, visibility .28s ease;
-    overflow-y: auto;
-    -webkit-overflow-scrolling: touch;
-}
-
-.mobile-nav.open {
-    transform: translate3d(0, 0, 0);
-    visibility: visible;
-}
-
-.mobile-nav .close-btn {
-    position: absolute;
-    top: 1rem;
-    right: 1rem;
-    width: 42px;
-    height: 42px;
-    border: 0;
-    border-radius: 50%;
-    background: #f3f4f6;
-    color: var(--navy);
-    font-size: 1.1rem;
-    cursor: pointer;
-    z-index: 2;
-}
-
-.mobile-nav nav a {
-    display: block;
-    padding: .95rem .25rem;
-    border-bottom: 1px solid var(--gray-100);
-    color: var(--navy);
-    font-family: var(--font-label);
-    font-weight: 600;
-}
-
-.mobile-nav nav a.active {
-    color: var(--pink);
-}
-
-.mobile-actions {
-    display: grid;
-    gap: .7rem;
-    margin-top: 1.5rem;
-    padding-top: 1.2rem;
-    border-top: 1px solid var(--gray-200);
-}
-
-.mobile-actions .btn {
-    width: 100%;
-    justify-content: center;
-}
-
-.mobile-whatsapp {
-    background: #25D366;
-    color: #fff;
-}
-
-@media (max-width: 768px) {
-    .header {
-        padding: .65rem 0;
-    }
-
-    .header .container {
-        padding-right: 1rem;
-    }
-
-    .menu-toggle {
-        position: relative;
-        z-index: 1210;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        pointer-events: auto;
-        touch-action: manipulation;
-    }
-
-    .hero {
-        min-height: 100svh;
-        min-height: 100dvh;
-        padding: 0;
-        display: flex;
-        align-items: stretch;
-        justify-content: center;
-    }
-
-    .hero-buttons {
-        left: 50%;
-        bottom: 7.2rem;
-        width: min(calc(100% - 2rem), 390px);
-        flex-direction: column;
-        gap: .7rem;
-        align-items: stretch;
-    }
-
-    .hero-btn {
-        width: 100%;
-        min-width: 0;
-        min-height: 54px;
-        padding: .85rem 1rem;
-        font-size: .98rem;
-    }
-
-    .sticky-bar {
-        display: block;
-        min-height: 68px;
-    }
-
-    .sticky-bar .grid {
-        min-height: 68px;
-    }
-
-    .sticky-bar a {
-        justify-content: center;
-        min-height: 68px;
-        padding: .55rem .2rem;
-    }
-
-    .whatsapp-float {
-        right: .9rem;
-        bottom: 5.8rem;
-        width: 52px;
-        height: 52px;
-    }
-
-    /* Prevent content from being hidden behind the fixed mobile bar */
-    .footer {
-        padding-bottom: 5.5rem;
-    }
-}
-
-@media (max-width: 480px) {
-    .hero-buttons {
-        bottom: 7.4rem;
-        width: calc(100% - 1.5rem);
-    }
-
-    .hero-btn {
-        min-height: 52px;
-        font-size: .94rem;
-    }
-}
-
-/* Do not allow a stale inline JS scroll lock to break page scrolling */
-body.menu-open {
-    overflow: hidden !important;
-}
-
-    </style>
+</style>
 </head>
+
 <body>
 
-    <!-- ===== HEADER ===== -->
-<!-- ===== HEADER ===== -->
 <header class="header" id="header">
-    <div class="container">
-
-        <nav class="nav">
-            <a href="index.html" class="active">Home</a>
-            <a href="about.html">About</a>
-            <a href="programs.html">Programs</a>
-            <a href="environment.html">Environment</a>
-            <a href="admissions.html">Admissions</a>
-         </nav>
-    <button class="menu-toggle" id="menuToggle" aria-label="Open menu">☰</button>
+  <div class="container header-inner">
+    <nav class="nav" aria-label="Main navigation">
+      <a href="index.html" class="active">Home</a>
+      <a href="about.html">About</a>
+      <a href="programs.html">Programs</a>
+      <a href="environment.html">Environment</a>
+      <a href="admissions.html">Admissions</a>
+    </nav>
+    <button class="menu-toggle" id="menuToggle" type="button" aria-label="Open menu" aria-expanded="false">☰</button>
   </div>
 </header>
 
-<div class="mobile-nav" id="mobileNav"
-     style="display:none;position:fixed;inset:0 0 0 auto;width:min(330px,88vw);background:#fff;z-index:1100;padding:80px 28px 30px;box-shadow:-10px 0 35px rgba(0,0,0,.15)">
-  <button id="closeMenu"
-          style="position:absolute;top:18px;right:18px;border:0;background:#f3f4f6;border-radius:50%;width:40px;height:40px;font-size:18px">✕</button>
-  <a href="index.html" style="display:block;padding:15px 0;border-bottom:1px solid #eee">Home</a>
-  <a href="about.html" style="display:block;padding:15px 0;border-bottom:1px solid #eee">About</a>
-  <a href="programs.html" style="display:block;padding:15px 0;border-bottom:1px solid #eee">Programs</a>
-  <a href="environment.html" style="display:block;padding:15px 0;border-bottom:1px solid #eee">Environment</a>
-  <a href="admissions.html" style="display:block;padding:15px 0;border-bottom:1px solid #eee;color:#D7195B;font-weight:700">Admissions</a>
-  <a href="#enquire" style="display:block;margin-top:25px;text-align:center;padding:13px;background:#D7195B;color:#fff;border-radius:999px;font-weight:700">📝 Enquire Now</a>
-  <a href="tel:918438142540" style="display:block;margin-top:12px;text-align:center;padding:13px;border:2px solid #D7195B;color:#D7195B;border-radius:999px;font-weight:700">📞 Call Now</a>
-</div>
+<div class="mobile-backdrop" id="mobileBackdrop"></div>
 
+<aside class="mobile-menu" id="mobileMenu" aria-hidden="true">
+  <button class="mobile-close" id="closeMenu" type="button" aria-label="Close menu">✕</button>
+  <a href="index.html" class="active">Home</a>
+  <a href="about.html">About</a>
+  <a href="programs.html">Programs</a>
+  <a href="environment.html">Environment</a>
+  <a href="admissions.html">Admissions</a>
 
+  <div class="mobile-actions">
+    <a href="admissions.html">📅 Book a School Visit</a>
+    <a class="whatsapp" href="https://wa.me/918438142540?text=Hello%20BrightRoots%20Kids%20Care%2C%20I%20would%20like%20to%20know%20more%20about%20admission%20for%20my%20child." target="_blank" rel="noopener">💬 WhatsApp Us</a>
+  </div>
+</aside>
 
-    <!-- ===== SIMPLE HERO ===== -->
-<section class="hero">
+<main>
 
-    <div class="hero-buttons">
+<!-- HOME 1: HERO -->
+<section class="hero" id="home">
+  <div class="container">
+    <div class="hero-content">
+      <div class="hero-card">
+        <span class="eyebrow">Admissions Open • 2026–27</span>
+        <h1>A Strong Start Today for a <span class="gradient">Brighter Tomorrow</span></h1>
+        <p class="hero-subtitle">Where little minds play, learn, grow and thrive.</p>
 
-        <a href="admissions.html" class="hero-btn hero-btn-primary">
-            📅 Book a School Visit
-        </a>
+        <div class="hero-list">
+          <span>Play Group</span>
+          <span>Pre-KG</span>
+          <span>LKG</span>
+          <span>UKG</span>
+          <span>Day Care</span>
+        </div>
 
-        <a
-            href="https://wa.me/918438142540?text=Hello%20BrightRoots%20Kids%20Care%2C%20I%20would%20like%20to%20know%20more%20about%20admission%20for%20my%20child."
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Chat with BrightRoots Kids Care on WhatsApp"
-            class="hero-btn hero-btn-whatsapp"
-        >
-            💬 WhatsApp Us
-        </a>
-
+        <div class="buttons">
+          <a class="btn btn-pink" href="admissions.html">📅 Book a School Visit</a>
+          <a class="btn btn-green" href="https://wa.me/918438142540?text=Hello%20BrightRoots%20Kids%20Care%2C%20I%20would%20like%20to%20know%20more%20about%20admission%20for%20my%20child." target="_blank" rel="noopener">💬 WhatsApp Us</a>
+        </div>
+      </div>
     </div>
+  </div>
 </section>
 
-    <!-- ===== WHY US ===== -->
-    <section class="section-padding why-us">
-        <div class="container">
-            <div class="section-title scroll-animate">
-                <span class="eyebrow">Why Choose Us</span>
-                <h2>Why Parents Choose <span class="gradient-text">BrightRoots</span></h2>
-                <p>We provide a nurturing environment where children learn, grow, and thrive</p>
-            </div>
-            <div class="why-grid">
-                <div class="card why-card scroll-animate" data-delay="100">
-                    <div class="icon-circle">🧸</div>
-                    <h3>Play-Based Learning</h3>
-                    <p>Children learn through activities, games and exploration</p>
-                </div>
-                <div class="card why-card scroll-animate" data-delay="150">
-                    <div class="icon-circle">🔤</div>
-                    <h3>Phonics Training</h3>
-                    <p>Building strong reading and speaking skills</p>
-                </div>
-                <div class="card why-card scroll-animate" data-delay="200">
-                    <div class="icon-circle">❤️</div>
-                    <h3>Safe & Caring Environment</h3>
-                    <p>A secure, hygienic and caring environment</p>
-                </div>
-                <div class="card why-card scroll-animate" data-delay="250">
-                    <div class="icon-circle">🌱</div>
-                    <h3>Child-Centred Development</h3>
-                    <p>Encouraging every child's interests and development</p>
-                </div>
-                <div class="card why-card scroll-animate" data-delay="300">
-                    <div class="icon-circle">🏫</div>
-                    <h3>Structured Curriculum</h3>
-                    <p>Internationally designed, research-based curriculum</p>
-                </div>
-                <div class="card why-card scroll-animate" data-delay="350">
-                    <div class="icon-circle">🌙</div>
-                    <h3>Day Care Support</h3>
-                    <p>Safe, nurturing care for your little one</p>
-                </div>
-            </div>
-        </div>
-    </section>
+<!-- HOME 2: WHY PARENTS CHOOSE US -->
+<section class="section why" id="why">
+  <div class="section-inner">
+    <div class="container">
+      <div class="section-heading">
+        <span class="eyebrow">Why Choose Us</span>
+        <h2>Why Parents Choose <span class="gradient">BrightRoots</span></h2>
+        <p>A warm, structured and joyful place where children feel safe while learning every day.</p>
+      </div>
 
-    <!-- ===== PROGRAMS PREVIEW ===== -->
-    <section class="section-padding">
-        <div class="container">
-            <div class="section-title scroll-animate">
-                <span class="eyebrow">Our Programs</span>
-                <h2>Our <span class="gradient-text">Programs</span></h2>
-                <p>Choose the right program for your child's age and development</p>
-            </div>
-            <div class="programs-grid">
-                <div class="card program-card scroll-animate" data-delay="100">
-                    <span class="emoji">🧸</span>
-                    <h4>Play Group</h4>
-                    <span class="age">1.5 - 2.5 years</span>
-                </div>
-                <div class="card program-card scroll-animate" data-delay="150">
-                    <span class="emoji">📚</span>
-                    <h4>Pre-KG</h4>
-                    <span class="age">2.5 - 3.5 years</span>
-                </div>
-                <div class="card program-card scroll-animate" data-delay="200">
-                    <span class="emoji">✏️</span>
-                    <h4>LKG</h4>
-                    <span class="age">3.5 - 4.5 years</span>
-                </div>
-                <div class="card program-card scroll-animate" data-delay="250">
-                    <span class="emoji">🌟</span>
-                    <h4>UKG</h4>
-                    <span class="age">4.5 - 5.5 years</span>
-                </div>
-                <div class="card program-card scroll-animate" data-delay="300">
-                    <span class="emoji">🌙</span>
-                    <h4>Day Care</h4>
-                    <span class="age">Flexible hours</span>
-                </div>
-            </div>
-            <div class="text-center" style="margin-top: 2.5rem;">
-                <a href="programs.html" class="btn btn-primary">View All Programs →</a>
-            </div>
-        </div>
-    </section>
+      <div class="cards">
+        <article class="card"><div class="icon">🧸</div><h3>Play-Based Learning</h3><p>Children learn through activities, games, exploration and hands-on experiences.</p></article>
+        <article class="card"><div class="icon">🔤</div><h3>Phonics Training</h3><p>Building early reading, pronunciation and confident communication skills.</p></article>
+        <article class="card"><div class="icon">❤️</div><h3>Safe & Caring</h3><p>A secure, hygienic and caring environment designed around young children.</p></article>
+        <article class="card"><div class="icon">🌱</div><h3>Child-Centred</h3><p>Supporting each child's interests, confidence and individual development.</p></article>
+        <article class="card"><div class="icon">🏫</div><h3>Structured Curriculum</h3><p>A planned learning experience combining age-appropriate activities and development.</p></article>
+        <article class="card"><div class="icon">🌙</div><h3>Day Care Support</h3><p>Safe, nurturing care for families who need extended support for their little ones.</p></article>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <!-- ===== LEARNING APPROACH ===== -->
-    <section class="section-padding approach">
-        <div class="container">
-            <div class="section-title scroll-animate">
-                <span class="eyebrow on-dark">Learning Approach</span>
-                <h2>Our Learning <span style="color: var(--gold);">Approach</span></h2>
-                <p>Powered by EdSmart™ Curriculum — Internationally Designed, Research Based, Future Ready</p>
-            </div>
-            <div class="approach-grid">
-                <div class="approach-card scroll-animate" data-delay="100">
-                    <div class="icon">🎨</div>
-                    <h4>Creative Learning</h4>
-                    <p>Encouraging creativity and self-expression</p>
-                </div>
-                <div class="approach-card scroll-animate" data-delay="150">
-                    <div class="icon">🧩</div>
-                    <h4>Play-Based</h4>
-                    <p>Learning through fun activities and play</p>
-                </div>
-                <div class="approach-card scroll-animate" data-delay="200">
-                    <div class="icon">🌍</div>
-                    <h4>Global Curriculum</h4>
-                    <p>Internationally designed for future readiness</p>
-                </div>
-                <div class="approach-card scroll-animate" data-delay="250">
-                    <div class="icon">❤️</div>
-                    <h4>Holistic Growth</h4>
-                    <p>Developing life skills, creativity &amp; confidence</p>
-                </div>
-            </div>
-        </div>
-    </section>
+<!-- HOME 3: PROGRAMS -->
+<section class="section programs" id="programs">
+  <div class="section-inner">
+    <div class="container">
+      <div class="section-heading">
+        <span class="eyebrow gold">Our Programs</span>
+        <h2>The Right Start for Every <span class="gradient">Age</span></h2>
+        <p>Simple, age-appropriate programs designed around children's early learning stages.</p>
+      </div>
 
-    <!-- ===== ENVIRONMENT PREVIEW ===== -->
-    <section class="section-padding">
-        <div class="container">
-            <div class="section-title scroll-animate">
-                <span class="eyebrow">Environment</span>
-                <h2>Safe, Secure &amp; <span class="gradient-text">Loving Environment</span></h2>
-                <p>Where your child feels safe, nurtured, and inspired to learn</p>
-            </div>
-            <div class="env-grid">
-                <div class="card env-card scroll-animate" data-delay="100">
-                    <img src="images/classroom.jpg" alt="BrightRoots Classroom" />
-                    <div class="content">
-                        <h4>🏫 Hybrid Classrooms</h4>
-                        <p>Child-safe, modern classrooms designed for interactive learning</p>
-                    </div>
-                </div>
-                <div class="card env-card scroll-animate" data-delay="150">
-                    <img src="images/play-area.jpg" alt="BrightRoots Play Area" />
-                    <div class="content">
-                        <h4>🌳 Secure Play Areas</h4>
-                        <p>Safe outdoor and indoor spaces for active play and exploration</p>
-                    </div>
-                </div>
-                <div class="card env-card scroll-animate" data-delay="200">
-                    <img src="images/activities.jpg" alt="BrightRoots Activities" />
-                    <div class="content">
-                        <h4>🎨 Activity-Based Learning</h4>
-                        <p>Engaging activities that make learning fun and memorable</p>
-                    </div>
-                </div>
-            </div>
-            <div class="text-center" style="margin-top: 2.5rem;">
-                <a href="environment.html" class="btn btn-primary">Explore Our Environment →</a>
-            </div>
-        </div>
-    </section>
+      <div class="program-grid">
+        <article class="program"><span class="emoji">🧸</span><h3>Play Group</h3><span class="age">1.5 – 2.5 years</span></article>
+        <article class="program"><span class="emoji">📚</span><h3>Pre-KG</h3><span class="age">2.5 – 3.5 years</span></article>
+        <article class="program"><span class="emoji">✏️</span><h3>LKG</h3><span class="age">3.5 – 4.5 years</span></article>
+        <article class="program"><span class="emoji">🌟</span><h3>UKG</h3><span class="age">4.5 – 5.5 years</span></article>
+        <article class="program"><span class="emoji">🌙</span><h3>Day Care</h3><span class="age">Flexible hours</span></article>
+      </div>
 
-    <!-- ===== GALLERY PREVIEW ===== -->
-    <section class="section-padding bg-cream">
-        <div class="container">
-            <div class="section-title scroll-animate">
-                <span class="eyebrow">Gallery</span>
-                <h2>Our <span class="gradient-text">Gallery</span></h2>
-                <p>Peek into the joyful learning experience at BrightRoots</p>
-            </div>
-            <div class="gallery-grid">
-                <div class="gallery-item scroll-animate" data-delay="100">
-                    <img src="images/gallery1.jpg" alt="BrightRoots Activity" />
-                    <div class="overlay"><span>📸 Activities</span></div>
-                </div>
-                <div class="gallery-item scroll-animate" data-delay="150">
-                    <img src="images/gallery2.jpg" alt="BrightRoots Classroom" />
-                    <div class="overlay"><span>📸 Classroom</span></div>
-                </div>
-                <div class="gallery-item scroll-animate" data-delay="200">
-                    <img src="images/gallery3.jpg" alt="BrightRoots Play" />
-                    <div class="overlay"><span>📸 Play Time</span></div>
-                </div>
-                <div class="gallery-item scroll-animate" data-delay="250">
-                    <img src="images/gallery4.jpg" alt="BrightRoots Celebration" />
-                    <div class="overlay"><span>📸 Celebrations</span></div>
-                </div>
-                <div class="gallery-item scroll-animate" data-delay="300">
-                    <img src="images/gallery5.jpg" alt="BrightRoots Art" />
-                    <div class="overlay"><span>📸 Art &amp; Craft</span></div>
-                </div>
-                <div class="gallery-item scroll-animate" data-delay="350">
-                    <img src="images/gallery6.jpg" alt="BrightRoots Outdoor" />
-                    <div class="overlay"><span>📸 Outdoor Fun</span></div>
-                </div>
-            </div>
-            <div class="text-center" style="margin-top: 2.5rem;">
-                <a href="environment.html#gallery" class="btn btn-primary">View Full Gallery →</a>
-            </div>
-        </div>
-    </section>
+      <div class="buttons" style="justify-content:center">
+        <a class="btn btn-pink" href="programs.html">View All Programs →</a>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <!-- ===== TESTIMONIALS ===== -->
-    <section class="section-padding testimonials">
-        <div class="container">
-            <div class="section-title scroll-animate">
-                <span class="eyebrow">Testimonials</span>
-                <h2>What Parents <span class="gradient-text">Say</span></h2>
-                <p>Real stories from families who trust BrightRoots</p>
-            </div>
-            <div class="testimonial-grid">
-                <div class="card testimonial-card scroll-animate" data-delay="100">
-                    <div class="stars">⭐⭐⭐⭐⭐</div>
-                    <blockquote>"My daughter has grown so much since joining BrightRoots. The teachers are caring and the learning approach is wonderful."</blockquote>
-                    <div class="author">
-                        <div class="avatar">P</div>
-                        <div>
-                            <div class="name">Priya S.</div>
-                            <div class="role">Parent of LKG student</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="card testimonial-card scroll-animate" data-delay="150">
-                    <div class="stars">⭐⭐⭐⭐⭐</div>
-                    <blockquote>"The phonics training has helped my son read confidently. We're so happy with the progress he's made."</blockquote>
-                    <div class="author">
-                        <div class="avatar">R</div>
-                        <div>
-                            <div class="name">Rajesh K.</div>
-                            <div class="role">Parent of UKG student</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="card testimonial-card scroll-animate" data-delay="200">
-                    <div class="stars">⭐⭐⭐⭐⭐</div>
-                    <blockquote>"The daycare support is a lifesaver for us as working parents. Our child is safe, happy, and learning every day."</blockquote>
-                    <div class="author">
-                        <div class="avatar">M</div>
-                        <div>
-                            <div class="name">Meena R.</div>
-                            <div class="role">Working Parent</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+<!-- HOME 4: LEARNING APPROACH -->
+<section class="section approach dark" id="approach">
+  <div class="section-inner">
+    <div class="container">
+      <div class="section-heading">
+        <span class="eyebrow white">Learning Approach</span>
+        <h2>Learning Through <span style="color:#ffd05b">Play & Discovery</span></h2>
+        <p>Children get opportunities to explore creativity, communication, problem-solving and confidence.</p>
+      </div>
 
-    <!-- ===== ADMISSION CTA ===== -->
-    <section class="section-padding admission-cta">
-        <div class="container">
-            <h2 class="scroll-animate">Ready to Give Your Child <span style="color: var(--gold);">A Bright Start?</span></h2>
-            <p class="scroll-animate" data-delay="100">Limited period opening offer! Special discount on fees. Enroll now for the 2026-27 session.</p>
-            <div class="scroll-animate" data-delay="200">
-                <a href="admissions.html" class="btn btn-white btn-lg">📅 Book a School Visit</a>
-            </div>
-        </div>
-    </section>
+      <div class="approach-grid">
+        <article class="approach-card"><div class="icon">🎨</div><h3>Creative Learning</h3><p>Art, stories, music and hands-on experiences encourage self-expression.</p></article>
+        <article class="approach-card"><div class="icon">🧩</div><h3>Play-Based</h3><p>Fun activities turn everyday learning into something children enjoy.</p></article>
+        <article class="approach-card"><div class="icon">🌍</div><h3>Future Ready</h3><p>Early skills are developed through structured and engaging learning experiences.</p></article>
+        <article class="approach-card"><div class="icon">❤️</div><h3>Holistic Growth</h3><p>Social, emotional, physical and communication skills grow together.</p></article>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <!-- ===== FOOTER ===== -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-grid">
-                <div>
-                    <div class="logo" style="margin-bottom: 0.75rem;">
-                        <div class="logo-icon" style="background: rgba(255, 255, 255, 0.1);">
-                            <img src="images/kidslogo.jpg" alt="BrightRoots Kids Care" style="width:100%;height:100%;object-fit:cover;border-radius:50%;" />
-                        </div>
-                        <div>
-                            <span class="logo-text" style="color: white;">BrightRoots</span>
-                            <span class="logo-sub" style="color: var(--pink);">Kids Care</span>
-                        </div>
-                    </div>
-                    <p>Where Little Minds Grow and Thrive</p>
-                    <div class="social">
-                        <a href="#" aria-label="Facebook">📘</a>
-                        <a href="#" aria-label="Instagram">📸</a>
-                        <a href="#" aria-label="YouTube">▶️</a>
-                    </div>
-                </div>
-                <div>
-                    <h4>Quick Links</h4>
-                    <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="about.html">About Us</a></li>
-                        <li><a href="programs.html">Programs</a></li>
-                        <li><a href="environment.html">Environment</a></li>
-                        <li><a href="admissions.html">Admissions</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h4>Programs</h4>
-                    <ul>
-                        <li><a href="programs.html#play-group">Play Group</a></li>
-                        <li><a href="programs.html#pre-kg">Pre-KG</a></li>
-                        <li><a href="programs.html#lkg">LKG</a></li>
-                        <li><a href="programs.html#ukg">UKG</a></li>
-                        <li><a href="programs.html#day-care">Day Care</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h4>Contact</h4>
-                    <div class="contact-item">
-                        <span class="icon">📍</span>
-                        <div>19A/170 Ashok Nagar, Near KGG Hospital, Tirupattur 635601</div>
-                    </div>
-                    <div class="contact-item">
-                        <span class="icon">📞</span>
-                        <a href="tel:918438142540">84381 42540</a>
-                    </div>
-                    <div class="contact-item">
-                        <span class="icon">✉️</span>
-                        <a href="mailto:info@brightrootskidscare.com">info@brightrootskidscare.com</a>
-                    </div>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>© <span id="currentYear"></span> BrightRoots Kids Care. All rights reserved.</p>
-            </div>
-        </div>
-    </footer>
+<!-- HOME 5: ENVIRONMENT -->
+<section class="section environment" id="environment">
+  <div class="section-inner">
+    <div class="container">
+      <div class="section-heading">
+        <span class="eyebrow">Our Environment</span>
+        <h2>A Place Children Feel <span class="gradient">Happy & Safe</span></h2>
+        <p>Real spaces, real activities and a welcoming environment for your child's everyday experience.</p>
+      </div>
 
-    <!-- ===== STICKY BOTTOM BAR ===== -->
-    <div class="sticky-bar">
-        <div class="grid">
-            <a href="tel:918438142540"><span class="icon">📞</span>Call</a>
-            <a href="https://wa.me/918438142540?text=Hello%20BrightRoots%20Kids%20Care%2C%20I%20would%20like%20to%20know%20more%20about%20admission%20for%20my%20child." target="_blank" class="whatsapp"><span class="icon">💬</span>WhatsApp</a>
-            <a href="https://maps.google.com/maps?q=19A/170+Ashok+Nagar,+Tirupattur" target="_blank"><span class="icon">📍</span>Directions</a>
+      <div class="feature-grid">
+        <article class="feature">
+          <img src="images/classroom.jpg" alt="BrightRoots classroom" loading="lazy">
+          <div class="feature-body"><h3>🏫 Child-Friendly Classrooms</h3><p>Comfortable spaces created for focused learning and interaction.</p></div>
+        </article>
+        <article class="feature">
+          <img src="images/play-area.jpg" alt="BrightRoots play area" loading="lazy">
+          <div class="feature-body"><h3>🌳 Active Play Areas</h3><p>Indoor and outdoor opportunities for movement, play and exploration.</p></div>
+        </article>
+        <article class="feature">
+          <img src="images/activities.jpg" alt="BrightRoots learning activity" loading="lazy">
+          <div class="feature-body"><h3>🎨 Activity-Based Learning</h3><p>Hands-on activities help children learn concepts naturally and joyfully.</p></div>
+        </article>
+      </div>
+
+      <div class="buttons" style="justify-content:center">
+        <a class="btn btn-pink" href="environment.html">Explore Our Environment →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOME 6: EXPERIENCE / TRUST -->
+<section class="section gallery-section dark" id="experience">
+  <div class="section-inner">
+    <div class="container">
+      <div class="section-heading">
+        <span class="eyebrow white">A Day at BrightRoots</span>
+        <h2>Little Moments. <span style="color:#ffd05b">Big Growth.</span></h2>
+        <p>Parents can see the kind of joyful learning, friendship and discovery their child experiences.</p>
+      </div>
+
+      <div class="gallery-strip">
+        <article class="gallery-card"><div><h3>🎨 Create</h3><p>Art, craft and creative activities.</p></div></article>
+        <article class="gallery-card"><div><h3>🧒 Learn Together</h3><p>Children build communication and social confidence.</p></div></article>
+        <article class="gallery-card"><div><h3>🏃 Play & Explore</h3><p>Movement, games and hands-on discovery.</p></div></article>
+      </div>
+
+      <div class="buttons" style="justify-content:center">
+        <a class="btn btn-white" href="environment.html#gallery">View Full Gallery →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOME 7: FINAL DECISION / CTA -->
+<section class="section cta" id="visit">
+  <div class="section-inner">
+    <div class="container">
+      <div class="panel">
+        <span class="eyebrow">Admissions 2026–27</span>
+        <h2>Ready to Give Your Child a <span class="gradient">Bright Start?</span></h2>
+        <p>Come and see the classrooms, activities and environment for yourself. A school visit helps parents make a confident decision.</p>
+
+        <div class="buttons">
+          <a class="btn btn-pink" href="admissions.html">📅 Book a School Visit</a>
+          <a class="btn btn-green" href="https://wa.me/918438142540?text=Hello%20BrightRoots%20Kids%20Care%2C%20I%20would%20like%20to%20know%20more%20about%20admission%20for%20my%20child." target="_blank" rel="noopener">💬 WhatsApp Us</a>
         </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <img class="footer-logo" src="images/kidslogo.jpg" alt="BrightRoots Kids Care">
+        <p>BrightRoots Kids Care<br>Where Little Minds Grow and Thrive.</p>
+      </div>
+
+      <div>
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="programs.html">Programs</a></li>
+          <li><a href="environment.html">Environment</a></li>
+          <li><a href="admissions.html">Admissions</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h3>Programs</h3>
+        <ul>
+          <li><a href="programs.html#play-group">Play Group</a></li>
+          <li><a href="programs.html#pre-kg">Pre-KG</a></li>
+          <li><a href="programs.html#lkg">LKG</a></li>
+          <li><a href="programs.html#ukg">UKG</a></li>
+          <li><a href="programs.html#day-care">Day Care</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h3>Contact</h3>
+        <p>📍 19A/170 Ashok Nagar, Near KGG Hospital, Tirupattur 635601</p>
+        <p style="margin-top:10px">📞 <a href="tel:918438142540">84381 42540</a></p>
+        <p style="margin-top:10px">✉️ <a href="mailto:info@brightrootskidscare.com">info@brightrootskidscare.com</a></p>
+      </div>
     </div>
 
-    <!-- ===== WHATSAPP FLOAT ===== -->
-    <a href="https://wa.me/918438142540?text=Hello%20BrightRoots%20Kids%20Care%2C%20I%20would%20like%20to%20know%20more%20about%20admission%20for%20my%20child." target="_blank" class="whatsapp-float">💬</a>
+    <div class="footer-bottom">
+      <p>© <span id="year"></span> BrightRoots Kids Care. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
 
-    <!-- ===== JAVASCRIPT ===== -->
-    <script>
-document.addEventListener('DOMContentLoaded', function () {
-    /* ---------- MOBILE MENU ---------- */
-    const menuToggle = document.getElementById('menuToggle');
-    const mobileNav = document.getElementById('mobileNav');
-    const mobileOverlay = document.getElementById('mobileOverlay');
-    const closeMenuButton = document.getElementById('closeMenu');
+<div class="sticky-bar">
+  <div class="sticky-grid">
+    <a href="tel:918438142540"><span>📞</span>Call</a>
+    <a class="whatsapp" href="https://wa.me/918438142540?text=Hello%20BrightRoots%20Kids%20Care%2C%20I%20would%20like%20to%20know%20more%20about%20admission%20for%20my%20child." target="_blank" rel="noopener"><span>💬</span>WhatsApp</a>
+    <a href="https://maps.google.com/maps?q=19A/170+Ashok+Nagar,+Tirupattur" target="_blank" rel="noopener"><span>📍</span>Directions</a>
+  </div>
+</div>
 
-    function openMenu() {
-        if (!mobileNav) return;
-        mobileNav.classList.add('open');
-        mobileOverlay?.classList.add('active');
-        mobileNav.setAttribute('aria-hidden', 'false');
-        mobileOverlay?.setAttribute('aria-hidden', 'false');
-        document.body.classList.add('menu-open');
-    }
+<a class="whatsapp-float" href="https://wa.me/918438142540?text=Hello%20BrightRoots%20Kids%20Care%2C%20I%20would%20like%20to%20know%20more%20about%20admission%20for%20my%20child." target="_blank" rel="noopener" aria-label="WhatsApp">💬</a>
 
-    function closeMenu() {
-        if (!mobileNav) return;
-        mobileNav.classList.remove('open');
-        mobileOverlay?.classList.remove('active');
-        mobileNav.setAttribute('aria-hidden', 'true');
-        mobileOverlay?.setAttribute('aria-hidden', 'true');
-        document.body.classList.remove('menu-open');
-    }
+<script>
+document.addEventListener('DOMContentLoaded', function(){
+  const header = document.getElementById('header');
+  const menuToggle = document.getElementById('menuToggle');
+  const mobileMenu = document.getElementById('mobileMenu');
+  const mobileBackdrop = document.getElementById('mobileBackdrop');
+  const closeMenu = document.getElementById('closeMenu');
 
-    menuToggle?.addEventListener('click', function (e) {
-        e.preventDefault();
-        e.stopPropagation();
-        openMenu();
-    });
+  function setMenu(open){
+    mobileMenu.classList.toggle('open', open);
+    mobileBackdrop.classList.toggle('open', open);
+    mobileMenu.setAttribute('aria-hidden', String(!open));
+    menuToggle.setAttribute('aria-expanded', String(open));
+    document.body.classList.toggle('menu-open', open);
+  }
 
-    closeMenuButton?.addEventListener('click', function (e) {
-        e.preventDefault();
-        closeMenu();
-    });
+  menuToggle.addEventListener('click', function(){ setMenu(true); });
+  closeMenu.addEventListener('click', function(){ setMenu(false); });
+  mobileBackdrop.addEventListener('click', function(){ setMenu(false); });
 
-    mobileOverlay?.addEventListener('click', closeMenu);
+  mobileMenu.querySelectorAll('a').forEach(function(link){
+    link.addEventListener('click', function(){ setMenu(false); });
+  });
 
-    document.querySelectorAll('.mobile-nav a').forEach(function (link) {
-        link.addEventListener('click', closeMenu);
-    });
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape') setMenu(false);
+  });
 
-    document.addEventListener('keydown', function (e) {
-        if (e.key === 'Escape') closeMenu();
-    });
+  window.addEventListener('scroll', function(){
+    header.classList.toggle('scrolled', window.scrollY > 30);
+  }, {passive:true});
 
-    /* ---------- HEADER SCROLL ---------- */
-    const header = document.getElementById('header');
-
-    function updateHeader() {
-        if (header) {
-            header.classList.toggle('header-scrolled', window.scrollY > 50);
-        }
-    }
-
-    window.addEventListener('scroll', updateHeader, { passive: true });
-    updateHeader();
-
-    /* ---------- SCROLL ANIMATIONS ---------- */
-    const animateElements = document.querySelectorAll('.scroll-animate');
-
-    if ('IntersectionObserver' in window) {
-        const observer = new IntersectionObserver(function (entries, obs) {
-            entries.forEach(function (entry) {
-                if (!entry.isIntersecting) return;
-
-                const delay = parseInt(entry.target.dataset.delay || '0', 10);
-
-                setTimeout(function () {
-                    entry.target.classList.add('visible');
-                }, delay);
-
-                obs.unobserve(entry.target);
-            });
-        }, {
-            threshold: 0.05,
-            rootMargin: '0px 0px -30px 0px'
-        });
-
-        animateElements.forEach(function (el) {
-            observer.observe(el);
-        });
-    } else {
-        animateElements.forEach(function (el) {
-            el.classList.add('visible');
-        });
-    }
-
-    /* ---------- CURRENT YEAR ---------- */
-    const yearElement = document.getElementById('currentYear');
-    if (yearElement) {
-        yearElement.textContent = new Date().getFullYear();
-    }
-
-    /* ---------- FORM VALIDATION / DEMO SUBMIT ---------- */
-    const enquiryForm = document.getElementById('enquiryForm');
-
-    if (enquiryForm) {
-        enquiryForm.addEventListener('submit', function (e) {
-            e.preventDefault();
-
-            const requiredFields = enquiryForm.querySelectorAll('[required]');
-            let valid = true;
-
-            enquiryForm.querySelectorAll('.error-message').forEach(function (el) {
-                el.remove();
-            });
-
-            requiredFields.forEach(function (input) {
-                input.classList.remove('error');
-
-                if (!input.value.trim()) {
-                    valid = false;
-                    input.classList.add('error');
-
-                    const error = document.createElement('span');
-                    error.className = 'error-message';
-                    error.textContent = 'This field is required';
-                    error.style.cssText =
-                        'display:block;color:#D7195B;font-size:.82rem;margin-top:.25rem;';
-                    input.parentElement.appendChild(error);
-                }
-            });
-
-            const phone = enquiryForm.querySelector('input[type="tel"]');
-
-            if (phone && phone.value.trim()) {
-                const digits = phone.value.replace(/\D/g, '');
-
-                if (digits.length !== 10) {
-                    valid = false;
-                    phone.classList.add('error');
-
-                    const error = document.createElement('span');
-                    error.className = 'error-message';
-                    error.textContent = 'Please enter a valid 10-digit phone number';
-                    error.style.cssText =
-                        'display:block;color:#D7195B;font-size:.82rem;margin-top:.25rem;';
-                    phone.parentElement.appendChild(error);
-                }
-            }
-
-            if (!valid) return;
-
-            const submitBtn = enquiryForm.querySelector('button[type="submit"]');
-
-            if (submitBtn) {
-                submitBtn.disabled = true;
-                submitBtn.textContent = 'Sending...';
-            }
-
-            setTimeout(function () {
-                const success = document.createElement('div');
-                success.className = 'form-success';
-                success.textContent = '✅ Thank you! Our team will contact you shortly.';
-                success.style.cssText =
-                    'background:#4A9B45;color:#fff;padding:1rem;border-radius:.7rem;margin-top:1rem;text-align:center;font-weight:700;';
-
-                enquiryForm.appendChild(success);
-                enquiryForm.reset();
-
-                if (submitBtn) {
-                    submitBtn.disabled = false;
-                    submitBtn.textContent = '📤 Send Enquiry';
-                }
-
-                setTimeout(function () {
-                    success.remove();
-                }, 5000);
-            }, 800);
-        });
-    }
-
-    /* ---------- PHONE FORMATTING ---------- */
-    document.querySelectorAll('input[type="tel"]').forEach(function (input) {
-        input.addEventListener('input', function () {
-            let value = this.value.replace(/\D/g, '').slice(0, 10);
-
-            if (value.length > 5) {
-                value = value.slice(0, 5) + ' ' + value.slice(5);
-            }
-
-            this.value = value;
-        });
-    });
-
-    /* ---------- SMOOTH INTERNAL LINKS ---------- */
-    document.querySelectorAll('a[href^="#"]').forEach(function (anchor) {
-        anchor.addEventListener('click', function (e) {
-            const href = this.getAttribute('href');
-
-            if (!href || href === '#') return;
-
-            const target = document.querySelector(href);
-            if (!target) return;
-
-            e.preventDefault();
-
-            const headerHeight = header ? header.offsetHeight : 0;
-            const targetTop =
-                target.getBoundingClientRect().top +
-                window.scrollY -
-                headerHeight -
-                10;
-
-            window.scrollTo({
-                top: Math.max(0, targetTop),
-                behavior: 'smooth'
-            });
-        });
-    });
-
-    /* ---------- GALLERY LIGHTBOX ---------- */
-    const galleryItems = document.querySelectorAll('.gallery-item');
-
-    galleryItems.forEach(function (item) {
-        item.addEventListener('click', function () {
-            const image = item.querySelector('img');
-            if (!image) return;
-
-            let lightbox = document.querySelector('.lightbox-overlay');
-
-            if (!lightbox) {
-                lightbox = document.createElement('div');
-                lightbox.className = 'lightbox-overlay';
-                lightbox.innerHTML = `
-                    <button type="button" class="lightbox-close" aria-label="Close image">✕</button>
-                    <img class="lightbox-image" alt="">
-                `;
-
-                lightbox.style.cssText = `
-                    position:fixed;
-                    inset:0;
-                    z-index:2000;
-                    display:none;
-                    align-items:center;
-                    justify-content:center;
-                    padding:2rem;
-                    background:rgba(0,0,0,.92);
-                    cursor:pointer;
-                `;
-
-                const lightboxImage = lightbox.querySelector('.lightbox-image');
-                lightboxImage.style.cssText = `
-                    max-width:100%;
-                    max-height:90vh;
-                    object-fit:contain;
-                    border-radius:.5rem;
-                    cursor:default;
-                `;
-
-                const close = lightbox.querySelector('.lightbox-close');
-                close.style.cssText = `
-                    position:fixed;
-                    top:1rem;
-                    right:1rem;
-                    z-index:2001;
-                    border:0;
-                    background:none;
-                    color:#fff;
-                    font-size:2.2rem;
-                    cursor:pointer;
-                `;
-
-                document.body.appendChild(lightbox);
-
-                lightbox.addEventListener('click', function (e) {
-                    if (e.target === lightbox || e.target === close) {
-                        lightbox.style.display = 'none';
-                        document.body.classList.remove('menu-open');
-                    }
-                });
-            }
-
-            lightbox.querySelector('.lightbox-image').src = image.src;
-            lightbox.querySelector('.lightbox-image').alt = image.alt || '';
-            lightbox.style.display = 'flex';
-            document.body.classList.add('menu-open');
-        });
-    });
+  document.getElementById('year').textContent = new Date().getFullYear();
 });
 </script>
 
