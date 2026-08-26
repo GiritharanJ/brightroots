@@ -158,7 +158,7 @@ button{font:inherit}
   content:"";
   position:absolute;
   inset:0;
-  background:rgba(255,255,255,.58);
+  background:rgba(255,255,255,.08);
 }
 .section.dark::before{background:rgba(7,26,61,.58)}
 .section-inner{position:relative;z-index:1;width:100%}
@@ -541,6 +541,13 @@ p{color:var(--muted)}
 
 <header class="header" id="header">
   <div class="container header-inner">
+
+    <!-- Logo -->
+    <a href="index.html" class="brand-logo" aria-label="BrightRoots Kids Care Home">
+      <img src="images/kidslogo.jpg" alt="BrightRoots Kids Care">
+    </a>
+
+    <!-- Desktop Navigation -->
     <nav class="nav" aria-label="Main navigation">
       <a href="index.html" class="active">Home</a>
       <a href="about.html">About</a>
@@ -548,14 +555,39 @@ p{color:var(--muted)}
       <a href="environment.html">Environment</a>
       <a href="admissions.html">Admissions</a>
     </nav>
-    <button class="menu-toggle" id="menuToggle" type="button" aria-label="Open menu" aria-expanded="false">☰</button>
+
+    <!-- Mobile Menu Button -->
+    <button
+      class="menu-toggle"
+      id="menuToggle"
+      type="button"
+      aria-label="Open menu"
+      aria-expanded="false">
+      ☰
+    </button>
+
   </div>
 </header>
 
+<!-- Mobile backdrop -->
 <div class="mobile-backdrop" id="mobileBackdrop"></div>
 
+<!-- Mobile menu -->
 <aside class="mobile-menu" id="mobileMenu" aria-hidden="true">
-  <button class="mobile-close" id="closeMenu" type="button" aria-label="Close menu">✕</button>
+
+  <button
+    class="mobile-close"
+    id="closeMenu"
+    type="button"
+    aria-label="Close menu">
+    ✕
+  </button>
+
+  <!-- Mobile Logo -->
+  <div class="mobile-logo">
+    <img src="images/kidslogo.jpg" alt="BrightRoots Kids Care">
+  </div>
+
   <a href="index.html" class="active">Home</a>
   <a href="about.html">About</a>
   <a href="programs.html">Programs</a>
@@ -563,9 +595,19 @@ p{color:var(--muted)}
   <a href="admissions.html">Admissions</a>
 
   <div class="mobile-actions">
-    <a href="admissions.html">📅 Book a School Visit</a>
-    <a class="whatsapp" href="https://wa.me/918438142540?text=Hello%20BrightRoots%20Kids%20Care%2C%20I%20would%20like%20to%20know%20more%20about%20admission%20for%20my%20child." target="_blank" rel="noopener">💬 WhatsApp Us</a>
+    <a href="admissions.html">
+      📅 Book a School Visit
+    </a>
+
+    <a
+      class="whatsapp"
+      href="https://wa.me/918438142540?text=Hello%20BrightRoots%20Kids%20Care%2C%20I%20would%20like%20to%20know%20more%20about%20admission%20for%20my%20child."
+      target="_blank"
+      rel="noopener">
+      💬 WhatsApp Us
+    </a>
   </div>
+
 </aside>
 
 <main>
