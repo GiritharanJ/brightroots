@@ -1117,6 +1117,250 @@
                 animation: none;
             }
         }
+    
+/* ============================================================
+   FINAL MOBILE / TOUCH FIXES
+   ============================================================ */
+
+html {
+    width: 100%;
+    min-height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+    -webkit-text-size-adjust: 100%;
+}
+
+body {
+    width: 100%;
+    min-height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto !important;
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior-y: auto;
+}
+
+.header {
+    z-index: 1200;
+}
+
+.hero {
+    position: relative;
+    isolation: isolate;
+    min-height: 92vh;
+    min-height: 92svh;
+}
+
+.hero-buttons {
+    position: absolute;
+    z-index: 20;
+    left: 50%;
+    bottom: 7.5rem;
+    margin: 0;
+    transform: translateX(-50%);
+    width: min(100% - 2rem, 480px);
+    pointer-events: auto;
+    touch-action: manipulation;
+}
+
+.hero-btn {
+    position: relative;
+    z-index: 21;
+    pointer-events: auto;
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.sticky-bar {
+    z-index: 1300;
+    pointer-events: auto;
+}
+
+.sticky-bar a {
+    pointer-events: auto;
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.whatsapp-float {
+    z-index: 1350;
+    pointer-events: auto;
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
+}
+
+/* Dedicated mobile menu overlay — no conflict with gallery overlays */
+.mobile-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(10, 20, 45, 0.52);
+    z-index: 1250;
+}
+
+.mobile-overlay.active {
+    display: block;
+}
+
+.mobile-nav {
+    display: block;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: min(320px, 86vw);
+    max-width: 100%;
+    background: #fff;
+    box-shadow: -15px 0 40px rgba(0,0,0,.18);
+    padding: 5.5rem 1.5rem 2rem;
+    z-index: 1300;
+    transform: translate3d(100%, 0, 0);
+    visibility: hidden;
+    transition: transform .28s ease, visibility .28s ease;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+.mobile-nav.open {
+    transform: translate3d(0, 0, 0);
+    visibility: visible;
+}
+
+.mobile-nav .close-btn {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    width: 42px;
+    height: 42px;
+    border: 0;
+    border-radius: 50%;
+    background: #f3f4f6;
+    color: var(--navy);
+    font-size: 1.1rem;
+    cursor: pointer;
+    z-index: 2;
+}
+
+.mobile-nav nav a {
+    display: block;
+    padding: .95rem .25rem;
+    border-bottom: 1px solid var(--gray-100);
+    color: var(--navy);
+    font-family: var(--font-label);
+    font-weight: 600;
+}
+
+.mobile-nav nav a.active {
+    color: var(--pink);
+}
+
+.mobile-actions {
+    display: grid;
+    gap: .7rem;
+    margin-top: 1.5rem;
+    padding-top: 1.2rem;
+    border-top: 1px solid var(--gray-200);
+}
+
+.mobile-actions .btn {
+    width: 100%;
+    justify-content: center;
+}
+
+.mobile-whatsapp {
+    background: #25D366;
+    color: #fff;
+}
+
+@media (max-width: 768px) {
+    .header {
+        padding: .65rem 0;
+    }
+
+    .header .container {
+        padding-right: 1rem;
+    }
+
+    .menu-toggle {
+        position: relative;
+        z-index: 1210;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        pointer-events: auto;
+        touch-action: manipulation;
+    }
+
+    .hero {
+        min-height: 100svh;
+        min-height: 100dvh;
+        padding: 0;
+        display: flex;
+        align-items: stretch;
+        justify-content: center;
+    }
+
+    .hero-buttons {
+        left: 50%;
+        bottom: 7.2rem;
+        width: min(calc(100% - 2rem), 390px);
+        flex-direction: column;
+        gap: .7rem;
+        align-items: stretch;
+    }
+
+    .hero-btn {
+        width: 100%;
+        min-width: 0;
+        min-height: 54px;
+        padding: .85rem 1rem;
+        font-size: .98rem;
+    }
+
+    .sticky-bar {
+        display: block;
+        min-height: 68px;
+    }
+
+    .sticky-bar .grid {
+        min-height: 68px;
+    }
+
+    .sticky-bar a {
+        justify-content: center;
+        min-height: 68px;
+        padding: .55rem .2rem;
+    }
+
+    .whatsapp-float {
+        right: .9rem;
+        bottom: 5.8rem;
+        width: 52px;
+        height: 52px;
+    }
+
+    /* Prevent content from being hidden behind the fixed mobile bar */
+    .footer {
+        padding-bottom: 5.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-buttons {
+        bottom: 7.4rem;
+        width: calc(100% - 1.5rem);
+    }
+
+    .hero-btn {
+        min-height: 52px;
+        font-size: .94rem;
+    }
+}
+
+/* Do not allow a stale inline JS scroll lock to break page scrolling */
+body.menu-open {
+    overflow: hidden !important;
+}
+
     </style>
 </head>
 <body>
@@ -1141,6 +1385,28 @@
     </div>
 </header>
 
+<!-- ===== MOBILE NAVIGATION ===== -->
+<div class="mobile-overlay" id="mobileOverlay" aria-hidden="true"></div>
+
+<aside class="mobile-nav" id="mobileNav" aria-hidden="true" aria-label="Mobile navigation">
+    <button class="close-btn" id="closeMenu" type="button" aria-label="Close menu">✕</button>
+
+    <nav>
+        <a href="index.html" class="active">Home</a>
+        <a href="about.html">About</a>
+        <a href="programs.html">Programs</a>
+        <a href="environment.html">Environment</a>
+        <a href="admissions.html">Admissions</a>
+    </nav>
+
+    <div class="mobile-actions">
+        <a href="admissions.html" class="btn btn-primary btn-block">📅 Book a School Visit</a>
+        <a href="https://wa.me/918438142540?text=Hello%20BrightRoots%20Kids%20Care%2C%20I%20would%20like%20to%20know%20more%20about%20admission%20for%20my%20child."
+           target="_blank" rel="noopener" class="btn btn-block mobile-whatsapp">💬 WhatsApp Us</a>
+    </div>
+</aside>
+
+
     <!-- ===== SIMPLE HERO ===== -->
 <section class="hero">
 
@@ -1153,7 +1419,8 @@
         <a
             href="https://wa.me/918438142540?text=Hello%20BrightRoots%20Kids%20Care%2C%20I%20would%20like%20to%20know%20more%20about%20admission%20for%20my%20child."
             target="_blank"
-            rel="noopener"
+            rel="noopener noreferrer"
+            aria-label="Chat with BrightRoots Kids Care on WhatsApp"
             class="hero-btn hero-btn-whatsapp"
         >
             💬 WhatsApp Us
@@ -1490,185 +1757,288 @@
 
     <!-- ===== JAVASCRIPT ===== -->
     <script>
-        // ============================================================
-        // BRIGHTROOTS KIDS CARE — Complete JavaScript
-        // ============================================================
+document.addEventListener('DOMContentLoaded', function () {
+    /* ---------- MOBILE MENU ---------- */
+    const menuToggle = document.getElementById('menuToggle');
+    const mobileNav = document.getElementById('mobileNav');
+    const mobileOverlay = document.getElementById('mobileOverlay');
+    const closeMenuButton = document.getElementById('closeMenu');
 
-        document.addEventListener('DOMContentLoaded', function() {
+    function openMenu() {
+        if (!mobileNav) return;
+        mobileNav.classList.add('open');
+        mobileOverlay?.classList.add('active');
+        mobileNav.setAttribute('aria-hidden', 'false');
+        mobileOverlay?.setAttribute('aria-hidden', 'false');
+        document.body.classList.add('menu-open');
+    }
 
-            // ---------- MOBILE MENU ----------
-            const menuToggle = document.getElementById('menuToggle');
-            const mobileNav = document.getElementById('mobileNav');
-            const overlay = document.getElementById('overlay');
-            const closeBtn = document.getElementById('closeMenu');
+    function closeMenu() {
+        if (!mobileNav) return;
+        mobileNav.classList.remove('open');
+        mobileOverlay?.classList.remove('active');
+        mobileNav.setAttribute('aria-hidden', 'true');
+        mobileOverlay?.setAttribute('aria-hidden', 'true');
+        document.body.classList.remove('menu-open');
+    }
 
-            function openMenu() {
-                if (mobileNav) mobileNav.classList.add('open');
-                if (overlay) overlay.classList.add('active');
-                document.body.style.overflow = 'hidden';
-            }
+    menuToggle?.addEventListener('click', function (e) {
+        e.preventDefault();
+        e.stopPropagation();
+        openMenu();
+    });
 
-            function closeMenu() {
-                if (mobileNav) mobileNav.classList.remove('open');
-                if (overlay) overlay.classList.remove('active');
-                document.body.style.overflow = '';
-            }
+    closeMenuButton?.addEventListener('click', function (e) {
+        e.preventDefault();
+        closeMenu();
+    });
 
-            if (menuToggle) {
-                menuToggle.addEventListener('click', openMenu);
-            }
-            if (closeBtn) {
-                closeBtn.addEventListener('click', closeMenu);
-            }
-            if (overlay) {
-                overlay.addEventListener('click', closeMenu);
-            }
+    mobileOverlay?.addEventListener('click', closeMenu);
 
-            document.addEventListener('keydown', function(e) {
-                if (e.key === 'Escape') closeMenu();
+    document.querySelectorAll('.mobile-nav a').forEach(function (link) {
+        link.addEventListener('click', closeMenu);
+    });
+
+    document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape') closeMenu();
+    });
+
+    /* ---------- HEADER SCROLL ---------- */
+    const header = document.getElementById('header');
+
+    function updateHeader() {
+        if (header) {
+            header.classList.toggle('header-scrolled', window.scrollY > 50);
+        }
+    }
+
+    window.addEventListener('scroll', updateHeader, { passive: true });
+    updateHeader();
+
+    /* ---------- SCROLL ANIMATIONS ---------- */
+    const animateElements = document.querySelectorAll('.scroll-animate');
+
+    if ('IntersectionObserver' in window) {
+        const observer = new IntersectionObserver(function (entries, obs) {
+            entries.forEach(function (entry) {
+                if (!entry.isIntersecting) return;
+
+                const delay = parseInt(entry.target.dataset.delay || '0', 10);
+
+                setTimeout(function () {
+                    entry.target.classList.add('visible');
+                }, delay);
+
+                obs.unobserve(entry.target);
+            });
+        }, {
+            threshold: 0.05,
+            rootMargin: '0px 0px -30px 0px'
+        });
+
+        animateElements.forEach(function (el) {
+            observer.observe(el);
+        });
+    } else {
+        animateElements.forEach(function (el) {
+            el.classList.add('visible');
+        });
+    }
+
+    /* ---------- CURRENT YEAR ---------- */
+    const yearElement = document.getElementById('currentYear');
+    if (yearElement) {
+        yearElement.textContent = new Date().getFullYear();
+    }
+
+    /* ---------- FORM VALIDATION / DEMO SUBMIT ---------- */
+    const enquiryForm = document.getElementById('enquiryForm');
+
+    if (enquiryForm) {
+        enquiryForm.addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            const requiredFields = enquiryForm.querySelectorAll('[required]');
+            let valid = true;
+
+            enquiryForm.querySelectorAll('.error-message').forEach(function (el) {
+                el.remove();
             });
 
-            document.querySelectorAll('.mobile-nav a').forEach(function(link) {
-                link.addEventListener('click', closeMenu);
-            });
+            requiredFields.forEach(function (input) {
+                input.classList.remove('error');
 
-            // ---------- HEADER SCROLL ----------
-            const header = document.getElementById('header');
+                if (!input.value.trim()) {
+                    valid = false;
+                    input.classList.add('error');
 
-            window.addEventListener('scroll', function() {
-                if (window.scrollY > 50) {
-                    header.classList.add('header-scrolled');
-                } else {
-                    header.classList.remove('header-scrolled');
+                    const error = document.createElement('span');
+                    error.className = 'error-message';
+                    error.textContent = 'This field is required';
+                    error.style.cssText =
+                        'display:block;color:#D7195B;font-size:.82rem;margin-top:.25rem;';
+                    input.parentElement.appendChild(error);
                 }
             });
 
-            // ---------- SCROLL ANIMATIONS ----------
-            const animateElements = document.querySelectorAll('.scroll-animate');
+            const phone = enquiryForm.querySelector('input[type="tel"]');
 
-            const observerOptions = {
-                threshold: 0.1,
-                rootMargin: '0px 0px -50px 0px'
-            };
+            if (phone && phone.value.trim()) {
+                const digits = phone.value.replace(/\D/g, '');
 
-            const observer = new IntersectionObserver(function(entries) {
-                entries.forEach(function(entry) {
-                    if (entry.isIntersecting) {
-                        const delay = parseInt(entry.target.dataset.delay) || 0;
-                        setTimeout(function() {
-                            entry.target.classList.add('visible');
-                        }, delay);
-                        observer.unobserve(entry.target);
-                    }
-                });
-            }, observerOptions);
+                if (digits.length !== 10) {
+                    valid = false;
+                    phone.classList.add('error');
 
-            animateElements.forEach(function(el) {
-                observer.observe(el);
-            });
-
-            // ---------- CURRENT YEAR ----------
-            const yearElement = document.getElementById('currentYear');
-            if (yearElement) {
-                yearElement.textContent = new Date().getFullYear();
+                    const error = document.createElement('span');
+                    error.className = 'error-message';
+                    error.textContent = 'Please enter a valid 10-digit phone number';
+                    error.style.cssText =
+                        'display:block;color:#D7195B;font-size:.82rem;margin-top:.25rem;';
+                    phone.parentElement.appendChild(error);
+                }
             }
 
-            // ---------- WHATSAPP LINKS ----------
-            document.querySelectorAll('[data-whatsapp]').forEach(function(el) {
-                el.addEventListener('click', function(e) {
-                    const message = this.dataset.whatsapp ||
-                        'Hello BrightRoots Kids Care, I would like to know more about admission for my child.';
-                    const phone = '918438142540';
-                    const url = 'https://wa.me/' + phone + '?text=' + encodeURIComponent(message);
-                    window.open(url, '_blank');
-                });
-            });
+            if (!valid) return;
 
-            // ---------- GALLERY LIGHTBOX ----------
-            const galleryItems = document.querySelectorAll('.gallery-item');
+            const submitBtn = enquiryForm.querySelector('button[type="submit"]');
 
-            function createLightbox() {
-                const existing = document.querySelector('.lightbox-overlay');
-                if (existing) return existing;
-
-                const overlay = document.createElement('div');
-                overlay.className = 'lightbox-overlay';
-                overlay.style.cssText = `
-                        position: fixed;
-                        inset: 0;
-                        background: rgba(0,0,0,0.92);
-                        z-index: 2000;
-                        display: none;
-                        align-items: center;
-                        justify-content: center;
-                        padding: 2rem;
-                        cursor: pointer;
-                    `;
-
-                const img = document.createElement('img');
-                img.className = 'lightbox-image';
-                img.style.cssText = `
-                        max-width: 100%;
-                        max-height: 90vh;
-                        border-radius: 0.5rem;
-                        object-fit: contain;
-                        cursor: default;
-                    `;
-
-                const close = document.createElement('button');
-                close.className = 'lightbox-close';
-                close.textContent = '✕';
-                close.style.cssText = `
-                        position: fixed;
-                        top: 1.5rem;
-                        right: 1.5rem;
-                        background: none;
-                        border: none;
-                        color: white;
-                        font-size: 2.5rem;
-                        cursor: pointer;
-                        z-index: 2001;
-                        font-family: var(--font-body);
-                    `;
-
-                overlay.appendChild(img);
-                overlay.appendChild(close);
-                document.body.appendChild(overlay);
-
-                overlay.addEventListener('click', function(e) {
-                    if (e.target === overlay || e.target === close) {
-                        overlay.style.display = 'none';
-                        document.body.style.overflow = '';
-                    }
-                });
-
-                document.addEventListener('keydown', function(e) {
-                    if (e.key === 'Escape' && overlay.style.display === 'flex') {
-                        overlay.style.display = 'none';
-                        document.body.style.overflow = '';
-                    }
-                });
-
-                return overlay;
+            if (submitBtn) {
+                submitBtn.disabled = true;
+                submitBtn.textContent = 'Sending...';
             }
 
-            galleryItems.forEach(function(item) {
-                item.addEventListener('click', function() {
-                    const img = this.querySelector('img');
-                    if (!img) return;
+            setTimeout(function () {
+                const success = document.createElement('div');
+                success.className = 'form-success';
+                success.textContent = '✅ Thank you! Our team will contact you shortly.';
+                success.style.cssText =
+                    'background:#4A9B45;color:#fff;padding:1rem;border-radius:.7rem;margin-top:1rem;text-align:center;font-weight:700;';
 
-                    const overlay = createLightbox();
-                    const lightboxImg = overlay.querySelector('.lightbox-image');
-                    lightboxImg.src = img.src;
-                    lightboxImg.alt = img.alt || '';
-                    overlay.style.display = 'flex';
-                    document.body.style.overflow = 'hidden';
-                });
-            });
+                enquiryForm.appendChild(success);
+                enquiryForm.reset();
 
-            console.log('🌳 BrightRoots Kids Care - Website loaded successfully!');
+                if (submitBtn) {
+                    submitBtn.disabled = false;
+                    submitBtn.textContent = '📤 Send Enquiry';
+                }
+
+                setTimeout(function () {
+                    success.remove();
+                }, 5000);
+            }, 800);
         });
-    </script>
+    }
+
+    /* ---------- PHONE FORMATTING ---------- */
+    document.querySelectorAll('input[type="tel"]').forEach(function (input) {
+        input.addEventListener('input', function () {
+            let value = this.value.replace(/\D/g, '').slice(0, 10);
+
+            if (value.length > 5) {
+                value = value.slice(0, 5) + ' ' + value.slice(5);
+            }
+
+            this.value = value;
+        });
+    });
+
+    /* ---------- SMOOTH INTERNAL LINKS ---------- */
+    document.querySelectorAll('a[href^="#"]').forEach(function (anchor) {
+        anchor.addEventListener('click', function (e) {
+            const href = this.getAttribute('href');
+
+            if (!href || href === '#') return;
+
+            const target = document.querySelector(href);
+            if (!target) return;
+
+            e.preventDefault();
+
+            const headerHeight = header ? header.offsetHeight : 0;
+            const targetTop =
+                target.getBoundingClientRect().top +
+                window.scrollY -
+                headerHeight -
+                10;
+
+            window.scrollTo({
+                top: Math.max(0, targetTop),
+                behavior: 'smooth'
+            });
+        });
+    });
+
+    /* ---------- GALLERY LIGHTBOX ---------- */
+    const galleryItems = document.querySelectorAll('.gallery-item');
+
+    galleryItems.forEach(function (item) {
+        item.addEventListener('click', function () {
+            const image = item.querySelector('img');
+            if (!image) return;
+
+            let lightbox = document.querySelector('.lightbox-overlay');
+
+            if (!lightbox) {
+                lightbox = document.createElement('div');
+                lightbox.className = 'lightbox-overlay';
+                lightbox.innerHTML = `
+                    <button type="button" class="lightbox-close" aria-label="Close image">✕</button>
+                    <img class="lightbox-image" alt="">
+                `;
+
+                lightbox.style.cssText = `
+                    position:fixed;
+                    inset:0;
+                    z-index:2000;
+                    display:none;
+                    align-items:center;
+                    justify-content:center;
+                    padding:2rem;
+                    background:rgba(0,0,0,.92);
+                    cursor:pointer;
+                `;
+
+                const lightboxImage = lightbox.querySelector('.lightbox-image');
+                lightboxImage.style.cssText = `
+                    max-width:100%;
+                    max-height:90vh;
+                    object-fit:contain;
+                    border-radius:.5rem;
+                    cursor:default;
+                `;
+
+                const close = lightbox.querySelector('.lightbox-close');
+                close.style.cssText = `
+                    position:fixed;
+                    top:1rem;
+                    right:1rem;
+                    z-index:2001;
+                    border:0;
+                    background:none;
+                    color:#fff;
+                    font-size:2.2rem;
+                    cursor:pointer;
+                `;
+
+                document.body.appendChild(lightbox);
+
+                lightbox.addEventListener('click', function (e) {
+                    if (e.target === lightbox || e.target === close) {
+                        lightbox.style.display = 'none';
+                        document.body.classList.remove('menu-open');
+                    }
+                });
+            }
+
+            lightbox.querySelector('.lightbox-image').src = image.src;
+            lightbox.querySelector('.lightbox-image').alt = image.alt || '';
+            lightbox.style.display = 'flex';
+            document.body.classList.add('menu-open');
+        });
+    });
+});
+</script>
 
 </body>
 </html>
