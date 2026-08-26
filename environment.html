@@ -26,7 +26,7 @@
                 <a href="admissions.html">Admissions</a>
                 <a href="admissions.html" class="btn btn-primary btn-sm">Book a Visit</a>
             </nav>
-            <button class="menu-toggle" id="menuToggle">☰</button>
+            <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">☰</button>
         </div>
     </header>
 
@@ -34,6 +34,13 @@
     <div class="overlay" id="overlay"></div>
     <div class="mobile-nav" id="mobileNav">
         <button class="close-btn" id="closeMenu">✕</button>
+        <div class="logo" style="margin-bottom: 2rem;">
+            <div class="logo-icon">🌳</div>
+            <div>
+                <span class="logo-text">BrightRoots</span>
+                <span class="logo-sub">Kids Care</span>
+            </div>
+        </div>
         <a href="index.html">Home</a>
         <a href="about.html">About</a>
         <a href="programs.html">Programs</a>
@@ -57,47 +64,48 @@
     <section class="section-padding">
         <div class="container">
             <div class="section-title scroll-animate">
+                <span class="eyebrow">Our Space</span>
                 <h2>Safe, Secure &amp; <span class="gradient-text">Loving Environment</span></h2>
                 <p>Every detail is designed with your child's safety and happiness in mind</p>
             </div>
             <div class="env-feature-grid">
                 <div class="env-feature scroll-animate" data-delay="100">
-                    <img src="images/classroom.jpg" alt="Classrooms" />
+                    <img src="images/classroom-placeholder.jpg" alt="Classrooms" />
                     <div class="content">
                         <h3>🏫 Hybrid Classrooms</h3>
                         <p>Child-safe, modern classrooms designed for interactive and engaging learning experiences.</p>
                     </div>
                 </div>
-                <div class="env-feature scroll-animate" data-delay="200">
-                    <img src="images/play-area.jpg" alt="Play Area" />
+                <div class="env-feature scroll-animate" data-delay="150">
+                    <img src="images/play-placeholder.jpg" alt="Play Area" />
                     <div class="content">
                         <h3>🌳 Play Areas</h3>
                         <p>Secure indoor and outdoor spaces for active play, exploration, and physical development.</p>
                     </div>
                 </div>
-                <div class="env-feature scroll-animate" data-delay="300">
-                    <img src="images/activities.jpg" alt="Safety" />
+                <div class="env-feature scroll-animate" data-delay="200">
+                    <img src="images/safety-placeholder.jpg" alt="Safety" />
                     <div class="content">
                         <h3>🛡️ Safety First</h3>
-                        <p>Hybrid, child-safe classrooms with CCTV, secure entry, and trained staff for complete peace of mind.</p>
+                        <p>Child-safe classrooms with CCTV, secure entry, and trained staff for complete peace of mind.</p>
                     </div>
                 </div>
-                <div class="env-feature scroll-animate" data-delay="400">
-                    <img src="images/gallery5.jpg" alt="Hygiene" />
+                <div class="env-feature scroll-animate" data-delay="250">
+                    <img src="images/hygiene-placeholder.jpg" alt="Hygiene" />
                     <div class="content">
                         <h3>🧼 Hygienic Campus</h3>
                         <p>Regular sanitation, clean facilities, and strict hygiene protocols to keep your child healthy.</p>
                     </div>
                 </div>
-                <div class="env-feature scroll-animate" data-delay="500">
-                    <img src="images/hero-bg.jpg" alt="Learning Environment" />
+                <div class="env-feature scroll-animate" data-delay="300">
+                    <img src="images/learning-placeholder.jpg" alt="Learning Environment" />
                     <div class="content">
                         <h3>📚 Learning Environment</h3>
                         <p>Stimulating, colorful, and resource-rich spaces that encourage curiosity and discovery.</p>
                     </div>
                 </div>
-                <div class="env-feature scroll-animate" data-delay="600">
-                    <img src="images/gallery6.jpg" alt="Day Care" />
+                <div class="env-feature scroll-animate" data-delay="350">
+                    <img src="images/daycare-placeholder.jpg" alt="Day Care" />
                     <div class="content">
                         <h3>🌙 Day Care Area</h3>
                         <p>Warm, home-like spaces for rest, play, and care with a nurturing atmosphere.</p>
@@ -108,39 +116,40 @@
     </section>
 
     <!-- ===== GALLERY ===== -->
-    <section class="section-padding" id="gallery" style="background: var(--cream);">
+    <section class="section-padding bg-cream" id="gallery">
         <div class="container">
             <div class="section-title scroll-animate">
+                <span class="eyebrow gold">Gallery</span>
                 <h2>Our <span class="gradient-text">Gallery</span></h2>
                 <p>Moments of joy, learning, and growth at BrightRoots</p>
             </div>
             <div class="gallery-page-grid">
                 <div class="item scroll-animate" data-delay="100">
-                    <img src="images/gallery1.jpg" alt="Classroom Activity" />
+                    <img src="images/gallery.jpg" alt="Classroom Activity" />
                 </div>
                 <div class="item scroll-animate" data-delay="150">
-                    <img src="images/gallery2.jpg" alt="Learning Session" />
+                    <img src="images/gallery.jpg" alt="Learning Session" />
                 </div>
                 <div class="item scroll-animate" data-delay="200">
-                    <img src="images/gallery3.jpg" alt="Play Time" />
+                    <img src="images/gallery.jpg" alt="Play Time" />
                 </div>
                 <div class="item scroll-animate" data-delay="250">
-                    <img src="images/gallery4.jpg" alt="Celebration" />
+                    <img src="images/gallery.jpg" alt="Celebration" />
                 </div>
                 <div class="item scroll-animate" data-delay="300">
-                    <img src="images/gallery5.jpg" alt="Art & Craft" />
+                    <img src="images/gallery.jpg" alt="Art & Craft" />
                 </div>
                 <div class="item scroll-animate" data-delay="350">
                     <img src="images/gallery6.jpg" alt="Outdoor Fun" />
                 </div>
                 <div class="item scroll-animate" data-delay="400">
-                    <img src="images/classroom.jpg" alt="Classroom" />
+                    <img src="images/gallery7.jpg" alt="Classroom" />
                 </div>
                 <div class="item scroll-animate" data-delay="450">
-                    <img src="images/play-area.jpg" alt="Play Area" />
+                    <img src="images/gallery8.jpg" alt="Play Area" />
                 </div>
                 <div class="item scroll-animate" data-delay="500">
-                    <img src="images/activities.jpg" alt="Activities" />
+                    <img src="images/gallery9.jpg" alt="Activities" />
                 </div>
             </div>
         </div>
@@ -151,8 +160,8 @@
         <div class="container">
             <div class="footer-grid">
                 <div>
-                    <div class="logo" style="margin-bottom: 1rem;">
-                        <div class="logo-icon">🌳</div>
+                    <div class="logo" style="margin-bottom: 0.75rem;">
+                        <div class="logo-icon" style="background: rgba(255,255,255,0.1);">🌳</div>
                         <div>
                             <span class="logo-text" style="color: white;">BrightRoots</span>
                             <span class="logo-sub" style="color: var(--pink);">Kids Care</span>
@@ -160,9 +169,9 @@
                     </div>
                     <p>Where Little Minds Grow and Thrive</p>
                     <div class="social">
-                        <a href="#">📘</a>
-                        <a href="#">📸</a>
-                        <a href="#">▶️</a>
+                        <a href="#" aria-label="Facebook">📘</a>
+                        <a href="#" aria-label="Instagram">📸</a>
+                        <a href="#" aria-label="YouTube">▶️</a>
                     </div>
                 </div>
                 <div>
@@ -194,6 +203,10 @@
                     <div class="contact-item">
                         <span class="icon">📞</span>
                         <a href="tel:918438142540">84381 42540</a>
+                    </div>
+                    <div class="contact-item">
+                        <span class="icon">✉️</span>
+                        <a href="mailto:info@brightrootskidscare.com">info@brightrootskidscare.com</a>
                     </div>
                 </div>
             </div>
