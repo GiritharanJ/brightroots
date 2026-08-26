@@ -1,24 +1,25 @@
-// ============================================
+// ============================================================
 // BRIGHTROOTS KIDS CARE - Complete JavaScript
-// ============================================
+// Single file for all pages
+// ============================================================
 
 document.addEventListener('DOMContentLoaded', function() {
 
-    // ---------- Mobile Menu ----------
+    // ---------- MOBILE MENU ----------
     const menuToggle = document.getElementById('menuToggle');
     const mobileNav = document.getElementById('mobileNav');
     const overlay = document.getElementById('overlay');
     const closeBtn = document.getElementById('closeMenu');
 
     function openMenu() {
-        mobileNav.classList.add('open');
-        overlay.classList.add('active');
+        if (mobileNav) mobileNav.classList.add('open');
+        if (overlay) overlay.classList.add('active');
         document.body.style.overflow = 'hidden';
     }
 
     function closeMenu() {
-        mobileNav.classList.remove('open');
-        overlay.classList.remove('active');
+        if (mobileNav) mobileNav.classList.remove('open');
+        if (overlay) overlay.classList.remove('active');
         document.body.style.overflow = '';
     }
 
@@ -42,7 +43,7 @@ document.addEventListener('DOMContentLoaded', function() {
         link.addEventListener('click', closeMenu);
     });
 
-    // ---------- Header Scroll Effect ----------
+    // ---------- HEADER SCROLL EFFECT ----------
     const header = document.getElementById('header');
 
     window.addEventListener('scroll', function() {
@@ -53,7 +54,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    // ---------- Scroll Animations ----------
+    // ---------- SCROLL ANIMATIONS ----------
     const animateElements = document.querySelectorAll('.scroll-animate');
 
     const observerOptions = {
@@ -64,7 +65,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const observer = new IntersectionObserver(function(entries) {
         entries.forEach(function(entry) {
             if (entry.isIntersecting) {
-                const delay = entry.target.dataset.delay || 0;
+                const delay = parseInt(entry.target.dataset.delay) || 0;
                 setTimeout(function() {
                     entry.target.classList.add('visible');
                 }, delay);
@@ -77,19 +78,17 @@ document.addEventListener('DOMContentLoaded', function() {
         observer.observe(el);
     });
 
-    // ---------- Form Validation ----------
-    const contactForm = document.getElementById('contactForm');
-    const visitForm = document.getElementById('visitForm');
+    // ---------- FORM VALIDATION ----------
+    const enquiryForm = document.getElementById('enquiryForm');
 
     function validateForm(form) {
-        const inputs = form.querySelectorAll('input, textarea, select');
+        const inputs = form.querySelectorAll('input, select, textarea');
         let isValid = true;
 
         inputs.forEach(function(input) {
-            const errorEl = input.parentElement.querySelector('.error-message');
-            
             // Remove existing error
-            if (errorEl) errorEl.remove();
+            const existingError = input.parentElement.querySelector('.error-message');
+            if (existingError) existingError.remove();
             input.classList.remove('error');
 
             // Required validation
@@ -101,6 +100,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 error.style.color = '#D7195B';
                 error.style.fontSize = '0.85rem';
                 error.style.marginTop = '0.25rem';
+                error.style.display = 'block';
                 error.textContent = 'This field is required';
                 input.parentElement.appendChild(error);
             }
@@ -116,6 +116,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     error.style.color = '#D7195B';
                     error.style.fontSize = '0.85rem';
                     error.style.marginTop = '0.25rem';
+                    error.style.display = 'block';
                     error.textContent = 'Please enter a valid email';
                     input.parentElement.appendChild(error);
                 }
@@ -124,7 +125,7 @@ document.addEventListener('DOMContentLoaded', function() {
             // Phone validation
             if (input.type === 'tel' && input.value.trim()) {
                 const phoneRegex = /^[0-9]{10}$/;
-                if (!phoneRegex.test(input.value.trim().replace(/\D/g, ''))) {
+                if (!phoneRegex.test(input.value.trim().replace(/\s/g, ''))) {
                     isValid = false;
                     input.classList.add('error');
                     const error = document.createElement('span');
@@ -132,6 +133,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     error.style.color = '#D7195B';
                     error.style.fontSize = '0.85rem';
                     error.style.marginTop = '0.25rem';
+                    error.style.display = 'block';
                     error.textContent = 'Please enter a valid 10-digit phone number';
                     input.parentElement.appendChild(error);
                 }
@@ -144,11 +146,11 @@ document.addEventListener('DOMContentLoaded', function() {
     function handleFormSubmit(e) {
         e.preventDefault();
         const form = e.target;
-        
+
         if (validateForm(form)) {
             const submitBtn = form.querySelector('button[type="submit"]');
             const originalText = submitBtn.textContent;
-            
+
             submitBtn.textContent = 'Sending...';
             submitBtn.disabled = true;
 
@@ -163,39 +165,35 @@ document.addEventListener('DOMContentLoaded', function() {
                     border-radius: 0.5rem;
                     margin-top: 1rem;
                     text-align: center;
+                    font-weight: 600;
                 `;
-                successMsg.innerHTML = `
-                    ✅ Thank you! Our team will contact you shortly.
-                `;
-                
+                successMsg.innerHTML = '✅ Thank you! Our team will contact you shortly.';
+
                 form.appendChild(successMsg);
                 form.reset();
-                
+
                 submitBtn.textContent = originalText;
                 submitBtn.disabled = false;
 
                 // Remove success message after 5 seconds
                 setTimeout(function() {
-                    successMsg.remove();
+                    if (successMsg.parentElement) {
+                        successMsg.remove();
+                    }
                 }, 5000);
             }, 1500);
         }
     }
 
-    if (contactForm) {
-        contactForm.addEventListener('submit', handleFormSubmit);
-    }
-    if (visitForm) {
-        visitForm.addEventListener('submit', handleFormSubmit);
+    if (enquiryForm) {
+        enquiryForm.addEventListener('submit', handleFormSubmit);
     }
 
-    // ---------- Real-time Phone Formatting ----------
+    // ---------- REAL-TIME PHONE FORMATTING ----------
     document.querySelectorAll('input[type="tel"]').forEach(function(input) {
         input.addEventListener('input', function() {
             let value = this.value.replace(/\D/g, '');
             if (value.length > 10) value = value.slice(0, 10);
-            
-            // Format: 12345 67890
             if (value.length > 5) {
                 value = value.slice(0, 5) + ' ' + value.slice(5);
             }
@@ -203,18 +201,18 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // ---------- Smooth Scroll ----------
+    // ---------- SMOOTH SCROLL ----------
     document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
         anchor.addEventListener('click', function(e) {
             const href = this.getAttribute('href');
             if (href === '#') return;
-            
+
             const target = document.querySelector(href);
             if (target) {
                 e.preventDefault();
-                const headerHeight = document.getElementById('header').offsetHeight;
+                const headerHeight = document.getElementById('header').offsetHeight || 80;
                 const targetPosition = target.getBoundingClientRect().top + window.scrollY - headerHeight;
-                
+
                 window.scrollTo({
                     top: targetPosition,
                     behavior: 'smooth'
@@ -223,25 +221,24 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // ---------- Current Year in Footer ----------
+    // ---------- CURRENT YEAR IN FOOTER ----------
     const yearElement = document.getElementById('currentYear');
     if (yearElement) {
         yearElement.textContent = new Date().getFullYear();
     }
 
-    // ---------- WhatsApp Pre-filled Messages ----------
+    // ---------- WHATSAPP PREFILLED MESSAGES ----------
     document.querySelectorAll('[data-whatsapp]').forEach(function(el) {
         el.addEventListener('click', function(e) {
             const message = this.dataset.whatsapp || 'Hello BrightRoots Kids Care, I would like to know more about admission for my child.';
             const phone = '918438142540';
-            const url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
+            const url = 'https://wa.me/' + phone + '?text=' + encodeURIComponent(message);
             window.open(url, '_blank');
         });
     });
 
-    // ---------- Gallery Lightbox ----------
+    // ---------- GALLERY LIGHTBOX ----------
     const galleryItems = document.querySelectorAll('.gallery-item, .gallery-page-grid .item');
-    let lightbox = null;
 
     function createLightbox() {
         const existing = document.querySelector('.lightbox-overlay');
@@ -252,14 +249,15 @@ document.addEventListener('DOMContentLoaded', function() {
         overlay.style.cssText = `
             position: fixed;
             inset: 0;
-            background: rgba(0,0,0,0.9);
+            background: rgba(0,0,0,0.92);
             z-index: 2000;
             display: none;
             align-items: center;
             justify-content: center;
             padding: 2rem;
+            cursor: pointer;
         `;
-        
+
         const img = document.createElement('img');
         img.className = 'lightbox-image';
         img.style.cssText = `
@@ -267,13 +265,14 @@ document.addEventListener('DOMContentLoaded', function() {
             max-height: 90vh;
             border-radius: 0.5rem;
             object-fit: contain;
+            cursor: default;
         `;
-        
+
         const close = document.createElement('button');
         close.className = 'lightbox-close';
         close.textContent = '✕';
         close.style.cssText = `
-            position: absolute;
+            position: fixed;
             top: 1.5rem;
             right: 1.5rem;
             background: none;
@@ -282,31 +281,27 @@ document.addEventListener('DOMContentLoaded', function() {
             font-size: 2.5rem;
             cursor: pointer;
             z-index: 2001;
+            font-family: var(--font-body);
         `;
-        
+
         overlay.appendChild(img);
         overlay.appendChild(close);
         document.body.appendChild(overlay);
-        
+
         overlay.addEventListener('click', function(e) {
-            if (e.target === overlay) {
+            if (e.target === overlay || e.target === close) {
                 overlay.style.display = 'none';
                 document.body.style.overflow = '';
             }
         });
-        
-        close.addEventListener('click', function() {
-            overlay.style.display = 'none';
-            document.body.style.overflow = '';
-        });
-        
+
         document.addEventListener('keydown', function(e) {
             if (e.key === 'Escape' && overlay.style.display === 'flex') {
                 overlay.style.display = 'none';
                 document.body.style.overflow = '';
             }
         });
-        
+
         return overlay;
     }
 
@@ -314,7 +309,7 @@ document.addEventListener('DOMContentLoaded', function() {
         item.addEventListener('click', function() {
             const img = this.querySelector('img');
             if (!img) return;
-            
+
             const overlay = createLightbox();
             const lightboxImg = overlay.querySelector('.lightbox-image');
             lightboxImg.src = img.src;
@@ -323,6 +318,9 @@ document.addEventListener('DOMContentLoaded', function() {
             document.body.style.overflow = 'hidden';
         });
     });
+
+    // ---------- ACTIVE NAV LINK (for page highlighting) ----------
+    // This is handled by adding 'active' class in HTML
 
     console.log('🌳 BrightRoots Kids Care - Website loaded successfully!');
 });
