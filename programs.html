@@ -26,7 +26,7 @@
                 <a href="admissions.html">Admissions</a>
                 <a href="admissions.html" class="btn btn-primary btn-sm">Book a Visit</a>
             </nav>
-            <button class="menu-toggle" id="menuToggle">☰</button>
+            <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">☰</button>
         </div>
     </header>
 
@@ -34,6 +34,13 @@
     <div class="overlay" id="overlay"></div>
     <div class="mobile-nav" id="mobileNav">
         <button class="close-btn" id="closeMenu">✕</button>
+        <div class="logo" style="margin-bottom: 2rem;">
+            <div class="logo-icon">🌳</div>
+            <div>
+                <span class="logo-text">BrightRoots</span>
+                <span class="logo-sub">Kids Care</span>
+            </div>
+        </div>
         <a href="index.html">Home</a>
         <a href="about.html">About</a>
         <a href="programs.html" class="active">Programs</a>
@@ -74,7 +81,7 @@
     </section>
 
     <!-- ===== PRE-KG ===== -->
-    <section class="section-padding" id="pre-kg" style="background: var(--cream);">
+    <section class="section-padding bg-cream" id="pre-kg">
         <div class="container">
             <div class="program-detail scroll-animate">
                 <div class="header">
@@ -114,7 +121,7 @@
     </section>
 
     <!-- ===== UKG ===== -->
-    <section class="section-padding" id="ukg" style="background: var(--cream);">
+    <section class="section-padding bg-cream" id="ukg">
         <div class="container">
             <div class="program-detail scroll-animate">
                 <div class="header">
@@ -154,15 +161,13 @@
     </section>
 
     <!-- ===== PROGRAM ENQUIRY ===== -->
-    <section class="section-padding" style="background: var(--navy); color: var(--white);">
+    <section class="section-padding approach">
         <div class="container text-center">
             <h2 style="color: var(--white);">Not Sure Which Program is Right for Your Child?</h2>
             <p style="color: rgba(255,255,255,0.8); max-width: 600px; margin: 1rem auto 2rem;">
                 Our team is here to help you choose the best program for your child's age and development.
             </p>
-            <a href="https://wa.me/918438142540?text=Hello%20BrightRoots%20Kids%20Care%2C%20I%20need%20help%20choosing%20a%20program%20for%20my%20child." target="_blank" class="btn btn-white btn-lg">
-                💬 Talk to Us on WhatsApp
-            </a>
+            <a href="https://wa.me/918438142540?text=Hello%20BrightRoots%20Kids%20Care%2C%20I%20need%20help%20choosing%20a%20program%20for%20my%20child." target="_blank" class="btn btn-white btn-lg">💬 Talk to Us on WhatsApp</a>
         </div>
     </section>
 
@@ -171,8 +176,8 @@
         <div class="container">
             <div class="footer-grid">
                 <div>
-                    <div class="logo" style="margin-bottom: 1rem;">
-                        <div class="logo-icon">🌳</div>
+                    <div class="logo" style="margin-bottom: 0.75rem;">
+                        <div class="logo-icon" style="background: rgba(255,255,255,0.1);">🌳</div>
                         <div>
                             <span class="logo-text" style="color: white;">BrightRoots</span>
                             <span class="logo-sub" style="color: var(--pink);">Kids Care</span>
@@ -180,9 +185,9 @@
                     </div>
                     <p>Where Little Minds Grow and Thrive</p>
                     <div class="social">
-                        <a href="#">📘</a>
-                        <a href="#">📸</a>
-                        <a href="#">▶️</a>
+                        <a href="#" aria-label="Facebook">📘</a>
+                        <a href="#" aria-label="Instagram">📸</a>
+                        <a href="#" aria-label="YouTube">▶️</a>
                     </div>
                 </div>
                 <div>
@@ -214,6 +219,10 @@
                     <div class="contact-item">
                         <span class="icon">📞</span>
                         <a href="tel:918438142540">84381 42540</a>
+                    </div>
+                    <div class="contact-item">
+                        <span class="icon">✉️</span>
+                        <a href="mailto:info@brightrootskidscare.com">info@brightrootskidscare.com</a>
                     </div>
                 </div>
             </div>
