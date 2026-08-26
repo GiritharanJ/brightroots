@@ -303,7 +303,7 @@
         }
         .header .container {
             display: flex;
-            justify-content: space-between;
+            justify-content: flex-end;
             align-items: center;
         }
     
@@ -465,7 +465,7 @@
 
     min-width: 220px;
 
-    padding: 1rem 1.8rem;
+    padding: 0.95rem 1.6rem;
 
     border-radius: 999px;
 
@@ -1021,24 +1021,6 @@
 
         /* ---------- Responsive ---------- */
         @media (max-width: 1100px) {
-            .hero .container {
-                grid-template-columns: 1fr;
-                text-align: center;
-            }
-            .hero-actions {
-                justify-content: center;
-            }
-            .hero-meta {
-                justify-content: center;
-            }
-            .hero-visual {
-                order: -1;
-                max-width: 320px;
-                margin: 0 auto;
-            }
-            .hero-chip {
-                display: none;
-            }
             .footer-grid {
                 grid-template-columns: 1fr 1fr;
             }
@@ -1069,18 +1051,6 @@
                 min-height: auto;
                 padding: 7rem 0 4rem;
             }
-            .hero-actions {
-                flex-direction: column;
-                align-items: center;
-            }
-            .hero-actions .btn {
-                width: 100%;
-                justify-content: center;
-            }
-            .hero-meta {
-                flex-direction: column;
-                gap: 0.6rem;
-            }
             .sticky-bar {
                 display: block;
             }
@@ -1097,15 +1067,6 @@
             }
             .footer {
                 padding: 4rem 0 1.5rem;
-            }
-            .wave-divider svg {
-                height: 40px;
-            }
-            .hero-visual {
-                max-width: 260px;
-            }
-            .hero-content h1 {
-                font-size: 2rem;
             }
         }
 
@@ -1137,17 +1098,23 @@
             .testimonial-grid {
                 grid-template-columns: 1fr;
             }
-            .hero-visual {
-                max-width: 200px;
+            .hero-buttons {
+                left: 1.15rem;
+                right: 1.15rem;
+                top: auto;
+                bottom: 3.5rem;
+                transform: none;
+                flex-direction: column;
+                align-items: stretch;
             }
-            .hero-chip {
-                display: none;
+
+            .hero-btn {
+                width: 100%;
+                min-width: 0;
             }
+
             .pulse-btn {
                 animation: none;
-            }
-            .hero-subtitle {
-                font-size: 0.9rem;
             }
         }
     </style>
@@ -1193,20 +1160,6 @@
         </a>
 
     </div>
-
-    <div class="wave-divider">
-        <svg
-            viewBox="0 0 1440 60"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-        >
-            <path
-                d="M0 60L60 55C120 50 240 40 360 35C480 30 600 30 720 35C840 40 960 50 1080 50C1200 50 1320 45 1380 42.5L1440 40V0H0V60Z"
-                fill="white"
-            />
-        </svg>
-    </div>
-
 </section>
 
     <!-- ===== WHY US ===== -->
