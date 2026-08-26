@@ -26,7 +26,7 @@
                 <a href="admissions.html" class="active">Admissions</a>
                 <a href="#enquire" class="btn btn-primary btn-sm">Enquire Now</a>
             </nav>
-            <button class="menu-toggle" id="menuToggle">☰</button>
+            <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">☰</button>
         </div>
     </header>
 
@@ -34,6 +34,13 @@
     <div class="overlay" id="overlay"></div>
     <div class="mobile-nav" id="mobileNav">
         <button class="close-btn" id="closeMenu">✕</button>
+        <div class="logo" style="margin-bottom: 2rem;">
+            <div class="logo-icon">🌳</div>
+            <div>
+                <span class="logo-text">BrightRoots</span>
+                <span class="logo-sub">Kids Care</span>
+            </div>
+        </div>
         <a href="index.html">Home</a>
         <a href="about.html">About</a>
         <a href="programs.html">Programs</a>
@@ -45,9 +52,7 @@
         </div>
     </div>
 
-    <!-- ============================================================ -->
-    <!-- ===== ADMISSIONS OPEN - HERO SECTION ===== -->
-    <!-- ============================================================ -->
+    <!-- ===== ADMISSIONS HERO ===== -->
     <section class="admissions-hero">
         <div class="container">
             <div class="admissions-hero-content scroll-animate">
@@ -59,52 +64,48 @@
                 <p class="hero-subtitle">Play Group • Pre-KG • LKG • UKG • Day Care</p>
                 <div class="hero-actions">
                     <a href="#enquire" class="btn btn-primary btn-lg">📝 Enquire for Admission</a>
-                    <a href="https://wa.me/918438142540?text=Hello%20BrightRoots%20Kids%20Care%2C%20I%20would%20like%20to%20know%20more%20about%20admission%20for%20my%20child." target="_blank" class="btn btn-white btn-lg">
-                        💬 WhatsApp Us
-                    </a>
+                    <a href="https://wa.me/918438142540?text=Hello%20BrightRoots%20Kids%20Care%2C%20I%20would%20like%20to%20know%20more%20about%20admission%20for%20my%20child." target="_blank" class="btn btn-white btn-lg">💬 WhatsApp Us</a>
                 </div>
             </div>
         </div>
-        <!-- Wave Divider -->
-        <div class="wave-divider">
-            <svg viewBox="0 0 1440 60" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M0 60L60 55C120 50 240 40 360 35C480 30 600 30 720 35C840 40 960 50 1080 50C1200 50 1320 45 1380 42.5L1440 40V0H0V60Z" fill="white" />
+        <div class="leaf-divider bottom">
+            <svg viewBox="0 0 1440 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0 42L60 38C120 34 240 26 360 22C480 18 600 18 720 22C840 26 960 34 1080 34C1200 34 1320 30 1380 28L1440 26V0H0V42Z" fill="white" />
             </svg>
         </div>
     </section>
 
-    <!-- ============================================================ -->
     <!-- ===== ADMISSION PROCESS ===== -->
-    <!-- ============================================================ -->
     <section class="section-padding process-section">
         <div class="container">
             <div class="section-title scroll-animate">
+                <span class="eyebrow">How It Works</span>
                 <h2>Admission <span class="gradient-text">Process</span></h2>
                 <p>Simple, transparent, and parent-friendly — in just 4 steps</p>
             </div>
             <div class="process-flow">
-                <div class="process-step scroll-animate" data-delay="100">
+                <div class="card process-step scroll-animate" data-delay="100">
                     <div class="step-number">1</div>
                     <div class="step-icon">📝</div>
                     <h4>Enquire</h4>
                     <p>Reach out via phone, WhatsApp, or our enquiry form</p>
                 </div>
                 <div class="process-arrow">→</div>
-                <div class="process-step scroll-animate" data-delay="150">
+                <div class="card process-step scroll-animate" data-delay="150">
                     <div class="step-number">2</div>
                     <div class="step-icon">💬</div>
                     <h4>Talk to Our Team</h4>
                     <p>Discuss your child's needs and our programs</p>
                 </div>
                 <div class="process-arrow">→</div>
-                <div class="process-step scroll-animate" data-delay="200">
+                <div class="card process-step scroll-animate" data-delay="200">
                     <div class="step-number">3</div>
                     <div class="step-icon">🏫</div>
                     <h4>Visit the School</h4>
                     <p>See our environment and meet our teachers</p>
                 </div>
                 <div class="process-arrow">→</div>
-                <div class="process-step scroll-animate" data-delay="250">
+                <div class="card process-step scroll-animate" data-delay="250">
                     <div class="step-number">4</div>
                     <div class="step-icon">✅</div>
                     <h4>Complete Admission</h4>
@@ -114,13 +115,12 @@
         </div>
     </section>
 
-    <!-- ============================================================ -->
-    <!-- ===== ADMISSION ENQUIRY FORM ===== -->
-    <!-- ============================================================ -->
+    <!-- ===== ADMISSION ENQUIRY ===== -->
     <section class="section-padding enquiry-section" id="enquire">
         <div class="container">
             <div class="enquiry-wrapper">
                 <div class="enquiry-info scroll-animate">
+                    <span class="eyebrow">Get Started</span>
                     <h2>Start Your Child's <span class="gradient-text">Journey</span></h2>
                     <p>Fill in the form and our team will get back to you within 24 hours.</p>
                     <ul class="enquiry-benefits">
@@ -177,52 +177,48 @@
         </div>
     </section>
 
-    <!-- ============================================================ -->
     <!-- ===== CONTACT US ===== -->
-    <!-- ============================================================ -->
-    <section class="section-padding contact-section" style="background: var(--cream);">
+    <section class="section-padding contact-section">
         <div class="container">
             <div class="section-title scroll-animate">
+                <span class="eyebrow blue">Contact</span>
                 <h2>Contact <span class="gradient-text">Us</span></h2>
                 <p>We're here to help! Reach out to us anytime</p>
             </div>
-            <div class="contact-grid">
-                <div class="contact-cards">
-                    <div class="contact-card scroll-animate" data-delay="100">
-                        <div class="contact-card-icon">📞</div>
-                        <div class="contact-card-content">
-                            <h4>Call Us</h4>
-                            <p><a href="tel:918438142540">84381 42540</a></p>
-                            <small>Mon-Fri, 8:00 AM - 6:00 PM</small>
-                        </div>
+            <div class="contact-cards" style="max-width: 700px; margin: 0 auto;">
+                <div class="contact-card scroll-animate" data-delay="100">
+                    <div class="contact-card-icon">📞</div>
+                    <div class="contact-card-content">
+                        <h4>Call Us</h4>
+                        <p><a href="tel:918438142540">84381 42540</a></p>
+                        <small>Mon-Fri, 8:00 AM - 6:00 PM</small>
                     </div>
-                    <div class="contact-card scroll-animate" data-delay="150">
-                        <div class="contact-card-icon">💬</div>
-                        <div class="contact-card-content">
-                            <h4>WhatsApp</h4>
-                            <p><a href="https://wa.me/918438142540?text=Hello%20BrightRoots%20Kids%20Care%2C%20I%20would%20like%20to%20know%20more%20about%20admission%20for%20my%20child." target="_blank">Chat with us</a></p>
-                            <small>Quick responses on WhatsApp</small>
-                        </div>
+                </div>
+                <div class="contact-card scroll-animate" data-delay="150">
+                    <div class="contact-card-icon">💬</div>
+                    <div class="contact-card-content">
+                        <h4>WhatsApp</h4>
+                        <p><a href="https://wa.me/918438142540?text=Hello%20BrightRoots%20Kids%20Care%2C%20I%20would%20like%20to%20know%20more%20about%20admission%20for%20my%20child." target="_blank">Chat with us</a></p>
+                        <small>Quick responses on WhatsApp</small>
                     </div>
-                    <div class="contact-card scroll-animate" data-delay="200">
-                        <div class="contact-card-icon">✉️</div>
-                        <div class="contact-card-content">
-                            <h4>Email</h4>
-                            <p><a href="mailto:info@brightrootskidscare.com">info@brightrootskidscare.com</a></p>
-                            <small>We'll respond within 24 hours</small>
-                        </div>
+                </div>
+                <div class="contact-card scroll-animate" data-delay="200">
+                    <div class="contact-card-icon">✉️</div>
+                    <div class="contact-card-content">
+                        <h4>Email</h4>
+                        <p><a href="mailto:info@brightrootskidscare.com">info@brightrootskidscare.com</a></p>
+                        <small>We'll respond within 24 hours</small>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ============================================================ -->
     <!-- ===== VISIT OUR SCHOOL ===== -->
-    <!-- ============================================================ -->
     <section class="section-padding visit-section">
         <div class="container">
             <div class="section-title scroll-animate">
+                <span class="eyebrow gold">Visit Us</span>
                 <h2>Visit Our <span class="gradient-text">School</span></h2>
                 <p>Come see the BrightRoots difference for yourself</p>
             </div>
@@ -241,12 +237,8 @@
                         </div>
                     </div>
                     <div class="visit-actions">
-                        <a href="https://maps.google.com/maps?q=19A/170+Ashok+Nagar,+Tirupattur" target="_blank" class="btn btn-primary btn-lg" style="width: 100%; justify-content: center;">
-                            🗺️ Get Directions
-                        </a>
-                        <a href="#enquire" class="btn btn-outline btn-lg" style="width: 100%; justify-content: center;">
-                            📅 Book a School Visit
-                        </a>
+                        <a href="https://maps.google.com/maps?q=19A/170+Ashok+Nagar,+Tirupattur" target="_blank" class="btn btn-primary btn-lg" style="width: 100%; justify-content: center;">🗺️ Get Directions</a>
+                        <a href="#enquire" class="btn btn-outline btn-lg" style="width: 100%; justify-content: center;">📅 Book a School Visit</a>
                     </div>
                     <div class="visit-hours">
                         <p>🕐 <strong>Visiting Hours:</strong> Monday - Friday, 9:00 AM - 5:00 PM</p>
@@ -268,15 +260,13 @@
         </div>
     </section>
 
-    <!-- ============================================================ -->
     <!-- ===== FOOTER ===== -->
-    <!-- ============================================================ -->
     <footer class="footer">
         <div class="container">
             <div class="footer-grid">
                 <div>
-                    <div class="logo" style="margin-bottom: 1rem;">
-                        <div class="logo-icon">🌳</div>
+                    <div class="logo" style="margin-bottom: 0.75rem;">
+                        <div class="logo-icon" style="background: rgba(255,255,255,0.1);">🌳</div>
                         <div>
                             <span class="logo-text" style="color: white;">BrightRoots</span>
                             <span class="logo-sub" style="color: var(--pink);">Kids Care</span>
@@ -284,9 +274,9 @@
                     </div>
                     <p>Where Little Minds Grow and Thrive</p>
                     <div class="social">
-                        <a href="#">📘</a>
-                        <a href="#">📸</a>
-                        <a href="#">▶️</a>
+                        <a href="#" aria-label="Facebook">📘</a>
+                        <a href="#" aria-label="Instagram">📸</a>
+                        <a href="#" aria-label="YouTube">▶️</a>
                     </div>
                 </div>
                 <div>
@@ -320,8 +310,8 @@
                         <a href="tel:918438142540">84381 42540</a>
                     </div>
                     <div class="contact-item">
-                        <span class="icon">💬</span>
-                        <a href="https://wa.me/918438142540?text=Hello%20BrightRoots%20Kids%20Care%2C%20I%20would%20like%20to%20know%20more%20about%20admission%20for%20my%20child." target="_blank">WhatsApp</a>
+                        <span class="icon">✉️</span>
+                        <a href="mailto:info@brightrootskidscare.com">info@brightrootskidscare.com</a>
                     </div>
                 </div>
             </div>
