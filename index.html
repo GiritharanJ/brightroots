@@ -1376,35 +1376,24 @@ body.menu-open {
             <a href="programs.html">Programs</a>
             <a href="environment.html">Environment</a>
             <a href="admissions.html">Admissions</a>
-        </nav>
-
-        <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
-            ☰
-        </button>
-
-    </div>
+         </nav>
+    <button class="menu-toggle" id="menuToggle" aria-label="Open menu">☰</button>
+  </div>
 </header>
 
-<!-- ===== MOBILE NAVIGATION ===== -->
-<div class="mobile-overlay" id="mobileOverlay" aria-hidden="true"></div>
+<div class="mobile-nav" id="mobileNav"
+     style="display:none;position:fixed;inset:0 0 0 auto;width:min(330px,88vw);background:#fff;z-index:1100;padding:80px 28px 30px;box-shadow:-10px 0 35px rgba(0,0,0,.15)">
+  <button id="closeMenu"
+          style="position:absolute;top:18px;right:18px;border:0;background:#f3f4f6;border-radius:50%;width:40px;height:40px;font-size:18px">✕</button>
+  <a href="index.html" style="display:block;padding:15px 0;border-bottom:1px solid #eee">Home</a>
+  <a href="about.html" style="display:block;padding:15px 0;border-bottom:1px solid #eee">About</a>
+  <a href="programs.html" style="display:block;padding:15px 0;border-bottom:1px solid #eee">Programs</a>
+  <a href="environment.html" style="display:block;padding:15px 0;border-bottom:1px solid #eee">Environment</a>
+  <a href="admissions.html" style="display:block;padding:15px 0;border-bottom:1px solid #eee;color:#D7195B;font-weight:700">Admissions</a>
+  <a href="#enquire" style="display:block;margin-top:25px;text-align:center;padding:13px;background:#D7195B;color:#fff;border-radius:999px;font-weight:700">📝 Enquire Now</a>
+  <a href="tel:918438142540" style="display:block;margin-top:12px;text-align:center;padding:13px;border:2px solid #D7195B;color:#D7195B;border-radius:999px;font-weight:700">📞 Call Now</a>
+</div>
 
-<aside class="mobile-nav" id="mobileNav" aria-hidden="true" aria-label="Mobile navigation">
-    <button class="close-btn" id="closeMenu" type="button" aria-label="Close menu">✕</button>
-
-    <nav>
-        <a href="index.html" class="active">Home</a>
-        <a href="about.html">About</a>
-        <a href="programs.html">Programs</a>
-        <a href="environment.html">Environment</a>
-        <a href="admissions.html">Admissions</a>
-    </nav>
-
-    <div class="mobile-actions">
-        <a href="admissions.html" class="btn btn-primary btn-block">📅 Book a School Visit</a>
-        <a href="https://wa.me/918438142540?text=Hello%20BrightRoots%20Kids%20Care%2C%20I%20would%20like%20to%20know%20more%20about%20admission%20for%20my%20child."
-           target="_blank" rel="noopener" class="btn btn-block mobile-whatsapp">💬 WhatsApp Us</a>
-    </div>
-</aside>
 
 
     <!-- ===== SIMPLE HERO ===== -->
