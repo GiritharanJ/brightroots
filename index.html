@@ -530,89 +530,221 @@ p{color:var(--muted)}
 }
 .hero-meta span{display:flex;align-items:center;gap:8px}
 
-/* Visual side */
+/* ================= HERO PHOTO ================= */
+
 .hero-visual{
   position:relative;
   z-index:1;
   display:flex;
   justify-content:center;
+  align-items:center;
 }
 
 .hero-photo-frame{
   position:relative;
   width:min(400px,92%);
   aspect-ratio:1/1.06;
+  isolation:isolate;
 }
+
+/* Colorful animated border */
 .hero-photo-frame::before{
   content:"";
   position:absolute;
   inset:-14px;
-  border-radius:44% 56% 63% 37% / 46% 41% 59% 54%;
-  background:linear-gradient(135deg,var(--pink),var(--gold));
-  animation:heroMorph 9s ease-in-out infinite;
+
+  border-radius:
+    44% 56% 63% 37%
+    /
+    46% 41% 59% 54%;
+
+  background:
+    linear-gradient(
+      135deg,
+      var(--pink),
+      var(--gold),
+      var(--green)
+    );
+
+  animation:
+    heroMorph 9s ease-in-out infinite;
+
   z-index:0;
 }
+
+/* Photo */
 .hero-photo-frame img{
   position:relative;
   z-index:1;
+
   width:100%;
   height:100%;
+
   object-fit:cover;
-  border-radius:44% 56% 63% 37% / 46% 41% 59% 54%;
-  animation:heroMorph 9s ease-in-out infinite;
-  box-shadow:0 25px 55px rgba(7,26,61,.22);
+
+  border-radius:
+    44% 56% 63% 37%
+    /
+    46% 41% 59% 54%;
+
+  box-shadow:
+    0 25px 55px rgba(7,26,61,.22);
+
+  animation:
+    heroMorph 9s ease-in-out infinite;
+
+  opacity:1;
+
+  transition:
+    opacity .9s ease-in-out,
+    transform 1.2s ease-in-out;
+
+  transform:scale(1);
 }
+
+/* Image change animation */
+.hero-photo-frame img.changing{
+  opacity:0;
+  transform:scale(1.06);
+}
+
+
+/* Organic / round shape animation */
 @keyframes heroMorph{
-  0%,100%{border-radius:44% 56% 63% 37% / 46% 41% 59% 54%}
-  50%{border-radius:60% 40% 38% 62% / 55% 60% 40% 45%}
+
+  0%,100%{
+    border-radius:
+      44% 56% 63% 37%
+      /
+      46% 41% 59% 54%;
+  }
+
+  50%{
+    border-radius:
+      60% 40% 38% 62%
+      /
+      55% 60% 40% 45%;
+  }
+
 }
+
+
+/* ================= FLOATING LABELS ================= */
 
 .hero-float{
   position:absolute;
+
   display:flex;
   align-items:center;
   gap:8px;
+
   background:#fff;
+
   padding:11px 16px;
+
   border-radius:999px;
-  box-shadow:0 14px 30px rgba(7,26,61,.16);
+
+  box-shadow:
+    0 14px 30px rgba(7,26,61,.16);
+
   font-family:Poppins,sans-serif;
   font-weight:700;
   font-size:.85rem;
+
   color:var(--navy);
-  animation:heroFloat 4.5s ease-in-out infinite;
+
+  animation:
+    heroFloat 4.5s ease-in-out infinite;
+
   z-index:2;
 }
-.hero-float.f1{top:2%;left:-6%;animation-delay:0s}
-.hero-float.f2{bottom:16%;right:-8%;animation-delay:1.4s}
-.hero-float.f3{bottom:-4%;left:16%;animation-delay:2.6s}
-@keyframes heroFloat{
-  0%,100%{transform:translateY(0)}
-  50%{transform:translateY(-14px)}
+
+.hero-float.f1{
+  top:2%;
+  left:-6%;
+  animation-delay:0s;
 }
+
+.hero-float.f2{
+  bottom:16%;
+  right:-8%;
+  animation-delay:1.4s;
+}
+
+.hero-float.f3{
+  bottom:-4%;
+  left:16%;
+  animation-delay:2.6s;
+}
+
+
+/* Floating animation */
+@keyframes heroFloat{
+
+  0%,100%{
+    transform:translateY(0);
+  }
+
+  50%{
+    transform:translateY(-14px);
+  }
+
+}
+
+
+/* ================= TABLET ================= */
 
 @media(max-width:1060px){
-  .hero .container{grid-template-columns:1fr}
-  .hero-visual{order:-1;margin-bottom:8px}
-  .hero-photo-frame{width:min(300px,72%)}
-  .hero-float{display:none}
-  .hero-copy{max-width:none}
+
+  .hero .container{
+    grid-template-columns:1fr;
+  }
+
+  .hero-visual{
+    order:-1;
+    margin-bottom:8px;
+  }
+
+  .hero-photo-frame{
+    width:min(300px,72%);
+  }
+
+  .hero-float{
+    display:none;
+  }
+
+  .hero-copy{
+    max-width:none;
+  }
+
 }
+
+
+/* ================= MOBILE ================= */
 
 @media(max-width:760px){
-  .hero{
-    min-height:auto;
-    padding:130px 0 60px;
+
+  .hero-photo-frame{
+    width:min(260px,68%);
   }
-  .hero h1{font-size:clamp(2.15rem,9vw,3rem)}
-  .hero-subtitle{font-size:1rem}
-  .hero-photo-frame{width:min(260px,68%)}
+
 }
 
+
+/* ================= REDUCED MOTION ================= */
+
 @media(prefers-reduced-motion:reduce){
+
   .hero-photo-frame::before,
   .hero-photo-frame img,
-  .hero-float{animation:none}
+  .hero-float{
+    animation:none;
+  }
+
+  .hero-photo-frame img{
+    transition:none;
+  }
+
 }
 
 /* ================= WHY ================= */
@@ -1095,7 +1227,7 @@ p{color:var(--muted)}
 
     <div class="hero-visual">
       <div class="hero-photo-frame">
-        <img src="images/hero-bg.jpg" alt="Children learning at BrightRoots Kids Care" loading="eager">
+        <img src="images/home2.jpg" alt="Children learning at BrightRoots Kids Care" loading="eager">
       </div>
       <span class="hero-float f1">🎨 Creative Play</span>
       <span class="hero-float f2">❤️ Loving Care</span>
@@ -1370,7 +1502,79 @@ document.addEventListener('DOMContentLoaded', function(){
       setMenu(false);
     }
   });
+/* ================= HERO PHOTO AUTO SLIDER ================= */
 
+const heroPhoto = document.getElementById('heroPhoto');
+
+const heroImages = [
+  'images/home1.jpg',
+  'images/home2.jpg',
+  'images/home3.jpg',
+  'images/home4.jpg',
+  'images/home5.jpg',
+  'images/home6.jpg',
+  'images/home7.jpg'
+];
+
+let heroImageIndex = 0;
+
+/* Change image every 5 seconds */
+const HERO_IMAGE_TIME = 5000;
+
+
+/* Preload images so changing is smooth */
+heroImages.forEach(function(src){
+
+  const image = new Image();
+
+  image.src = src;
+
+});
+
+
+function changeHeroImage(){
+
+  if(!heroPhoto){
+    return;
+  }
+
+  /* Fade out */
+  heroPhoto.classList.add('changing');
+
+
+  setTimeout(function(){
+
+    /* Move to next image */
+    heroImageIndex =
+      (heroImageIndex + 1) % heroImages.length;
+
+
+    /* Change image */
+    heroPhoto.src =
+      heroImages[heroImageIndex];
+
+
+    /* Fade back in */
+    requestAnimationFrame(function(){
+
+      heroPhoto.classList.remove('changing');
+
+    });
+
+  }, 900);
+
+}
+
+
+/* Start automatic slider */
+if(heroPhoto){
+
+  setInterval(
+    changeHeroImage,
+    HERO_IMAGE_TIME
+  );
+
+}
 
   /* ================= FOOTER YEAR ================= */
 
