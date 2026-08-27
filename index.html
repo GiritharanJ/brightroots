@@ -1227,7 +1227,7 @@ p{color:var(--muted)}
 
     <div class="hero-visual">
       <div class="hero-photo-frame">
-        <img src="images/home2.jpg" alt="Children learning at BrightRoots Kids Care" loading="eager">
+        <img id="heroPhoto" src="images/home1.jpg" alt="Children learning at BrightRoots Kids Care" loading="eager">
       </div>
       <span class="hero-float f1">🎨 Creative Play</span>
       <span class="hero-float f2">❤️ Loving Care</span>
@@ -1567,7 +1567,7 @@ function changeHeroImage(){
 
 
 /* Start automatic slider */
-if(heroPhoto){
+if(heroPhoto && !window.matchMedia('(prefers-reduced-motion: reduce)').matches){
 
   setInterval(
     changeHeroImage,
