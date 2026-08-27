@@ -440,57 +440,84 @@ p{color:var(--muted)}
 .btn-white{background:#fff;color:var(--navy);box-shadow:0 10px 25px rgba(0,0,0,.15)}
 
 /* ================= HERO ================= */
+/* ================= HERO AUTO BACKGROUND SLIDER ================= */
+
 .hero{
   min-height:100svh;
   position:relative;
   display:flex;
   align-items:flex-end;
   padding:110px 0 90px;
-  background:
-    radial-gradient(circle at 8% 18%,rgba(233,30,99,.13),transparent 28%),
-    radial-gradient(circle at 88% 18%,rgba(24,139,210,.13),transparent 28%),
-    radial-gradient(circle at 70% 90%,rgba(245,164,0,.14),transparent 30%),
-    linear-gradient(135deg,#fff8fb 0%,#fffdf8 48%,#f1f9ff 100%);
+  overflow:hidden;
+  isolation:isolate;
+  background:#fff;
 }
 
+/* Two layers are used so the image itself fades smoothly. */
+.hero-bg{
+  position:absolute;
+  inset:0;
+  z-index:-2;
+  background-size:cover;
+  background-position:center center;
+  background-repeat:no-repeat;
+  opacity:0;
+  transition:opacity 1.2s ease-in-out;
+  transform:scale(1.01);
+}
+
+.hero-bg.active{
+  opacity:1;
+}
+
+/* Light overlay keeps the text/card readable without hiding the photos. */
 .hero::before{
   content:"";
   position:absolute;
   inset:0;
-  background:linear-gradient(
-    90deg,
-    rgba(255,255,255,.06) 0%,
-    rgba(255,255,255,.04) 40%,
-    rgba(255,255,255,0) 75%
-  );
+  z-index:-1;
+  pointer-events:none;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(255,255,255,.18) 0%,
+      rgba(255,255,255,.06) 45%,
+      rgba(255,255,255,0) 78%
+    );
 }
 
 .hero-content{
   position:relative;
-  z-index:1;
+  z-index:2;
   max-width:610px;
 }
 
-
-  .hero-card{
-  background:#fff;
+.hero-card{
+  background:rgba(255,255,255,.90);
   border-radius:30px;
   padding:38px;
-  border:1px solid rgba(16,38,83,.07);
+  border:1px solid rgba(255,255,255,.75);
   box-shadow:0 20px 55px rgba(7,26,61,.12);
 }
-.hero h1{font-size:clamp(2.5rem,6vw,4.8rem);margin-bottom:15px}
+
+.hero h1{
+  font-size:clamp(2.5rem,6vw,4.8rem);
+  margin-bottom:15px;
+}
+
 .hero-subtitle{
   font-size:1.16rem;
   font-weight:700;
   color:var(--navy);
 }
+
 .hero-list{
   display:flex;
   flex-wrap:wrap;
   gap:8px;
   margin-top:16px;
 }
+
 .hero-list span{
   background:#fff;
   border-radius:999px;
@@ -499,6 +526,51 @@ p{color:var(--muted)}
   font-weight:700;
   color:var(--navy);
   box-shadow:0 5px 14px rgba(7,26,61,.08);
+}
+
+@media(max-width:760px){
+
+  .hero{
+    min-height:100svh;
+    padding:105px 0 85px;
+    align-items:flex-end;
+  }
+
+  .hero-bg{
+    background-position:center center;
+  }
+
+  .hero::before{
+    background:
+      linear-gradient(
+        180deg,
+        rgba(255,255,255,.05) 0%,
+        rgba(255,255,255,0) 50%,
+        rgba(7,26,61,.12) 100%
+      );
+  }
+
+  .hero-card{
+    background:rgba(255,255,255,.94);
+    padding:24px;
+    border-radius:24px;
+  }
+
+  .hero h1{
+    font-size:clamp(2.2rem,10vw,3.3rem);
+  }
+
+  .hero-subtitle{
+    font-size:1rem;
+  }
+}
+
+/* ================= HERO SLIDER ACCESSIBILITY ================= */
+
+@media(prefers-reduced-motion:reduce){
+  .hero-bg{
+    transition:none;
+  }
 }
 
 /* ================= WHY ================= */
@@ -970,6 +1042,11 @@ p{color:var(--muted)}
 
 <!-- HOME 1: HERO -->
 <section class="hero" id="home">
+
+  <!-- Hero background slider: home1.jpg → home7.jpg -->
+  <div class="hero-bg active" id="heroBgA" aria-hidden="true"></div>
+  <div class="hero-bg" id="heroBgB" aria-hidden="true"></div>
+
   <div class="container">
     <div class="hero-content">
       <div class="hero-card">
@@ -1212,101 +1289,175 @@ p{color:var(--muted)}
 <script>
 document.addEventListener('DOMContentLoaded', function(){
 
-  const menuToggle =
-    document.getElementById('menuToggle');
+  /* ================= MOBILE MENU ================= */
 
-  const mobileMenu =
-    document.getElementById('mobileMenu');
-
-  const mobileBackdrop =
-    document.getElementById('mobileBackdrop');
-
-  const closeMenu =
-    document.getElementById('closeMenu');
-
+  const menuToggle = document.getElementById('menuToggle');
+  const mobileMenu = document.getElementById('mobileMenu');
+  const mobileBackdrop = document.getElementById('mobileBackdrop');
+  const closeMenu = document.getElementById('closeMenu');
 
   function setMenu(open){
+    mobileMenu.classList.toggle('open', open);
+    mobileBackdrop.classList.toggle('open', open);
 
-    mobileMenu.classList.toggle(
-      'open',
-      open
-    );
+    mobileMenu.setAttribute('aria-hidden', String(!open));
+    menuToggle.setAttribute('aria-expanded', String(open));
 
-    mobileBackdrop.classList.toggle(
-      'open',
-      open
-    );
+    document.body.classList.toggle('menu-open', open);
+  }
 
-    mobileMenu.setAttribute(
-      'aria-hidden',
-      String(!open)
-    );
+  if(menuToggle){
+    menuToggle.addEventListener('click', function(){
+      setMenu(true);
+    });
+  }
 
-    menuToggle.setAttribute(
-      'aria-expanded',
-      String(open)
-    );
+  if(closeMenu){
+    closeMenu.addEventListener('click', function(){
+      setMenu(false);
+    });
+  }
 
-    document.body.classList.toggle(
-      'menu-open',
-      open
-    );
+  if(mobileBackdrop){
+    mobileBackdrop.addEventListener('click', function(){
+      setMenu(false);
+    });
+  }
+
+  if(mobileMenu){
+    mobileMenu.querySelectorAll('a').forEach(function(link){
+      link.addEventListener('click', function(){
+        setMenu(false);
+      });
+    });
+  }
+
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape'){
+      setMenu(false);
+    }
+  });
+
+
+  /* ================= FOOTER YEAR ================= */
+
+  const year = document.getElementById('year');
+
+  if(year){
+    year.textContent = new Date().getFullYear();
   }
 
 
-  /* Open */
-  menuToggle.addEventListener(
-    'click',
-    function(){
-      setMenu(true);
+  /* ================= HERO AUTO BACKGROUND SLIDER ================= */
+
+  const hero = document.getElementById('home');
+  const heroBgA = document.getElementById('heroBgA');
+  const heroBgB = document.getElementById('heroBgB');
+
+  const heroImages = [
+    'images/home1.jpg',
+    'images/home2.jpg',
+    'images/home3.jpg',
+    'images/home4.jpg',
+    'images/home5.jpg',
+    'images/home6.jpg',
+    'images/home7.jpg'
+  ];
+
+  let heroIndex = 0;
+  let activeLayer = heroBgA;
+
+  /*
+    Change interval:
+    5000 = 5 seconds per image.
+    The fade itself takes 1.2 seconds.
+  */
+  const SLIDE_INTERVAL = 5000;
+  const FADE_TIME = 1200;
+
+  function setBackground(layer, image){
+    layer.style.backgroundImage =
+      'url("' + image + '")';
+  }
+
+  function preloadImages(){
+    heroImages.forEach(function(src){
+      const img = new Image();
+      img.src = src;
+    });
+  }
+
+  function showNextHeroImage(){
+
+    if(!hero || !heroBgA || !heroBgB){
+      return;
     }
-  );
 
+    const nextIndex =
+      (heroIndex + 1) % heroImages.length;
 
-  /* Close */
-  closeMenu.addEventListener(
-    'click',
-    function(){
-      setMenu(false);
-    }
-  );
+    const nextLayer =
+      activeLayer === heroBgA
+        ? heroBgB
+        : heroBgA;
 
+    setBackground(
+      nextLayer,
+      heroImages[nextIndex]
+    );
 
-  /* Click outside */
-  mobileBackdrop.addEventListener(
-    'click',
-    function(){
-      setMenu(false);
-    }
-  );
+    /*
+      Put the next image underneath first,
+      then fade it in.
+    */
+    requestAnimationFrame(function(){
 
-
-  /* Close after selecting menu item */
-  mobileMenu
-    .querySelectorAll('a')
-    .forEach(function(link){
-
-      link.addEventListener(
-        'click',
-        function(){
-          setMenu(false);
-        }
-      );
+      nextLayer.classList.add('active');
+      activeLayer.classList.remove('active');
 
     });
 
+    /*
+      After the fade, clear the old layer's image.
+      This avoids keeping unnecessary visible layers.
+    */
+    setTimeout(function(){
 
-  /* ESC */
-  document.addEventListener(
-    'keydown',
-    function(e){
-
-      if(e.key === 'Escape'){
-        setMenu(false);
+      if(activeLayer){
+        activeLayer.style.backgroundImage = 'none';
       }
 
+    }, FADE_TIME);
+
+    activeLayer = nextLayer;
+    heroIndex = nextIndex;
+  }
+
+  if(hero && heroBgA && heroBgB){
+
+    /* First hero image */
+    setBackground(
+      heroBgA,
+      heroImages[0]
+    );
+
+    heroBgA.classList.add('active');
+    heroBgB.classList.remove('active');
+
+    /* Preload all seven images */
+    preloadImages();
+
+    /* Automatically change every 5 seconds */
+    if(
+      heroImages.length > 1 &&
+      !window.matchMedia('(prefers-reduced-motion: reduce)').matches
+    ){
+      window.setInterval(
+        showNextHeroImage,
+        SLIDE_INTERVAL
+      );
     }
-  );
+  }
 
 });
 </script>
