@@ -28,12 +28,7 @@ p{color:var(--muted)}
   padding:14px 0;
   transition:all .25s ease;
 }
-
-.header.scrolled{
-  background:rgba(255,255,255,.94);
-  backdrop-filter:blur(14px);
-  box-shadow:0 8px 30px rgba(7,26,61,.12);
-}
+.header.scrolled{background:transparent;box-shadow:none;backdrop-filter:none;-webkit-backdrop-filter:none;}
 
 .header-inner{
   display:flex;
@@ -250,6 +245,26 @@ p{color:var(--muted)}
 .page-banner .container{position:relative;z-index:1}.page-banner h1{margin-bottom:10px}.page-banner p{font-size:1.12rem}
 .gradient-text{background:linear-gradient(135deg,var(--pink),var(--gold));-webkit-background-clip:text;background-clip:text;color:transparent}
 .section-padding{padding:82px 0}.bg-cream{background:var(--cream)}
+.about-story{
+  background:
+    radial-gradient(circle at 8% 20%,rgba(215,25,91,.08),transparent 25%),
+    radial-gradient(circle at 92% 80%,rgba(40,169,214,.09),transparent 25%),
+    linear-gradient(135deg,#fff8fb 0%,#fff 55%,#f4fbff 100%);
+}
+.philosophy-grid .philosophy-card:nth-child(1){border-top:5px solid var(--pink)}
+.philosophy-grid .philosophy-card:nth-child(2){border-top:5px solid var(--green)}
+.philosophy-grid .philosophy-card:nth-child(3){border-top:5px solid var(--blue)}
+.philosophy-grid .philosophy-card:nth-child(4){border-top:5px solid var(--gold)}
+.values-grid .value-card:nth-child(1){border-top:5px solid var(--blue)}
+.values-grid .value-card:nth-child(2){border-top:5px solid var(--pink)}
+.values-grid .value-card:nth-child(3){border-top:5px solid var(--gold)}
+.values-grid .value-card:nth-child(4){border-top:5px solid var(--green)}
+.values-grid .value-card:nth-child(5){border-top:5px solid #8b5cf6}
+.values-grid .value-card:nth-child(6){border-top:5px solid var(--blue)}
+.teacher-card:nth-child(1){border-top:5px solid var(--pink)}
+.teacher-card:nth-child(2){border-top:5px solid var(--gold)}
+.teacher-card:nth-child(3){border-top:5px solid var(--green)}
+
 .eyebrow{display:inline-block;padding:7px 15px;border-radius:999px;background:#fff0f5;color:var(--pink);font-family:'Poppins',sans-serif;font-size:.78rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;margin-bottom:14px}
 .eyebrow.gold{background:#fff7df;color:#9a6800}.eyebrow.green{background:#edf8eb;color:#3d8239}.eyebrow.blue{background:#eaf8fd;color:#1782aa}
 .section-title{text-align:center;max-width:720px;margin:0 auto 45px}.section-title p{margin-top:10px;font-size:1.05rem}
@@ -265,12 +280,33 @@ p{color:var(--muted)}
 .photo-ring{width:150px;height:150px;margin:0 auto 18px;border-radius:50%;padding:6px;background:linear-gradient(135deg,var(--pink),var(--gold))}
 .photo-ring img{width:100%;height:100%;object-fit:cover;border-radius:50%;border:5px solid #fff}
 .teacher-card p{font-size:.94rem}.team-note{margin-top:25px;text-align:center}
-.footer{background:var(--navy-deep);color:#fff;padding:65px 0 20px}.footer-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1.2fr;gap:35px;margin-bottom:40px}
+.footer{background:var(--navy-deep);color:#fff;padding:65px 0 20px}
+.footer-logo{
+  width:180px;
+  height:72px;
+  object-fit:contain;
+  object-position:left center;
+  border-radius:12px;
+  margin-bottom:14px;
+  background:#fff;
+  padding:4px 8px;
+}
+.footer-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1.2fr;gap:35px;margin-bottom:40px}
 .footer h4{color:#fff;font-family:'Poppins',sans-serif;font-size:.95rem;margin-bottom:15px;text-transform:uppercase}.footer p,.footer a{color:rgba(255,255,255,.68);font-size:.94rem}
 .footer ul{list-style:none}.footer li{margin-bottom:8px}.footer a:hover{color:var(--gold)}.footer-brand{font-family:'Baloo 2',cursive;font-size:1.8rem;color:#fff}.footer-sub{color:var(--pink)!important;font-weight:700}
 .contact-item{display:flex;gap:9px;margin-bottom:11px;align-items:flex-start}.contact-item .icon{color:var(--gold)}
 .footer-bottom{border-top:1px solid rgba(255,255,255,.1);padding-top:18px;text-align:center}.footer-bottom p{font-size:.82rem;color:rgba(255,255,255,.42)}
 .whatsapp-float{position:fixed;right:22px;bottom:22px;z-index:900;width:58px;height:58px;border-radius:50%;display:grid;place-items:center;background:#25D366;color:#fff;font-size:26px;box-shadow:0 8px 25px rgba(37,211,102,.35)}
+@media(max-width:900px){
+  .header{
+    padding:10px 0;
+    background:transparent!important;
+    box-shadow:none!important;
+  }
+  .header .container{justify-content:space-between}
+  .brand-logo img{width:175px;height:62px}
+  .menu-toggle{width:50px;height:50px}
+}
 @media(max-width:900px){
  .nav{display:none}.menu-toggle{display:block}.header .container{justify-content:flex-end}
  .about-story .grid{grid-template-columns:1fr;gap:35px}.philosophy-grid{grid-template-columns:repeat(2,1fr)}
@@ -568,13 +604,6 @@ document.addEventListener('DOMContentLoaded', function(){
   document.addEventListener('keydown', function(e){
     if(e.key === 'Escape') setMenu(false);
   });
-
-  window.addEventListener('scroll', function(){
-    header.classList.toggle('scrolled', window.scrollY > 30);
-  }, {passive:true});
-
-  document.getElementById('year').textContent = new Date().getFullYear();
-});
 </script>
 
 </body>
