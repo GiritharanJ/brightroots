@@ -844,81 +844,659 @@ p{color:var(--muted)}
 .feature-body h3{font-size:1.25rem}
 .feature-body p{margin-top:6px}
 
-/* ================= GALLERY / TRUST ================= */
-.gallery-section{background:linear-gradient(135deg,#fff1f7 0%,#f3f0ff 50%,#eef8ff 100%)}
+/* =========================================================
+   COLORFUL GALLERY SECTION
+   ========================================================= */
 
-/* ================= GALLERY ================= */
-
-.gallery-strip{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:18px;
-}
-
-.gallery-card{
-  min-height:260px;
-  border-radius:25px;
-  padding:26px;
-  display:flex;
-  align-items:flex-end;
+.gallery-section{
   position:relative;
   overflow:hidden;
-  color:#fff;
-  box-shadow:var(--shadow);
-  background-size:cover;
-  background-position:center;
-}
 
-/* Gallery images */
-.gallery1{
-  background-image:
-    linear-gradient(
-      180deg,
-      rgba(7,26,61,.05),
-      rgba(7,26,61,.78)
+  padding:100px 0;
+
+  background:
+    radial-gradient(
+      circle at 8% 20%,
+      rgba(255,91,145,.18),
+      transparent 28%
     ),
-    url('images/gallery1.jpg');
-}
-
-.gallery2{
-  background-image:
-    linear-gradient(
-      180deg,
-      rgba(7,26,61,.05),
-      rgba(7,26,61,.78)
+    radial-gradient(
+      circle at 92% 15%,
+      rgba(62,190,255,.18),
+      transparent 28%
     ),
-    url('images/gallery2.jpg');
-}
-
-.gallery3{
-  background-image:
-    linear-gradient(
-      180deg,
-      rgba(7,26,61,.05),
-      rgba(7,26,61,.78)
+    radial-gradient(
+      circle at 50% 100%,
+      rgba(255,205,72,.20),
+      transparent 30%
     ),
-    url('images/gallery3.jpg');
+    linear-gradient(
+      135deg,
+      #fff7fb 0%,
+      #f8f5ff 48%,
+      #effaff 100%
+    );
 }
 
-.gallery-card h3{
-  color:#fff;
+
+/* =========================================================
+   DECORATIVE BACKGROUND SHAPES
+   ========================================================= */
+
+.gallery-shape{
+  position:absolute;
+
+  border-radius:50%;
+
+  pointer-events:none;
+
+  filter:blur(1px);
+
+  opacity:.65;
+}
+
+.shape-one{
+  width:180px;
+  height:180px;
+
+  background:rgba(255,82,135,.16);
+
+  top:50px;
+  left:-80px;
+}
+
+.shape-two{
+  width:220px;
+  height:220px;
+
+  background:rgba(48,183,231,.14);
+
+  right:-100px;
+  top:35%;
+}
+
+.shape-three{
+  width:140px;
+  height:140px;
+
+  background:rgba(255,193,7,.16);
+
+  left:35%;
+  bottom:-80px;
+}
+
+
+/* =========================================================
+   SECTION HEADING
+   ========================================================= */
+
+.gallery-heading{
+
+  position:relative;
+  z-index:2;
+
+  max-width:780px;
+
+  margin:0 auto 45px;
+
+  text-align:center;
+}
+
+.gallery-eyebrow{
+
+  display:inline-flex;
+
+  align-items:center;
+  justify-content:center;
+
+  padding:8px 17px;
+
+  margin-bottom:14px;
+
+  border-radius:999px;
+
+  background:#fff;
+
+  color:#d7195b;
+
+  font-family:Poppins,sans-serif;
+
+  font-size:.78rem;
+
+  font-weight:800;
+
+  letter-spacing:.07em;
+
+  text-transform:uppercase;
+
+  box-shadow:
+    0 8px 22px rgba(20,42,90,.08);
+
+  border:1px solid rgba(215,25,91,.08);
+}
+
+
+.gallery-heading h2{
+
+  margin:0 0 12px;
+
+  font-family:'Baloo 2',cursive;
+
+  font-size:clamp(
+    2.2rem,
+    4vw,
+    3.5rem
+  );
+
+  line-height:1.05;
+
+  color:var(--navy);
+}
+
+.gallery-heading h2 span{
+
+  background:
+    linear-gradient(
+      135deg,
+      #ff3d81,
+      #ff9d00,
+      #ffc83d
+    );
+
+  -webkit-background-clip:text;
+  background-clip:text;
+
+  -webkit-text-fill-color:transparent;
+}
+
+
+.gallery-heading p{
+
+  max-width:690px;
+
+  margin:auto;
+
+  color:#64748b;
+
+  font-size:1.05rem;
+
+  line-height:1.7;
+}
+
+
+/* =========================================================
+   GALLERY GRID
+   ========================================================= */
+
+.gallery-grid{
+
+  position:relative;
+
+  z-index:2;
+
+  display:grid;
+
+  grid-template-columns:
+    repeat(3,minmax(0,1fr));
+
+  gap:24px;
+}
+
+
+/* =========================================================
+   GALLERY CARD
+   ========================================================= */
+
+.gallery-card{
+
+  position:relative;
+
+  overflow:hidden;
+
+  background:#fff;
+
+  border-radius:28px;
+
+  border:1px solid
+    rgba(20,42,90,.07);
+
+  box-shadow:
+    0 18px 45px
+    rgba(20,42,90,.10);
+
+  transition:
+    transform .3s ease,
+    box-shadow .3s ease;
+
+}
+
+.gallery-card:hover{
+
+  transform:
+    translateY(-8px);
+
+  box-shadow:
+    0 28px 60px
+    rgba(20,42,90,.16);
+}
+
+
+/* =========================================================
+   IMAGE
+   ========================================================= */
+
+.gallery-image{
+
+  position:relative;
+
+  height:260px;
+
+  overflow:hidden;
+}
+
+
+.gallery-image img{
+
+  width:100%;
+  height:100%;
+
+  object-fit:cover;
+
+  display:block;
+
+  transition:
+    transform .55s ease;
+}
+
+
+.gallery-card:hover
+.gallery-image img{
+
+  transform:scale(1.08);
+}
+
+
+/* =========================================================
+   IMAGE BOTTOM GRADIENT
+   ========================================================= */
+
+.gallery-image::after{
+
+  content:"";
+
+  position:absolute;
+
+  left:0;
+  right:0;
+  bottom:0;
+
+  height:100px;
+
+  background:
+    linear-gradient(
+      to top,
+      rgba(7,26,61,.38),
+      transparent
+    );
+
+  pointer-events:none;
+}
+
+
+/* =========================================================
+   COLORFUL BADGES
+   ========================================================= */
+
+.gallery-badge{
+
+  position:absolute;
+
+  left:18px;
+  top:18px;
+
+  z-index:2;
+
+  display:inline-flex;
+
+  align-items:center;
+
+  padding:8px 13px;
+
+  border-radius:999px;
+
+  background:#fff;
+
+  color:var(--navy);
+
+  font-family:Poppins,sans-serif;
+
+  font-size:.72rem;
+
+  font-weight:800;
+
+  letter-spacing:.05em;
+
+  box-shadow:
+    0 7px 20px
+    rgba(0,0,0,.13);
+}
+
+
+/* Different badge colors */
+
+.gallery-card-one
+.gallery-badge{
+  color:#d7195b;
+}
+
+.gallery-card-two
+.gallery-badge{
+  color:#1584b0;
+}
+
+.gallery-card-three
+.gallery-badge{
+  color:#e58b00;
+}
+
+
+/* =========================================================
+   CARD CONTENT
+   ========================================================= */
+
+.gallery-content{
+
+  display:flex;
+
+  gap:15px;
+
+  padding:24px 23px 27px;
+
+  min-height:145px;
+}
+
+
+.gallery-icon{
+
+  flex:0 0 52px;
+
+  width:52px;
+  height:52px;
+
+  display:grid;
+
+  place-items:center;
+
+  border-radius:17px;
+
   font-size:1.45rem;
-  margin-bottom:5px;
+
+  box-shadow:
+    0 8px 18px
+    rgba(20,42,90,.07);
 }
 
-.gallery-card p{
-  color:rgba(255,255,255,.92);
-  font-size:.95rem;
+
+/* Individual icon backgrounds */
+
+.gallery-card-one
+.gallery-icon{
+
+  background:#ffe8f1;
 }
 
-@media(max-width:760px){
-  .gallery-strip{
+.gallery-card-two
+.gallery-icon{
+
+  background:#e5f7fd;
+}
+
+.gallery-card-three
+.gallery-icon{
+
+  background:#fff3d7;
+}
+
+
+/* =========================================================
+   CARD TITLE
+   ========================================================= */
+
+.gallery-content h3{
+
+  margin:2px 0 6px;
+
+  font-family:'Baloo 2',cursive;
+
+  font-size:1.4rem;
+
+  line-height:1.1;
+
+  color:var(--navy);
+}
+
+
+/* =========================================================
+   CARD DESCRIPTION
+   ========================================================= */
+
+.gallery-content p{
+
+  margin:0;
+
+  color:#64748b;
+
+  font-size:.94rem;
+
+  line-height:1.65;
+}
+
+
+/* =========================================================
+   COLORFUL CARD BOTTOM ACCENTS
+   ========================================================= */
+
+.gallery-card-one{
+  border-bottom:5px solid #ed3f7c;
+}
+
+.gallery-card-two{
+  border-bottom:5px solid #2aa9d6;
+}
+
+.gallery-card-three{
+  border-bottom:5px solid #f5a400;
+}
+
+
+/* =========================================================
+   VIEW FULL GALLERY BUTTON
+   ========================================================= */
+
+.gallery-button-wrap{
+
+  position:relative;
+
+  z-index:2;
+
+  display:flex;
+
+  justify-content:center;
+
+  margin-top:38px;
+}
+
+
+.gallery-button{
+
+  display:inline-flex;
+
+  align-items:center;
+
+  justify-content:center;
+
+  gap:12px;
+
+  padding:14px 25px;
+
+  border-radius:999px;
+
+  background:#fff;
+
+  color:var(--navy);
+
+  font-family:Poppins,sans-serif;
+
+  font-size:.92rem;
+
+  font-weight:800;
+
+  border:2px solid
+    rgba(215,25,91,.10);
+
+  box-shadow:
+    0 12px 30px
+    rgba(20,42,90,.10);
+
+  transition:
+    transform .25s ease,
+    box-shadow .25s ease,
+    background .25s ease,
+    color .25s ease;
+}
+
+
+.gallery-button span{
+
+  font-size:1.15rem;
+
+  transition:
+    transform .25s ease;
+}
+
+
+.gallery-button:hover{
+
+  transform:translateY(-3px);
+
+  background:var(--pink);
+
+  color:#fff;
+
+  box-shadow:
+    0 15px 30px
+    rgba(215,25,91,.25);
+}
+
+
+.gallery-button:hover span{
+
+  transform:translateX(4px);
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media(max-width:950px){
+
+  .gallery-section{
+    padding:80px 0;
+  }
+
+  .gallery-grid{
+
+    grid-template-columns:
+      repeat(2,minmax(0,1fr));
+
+  }
+
+  .gallery-card:last-child{
+
+    grid-column:
+      1 / -1;
+
+    max-width:calc(50% - 12px);
+
+    width:100%;
+
+    margin:auto;
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media(max-width:680px){
+
+  .gallery-section{
+
+    padding:65px 0;
+
+  }
+
+  .gallery-heading{
+
+    margin-bottom:32px;
+
+  }
+
+  .gallery-heading h2{
+
+    font-size:2.25rem;
+
+  }
+
+  .gallery-heading p{
+
+    font-size:.95rem;
+
+  }
+
+  .gallery-grid{
+
     grid-template-columns:1fr;
+
+    gap:20px;
+
   }
 
-  .gallery-card{
-    min-height:240px;
+  .gallery-card:last-child{
+
+    grid-column:auto;
+
+    max-width:none;
+
   }
+
+  .gallery-image{
+
+    height:235px;
+
+  }
+
+  .gallery-content{
+
+    padding:21px 19px 23px;
+
+  }
+
+  .gallery-content h3{
+
+    font-size:1.3rem;
+
+  }
+
+  .gallery-content p{
+
+    font-size:.9rem;
+
+  }
+
 }
 /* ================= FINAL CTA ================= */
 .cta{
@@ -1269,11 +1847,11 @@ p{color:var(--muted)}
       </div>
 
       <div class="program-grid">
-        <article class="program"><span class="emoji">🧸</span><h3>Play Group</h3><span class="age">1.5 – 2.5 years</span></article>
-        <article class="program"><span class="emoji">📚</span><h3>Pre-KG</h3><span class="age">2.5 – 3.5 years</span></article>
-        <article class="program"><span class="emoji">✏️</span><h3>LKG</h3><span class="age">3.5 – 4.5 years</span></article>
-        <article class="program"><span class="emoji">🌟</span><h3>UKG</h3><span class="age">4.5 – 5.5 years</span></article>
-        <article class="program"><span class="emoji">🌙</span><h3>Day Care</h3><span class="age">Flexible hours</span></article>
+        <article class="program"><span class="emoji">🧸</span><h3>Play Group</h3></article>
+        <article class="program"><span class="emoji">📚</span><h3>Pre-KG</h3></article>
+        <article class="program"><span class="emoji">✏️</span><h3>LKG</h3></article>
+        <article class="program"><span class="emoji">🌟</span><h3>UKG</h3></article>
+        <article class="program"><span class="emoji">🌙</span><h3>Day Care</h3></article>
       </div>
 
       <div class="buttons" style="justify-content:center">
@@ -1336,47 +1914,158 @@ p{color:var(--muted)}
 </section>
 
 <!-- HOME 6: EXPERIENCE / TRUST -->
-<section class="section gallery-section dark" id="experience">
-  <div class="section-inner">
-    <div class="container">
-      <div class="section-heading">
-        <span class="eyebrow white">A Day at BrightRoots</span>
-        <h2>Little Moments. <span style="color:#ffd05b">Big Growth.</span></h2>
-        <p>Parents can see the kind of joyful learning, friendship and discovery their child experiences.</p>
-      </div>
+<!-- ================= GALLERY / TRUST ================= -->
+<section class="gallery-section" id="experience">
 
-   <div class="gallery-strip">
+  <!-- Decorative shapes -->
+  <span class="gallery-shape shape-one"></span>
+  <span class="gallery-shape shape-two"></span>
+  <span class="gallery-shape shape-three"></span>
 
-  <article class="gallery-card gallery1">
-    <div>
-      <h3>🎨 Create</h3>
-      <p>Art, craft and creative activities.</p>
+  <div class="container">
+
+    <div class="gallery-heading">
+
+      <span class="gallery-eyebrow">
+        🌈 A Day at BrightRoots
+      </span>
+
+      <h2>
+        Little Moments.
+        <span>Big Growth.</span>
+      </h2>
+
+      <p>
+        Parents can see the kind of joyful learning, friendship and
+        discovery their child experiences every day.
+      </p>
+
     </div>
-  </article>
 
-  <article class="gallery-card gallery2">
-    <div>
-      <h3>🧒 Learn Together</h3>
-      <p>Children build communication and social confidence.</p>
+
+    <div class="gallery-grid">
+
+      <!-- Gallery 1 -->
+      <article class="gallery-card gallery-card-one">
+
+        <div class="gallery-image">
+          <img
+            src="images/gallery1.jpg"
+            alt="Children enjoying creative activities at BrightRoots"
+            loading="lazy"
+          >
+
+          <span class="gallery-badge">
+            🎨 CREATE
+          </span>
+        </div>
+
+        <div class="gallery-content">
+
+          <div class="gallery-icon">
+            🎨
+          </div>
+
+          <div>
+            <h3>Create & Imagine</h3>
+
+            <p>
+              Art, craft and creative activities that encourage
+              imagination and self-expression.
+            </p>
+          </div>
+
+        </div>
+
+      </article>
+
+
+      <!-- Gallery 2 -->
+      <article class="gallery-card gallery-card-two">
+
+        <div class="gallery-image">
+          <img
+            src="images/gallery2.jpg"
+            alt="Children learning together with teacher"
+            loading="lazy"
+          >
+
+          <span class="gallery-badge">
+            🧒 LEARN
+          </span>
+        </div>
+
+        <div class="gallery-content">
+
+          <div class="gallery-icon">
+            🧒
+          </div>
+
+          <div>
+            <h3>Learn Together</h3>
+
+            <p>
+              Children build communication, friendship and
+              social confidence through shared experiences.
+            </p>
+          </div>
+
+        </div>
+
+      </article>
+
+
+      <!-- Gallery 3 -->
+      <article class="gallery-card gallery-card-three">
+
+        <div class="gallery-image">
+          <img
+            src="images/gallery3.jpg"
+            alt="Children playing outdoors"
+            loading="lazy"
+          >
+
+          <span class="gallery-badge">
+            🏃 EXPLORE
+          </span>
+        </div>
+
+        <div class="gallery-content">
+
+          <div class="gallery-icon">
+            🏃
+          </div>
+
+          <div>
+            <h3>Play & Explore</h3>
+
+            <p>
+              Movement, games and hands-on discovery help children
+              learn naturally through play.
+            </p>
+          </div>
+
+        </div>
+
+      </article>
+
     </div>
-  </article>
 
-  <article class="gallery-card gallery3">
-    <div>
-      <h3>🏃 Play & Explore</h3>
-      <p>Movement, games and hands-on discovery.</p>
+
+    <div class="gallery-button-wrap">
+
+      <a
+        class="gallery-button"
+        href="environment.html#gallery">
+        View Full Gallery
+        <span>→</span>
+      </a>
+
     </div>
-  </article>
 
-</div>
-
-      <div class="buttons" style="justify-content:center">
-        <a class="btn btn-white" href="environment.html#gallery">View Full Gallery →</a>
-      </div>
-    </div>
   </div>
-</section>
 
+</section>
 <!-- HOME 7: FINAL DECISION / CTA -->
 <section class="section cta" id="visit">
   <div class="section-inner">
