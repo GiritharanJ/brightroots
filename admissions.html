@@ -60,21 +60,8 @@ p{color:var(--muted)}
 
 /* ================= HEADER ================= */
 
-.header{
-  position:fixed;
-  top:0;
-  left:0;
-  right:0;
-  z-index:2000;
-  padding:14px 0;
-  transition:all .25s ease;
-}
-
-.header.scrolled{
-  background:rgba(255,255,255,.94);
-  backdrop-filter:blur(14px);
-  box-shadow:0 8px 30px rgba(7,26,61,.12);
-}
+.header{position:relative;z-index:2000;padding:14px 0;background:transparent;}
+.header.scrolled{background:transparent;box-shadow:none;backdrop-filter:none;-webkit-backdrop-filter:none;}
 
 .header-inner{
   display:flex;
@@ -371,6 +358,53 @@ p{color:var(--muted)}
   border:2px solid var(--pink);
 }
 .btn-block{width:100%}
+.contact-section{
+  background:
+    radial-gradient(circle at 8% 20%,rgba(40,169,214,.09),transparent 26%),
+    radial-gradient(circle at 92% 70%,rgba(215,25,91,.08),transparent 26%),
+    #fff;
+}
+.contact-cards{
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  max-width:100%;
+}
+.contact-card{
+  min-height:150px;
+}
+.contact-card:nth-child(1){border-top:5px solid var(--pink)}
+.contact-card:nth-child(2){border-top:5px solid var(--green)}
+.contact-card:nth-child(3){border-top:5px solid var(--blue)}
+.contact-card-content{min-width:0}
+.contact-card-content p{overflow-wrap:anywhere}
+
+.enquiry-form-wrapper .card{
+  border:0;
+  border-top:6px solid var(--pink);
+  background:rgba(255,255,255,.97);
+  box-shadow:0 20px 50px rgba(20,42,90,.12);
+}
+.form-actions{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:12px;
+  margin-top:18px;
+}
+.btn-whatsapp{
+  background:#25D366;
+  color:#fff;
+  box-shadow:0 8px 20px rgba(37,211,102,.22);
+}
+.btn-whatsapp:hover{background:#159447}
+.form-note{
+  margin-top:12px;
+  text-align:center;
+  font-size:.82rem;
+  color:var(--muted);
+}
+@media(max-width:600px){
+  .form-actions{grid-template-columns:1fr}
+}
+
 .btn-lg{padding:1rem 1.6rem;font-size:1rem}
 
 .admissions-hero{
@@ -640,8 +674,6 @@ p{color:var(--muted)}
   text-align:center;
 }
 .footer-bottom p{font-size:.82rem;color:rgba(255,255,255,.42)}
-
-.sticky-bar{display:none}
 .whatsapp-float{
   position:fixed;
   right:22px;
@@ -671,6 +703,19 @@ p{color:var(--muted)}
   .visit-grid{grid-template-columns:1fr}
 }
 
+
+@media(max-width:900px){
+  .header{
+    position:relative;
+    padding:10px 0;
+    background:transparent!important;
+    box-shadow:none!important;
+  }
+  .header .container{justify-content:space-between}
+  .brand-logo img{width:175px;height:62px}
+  .menu-toggle{width:50px;height:50px}
+}
+
 @media(max-width:900px){
   .nav{display:none}
   .menu-toggle{display:block}
@@ -698,28 +743,6 @@ p{color:var(--muted)}
     width:52px;height:52px;
     font-size:22px;
   }
-  .sticky-bar{
-    display:block;
-    position:fixed;
-    left:0;right:0;bottom:0;
-    z-index:950;
-    background:#fff;
-    border-top:1px solid #ddd;
-    box-shadow:0 -5px 20px rgba(0,0,0,.08);
-  }
-  .sticky-bar .grid{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-  }
-  .sticky-bar a{
-    padding:10px 4px;
-    text-align:center;
-    font-size:.78rem;
-    font-weight:700;
-    color:var(--navy);
-  }
-  .sticky-bar a.whatsapp{color:#159447}
-  .sticky-bar .icon{display:block;font-size:1.1rem;margin-bottom:2px}
 }
 
 </style>
@@ -909,7 +932,11 @@ p{color:var(--muted)}
                                 <label for="message">Message (Optional)</label>
                                 <textarea id="message" rows="3" placeholder="Any specific questions or requests..."></textarea>
                             </div>
-                            <button type="submit" class="btn btn-primary btn-block btn-lg">📤 Send Enquiry</button>
+                            <div class="form-actions">
+  <button type="submit" class="btn btn-primary btn-lg">📤 Send Enquiry</button>
+  <button type="button" id="whatsappEnquiry" class="btn btn-whatsapp btn-lg">💬 WhatsApp Enquiry</button>
+</div>
+<p class="form-note">Choose either option to send your admission enquiry.</p>
                         </form>
                     </div>
                 </div>
@@ -925,7 +952,7 @@ p{color:var(--muted)}
                 <h2>Contact <span class="gradient-text">Us</span></h2>
                 <p>We're here to help! Reach out to us anytime</p>
             </div>
-            <div class="contact-cards" style="max-width: 700px; margin: 0 auto;">
+            <div class="contact-cards">
                 <div class="contact-card scroll-animate" data-delay="100">
                     <div class="contact-card-icon">📞</div>
                     <div class="contact-card-content">
@@ -1046,16 +1073,6 @@ p{color:var(--muted)}
   </div>
 </footer>
 
-<div class="sticky-bar">
-  <div class="grid">
-    <a href="tel:918438142540"><span class="icon">📞</span>Call</a>
-    <a href="https://wa.me/918438142540?text=Hello%20BrightRoots%20Kids%20Care%2C%20I%20would%20like%20to%20know%20more%20about%20admission%20for%20my%20child."
-       target="_blank" rel="noopener" class="whatsapp"><span class="icon">💬</span>WhatsApp</a>
-    <a href="https://maps.google.com/maps?q=19A/170+Ashok+Nagar,+Tirupattur"
-       target="_blank" rel="noopener"><span class="icon">📍</span>Directions</a>
-  </div>
-</div>
-
 <a href="https://wa.me/918438142540?text=Hello%20BrightRoots%20Kids%20Care%2C%20I%20would%20like%20to%20know%20more%20about%20admission%20for%20my%20child."
    target="_blank" rel="noopener" class="whatsapp-float" aria-label="WhatsApp">💬</a>
 
@@ -1087,12 +1104,7 @@ document.addEventListener('DOMContentLoaded', function(){
   document.addEventListener('keydown', function(e){
     if(e.key === 'Escape') setMenu(false);
   });
-
-  window.addEventListener('scroll', function(){
-    header.classList.toggle('scrolled', window.scrollY > 30);
-  }, {passive:true});
-
-  document.getElementById('year').textContent = new Date().getFullYear();
+document.getElementById('year').textContent = new Date().getFullYear();
 });
 </script>
 </body>
