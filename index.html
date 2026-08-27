@@ -41,20 +41,28 @@ button{font:inherit}
 
 /* ================= HEADER ================= */
 
+/* ================= HEADER ================= */
+
 .header{
-  position:fixed;
+  position:absolute;
   top:0;
   left:0;
   right:0;
+  width:100%;
   z-index:2000;
   padding:14px 0;
-  transition:all .25s ease;
+  background:transparent;
+  box-shadow:none;
+  transition:none;
 }
 
+/* IMPORTANT:
+   Header must NOT become sticky or white when scrolling */
 .header.scrolled{
-  background:rgba(255,255,255,.94);
-  backdrop-filter:blur(14px);
-  box-shadow:0 8px 30px rgba(7,26,61,.12);
+  background:transparent;
+  box-shadow:none;
+  backdrop-filter:none;
+  -webkit-backdrop-filter:none;
 }
 
 .header-inner{
@@ -63,24 +71,41 @@ button{font:inherit}
   justify-content:space-between;
   gap:25px;
 }
+
+
 /* ================= BRAND LOGO ================= */
 
 .brand-logo{
   display:flex;
   align-items:center;
+  justify-content:center;
   flex-shrink:0;
-  background:#fff;
+
+  /* Logo itself can remain white */
+  background:rgba(255,255,255,.94);
+
   padding:5px 9px;
   border-radius:18px;
+
   box-shadow:0 7px 20px rgba(7,26,61,.10);
+
+  transition:transform .2s ease;
+}
+
+.brand-logo:hover{
+  transform:translateY(-2px);
 }
 
 .brand-logo img{
   width:190px;
   height:72px;
+
   object-fit:contain;
+  object-position:center;
+
   border-radius:14px;
 }
+
 
 /* ================= DESKTOP NAV ================= */
 
@@ -89,9 +114,12 @@ button{font:inherit}
   align-items:center;
   gap:4px;
 
-  background:rgba(255,255,255,.88);
-  border:1px solid rgba(16,38,83,.08);
+  /* Only the navigation has white background */
+  background:rgba(255,255,255,.90);
+
+  border:1px solid rgba(255,255,255,.75);
   border-radius:999px;
+
   padding:5px;
 
   box-shadow:0 8px 25px rgba(7,26,61,.08);
@@ -116,13 +144,14 @@ button{font:inherit}
   color:#fff;
 }
 
+
 /* ================= MOBILE MENU BUTTON ================= */
 
 .menu-toggle{
   display:none;
 
-  width:46px;
-  height:46px;
+  width:52px;
+  height:52px;
 
   border:0;
   border-radius:50%;
@@ -131,10 +160,13 @@ button{font:inherit}
   color:#fff;
 
   cursor:pointer;
-  font-size:24px;
 
-  box-shadow:0 8px 20px rgba(215,25,91,.3);
+  font-size:25px;
+  line-height:1;
+
+  box-shadow:0 8px 22px rgba(215,25,91,.30);
 }
+
 
 /* ================= MOBILE MENU ================= */
 
@@ -152,6 +184,7 @@ button{font:inherit}
 .mobile-backdrop.open{
   display:block;
 }
+
 
 .mobile-menu{
   position:fixed;
@@ -180,7 +213,8 @@ button{font:inherit}
   transform:translateX(0);
 }
 
-/* Mobile logo */
+
+/* ================= MOBILE LOGO ================= */
 
 .mobile-logo{
   text-align:center;
@@ -195,10 +229,12 @@ button{font:inherit}
   object-position:center;
 
   margin:auto;
+
   border-radius:10px;
 }
 
-/* Close button */
+
+/* ================= MOBILE CLOSE ================= */
 
 .mobile-close{
   position:absolute;
@@ -216,10 +252,12 @@ button{font:inherit}
   color:var(--navy);
 
   cursor:pointer;
+
   font-size:20px;
 }
 
-/* Mobile links */
+
+/* ================= MOBILE LINKS ================= */
 
 .mobile-menu > a{
   display:block;
@@ -239,7 +277,8 @@ button{font:inherit}
   color:var(--pink);
 }
 
-/* Mobile CTA */
+
+/* ================= MOBILE CTA ================= */
 
 .mobile-actions{
   display:grid;
@@ -266,7 +305,57 @@ button{font:inherit}
 .mobile-actions a.whatsapp{
   background:var(--green);
 }
+/* ================= RESPONSIVE HEADER ================= */
 
+@media(max-width:760px){
+
+  .header{
+    position:absolute;
+    top:0;
+    left:0;
+    right:0;
+
+    padding:12px 0;
+
+    background:transparent;
+  }
+
+  .header.scrolled{
+    background:transparent;
+    box-shadow:none;
+  }
+
+  .header-inner{
+    justify-content:space-between;
+    gap:12px;
+  }
+
+  .brand-logo{
+    padding:4px 7px;
+    border-radius:14px;
+    background:rgba(255,255,255,.95);
+  }
+
+  .brand-logo img{
+    width:185px;
+    height:68px;
+    border-radius:10px;
+  }
+
+  .nav{
+    display:none;
+  }
+
+  .menu-toggle{
+    display:grid;
+    place-items:center;
+
+    width:52px;
+    height:52px;
+
+    flex-shrink:0;
+  }
+}
 /* ================= COMMON ================= */
 .section{
   min-height:760px;
@@ -376,8 +465,8 @@ p{color:var(--muted)}
   inset:0;
   background:linear-gradient(
     90deg,
-    rgba(255,255,255,.18) 0%,
-    rgba(255,255,255,.08) 40%,
+    rgba(255,255,255,.06) 0%,
+    rgba(255,255,255,.04) 40%,
     rgba(255,255,255,0) 75%
   );
 }
@@ -388,12 +477,15 @@ p{color:var(--muted)}
   max-width:610px;
 }
 
-.hero-card{
-  background:rgba(255,255,255,.78);
+
+  .hero-card{
+  background:rgba(255,255,255,.06);
   border-radius:28px;
   padding:30px;
-  box-shadow:0 18px 45px rgba(7,26,61,.12);
-  border:1px solid rgba(255,255,255,.7);
+  border:1px solid rgba(255,255,255,.28);
+  box-shadow:0 12px 35px rgba(7,26,61,.08);
+  backdrop-filter:blur(3px);
+  -webkit-backdrop-filter:blur(3px);
 }
 .hero h1{font-size:clamp(2.5rem,6vw,4.8rem);margin-bottom:15px}
 .hero-subtitle{
@@ -1066,37 +1158,103 @@ p{color:var(--muted)}
 
 <script>
 document.addEventListener('DOMContentLoaded', function(){
-  const header = document.getElementById('header');
-  const menuToggle = document.getElementById('menuToggle');
-  const mobileMenu = document.getElementById('mobileMenu');
-  const mobileBackdrop = document.getElementById('mobileBackdrop');
-  const closeMenu = document.getElementById('closeMenu');
+
+  const menuToggle =
+    document.getElementById('menuToggle');
+
+  const mobileMenu =
+    document.getElementById('mobileMenu');
+
+  const mobileBackdrop =
+    document.getElementById('mobileBackdrop');
+
+  const closeMenu =
+    document.getElementById('closeMenu');
+
 
   function setMenu(open){
-    mobileMenu.classList.toggle('open', open);
-    mobileBackdrop.classList.toggle('open', open);
-    mobileMenu.setAttribute('aria-hidden', String(!open));
-    menuToggle.setAttribute('aria-expanded', String(open));
-    document.body.classList.toggle('menu-open', open);
+
+    mobileMenu.classList.toggle(
+      'open',
+      open
+    );
+
+    mobileBackdrop.classList.toggle(
+      'open',
+      open
+    );
+
+    mobileMenu.setAttribute(
+      'aria-hidden',
+      String(!open)
+    );
+
+    menuToggle.setAttribute(
+      'aria-expanded',
+      String(open)
+    );
+
+    document.body.classList.toggle(
+      'menu-open',
+      open
+    );
   }
 
-  menuToggle.addEventListener('click', function(){ setMenu(true); });
-  closeMenu.addEventListener('click', function(){ setMenu(false); });
-  mobileBackdrop.addEventListener('click', function(){ setMenu(false); });
 
-  mobileMenu.querySelectorAll('a').forEach(function(link){
-    link.addEventListener('click', function(){ setMenu(false); });
-  });
+  /* Open */
+  menuToggle.addEventListener(
+    'click',
+    function(){
+      setMenu(true);
+    }
+  );
 
-  document.addEventListener('keydown', function(e){
-    if(e.key === 'Escape') setMenu(false);
-  });
 
-  window.addEventListener('scroll', function(){
-    header.classList.toggle('scrolled', window.scrollY > 30);
-  }, {passive:true});
+  /* Close */
+  closeMenu.addEventListener(
+    'click',
+    function(){
+      setMenu(false);
+    }
+  );
 
-  document.getElementById('year').textContent = new Date().getFullYear();
+
+  /* Click outside */
+  mobileBackdrop.addEventListener(
+    'click',
+    function(){
+      setMenu(false);
+    }
+  );
+
+
+  /* Close after selecting menu item */
+  mobileMenu
+    .querySelectorAll('a')
+    .forEach(function(link){
+
+      link.addEventListener(
+        'click',
+        function(){
+          setMenu(false);
+        }
+      );
+
+    });
+
+
+  /* ESC */
+  document.addEventListener(
+    'keydown',
+    function(e){
+
+      if(e.key === 'Escape'){
+        setMenu(false);
+      }
+
+    }
+  );
+
 });
 </script>
 
