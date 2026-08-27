@@ -63,22 +63,23 @@ button{font:inherit}
   justify-content:space-between;
   gap:25px;
 }
-
-/* ================= HEADER LOGO ================= */
+/* ================= BRAND LOGO ================= */
 
 .brand-logo{
   display:flex;
   align-items:center;
   flex-shrink:0;
+  background:#fff;
+  padding:5px 9px;
+  border-radius:18px;
+  box-shadow:0 7px 20px rgba(7,26,61,.10);
 }
 
 .brand-logo img{
-  width:180px;
-  height:62px;
+  width:190px;
+  height:72px;
   object-fit:contain;
-  object-position:left center;
-  border-radius:10px;
-  mix-blend-mode:multiply;
+  border-radius:14px;
 }
 
 /* ================= DESKTOP NAV ================= */
@@ -284,7 +285,9 @@ button{font:inherit}
   inset:0;
   background:rgba(255,255,255,.08);
 }
-.section.dark::before{background:rgba(7,26,61,.58)}
+.section.dark::before{
+  background:rgba(7,26,61,.42);
+}
 .section-inner{position:relative;z-index:1;width:100%}
 
 .panel{
@@ -625,27 +628,40 @@ p{color:var(--muted)}
   .footer-grid{grid-template-columns:repeat(2,1fr)}
 }
 @media(max-width:760px){
-  .container{width:min(100% - 22px,600px)}
-  .nav{display:none}
-  .menu-toggle{display:block}
-  .header{
-    padding:10px 0;
+
+  .container{
+    width:min(100% - 22px,600px);
+  }
+
+  .nav{
+    display:none;
+  }
+
+  .menu-toggle{
+    display:block;
   }
 
   .header-inner{
     justify-content:space-between;
   }
-
-  /* Mobile header logo */
-
-  .brand-logo img{
-    width:145px;
-    height:52px;
+  .brand-logo{
+    padding:4px 7px;
+    border-radius:15px;
   }
 
+  .brand-logo img{
+    width:210px;
+    height:78px;
+    border-radius:12px;
+  }
+  /* DO NOT WASH OUT BACKGROUND IMAGES */
+  .section::before{
+    background:rgba(255,255,255,.08);
+  }
 
-  
-
+  .section.dark::before{
+    background:rgba(7,26,61,.08);
+  }
 
   .section{
     min-height:auto;
@@ -653,30 +669,87 @@ p{color:var(--muted)}
     background-attachment:scroll;
     background-position:center;
   }
-  .section::before{background:rgba(255,255,255,.68)}
-  .dark::before{background:rgba(7,26,61,.58)}
-  .panel{padding:24px;border-radius:22px}
+
+  .panel{
+    padding:24px;
+    border-radius:22px;
+  }
+
+  /* HERO */
   .hero{
     min-height:100svh;
-    padding:100px 0 85px;
+    padding:105px 0 85px;
     align-items:flex-end;
     background-position:center center;
   }
+
+  /* VERY LIGHT HERO OVERLAY */
   .hero::before{
-    background:linear-gradient(180deg,rgba(255,255,255,.18) 0%,rgba(255,255,255,.76) 58%,rgba(255,255,255,.95) 100%);
+    background:linear-gradient(
+      180deg,
+      rgba(255,255,255,.02) 0%,
+      rgba(255,255,255,.05) 45%,
+      rgba(255,255,255,.20) 100%
+    );
   }
-  .hero-card{padding:22px}
-  .hero h1{font-size:clamp(2.2rem,10vw,3.3rem)}
-  .hero-subtitle{font-size:1rem}
-  .buttons{flex-direction:column}
-  .buttons .btn{width:100%}
-  .cards,.feature-grid,.gallery-strip{grid-template-columns:1fr}
-  .program-grid{grid-template-columns:repeat(2,1fr)}
-  .approach-grid{grid-template-columns:1fr}
-  .footer-grid{grid-template-columns:1fr}
-  .sticky-bar{display:block}
-  .whatsapp-float{bottom:78px;width:52px;height:52px;font-size:24px;right:12px}
-  .footer{padding-bottom:85px}
+
+  .hero-card{
+    background:rgba(255,255,255,.78);
+    border:1px solid rgba(255,255,255,.65);
+    backdrop-filter:blur(3px);
+    -webkit-backdrop-filter:blur(3px);
+    padding:22px;
+  }
+
+  .hero h1{
+    font-size:clamp(2.2rem,10vw,3.3rem);
+  }
+
+  .hero-subtitle{
+    font-size:1rem;
+  }
+
+  .buttons{
+    flex-direction:column;
+  }
+
+  .buttons .btn{
+    width:100%;
+  }
+
+  .cards,
+  .feature-grid,
+  .gallery-strip{
+    grid-template-columns:1fr;
+  }
+
+  .program-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .approach-grid{
+    grid-template-columns:1fr;
+  }
+
+  .footer-grid{
+    grid-template-columns:1fr;
+  }
+
+  .sticky-bar{
+    display:block;
+  }
+
+  .whatsapp-float{
+    bottom:78px;
+    width:52px;
+    height:52px;
+    font-size:24px;
+    right:12px;
+  }
+
+  .footer{
+    padding-bottom:85px;
+  }
 }
 @media(max-width:430px){
   .hero-list span{font-size:.78rem}
@@ -697,8 +770,11 @@ p{color:var(--muted)}
   <div class="container header-inner">
 
     <!-- Logo -->
-    <a href="index.html" class="brand-logo" aria-label="BrightRoots Kids Care Home">
-      <img src="images/kidslogo.jpg" alt="BrightRoots Kids Care">
+  <a href="index.html" class="brand-logo" aria-label="BrightRoots Kids Care Home">
+      <img
+        src="images/kidslogo.jpg"
+        alt="BrightRoots Kids Care"
+      >
     </a>
 
     <!-- Desktop Navigation -->
