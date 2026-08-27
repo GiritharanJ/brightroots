@@ -41,8 +41,6 @@ button{font:inherit}
 
 /* ================= HEADER ================= */
 
-/* ================= HEADER ================= */
-
 .header{
   position:absolute;
   top:0;
@@ -368,15 +366,7 @@ button{font:inherit}
   background-repeat:no-repeat;
   background-attachment:fixed;
 }
-.section::before{
-  content:"";
-  position:absolute;
-  inset:0;
-  background:rgba(255,255,255,.08);
-}
-.section.dark::before{
-  background:rgba(7,26,61,.42);
-}
+.section::before{display:none;}
 .section-inner{position:relative;z-index:1;width:100%}
 
 .panel{
@@ -456,7 +446,11 @@ p{color:var(--muted)}
   display:flex;
   align-items:flex-end;
   padding:110px 0 90px;
-  background:url('images/home1.jpg') center/cover no-repeat;
+  background:
+    radial-gradient(circle at 8% 18%,rgba(233,30,99,.13),transparent 28%),
+    radial-gradient(circle at 88% 18%,rgba(24,139,210,.13),transparent 28%),
+    radial-gradient(circle at 70% 90%,rgba(245,164,0,.14),transparent 30%),
+    linear-gradient(135deg,#fff8fb 0%,#fffdf8 48%,#f1f9ff 100%);
 }
 
 .hero::before{
@@ -479,13 +473,11 @@ p{color:var(--muted)}
 
 
   .hero-card{
-  background:rgba(255,255,255,.06);
-  border-radius:28px;
-  padding:30px;
-  border:1px solid rgba(255,255,255,.28);
-  box-shadow:0 12px 35px rgba(7,26,61,.08);
-  backdrop-filter:blur(3px);
-  -webkit-backdrop-filter:blur(3px);
+  background:#fff;
+  border-radius:30px;
+  padding:38px;
+  border:1px solid rgba(16,38,83,.07);
+  box-shadow:0 20px 55px rgba(7,26,61,.12);
 }
 .hero h1{font-size:clamp(2.5rem,6vw,4.8rem);margin-bottom:15px}
 .hero-subtitle{
@@ -511,7 +503,7 @@ p{color:var(--muted)}
 
 /* ================= WHY ================= */
 .why{
-  background-image:url('images/home2.jpg');
+  background:linear-gradient(135deg,#fff4f8 0%,#fffaf5 48%,#f5faff 100%);
 }
 .cards{
   display:grid;
@@ -541,7 +533,7 @@ p{color:var(--muted)}
 .card p{font-size:.95rem;margin-top:7px}
 
 /* ================= PROGRAMS ================= */
-.programs{background-image:url('images/home3.jpg')}
+.programs{background:linear-gradient(135deg,#fff9e7 0%,#fff5fa 48%,#f1f8ff 100%)}
 .program-grid{
   display:grid;
   grid-template-columns:repeat(5,1fr);
@@ -560,7 +552,7 @@ p{color:var(--muted)}
 
 /* ================= APPROACH ================= */
 .approach{
-  background-image:url('images/home4.jpg');
+  background:linear-gradient(135deg,#102653 0%,#263e75 55%,#5b3f91 100%);
 }
 .approach-grid{
   display:grid;
@@ -580,7 +572,7 @@ p{color:var(--muted)}
 .approach-card p{margin-top:7px}
 
 /* ================= ENVIRONMENT ================= */
-.environment{background-image:url('images/home5.jpg')}
+.environment{background:linear-gradient(135deg,#effbf3 0%,#fffaf0 50%,#f4f9ff 100%)}
 .feature-grid{
   display:grid;
   grid-template-columns:repeat(3,1fr);
@@ -602,29 +594,85 @@ p{color:var(--muted)}
 .feature-body p{margin-top:6px}
 
 /* ================= GALLERY / TRUST ================= */
-.gallery-section{background-image:url('images/home6.jpg')}
+.gallery-section{background:linear-gradient(135deg,#fff1f7 0%,#f3f0ff 50%,#eef8ff 100%)}
+
+/* ================= GALLERY ================= */
+
 .gallery-strip{
   display:grid;
   grid-template-columns:repeat(3,1fr);
-  gap:16px;
+  gap:18px;
 }
+
 .gallery-card{
-  min-height:230px;
+  min-height:260px;
   border-radius:25px;
-  padding:24px;
+  padding:26px;
   display:flex;
   align-items:flex-end;
+  position:relative;
+  overflow:hidden;
   color:#fff;
-  background:linear-gradient(180deg,rgba(7,26,61,.05),rgba(7,26,61,.82));
-  box-shadow:0 14px 35px rgba(7,26,61,.16);
+  box-shadow:var(--shadow);
+  background-size:cover;
+  background-position:center;
 }
-.gallery-card h3{color:#fff}
-.gallery-card p{color:rgba(255,255,255,.88);font-size:.9rem}
 
+/* Gallery images */
+.gallery1{
+  background-image:
+    linear-gradient(
+      180deg,
+      rgba(7,26,61,.05),
+      rgba(7,26,61,.78)
+    ),
+    url('images/gallery1.jpg');
+}
+
+.gallery2{
+  background-image:
+    linear-gradient(
+      180deg,
+      rgba(7,26,61,.05),
+      rgba(7,26,61,.78)
+    ),
+    url('images/gallery2.jpg');
+}
+
+.gallery3{
+  background-image:
+    linear-gradient(
+      180deg,
+      rgba(7,26,61,.05),
+      rgba(7,26,61,.78)
+    ),
+    url('images/gallery3.jpg');
+}
+
+.gallery-card h3{
+  color:#fff;
+  font-size:1.45rem;
+  margin-bottom:5px;
+}
+
+.gallery-card p{
+  color:rgba(255,255,255,.92);
+  font-size:.95rem;
+}
+
+@media(max-width:760px){
+  .gallery-strip{
+    grid-template-columns:1fr;
+  }
+
+  .gallery-card{
+    min-height:240px;
+  }
+}
 /* ================= FINAL CTA ================= */
 .cta{
-  background-image:url('images/home7.jpg');
-  min-height:650px;
+  background:linear-gradient(135deg,#fff0f6 0%,#fff7e5 48%,#eaf9f0 100%);
+  min-height:540px;
 }
 .cta .panel{
   max-width:760px;
@@ -746,14 +794,7 @@ p{color:var(--muted)}
     height:78px;
     border-radius:12px;
   }
-  /* DO NOT WASH OUT BACKGROUND IMAGES */
-  .section::before{
-    background:rgba(255,255,255,.08);
-  }
-
-  .section.dark::before{
-    background:rgba(7,26,61,.08);
-  }
+  .section::before{display:none;}
 
   .section{
     min-height:auto;
@@ -776,21 +817,14 @@ p{color:var(--muted)}
   }
 
   /* VERY LIGHT HERO OVERLAY */
-  .hero::before{
-    background:linear-gradient(
-      180deg,
-      rgba(255,255,255,.02) 0%,
-      rgba(255,255,255,.05) 45%,
-      rgba(255,255,255,.20) 100%
-    );
-  }
+  .hero::before{background:transparent;}
 
   .hero-card{
-    background:rgba(255,255,255,.78);
-    border:1px solid rgba(255,255,255,.65);
-    backdrop-filter:blur(3px);
-    -webkit-backdrop-filter:blur(3px);
-    padding:22px;
+    background:#fff;
+    border:1px solid rgba(16,38,83,.07);
+    backdrop-filter:none;
+    -webkit-backdrop-filter:none;
+    padding:24px;
   }
 
   .hero h1{
@@ -1069,11 +1103,30 @@ p{color:var(--muted)}
         <p>Parents can see the kind of joyful learning, friendship and discovery their child experiences.</p>
       </div>
 
-      <div class="gallery-strip">
-        <article class="gallery-card"><div><h3>🎨 Create</h3><p>Art, craft and creative activities.</p></div></article>
-        <article class="gallery-card"><div><h3>🧒 Learn Together</h3><p>Children build communication and social confidence.</p></div></article>
-        <article class="gallery-card"><div><h3>🏃 Play & Explore</h3><p>Movement, games and hands-on discovery.</p></div></article>
-      </div>
+   <div class="gallery-strip">
+
+  <article class="gallery-card gallery1">
+    <div>
+      <h3>🎨 Create</h3>
+      <p>Art, craft and creative activities.</p>
+    </div>
+  </article>
+
+  <article class="gallery-card gallery2">
+    <div>
+      <h3>🧒 Learn Together</h3>
+      <p>Children build communication and social confidence.</p>
+    </div>
+  </article>
+
+  <article class="gallery-card gallery3">
+    <div>
+      <h3>🏃 Play & Explore</h3>
+      <p>Movement, games and hands-on discovery.</p>
+    </div>
+  </article>
+
+</div>
 
       <div class="buttons" style="justify-content:center">
         <a class="btn btn-white" href="environment.html#gallery">View Full Gallery →</a>
