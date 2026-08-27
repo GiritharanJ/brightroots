@@ -16,6 +16,7 @@
   --pink-light:#fce8f0;
   --gold:#f5a400;
   --green:#25b95a;
+  --blue:#28A9D6;
   --white:#fff;
   --cream:#fffaf5;
   --text:#26334f;
@@ -439,71 +440,50 @@ p{color:var(--muted)}
 .btn-green{background:var(--green);color:#fff;box-shadow:0 10px 25px rgba(37,185,90,.25)}
 .btn-white{background:#fff;color:var(--navy);box-shadow:0 10px 25px rgba(0,0,0,.15)}
 
-/* ================= HERO ================= */
-/* ================= HERO AUTO BACKGROUND SLIDER ================= */
+/* =====================================================
+   HERO — rebuilt: clean two-column layout, real photo,
+   colorful floating accents, no missing-image slider.
+   ===================================================== */
 
 .hero{
-  min-height:100svh;
+  min-height:96vh;
   position:relative;
   display:flex;
-  align-items:flex-end;
-  padding:110px 0 90px;
+  align-items:center;
+  padding:150px 0 90px;
   overflow:hidden;
   isolation:isolate;
-  background:#fff;
-}
-
-/* Two layers are used so the image itself fades smoothly. */
-.hero-bg{
-  position:absolute;
-  inset:0;
-  z-index:-2;
-  background-size:cover;
-  background-position:center center;
-  background-repeat:no-repeat;
-  opacity:0;
-  transition:opacity 1.2s ease-in-out;
-  transform:scale(1.01);
-}
-
-.hero-bg.active{
-  opacity:1;
-}
-
-/* Light overlay keeps the text/card readable without hiding the photos. */
-.hero::before{
-  content:"";
-  position:absolute;
-  inset:0;
-  z-index:-1;
-  pointer-events:none;
   background:
-    linear-gradient(
-      90deg,
-      rgba(255,255,255,.18) 0%,
-      rgba(255,255,255,.06) 45%,
-      rgba(255,255,255,0) 78%
-    );
+    radial-gradient(ellipse 60% 55% at 85% 8%, rgba(245,164,0,.20) 0%, transparent 60%),
+    radial-gradient(ellipse 55% 55% at 6% 92%, rgba(40,169,214,.18) 0%, transparent 60%),
+    linear-gradient(135deg,#fff1f7 0%, #fffaf0 45%, #f0f8ff 100%);
 }
 
-.hero-content{
-  position:relative;
-  z-index:2;
-  max-width:610px;
+.hero-blob{
+  position:absolute;
+  border-radius:50%;
+  filter:blur(70px);
+  z-index:-1;
+  opacity:.55;
+}
+.hero-blob.b1{width:320px;height:320px;background:var(--pink);top:-90px;right:8%;opacity:.18}
+.hero-blob.b2{width:260px;height:260px;background:var(--green);bottom:-80px;left:2%;opacity:.20}
+.hero-blob.b3{width:200px;height:200px;background:var(--gold);top:38%;left:46%;opacity:.16}
+
+.hero .container{
+  display:grid;
+  grid-template-columns:1.05fr .95fr;
+  gap:48px;
+  align-items:center;
 }
 
-.hero-card{
-  background:rgba(255,255,255,.90);
-  border-radius:30px;
-  padding:38px;
-  border:1px solid rgba(255,255,255,.75);
-  box-shadow:0 20px 55px rgba(7,26,61,.12);
-}
+.hero-content{position:relative;z-index:2}
 
 .hero h1{
-  font-size:clamp(2.5rem,6vw,4.8rem);
-  margin-bottom:15px;
+  font-size:clamp(2.5rem,4.6vw,3.9rem);
+  margin-bottom:16px;
 }
+.hero h1 .navy-word{color:var(--navy)}
 
 .hero-subtitle{
   font-size:1.16rem;
@@ -511,66 +491,128 @@ p{color:var(--muted)}
   color:var(--navy);
 }
 
+.hero-copy{
+  margin-top:10px;
+  font-size:1.02rem;
+  max-width:480px;
+}
+
 .hero-list{
   display:flex;
   flex-wrap:wrap;
   gap:8px;
-  margin-top:16px;
+  margin-top:20px;
 }
 
 .hero-list span{
   background:#fff;
   border-radius:999px;
-  padding:7px 12px;
+  padding:8px 14px;
   font-size:.86rem;
   font-weight:700;
   color:var(--navy);
-  box-shadow:0 5px 14px rgba(7,26,61,.08);
+  box-shadow:0 6px 16px rgba(7,26,61,.10);
+  border:1px solid rgba(16,38,83,.06);
+}
+.hero-list span:nth-child(1){color:var(--pink)}
+.hero-list span:nth-child(3){color:var(--green)}
+.hero-list span:nth-child(5){color:var(--blue)}
+
+.hero-meta{
+  display:flex;
+  flex-wrap:wrap;
+  gap:22px;
+  margin-top:22px;
+  font-family:Poppins,sans-serif;
+  font-weight:700;
+  font-size:.9rem;
+  color:var(--navy);
+}
+.hero-meta span{display:flex;align-items:center;gap:8px}
+
+/* Visual side */
+.hero-visual{
+  position:relative;
+  z-index:1;
+  display:flex;
+  justify-content:center;
+}
+
+.hero-photo-frame{
+  position:relative;
+  width:min(400px,92%);
+  aspect-ratio:1/1.06;
+}
+.hero-photo-frame::before{
+  content:"";
+  position:absolute;
+  inset:-14px;
+  border-radius:44% 56% 63% 37% / 46% 41% 59% 54%;
+  background:linear-gradient(135deg,var(--pink),var(--gold));
+  animation:heroMorph 9s ease-in-out infinite;
+  z-index:0;
+}
+.hero-photo-frame img{
+  position:relative;
+  z-index:1;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  border-radius:44% 56% 63% 37% / 46% 41% 59% 54%;
+  animation:heroMorph 9s ease-in-out infinite;
+  box-shadow:0 25px 55px rgba(7,26,61,.22);
+}
+@keyframes heroMorph{
+  0%,100%{border-radius:44% 56% 63% 37% / 46% 41% 59% 54%}
+  50%{border-radius:60% 40% 38% 62% / 55% 60% 40% 45%}
+}
+
+.hero-float{
+  position:absolute;
+  display:flex;
+  align-items:center;
+  gap:8px;
+  background:#fff;
+  padding:11px 16px;
+  border-radius:999px;
+  box-shadow:0 14px 30px rgba(7,26,61,.16);
+  font-family:Poppins,sans-serif;
+  font-weight:700;
+  font-size:.85rem;
+  color:var(--navy);
+  animation:heroFloat 4.5s ease-in-out infinite;
+  z-index:2;
+}
+.hero-float.f1{top:2%;left:-6%;animation-delay:0s}
+.hero-float.f2{bottom:16%;right:-8%;animation-delay:1.4s}
+.hero-float.f3{bottom:-4%;left:16%;animation-delay:2.6s}
+@keyframes heroFloat{
+  0%,100%{transform:translateY(0)}
+  50%{transform:translateY(-14px)}
+}
+
+@media(max-width:1060px){
+  .hero .container{grid-template-columns:1fr}
+  .hero-visual{order:-1;margin-bottom:8px}
+  .hero-photo-frame{width:min(300px,72%)}
+  .hero-float{display:none}
+  .hero-copy{max-width:none}
 }
 
 @media(max-width:760px){
-
   .hero{
-    min-height:100svh;
-    padding:105px 0 85px;
-    align-items:flex-end;
+    min-height:auto;
+    padding:130px 0 60px;
   }
-
-  .hero-bg{
-    background-position:center center;
-  }
-
-  .hero::before{
-    background:
-      linear-gradient(
-        180deg,
-        rgba(255,255,255,.05) 0%,
-        rgba(255,255,255,0) 50%,
-        rgba(7,26,61,.12) 100%
-      );
-  }
-
-  .hero-card{
-    background:rgba(255,255,255,.94);
-    padding:24px;
-    border-radius:24px;
-  }
-
-  .hero h1{
-    font-size:clamp(2.2rem,10vw,3.3rem);
-  }
-
-  .hero-subtitle{
-    font-size:1rem;
-  }
+  .hero h1{font-size:clamp(2.15rem,9vw,3rem)}
+  .hero-subtitle{font-size:1rem}
+  .hero-photo-frame{width:min(260px,68%)}
 }
 
-/* ================= HERO SLIDER ACCESSIBILITY ================= */
-
 @media(prefers-reduced-motion:reduce){
-  .hero-bg{
-    transition:none;
-  }
+  .hero-photo-frame::before,
+  .hero-photo-frame img,
+  .hero-float{animation:none}
 }
 
 /* ================= WHY ================= */
@@ -617,7 +659,12 @@ p{color:var(--muted)}
   border-radius:22px;
   background:rgba(255,255,255,.93);
   box-shadow:0 12px 30px rgba(7,26,61,.12);
+  border-top:4px solid var(--pink);
 }
+.program:nth-child(2){border-top-color:var(--gold)}
+.program:nth-child(3){border-top-color:var(--green)}
+.program:nth-child(4){border-top-color:var(--blue)}
+.program:nth-child(5){border-top-color:var(--navy)}
 .program .emoji{font-size:38px;display:block;margin-bottom:8px}
 .program h3{font-size:1.2rem}
 .age{display:block;margin-top:5px;color:#7b8497;font-size:.82rem;font-weight:700}
@@ -880,33 +927,6 @@ p{color:var(--muted)}
     border-radius:22px;
   }
 
-  /* HERO */
-  .hero{
-    min-height:100svh;
-    padding:105px 0 85px;
-    align-items:flex-end;
-    background-position:center center;
-  }
-
-  /* VERY LIGHT HERO OVERLAY */
-  .hero::before{background:transparent;}
-
-  .hero-card{
-    background:#fff;
-    border:1px solid rgba(16,38,83,.07);
-    backdrop-filter:none;
-    -webkit-backdrop-filter:none;
-    padding:24px;
-  }
-
-  .hero h1{
-    font-size:clamp(2.2rem,10vw,3.3rem);
-  }
-
-  .hero-subtitle{
-    font-size:1rem;
-  }
-
   .buttons{
     flex-direction:column;
   }
@@ -1043,30 +1063,43 @@ p{color:var(--muted)}
 <!-- HOME 1: HERO -->
 <section class="hero" id="home">
 
-  <!-- Hero background slider: home1.jpg → home7.jpg -->
-  <div class="hero-bg active" id="heroBgA" aria-hidden="true"></div>
-  <div class="hero-bg" id="heroBgB" aria-hidden="true"></div>
+  <span class="hero-blob b1" aria-hidden="true"></span>
+  <span class="hero-blob b2" aria-hidden="true"></span>
+  <span class="hero-blob b3" aria-hidden="true"></span>
 
   <div class="container">
     <div class="hero-content">
-      <div class="hero-card">
-        <span class="eyebrow">Admissions Open • 2026–27</span>
-        <h1>A Strong Start Today for a <span class="gradient">Brighter Tomorrow</span></h1>
-        <p class="hero-subtitle">Where little minds play, learn, grow and thrive.</p>
+      <span class="eyebrow">Admissions Open • 2026–27</span>
+      <h1>A Strong Start Today for a <span class="gradient">Brighter Tomorrow</span></h1>
+      <p class="hero-subtitle">Where little minds play, learn, grow and thrive.</p>
+      <p class="hero-copy">BrightRoots blends play-based learning, phonics and a warm, secure environment — so every day feels like a happy step forward for your child.</p>
 
-        <div class="hero-list">
-          <span>Play Group</span>
-          <span>Pre-KG</span>
-          <span>LKG</span>
-          <span>UKG</span>
-          <span>Day Care</span>
-        </div>
-
-        <div class="buttons">
-          <a class="btn btn-pink" href="admissions.html">📅 Book a School Visit</a>
-          <a class="btn btn-green" href="https://wa.me/918438142540?text=Hello%20BrightRoots%20Kids%20Care%2C%20I%20would%20like%20to%20know%20more%20about%20admission%20for%20my%20child." target="_blank" rel="noopener">💬 WhatsApp Us</a>
-        </div>
+      <div class="hero-list">
+        <span>🧸 Play Group</span>
+        <span>📚 Pre-KG</span>
+        <span>✏️ LKG</span>
+        <span>🌟 UKG</span>
+        <span>🌙 Day Care</span>
       </div>
+
+      <div class="buttons">
+        <a class="btn btn-pink" href="admissions.html">📅 Book a School Visit</a>
+        <a class="btn btn-green" href="https://wa.me/918438142540?text=Hello%20BrightRoots%20Kids%20Care%2C%20I%20would%20like%20to%20know%20more%20about%20admission%20for%20my%20child." target="_blank" rel="noopener">💬 WhatsApp Us</a>
+      </div>
+
+      <div class="hero-meta">
+        <span>📍 Tirupattur</span>
+        <span>📞 84381 42540</span>
+      </div>
+    </div>
+
+    <div class="hero-visual">
+      <div class="hero-photo-frame">
+        <img src="images/hero-bg.jpg" alt="Children learning at BrightRoots Kids Care" loading="eager">
+      </div>
+      <span class="hero-float f1">🎨 Creative Play</span>
+      <span class="hero-float f2">❤️ Loving Care</span>
+      <span class="hero-float f3">🌱 Growing Every Day</span>
     </div>
   </div>
 </section>
@@ -1345,118 +1378,6 @@ document.addEventListener('DOMContentLoaded', function(){
 
   if(year){
     year.textContent = new Date().getFullYear();
-  }
-
-
-  /* ================= HERO AUTO BACKGROUND SLIDER ================= */
-
-  const hero = document.getElementById('home');
-  const heroBgA = document.getElementById('heroBgA');
-  const heroBgB = document.getElementById('heroBgB');
-
-  const heroImages = [
-    'images/home1.jpg',
-    'images/home2.jpg',
-    'images/home3.jpg',
-    'images/home4.jpg',
-    'images/home5.jpg',
-    'images/home6.jpg',
-    'images/home7.jpg'
-  ];
-
-  let heroIndex = 0;
-  let activeLayer = heroBgA;
-
-  /*
-    Change interval:
-    5000 = 5 seconds per image.
-    The fade itself takes 1.2 seconds.
-  */
-  const SLIDE_INTERVAL = 5000;
-  const FADE_TIME = 1200;
-
-  function setBackground(layer, image){
-    layer.style.backgroundImage =
-      'url("' + image + '")';
-  }
-
-  function preloadImages(){
-    heroImages.forEach(function(src){
-      const img = new Image();
-      img.src = src;
-    });
-  }
-
-  function showNextHeroImage(){
-
-    if(!hero || !heroBgA || !heroBgB){
-      return;
-    }
-
-    const nextIndex =
-      (heroIndex + 1) % heroImages.length;
-
-    const nextLayer =
-      activeLayer === heroBgA
-        ? heroBgB
-        : heroBgA;
-
-    setBackground(
-      nextLayer,
-      heroImages[nextIndex]
-    );
-
-    /*
-      Put the next image underneath first,
-      then fade it in.
-    */
-    requestAnimationFrame(function(){
-
-      nextLayer.classList.add('active');
-      activeLayer.classList.remove('active');
-
-    });
-
-    /*
-      After the fade, clear the old layer's image.
-      This avoids keeping unnecessary visible layers.
-    */
-    setTimeout(function(){
-
-      if(activeLayer){
-        activeLayer.style.backgroundImage = 'none';
-      }
-
-    }, FADE_TIME);
-
-    activeLayer = nextLayer;
-    heroIndex = nextIndex;
-  }
-
-  if(hero && heroBgA && heroBgB){
-
-    /* First hero image */
-    setBackground(
-      heroBgA,
-      heroImages[0]
-    );
-
-    heroBgA.classList.add('active');
-    heroBgB.classList.remove('active');
-
-    /* Preload all seven images */
-    preloadImages();
-
-    /* Automatically change every 5 seconds */
-    if(
-      heroImages.length > 1 &&
-      !window.matchMedia('(prefers-reduced-motion: reduce)').matches
-    ){
-      window.setInterval(
-        showNextHeroImage,
-        SLIDE_INTERVAL
-      );
-    }
   }
 
 });
