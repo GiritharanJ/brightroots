@@ -5,7 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>BrightRoots Kids Care | Preschool & Daycare in Tirupattur</title>
     <meta name="description" content="BrightRoots Kids Care offers Play Group, Pre-KG, LKG, UKG and Day Care in Tirupattur with play‑based learning, phonics and a safe, caring environment." />
-
+<link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <style>
         /* ----- FONTS ----- */
         @import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Nunito+Sans:wght@400;600;700;800&family=Poppins:wght@500;600;700;800&display=swap');
@@ -222,8 +224,8 @@
             transform: translateY(-2px);
         }
         .brand-logo img {
-            width: 56px;
-            height: 56px;
+            width: 70px;
+            height: 70px;
             border-radius: 50%;
             object-fit: cover;
             object-position: center;
@@ -1594,8 +1596,8 @@
             margin-bottom: 12px;
         }
         .footer-logo-wrap img {
-            width: 56px;
-            height: 56px;
+            width: 70px;
+            height: 70px;
             border-radius: 50%;
             object-fit: cover;
             border: 3px solid rgba(255, 255, 255, 0.15);
@@ -1705,80 +1707,88 @@
         }
        /* ================= FOOTER SOCIAL ICONS ================= */
 
-.footer-social{
-  display:flex;
-  align-items:center;
-  gap:12px;
-  margin-top:18px;
+/* ================= FOOTER SOCIAL ICONS ================= */
+
+.footer-social {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 20px;
 }
 
-.footer-social a{
-  width:42px;
-  height:42px;
+.footer-social a {
+    width: 44px;
+    height: 44px;
 
-  display:flex;
-  align-items:center;
-  justify-content:center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-  border-radius:50%;
+    border-radius: 50%;
 
-  color:#fff;
-  text-decoration:none;
+    text-decoration: none;
 
-  font-size:18px;
+    color: #fff;
 
-  transition:
-    transform .25s ease,
-    box-shadow .25s ease,
-    background .25s ease;
+    font-size: 20px;
+
+    transition:
+        transform .25s ease,
+        box-shadow .25s ease;
 }
 
 /* Facebook */
-.footer-social .facebook{
-  background:#1877f2;
+
+.footer-social .facebook {
+    background: #1877f2;
+
+    box-shadow:
+        0 8px 18px rgba(24,119,242,.30);
 }
 
 /* Instagram */
-.footer-social .instagram{
-  background:linear-gradient(
-    135deg,
-    #feda75,
-    #fa7e1e,
-    #d62976,
-    #962fbf,
-    #4f5bd5
-  );
+
+.footer-social .instagram {
+    background:
+        linear-gradient(
+            135deg,
+            #833ab4,
+            #fd1d1d,
+            #fcb045
+        );
+
+    box-shadow:
+        0 8px 18px rgba(225,48,108,.30);
 }
 
 /* YouTube */
-.footer-social .youtube{
-  background:#ff0000;
+
+.footer-social .youtube {
+    background: #ff0000;
+
+    box-shadow:
+        0 8px 18px rgba(255,0,0,.28);
 }
 
 /* Hover */
-.footer-social a:hover{
-  transform:translateY(-4px) scale(1.05);
-  box-shadow:0 10px 22px rgba(0,0,0,.25);
+
+.footer-social a:hover {
+    transform: translateY(-4px) scale(1.05);
 }
 
-/* Icon itself */
-.footer-social i{
-  line-height:1;
+.footer-social .facebook:hover {
+    box-shadow:
+        0 12px 25px rgba(24,119,242,.45);
 }
 
-/* Mobile */
-@media(max-width:600px){
+.footer-social .instagram:hover {
+    box-shadow:
+        0 12px 25px rgba(225,48,108,.45);
+}
 
-  .footer-social{
-    justify-content:center;
-  }
-
-  .footer-social a{
-    width:44px;
-    height:44px;
-    font-size:19px;
-  }
-
+.footer-social .youtube:hover {
+    box-shadow:
+        0 12px 25px rgba(255,0,0,.40);
 }
         /* ============================================================
                    STICKY BAR & WHATSAPP FLOAT
