@@ -1,2326 +1,1373 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Environment & Gallery | BrightRoots Kids Care</title>
-
-<meta name="description"
-      content="Explore the safe, secure and loving learning environment, play areas, hygiene, safety and gallery at BrightRoots Kids Care in Tirupattur.">
-
-<style>
-/* =========================================================
-   BRIGHTROOTS KIDS CARE
-   ENVIRONMENT PAGE
-   No home1.jpg - home7.jpg backgrounds used here.
-   ========================================================= */
-
-/* ================= FONTS ================= */
-
-@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Nunito+Sans:wght@400;600;700;800&family=Poppins:wght@500;600;700;800&display=swap');
-
-
-/* ================= VARIABLES ================= */
-
-:root{
-    --navy:#142A5A;
-    --navy-deep:#0A1A3A;
-
-    --pink:#D7195B;
-    --pink-light:#FFF0F5;
-
-    --gold:#F5A400;
-    --gold-light:#FFF7DF;
-
-    --green:#4A9B45;
-    --green-light:#EAF7EC;
-
-    --blue:#28A9D6;
-    --blue-light:#EAF8FD;
-
-    --cream:#FFFCF8;
-    --white:#FFFFFF;
-
-    --text:#374151;
-    --muted:#6B7280;
-
-    --line:#E8EAF0;
-
-    --shadow:
-        0 10px 30px rgba(20,42,90,.09);
-
-    --shadow-lg:
-        0 18px 45px rgba(20,42,90,.14);
-
-    --shadow-xl:
-        0 25px 60px rgba(20,42,90,.18);
-
-    --radius:22px;
-}
-
-
-/* ================= RESET ================= */
-
-*{
-    box-sizing:border-box;
-    margin:0;
-    padding:0;
-}
-
-html{
-    scroll-behavior:smooth;
-}
-
-body{
-    font-family:'Nunito Sans',sans-serif;
-    color:var(--text);
-    background:var(--cream);
-    line-height:1.65;
-    overflow-x:hidden;
-}
-
-body.menu-open{
-    overflow:hidden;
-}
-
-a{
-    color:inherit;
-    text-decoration:none;
-}
-
-img{
-    display:block;
-    max-width:100%;
-}
-
-button{
-    font:inherit;
-}
-
-ul{
-    list-style:none;
-}
-
-
-/* ================= CONTAINER ================= */
-
-.container{
-    width:min(1180px,calc(100% - 40px));
-    margin:0 auto;
-}
-
-
-/* ================= TYPOGRAPHY ================= */
-
-h1,
-h2,
-h3,
-h4{
-    font-family:'Baloo 2',cursive;
-    color:var(--navy);
-    line-height:1.15;
-}
-
-h1{
-    font-size:clamp(2.5rem,5vw,4.2rem);
-}
-
-h2{
-    font-size:clamp(2rem,3.5vw,3rem);
-}
-
-h3{
-    font-size:1.55rem;
-}
-
-h4{
-    font-size:1.3rem;
-}
-
-p{
-    color:var(--muted);
-}
-
-.gradient-text{
-    background:linear-gradient(
-        135deg,
-        var(--pink),
-        var(--gold)
-    );
-
-    -webkit-background-clip:text;
-    background-clip:text;
-
-    color:transparent;
-}
-
-
-/* =========================================================
-   HEADER
-   ========================================================= */
-
-.header{
-    position:fixed;
-    top:0;
-    left:0;
-    right:0;
-
-    z-index:2000;
-
-    padding:12px 0;
-
-    transition:
-        background .25s ease,
-        box-shadow .25s ease,
-        backdrop-filter .25s ease;
-}
-
-.header.scrolled{
-    background:rgba(255,255,255,.96);
-
-    backdrop-filter:blur(14px);
-
-    box-shadow:
-        0 8px 30px rgba(7,26,61,.12);
-}
-
-.header-inner{
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-
-    gap:25px;
-}
-
-
-/* ================= HEADER LOGO ================= */
-
-.brand-logo{
-    display:flex;
-    align-items:center;
-
-    flex-shrink:0;
-
-    background:#fff;
-
-    padding:4px 7px;
-
-    border-radius:16px;
-
-    box-shadow:
-        0 6px 18px rgba(7,26,61,.10);
-
-    overflow:hidden;
-}
-
-.brand-logo img{
-    width:190px;
-    height:68px;
-
-    object-fit:contain;
-    object-position:center;
-
-    border-radius:12px;
-}
-
-
-/* ================= DESKTOP NAV ================= */
-
-.nav{
-    display:flex;
-    align-items:center;
-
-    gap:4px;
-
-    background:rgba(255,255,255,.90);
-
-    border:1px solid rgba(16,38,83,.08);
-
-    border-radius:999px;
-
-    padding:5px;
-
-    box-shadow:
-        0 8px 25px rgba(7,26,61,.08);
-}
-
-.nav a{
-    padding:10px 16px;
-
-    border-radius:999px;
-
-    font-family:Poppins,sans-serif;
-
-    font-size:.9rem;
-    font-weight:600;
-
-    color:var(--navy);
-
-    transition:
-        background .2s ease,
-        color .2s ease,
-        transform .2s ease;
-}
-
-.nav a:hover{
-    background:var(--pink-light);
-    color:var(--pink);
-}
-
-.nav a.active{
-    background:var(--pink);
-    color:#fff;
-}
-
-
-/* =========================================================
-   MOBILE MENU BUTTON
-   ========================================================= */
-
-.menu-toggle{
-    display:none;
-
-    width:48px;
-    height:48px;
-
-    border:0;
-    border-radius:50%;
-
-    background:var(--pink);
-
-    color:#fff;
-
-    cursor:pointer;
-
-    font-size:25px;
-
-    line-height:1;
-
-    box-shadow:
-        0 8px 22px rgba(215,25,91,.30);
-}
-
-
-/* =========================================================
-   MOBILE MENU
-   ========================================================= */
-
-.mobile-backdrop{
-    position:fixed;
-
-    inset:0;
-
-    background:rgba(5,18,45,.52);
-
-    z-index:2090;
-
-    display:none;
-}
-
-.mobile-backdrop.open{
-    display:block;
-}
-
-.mobile-menu{
-    position:fixed;
-
-    top:0;
-    right:0;
-    bottom:0;
-
-    width:min(350px,88vw);
-
-    background:#fff;
-
-    z-index:2100;
-
-    padding:
-        28px
-        24px
-        35px;
-
-    transform:translateX(100%);
-
-    transition:
-        transform .28s ease;
-
-    box-shadow:
-        -20px 0 50px rgba(0,0,0,.18);
-
-    overflow-y:auto;
-}
-
-.mobile-menu.open{
-    transform:translateX(0);
-}
-
-
-/* Mobile logo */
-
-.mobile-logo{
-    text-align:center;
-
-    padding:
-        20px 0
-        25px;
-}
-
-.mobile-logo img{
-    width:200px;
-    height:75px;
-
-    object-fit:contain;
-
-    margin:auto;
-
-    border-radius:14px;
-}
-
-
-/* Close */
-
-.mobile-close{
-    position:absolute;
-
-    top:18px;
-    right:18px;
-
-    width:42px;
-    height:42px;
-
-    border:0;
-
-    border-radius:50%;
-
-    background:#f1f3f7;
-
-    color:var(--navy);
-
-    cursor:pointer;
-
-    font-size:20px;
-}
-
-
-/* Mobile links */
-
-.mobile-menu > a{
-    display:block;
-
-    padding:15px 4px;
-
-    border-bottom:
-        1px solid #edf0f4;
-
-    font-family:Poppins,sans-serif;
-
-    font-weight:600;
-
-    color:var(--navy);
-}
-
-.mobile-menu > a:hover,
-.mobile-menu > a.active{
-    color:var(--pink);
-}
-
-
-/* Mobile CTA */
-
-.mobile-actions{
-    display:grid;
-
-    gap:10px;
-
-    margin-top:25px;
-}
-
-.mobile-actions a{
-    display:block;
-
-    padding:14px 15px;
-
-    text-align:center;
-
-    border-radius:999px;
-
-    color:#fff !important;
-
-    background:var(--pink);
-
-    font-family:Poppins,sans-serif;
-
-    font-weight:700;
-}
-
-.mobile-actions a.whatsapp{
-    background:#25D366;
-}
-
-
-/* =========================================================
-   PAGE BANNER
-   ========================================================= */
-
-.page-banner{
-    position:relative;
-
-    overflow:hidden;
-
-    padding:
-        150px
-        40px
-        95px;
-
-    text-align:center;
-
-    background:
-        linear-gradient(
-            135deg,
-            #fff5f8 0%,
-            #ffffff 48%,
-            #fff9e9 100%
-        );
-}
-
-.page-banner::before,
-.page-banner::after{
-    content:"";
-
-    position:absolute;
-
-    border-radius:50%;
-
-    pointer-events:none;
-}
-
-.page-banner::before{
-    width:280px;
-    height:280px;
-
-    background:
-        rgba(215,25,91,.08);
-
-    left:-120px;
-    top:-100px;
-}
-
-.page-banner::after{
-    width:320px;
-    height:320px;
-
-    background:
-        rgba(245,164,0,.09);
-
-    right:-130px;
-    bottom:-160px;
-}
-
-.page-banner .container{
-    position:relative;
-    z-index:1;
-}
-
-.page-banner h1{
-    margin-bottom:12px;
-}
-
-.page-banner p{
-    font-size:1.15rem;
-}
-
-
-/* =========================================================
-   COMMON SECTIONS
-   ========================================================= */
-
-.section-padding{
-    padding:82px 0;
-}
-
-.bg-cream{
-    background:var(--cream);
-}
-
-.section-title{
-    text-align:center;
-
-    max-width:780px;
-
-    margin:
-        0 auto
-        45px;
-}
-
-.section-title p{
-    margin-top:10px;
-
-    font-size:1.06rem;
-}
-
-.eyebrow{
-    display:inline-block;
-
-    padding:7px 15px;
-
-    border-radius:999px;
-
-    background:var(--pink-light);
-
-    color:var(--pink);
-
-    font-family:Poppins,sans-serif;
-
-    font-size:.78rem;
-
-    font-weight:800;
-
-    letter-spacing:.06em;
-
-    text-transform:uppercase;
-
-    margin-bottom:14px;
-}
-
-.eyebrow.gold{
-    background:var(--gold-light);
-    color:#9a6800;
-}
-
-
-/* =========================================================
-   IMPORTANT:
-   NO opacity:0 animation.
-   This guarantees content is visible even if JS fails.
-   ========================================================= */
-
-.scroll-animate{
-    opacity:1;
-    transform:none;
-}
-
-
-/* =========================================================
-   ENVIRONMENT FEATURE CARDS
-   ========================================================= */
-
-.env-feature-grid{
-    display:grid;
-
-    grid-template-columns:
-        repeat(3,1fr);
-
-    gap:24px;
-}
-
-.env-feature{
-    background:#fff;
-
-    border:
-        1px solid var(--line);
-
-    border-radius:var(--radius);
-
-    overflow:hidden;
-
-    box-shadow:var(--shadow);
-
-    transition:
-        transform .25s ease,
-        box-shadow .25s ease;
-}
-
-.env-feature:hover{
-    transform:translateY(-6px);
-
-    box-shadow:var(--shadow-lg);
-}
-
-.env-feature img{
-    width:100%;
-
-    height:240px;
-
-    object-fit:cover;
-}
-
-.env-feature .content{
-    padding:24px;
-}
-
-.env-feature h3{
-    margin-bottom:9px;
-}
-
-.env-feature p{
-    font-size:.96rem;
-}
-
-
-/* =========================================================
-   ENVIRONMENT CTA
-   ========================================================= */
-
-.environment-message{
-    margin-top:55px;
-
-    background:
-        linear-gradient(
-            135deg,
-            var(--navy),
-            #243d7a
-        );
-
-    border-radius:28px;
-
-    padding:40px;
-
-    text-align:center;
-
-    box-shadow:var(--shadow-lg);
-}
-
-.environment-message h2{
-    color:#fff;
-
-    margin-bottom:10px;
-}
-
-.environment-message p{
-    max-width:700px;
-
-    margin:0 auto;
-
-    color:
-        rgba(255,255,255,.82);
-}
-
-.environment-message .btn{
-    margin-top:22px;
-}
-
-
-/* =========================================================
-   BUTTON
-   ========================================================= */
-
-.btn{
-    display:inline-flex;
-
-    align-items:center;
-    justify-content:center;
-
-    gap:8px;
-
-    min-height:50px;
-
-    padding:
-        12px 24px;
-
-    border:0;
-
-    border-radius:999px;
-
-    font-family:Poppins,sans-serif;
-
-    font-weight:700;
-
-    cursor:pointer;
-
-    transition:
-        transform .2s ease,
-        box-shadow .2s ease;
-}
-
-.btn:hover{
-    transform:translateY(-2px);
-}
-
-.btn-primary{
-    background:var(--pink);
-
-    color:#fff;
-
-    box-shadow:
-        0 10px 25px
-        rgba(215,25,91,.28);
-}
-
-
-/* =========================================================
-   GALLERY
-   ========================================================= */
-
-.gallery-page-grid{
-    display:grid;
-
-    grid-template-columns:
-        repeat(3,1fr);
-
-    gap:18px;
-}
-
-.gallery-page-grid .item{
-    position:relative;
-
-    aspect-ratio:1 / 1;
-
-    border-radius:20px;
-
-    overflow:hidden;
-
-    box-shadow:var(--shadow);
-
-    background:#eee;
-}
-
-.gallery-page-grid img{
-    width:100%;
-    height:100%;
-
-    object-fit:cover;
-
-    transition:
-        transform .35s ease;
-}
-
-.gallery-page-grid .item:hover img{
-    transform:scale(1.05);
-}
-
-
-/* =========================================================
-   FOOTER
-   ========================================================= */
-
-.footer{
-    background:var(--navy-deep);
-
-    color:#fff;
-
-    padding:
-        65px 0
-        22px;
-}
-
-.footer-grid{
-    display:grid;
-
-    grid-template-columns:
-        1.4fr
-        1fr
-        1fr
-        1.2fr;
-
-    gap:35px;
-
-    margin-bottom:40px;
-}
-
-
-/* Footer logo */
-
-.footer-logo{
-    width:200px;
-    height:90px;
-
-    object-fit:contain;
-
-    object-position:left center;
-
-    background:#fff;
-
-    padding:4px 7px;
-
-    border-radius:14px;
-
-    margin-bottom:14px;
-}
-
-.footer h3{
-    color:#fff;
-
-    font-family:Poppins,sans-serif;
-
-    font-size:.95rem;
-
-    margin-bottom:15px;
-
-    text-transform:uppercase;
-
-    letter-spacing:.04em;
-}
-
-.footer p,
-.footer a{
-    color:
-        rgba(255,255,255,.68);
-
-    font-size:.94rem;
-}
-
-.footer li{
-    margin-bottom:8px;
-}
-
-.footer a:hover{
-    color:#fff;
-}
-
-.footer-bottom{
-    border-top:
-        1px solid
-        rgba(255,255,255,.1);
-
-    padding-top:18px;
-
-    text-align:center;
-}
-
-.footer-bottom p{
-    font-size:.82rem;
-
-    color:
-        rgba(255,255,255,.45);
-}
-
-
-/* =========================================================
-   FLOATING WHATSAPP
-   ========================================================= */
-
-.whatsapp-float{
-    position:fixed;
-
-    right:22px;
-    bottom:22px;
-
-    z-index:1950;
-
-    width:58px;
-    height:58px;
-
-    display:grid;
-
-    place-items:center;
-
-    border-radius:50%;
-
-    background:#25D366;
-
-    color:#fff;
-
-    font-size:26px;
-
-    box-shadow:
-        0 8px 25px
-        rgba(37,211,102,.35);
-}
-
-
-/* =========================================================
-   MOBILE STICKY BAR
-   ========================================================= */
-
-.sticky-bar{
-    display:none;
-
-    position:fixed;
-
-    left:0;
-    right:0;
-    bottom:0;
-
-    z-index:1900;
-
-    background:
-        rgba(255,255,255,.98);
-
-    border-top:
-        1px solid #e5e8ee;
-
-    box-shadow:
-        0 -8px 25px
-        rgba(7,26,61,.10);
-}
-
-.sticky-grid{
-    display:grid;
-
-    grid-template-columns:
-        repeat(3,1fr);
-}
-
-.sticky-grid a{
-    min-height:68px;
-
-    display:flex;
-
-    flex-direction:column;
-
-    align-items:center;
-
-    justify-content:center;
-
-    gap:2px;
-
-    font-family:Poppins,sans-serif;
-
-    font-size:.72rem;
-
-    font-weight:700;
-
-    color:var(--navy);
-}
-
-.sticky-grid a span{
-    font-size:21px;
-
-    line-height:1.2;
-}
-
-.sticky-grid a.whatsapp{
-    color:#079447;
-}
-
-
-/* =========================================================
-   RESPONSIVE
-   ========================================================= */
-
-@media(max-width:1000px){
-
-    .env-feature-grid{
-        grid-template-columns:
-            repeat(2,1fr);
-    }
-
-    .gallery-page-grid{
-        grid-template-columns:
-            repeat(2,1fr);
-    }
-
-    .footer-grid{
-        grid-template-columns:
-            repeat(2,1fr);
-    }
-}
-
-
-/* =========================================================
-   TABLET / MOBILE
-   ========================================================= */
-
-@media(max-width:760px){
-
-    .container{
-        width:
-            min(
-                calc(100% - 28px),
-                600px
-            );
-    }
-
-    /* Header */
-
-    .header{
-        padding:9px 0;
-        background:rgba(255,255,255,.97);
-    }
-
-    .header-inner{
-        justify-content:space-between;
-    }
-
-    .brand-logo{
-        padding:3px 5px;
-        border-radius:13px;
-    }
-
-    .brand-logo img{
-        width:180px;
-        height:62px;
-    }
-
-    .nav{
-        display:none;
-    }
-
-    .menu-toggle{
-        display:grid;
-
-        place-items:center;
-
-        flex-shrink:0;
-    }
-
-
-    /* Banner */
-
-    .page-banner{
-        padding:
-            125px
-            20px
-            70px;
-    }
-
-    .page-banner h1{
-        font-size:
-            clamp(
-                2.2rem,
-                11vw,
-                3.2rem
-            );
-    }
-
-    .page-banner p{
-        font-size:1rem;
-    }
-
-
-    /* Sections */
-
-    .section-padding{
-        padding:65px 0;
-    }
-
-    .section-title{
-        margin-bottom:32px;
-    }
-
-    .section-title h2{
-        font-size:
-            clamp(
-                2rem,
-                9vw,
-                2.7rem
-            );
-    }
-
-    .section-title p{
-        font-size:1rem;
-    }
-
-
-    /* Environment */
-
-    .env-feature-grid{
-        grid-template-columns:1fr;
-
-        gap:20px;
-    }
-
-    .env-feature{
-        border-radius:22px;
-    }
-
-    .env-feature img{
-        height:235px;
-    }
-
-    .env-feature .content{
-        padding:22px;
-    }
-
-    .env-feature h3{
-        font-size:1.4rem;
-    }
-
-
-    /* Environment message */
-
-    .environment-message{
-        padding:30px 22px;
-
-        border-radius:22px;
-
-        margin-top:38px;
-    }
-
-    .environment-message h2{
-        font-size:2rem;
-    }
-
-
-    /* Gallery */
-
-    .gallery-page-grid{
-        grid-template-columns:1fr;
-
-        gap:16px;
-    }
-
-    .gallery-page-grid .item{
-        aspect-ratio:
-            4 / 3;
-
-        border-radius:18px;
-    }
-
-
-    /* Footer */
-
-    .footer{
-        padding:
-            50px 0
-            90px;
-    }
-
-    .footer-grid{
-        grid-template-columns:1fr;
-
-        gap:32px;
-    }
-
-    .footer-logo{
-        width:200px;
-        height:85px;
-    }
-
-
-    /* Floating WhatsApp */
-
-    .whatsapp-float{
-        right:14px;
-
-        bottom:82px;
-
-        width:54px;
-        height:54px;
-
-        font-size:23px;
-    }
-
-
-    /* Sticky bottom */
-
-    .sticky-bar{
-        display:block;
-    }
-}
-
-
-/* =========================================================
-   SMALL MOBILE
-   ========================================================= */
-
-@media(max-width:430px){
-
-    .container{
-        width:
-            calc(100% - 22px);
-    }
-
-    .brand-logo img{
-        width:170px;
-        height:58px;
-    }
-
-    .menu-toggle{
-        width:46px;
-        height:46px;
-    }
-
-    .page-banner{
-        padding:
-            118px
-            15px
-            60px;
-    }
-
-    .page-banner h1{
-        font-size:2.25rem;
-    }
-
-    .page-banner p{
-        font-size:.95rem;
-    }
-
-    .section-padding{
-        padding:55px 0;
-    }
-
-    .env-feature img{
-        height:220px;
-    }
-
-    .env-feature .content{
-        padding:20px;
-    }
-
-    .gallery-page-grid .item{
-        aspect-ratio:
-            4 / 3;
-    }
-
-    .mobile-menu{
-        width:90vw;
-    }
-}
-
-
-/* =========================================================
-   REDUCED MOTION
-   ========================================================= */
-
-@media(prefers-reduced-motion:reduce){
-
-    html{
-        scroll-behavior:auto;
-    }
-
-    *,
-    *::before,
-    *::after{
-        transition:none !important;
-        animation:none !important;
-    }
-}
-
-</style>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Environment & Gallery | BrightRoots Kids Care</title>
+    <meta name="description" content="Explore the safe, secure and loving learning environment, play areas, hygiene, safety and gallery at BrightRoots Kids Care in Tirupattur." />
+
+    <!-- Font Awesome for social icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+    <style>
+        /* ============================================================
+           BRIGHTROOTS KIDS CARE — ENVIRONMENT PAGE STYLES
+           ============================================================ */
+
+        @import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Nunito+Sans:wght@400;600;700;800&family=Poppins:wght@500;600;700;800&display=swap');
+
+        :root {
+            --navy: #142A5A;
+            --navy-dark: #0A1A3A;
+            --pink: #D7195B;
+            --pink-dark: #B01345;
+            --pink-glow: #f03a7a;
+            --pink-light: #fde8f1;
+            --gold: #F5A400;
+            --gold-glow: #ffd966;
+            --gold-light: #fff3d6;
+            --green: #4A9B45;
+            --green-glow: #5fd07a;
+            --green-light: #e3f7ec;
+            --blue: #28A9D6;
+            --blue-glow: #5ac8f0;
+            --blue-light: #eaf8fd;
+            --cream: #FFFCF8;
+            --white: #fff;
+            --text: #374151;
+            --muted: #6B7280;
+            --gray-500: #6B7280;
+            --line: #E8EAF0;
+            --shadow: 0 10px 30px rgba(20, 42, 90, .09);
+            --shadow-lg: 0 18px 45px rgba(20, 42, 90, .14);
+            --shadow-glow: 0 12px 28px rgba(215, 25, 91, .30);
+            --radius: 22px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+        body {
+            font-family: 'Nunito Sans', sans-serif;
+            color: var(--text);
+            background: #fff;
+            line-height: 1.65;
+            overflow-x: hidden;
+        }
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+        img {
+            display: block;
+            max-width: 100%;
+        }
+        .container {
+            width: min(1180px, calc(100% - 40px));
+            margin: auto;
+        }
+        .text-center {
+            text-align: center;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4 {
+            font-family: 'Baloo 2', cursive;
+            color: var(--navy);
+            line-height: 1.15;
+        }
+        h1 {
+            font-size: clamp(2.5rem, 5vw, 4.2rem);
+        }
+        h2 {
+            font-size: clamp(2rem, 3.5vw, 3rem);
+        }
+        h3 {
+            font-size: 1.65rem;
+        }
+        h4 {
+            font-size: 1.25rem;
+        }
+        p {
+            color: var(--muted);
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, var(--pink), var(--gold));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        /* ============================================================
+                   HEADER (consistent with home page)
+                   ============================================================ */
+        .header {
+            position: relative;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 2000;
+            padding: 18px 0 0;
+            background: transparent;
+        }
+        .header-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+        }
+
+        .brand-logo {
+            display: flex;
+            align-items: center;
+            flex-shrink: 0;
+            transition: transform .2s ease;
+        }
+        .brand-logo:hover {
+            transform: translateY(-2px);
+        }
+        .brand-logo img {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            object-fit: cover;
+            object-position: center;
+            border: 3px solid rgba(255, 255, 255, 0.6);
+            box-shadow: 0 8px 24px rgba(6, 24, 61, 0.16);
+        }
+        .brand-text {
+            margin-left: 12px;
+            line-height: 1.1;
+        }
+        .brand-text .main {
+            font-family: 'Baloo 2', cursive;
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--navy);
+            display: block;
+        }
+        .brand-text .sub {
+            font-family: 'Poppins', sans-serif;
+            font-size: .62rem;
+            font-weight: 700;
+            letter-spacing: .1em;
+            text-transform: uppercase;
+            color: var(--pink);
+            display: block;
+        }
+
+        .nav {
+            display: flex;
+            align-items: center;
+            gap: 2px;
+            background: rgba(255, 255, 255, .96);
+            border-radius: 999px;
+            padding: 6px;
+            box-shadow: 0 12px 30px rgba(6, 24, 61, .14);
+        }
+        .nav a {
+            padding: 10px 18px;
+            border-radius: 999px;
+            font-family: 'Poppins', sans-serif;
+            font-size: .88rem;
+            font-weight: 600;
+            color: var(--navy);
+            transition: .2s ease;
+        }
+        .nav a:hover {
+            color: var(--pink);
+        }
+        .nav a.active {
+            background: linear-gradient(135deg, var(--pink), var(--pink-glow));
+            color: #fff;
+        }
+
+        .header-phone {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: linear-gradient(135deg, var(--pink), var(--pink-glow));
+            color: #fff;
+            padding: 12px 22px;
+            border-radius: 999px;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+            font-size: .9rem;
+            box-shadow: var(--shadow-glow);
+            flex-shrink: 0;
+            transition: .2s ease;
+        }
+        .header-phone:hover {
+            transform: translateY(-2px);
+        }
+
+        .menu-toggle {
+            display: none;
+            width: 52px;
+            height: 52px;
+            border: none;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--pink), var(--pink-glow));
+            color: #fff;
+            cursor: pointer;
+            font-size: 24px;
+            line-height: 1;
+            box-shadow: var(--shadow-glow);
+            flex-shrink: 0;
+        }
+
+        /* Mobile menu */
+        .mobile-backdrop {
+            position: fixed;
+            inset: 0;
+            background: rgba(6, 18, 45, .6);
+            z-index: 2090;
+            display: none;
+        }
+        .mobile-backdrop.open {
+            display: block;
+        }
+
+        .mobile-menu {
+            position: fixed;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            width: min(330px, 88vw);
+            background: #fff;
+            z-index: 2100;
+            padding: 32px 24px;
+            transform: translateX(100%);
+            transition: transform .35s cubic-bezier(.22, .68, 0, 1);
+            box-shadow: -20px 0 60px rgba(0, 0, 0, .18);
+            overflow-y: auto;
+        }
+        .mobile-menu.open {
+            transform: translateX(0);
+        }
+        .mobile-close {
+            position: absolute;
+            top: 16px;
+            right: 16px;
+            width: 40px;
+            height: 40px;
+            border: none;
+            border-radius: 50%;
+            background: #f0f2f7;
+            color: var(--navy);
+            cursor: pointer;
+            font-size: 18px;
+        }
+        .mobile-logo {
+            text-align: center;
+            padding: 6px 0 22px;
+        }
+        .mobile-logo img {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin: 0 auto;
+            border: 3px solid var(--pink-light);
+            box-shadow: 0 8px 20px rgba(6, 24, 61, .12);
+        }
+        .mobile-menu>a {
+            display: block;
+            padding: 14px 4px;
+            border-bottom: 1px solid #edf0f4;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            color: var(--navy);
+        }
+        .mobile-menu>a:hover,
+        .mobile-menu>a.active {
+            color: var(--pink);
+        }
+        .mobile-actions {
+            display: grid;
+            gap: 12px;
+            margin-top: 28px;
+        }
+        .mobile-actions a {
+            display: block;
+            text-align: center;
+            border-radius: 999px;
+            padding: 14px 15px;
+            color: #fff !important;
+            background: linear-gradient(135deg, var(--pink), var(--pink-glow));
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+        }
+        .mobile-actions a.whatsapp {
+            background: linear-gradient(135deg, var(--green), var(--green-glow));
+        }
+
+        /* ============================================================
+                   PAGE BANNER — COLORFUL HERO
+                   ============================================================ */
+        .page-banner {
+            position: relative;
+            overflow: hidden;
+            padding: 100px 0 90px;
+            text-align: center;
+            background:
+                radial-gradient(circle at 15% 20%, rgba(40, 169, 214, .15), transparent 30%),
+                radial-gradient(circle at 85% 25%, rgba(215, 25, 91, .15), transparent 30%),
+                radial-gradient(circle at 50% 80%, rgba(245, 164, 0, .14), transparent 30%),
+                linear-gradient(135deg, #f0f8ff 0%, #fff 40%, #fef9f0 70%, #fff5f7 100%);
+        }
+        .page-banner:before,
+        .page-banner:after {
+            content: "";
+            position: absolute;
+            border-radius: 50%;
+            pointer-events: none;
+        }
+        .page-banner:before {
+            width: 320px;
+            height: 320px;
+            background: rgba(40, 169, 214, .07);
+            left: -140px;
+            top: -120px;
+        }
+        .page-banner:after {
+            width: 360px;
+            height: 360px;
+            background: rgba(215, 25, 91, .06);
+            right: -140px;
+            bottom: -160px;
+        }
+
+        /* Decorative floating elements */
+        .page-banner .deco {
+            position: absolute;
+            font-size: 2.2rem;
+            opacity: .25;
+            z-index: 0;
+            pointer-events: none;
+            animation: float-deco 6s ease-in-out infinite;
+        }
+        .page-banner .deco.d1 {
+            top: 10%;
+            left: 6%;
+            color: var(--blue);
+            animation-delay: 0s;
+        }
+        .page-banner .deco.d2 {
+            top: 16%;
+            right: 8%;
+            color: var(--gold);
+            animation-delay: 1.2s;
+        }
+        .page-banner .deco.d3 {
+            bottom: 24%;
+            left: 10%;
+            color: var(--pink);
+            animation-delay: 2.4s;
+        }
+        .page-banner .deco.d4 {
+            bottom: 14%;
+            right: 6%;
+            color: var(--green);
+            animation-delay: 0.8s;
+        }
+        .page-banner .deco.d5 {
+            top: 42%;
+            left: 3%;
+            color: var(--pink);
+            animation-delay: 1.8s;
+            font-size: 1.6rem;
+        }
+        .page-banner .deco.d6 {
+            top: 38%;
+            right: 3%;
+            color: var(--gold);
+            animation-delay: 3s;
+            font-size: 1.6rem;
+        }
+
+        @keyframes float-deco {
+            0%,
+            100% {
+                transform: translateY(0) rotate(0deg);
+            }
+            50% {
+                transform: translateY(-18px) rotate(8deg);
+            }
+        }
+
+        .page-banner .container {
+            position: relative;
+            z-index: 1;
+        }
+
+        .page-banner .eyebrow {
+            display: inline-block;
+            padding: 8px 20px;
+            border-radius: 999px;
+            background: linear-gradient(135deg, var(--blue), var(--blue-glow));
+            color: #fff;
+            font-family: 'Poppins', sans-serif;
+            font-size: .8rem;
+            font-weight: 700;
+            letter-spacing: .08em;
+            text-transform: uppercase;
+            margin-bottom: 18px;
+            box-shadow: 0 8px 20px rgba(40, 169, 214, .30);
+        }
+
+        .page-banner h1 {
+            margin-bottom: 12px;
+            color: var(--navy);
+        }
+        .page-banner h1 .gradient-text {
+            background: linear-gradient(135deg, var(--blue), var(--pink));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        .page-banner p {
+            font-size: 1.15rem;
+            color: var(--muted);
+            max-width: 580px;
+            margin: 0 auto;
+            font-weight: 500;
+        }
+
+        .page-banner .banner-shape {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            line-height: 0;
+            z-index: 1;
+        }
+        .page-banner .banner-shape svg {
+            width: 100%;
+            height: 50px;
+            display: block;
+        }
+
+        /* ============================================================
+                   SECTION UTILITIES
+                   ============================================================ */
+        .section-padding {
+            padding: 82px 0;
+        }
+        .bg-cream {
+            background: var(--cream);
+        }
+
+        .eyebrow {
+            display: inline-block;
+            padding: 7px 15px;
+            border-radius: 999px;
+            background: var(--pink-light);
+            color: var(--pink);
+            font-family: 'Poppins', sans-serif;
+            font-size: .78rem;
+            font-weight: 700;
+            letter-spacing: .06em;
+            text-transform: uppercase;
+            margin-bottom: 14px;
+        }
+        .eyebrow.gold {
+            background: var(--gold-light);
+            color: #9a6800;
+        }
+        .eyebrow.blue {
+            background: var(--blue-light);
+            color: #1782aa;
+        }
+        .eyebrow.green {
+            background: var(--green-light);
+            color: #3d8239;
+        }
+
+        .section-title {
+            text-align: center;
+            max-width: 780px;
+            margin: 0 auto 45px;
+        }
+        .section-title p {
+            margin-top: 10px;
+            font-size: 1.06rem;
+        }
+
+        /* ============================================================
+                   BUTTONS
+                   ============================================================ */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            min-height: 50px;
+            padding: 12px 28px;
+            border: 0;
+            border-radius: 999px;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+            cursor: pointer;
+            transition: transform .2s ease, box-shadow .2s ease;
+        }
+        .btn:hover {
+            transform: translateY(-2px);
+        }
+        .btn-primary {
+            background: linear-gradient(135deg, var(--pink), var(--pink-glow));
+            color: #fff;
+            box-shadow: 0 10px 25px rgba(215, 25, 91, .28);
+        }
+        .btn-primary:hover {
+            box-shadow: 0 16px 35px rgba(215, 25, 91, .38);
+        }
+        .btn-white {
+            background: #fff;
+            color: var(--navy);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, .08);
+        }
+
+        /* ============================================================
+                   ENVIRONMENT FEATURES
+                   ============================================================ */
+        .env-feature-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+
+        .env-feature {
+            background: #fff;
+            border: 1px solid var(--line);
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: transform .3s ease, box-shadow .3s ease;
+        }
+        .env-feature:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--shadow-lg);
+        }
+        .env-feature img {
+            width: 100%;
+            height: 240px;
+            object-fit: cover;
+        }
+        .env-feature .content {
+            padding: 24px;
+        }
+        .env-feature h3 {
+            margin-bottom: 9px;
+            font-size: 1.25rem;
+        }
+        .env-feature p {
+            font-size: .96rem;
+        }
+
+        /* ============================================================
+                   ENVIRONMENT CTA MESSAGE
+                   ============================================================ */
+        .environment-message {
+            margin-top: 55px;
+            background: linear-gradient(135deg, var(--navy), #243d7a);
+            border-radius: 28px;
+            padding: 44px 40px;
+            text-align: center;
+            box-shadow: var(--shadow-lg);
+        }
+        .environment-message h2 {
+            color: #fff;
+            margin-bottom: 10px;
+        }
+        .environment-message p {
+            max-width: 700px;
+            margin: 0 auto;
+            color: rgba(255, 255, 255, .82);
+        }
+        .environment-message .btn {
+            margin-top: 22px;
+        }
+
+        /* ============================================================
+                   GALLERY
+                   ============================================================ */
+        .gallery-page-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
+        }
+        .gallery-page-grid .item {
+            position: relative;
+            aspect-ratio: 1 / 1;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            background: #eee;
+            cursor: pointer;
+        }
+        .gallery-page-grid .item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform .4s ease;
+        }
+        .gallery-page-grid .item:hover img {
+            transform: scale(1.06);
+        }
+        .gallery-page-grid .item .overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(215, 25, 91, .65), rgba(20, 42, 90, .65));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity .3s ease;
+        }
+        .gallery-page-grid .item:hover .overlay {
+            opacity: 1;
+        }
+        .gallery-page-grid .item .overlay span {
+            color: #fff;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+            font-size: .9rem;
+            letter-spacing: .04em;
+        }
+
+        /* ============================================================
+                   FOOTER
+                   ============================================================ */
+        .footer {
+            background: var(--navy-dark);
+            color: #fff;
+            padding: 60px 0 0;
+        }
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1.3fr 1fr 1fr 1.1fr 1.1fr;
+            gap: 34px;
+        }
+        .footer-logo-wrap {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 12px;
+        }
+        .footer-logo-wrap img {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid rgba(255, 255, 255, 0.15);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
+        .footer-logo-wrap .footer-brand-text {
+            line-height: 1.1;
+        }
+        .footer-logo-wrap .footer-brand-text .main {
+            font-family: 'Baloo 2', cursive;
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #fff;
+            display: block;
+        }
+        .footer-logo-wrap .footer-brand-text .sub {
+            font-family: 'Poppins', sans-serif;
+            font-size: .6rem;
+            font-weight: 700;
+            letter-spacing: .08em;
+            text-transform: uppercase;
+            color: var(--gold);
+            display: block;
+        }
+        .footer-brand p {
+            color: rgba(255, 255, 255, .7);
+            font-size: .92rem;
+            margin-bottom: 16px;
+            max-width: 300px;
+        }
+        .footer-social {
+            display: flex;
+            gap: 12px;
+            margin-top: 12px;
+        }
+        .footer-social a {
+            width: 44px;
+            height: 44px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            color: #fff;
+            font-size: 20px;
+            transition: transform .25s ease, box-shadow .25s ease;
+        }
+        .footer-social .facebook {
+            background: #1877f2;
+            box-shadow: 0 8px 18px rgba(24, 119, 242, .30);
+        }
+        .footer-social .instagram {
+            background: linear-gradient(135deg, #833ab4, #fd1d1d, #fcb045);
+            box-shadow: 0 8px 18px rgba(225, 48, 108, .30);
+        }
+        .footer-social .youtube {
+            background: #ff0000;
+            box-shadow: 0 8px 18px rgba(255, 0, 0, .28);
+        }
+        .footer-social a:hover {
+            transform: translateY(-4px) scale(1.05);
+        }
+        .footer-social .facebook:hover {
+            box-shadow: 0 12px 25px rgba(24, 119, 242, .45);
+        }
+        .footer-social .instagram:hover {
+            box-shadow: 0 12px 25px rgba(225, 48, 108, .45);
+        }
+        .footer-social .youtube:hover {
+            box-shadow: 0 12px 25px rgba(255, 0, 0, .40);
+        }
+
+        .footer h4 {
+            color: #fff;
+            font-family: 'Poppins', sans-serif;
+            font-size: .9rem;
+            text-transform: uppercase;
+            letter-spacing: .05em;
+            margin-bottom: 16px;
+        }
+        .footer ul li {
+            margin-bottom: 10px;
+        }
+        .footer ul li a {
+            color: rgba(255, 255, 255, .7);
+            font-size: .9rem;
+            transition: .2s ease;
+        }
+        .footer ul li a:hover {
+            color: var(--gold);
+        }
+        .footer-contact li {
+            display: flex;
+            gap: 10px;
+            align-items: flex-start;
+            color: rgba(255, 255, 255, .75);
+            font-size: .88rem;
+            margin-bottom: 12px;
+        }
+        .footer-contact li a {
+            color: rgba(255, 255, 255, .85);
+        }
+        .footer-contact .ic {
+            color: var(--gold);
+            flex-shrink: 0;
+        }
+        .footer-map {
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 10px 28px rgba(0, 0, 0, .25);
+        }
+        .footer-map iframe {
+            width: 100%;
+            height: 130px;
+            border: 0;
+            display: block;
+            filter: grayscale(.12);
+        }
+        .footer-bottom {
+            margin-top: 42px;
+            padding: 18px 0;
+            border-top: 1px solid rgba(255, 255, 255, .10);
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+        .footer-bottom p {
+            color: rgba(255, 255, 255, .5);
+            font-size: .82rem;
+        }
+
+        /* ============================================================
+                   STICKY BAR & WHATSAPP FLOAT
+                   ============================================================ */
+        .sticky-bar {
+            display: none;
+            position: fixed;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 1900;
+            background: rgba(255, 255, 255, .98);
+            border-top: 1px solid #e5e8ee;
+            box-shadow: 0 -8px 28px rgba(6, 24, 61, .10);
+        }
+        .sticky-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+        }
+        .sticky-grid a {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 66px;
+            font-size: .7rem;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+            color: var(--navy);
+        }
+        .sticky-grid a span {
+            font-size: 22px;
+            line-height: 1.2;
+        }
+        .sticky-grid a.whatsapp {
+            color: #16a34a;
+        }
+
+        .whatsapp-float {
+            position: fixed;
+            right: 22px;
+            bottom: 24px;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #25d366, #34e07a);
+            color: #fff;
+            font-size: 28px;
+            z-index: 1950;
+            box-shadow: 0 12px 30px rgba(37, 211, 102, .38);
+            transition: .25s ease;
+        }
+        .whatsapp-float:hover {
+            transform: scale(1.08);
+        }
+
+        /* ============================================================
+                   SCROLL ANIMATIONS
+                   ============================================================ */
+        .scroll-animate {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity .7s ease, transform .7s ease;
+        }
+        .scroll-animate.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ============================================================
+                   RESPONSIVE
+                   ============================================================ */
+        @media (max-width: 1100px) {
+            .footer-grid {
+                grid-template-columns: 1fr 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 900px) {
+            .nav {
+                display: none;
+            }
+            .menu-toggle {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            .header .container {
+                justify-content: space-between;
+            }
+            .header-phone {
+                display: none;
+            }
+            .env-feature-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .gallery-page-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+            .page-banner .deco {
+                display: none;
+            }
+        }
+
+        @media (max-width: 760px) {
+            .container {
+                width: min(100% - 28px, 600px);
+            }
+            .page-banner {
+                padding: 75px 0 60px;
+            }
+            .page-banner h1 {
+                font-size: 2.2rem;
+            }
+            .page-banner p {
+                font-size: 1rem;
+            }
+            .section-padding {
+                padding: 60px 0;
+            }
+            .section-title h2 {
+                font-size: 2rem;
+            }
+            .env-feature-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            .env-feature img {
+                height: 220px;
+            }
+            .environment-message {
+                padding: 30px 22px;
+                margin-top: 38px;
+            }
+            .environment-message h2 {
+                font-size: 1.8rem;
+            }
+            .gallery-page-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 14px;
+            }
+            .gallery-page-grid .item {
+                aspect-ratio: 4 / 3;
+            }
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 28px;
+            }
+            .footer {
+                padding-bottom: 90px;
+            }
+            .whatsapp-float {
+                right: 15px;
+                bottom: 78px;
+                width: 52px;
+                height: 52px;
+                font-size: 22px;
+            }
+            .sticky-bar {
+                display: block;
+            }
+            .footer-brand p {
+                max-width: 100%;
+            }
+        }
+
+        @media (max-width: 430px) {
+            .container {
+                width: calc(100% - 22px);
+            }
+            .page-banner {
+                padding: 70px 0 55px;
+            }
+            .page-banner h1 {
+                font-size: 1.9rem;
+            }
+            .page-banner p {
+                font-size: .95rem;
+            }
+            .section-padding {
+                padding: 50px 0;
+            }
+            .gallery-page-grid {
+                grid-template-columns: 1fr;
+                gap: 14px;
+            }
+            .gallery-page-grid .item {
+                aspect-ratio: 4 / 3;
+            }
+            .env-feature img {
+                height: 200px;
+            }
+            .mobile-menu {
+                width: 90vw;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            html {
+                scroll-behavior: auto;
+            }
+            *,
+            *::before,
+            *::after {
+                transition: none !important;
+                animation: none !important;
+            }
+        }
+    </style>
 </head>
-
-
 <body>
 
-
-<!-- =======================================================
-     HEADER
-     ======================================================= -->
-
-<header class="header" id="header">
-
-    <div class="container header-inner">
-
-        <!-- LOGO -->
-
-        <a
-            href="index.html"
-            class="brand-logo"
-            aria-label="BrightRoots Kids Care Home"
-        >
-            <img
-                src="images/kidslogo.jpg"
-                alt="BrightRoots Kids Care"
-            >
-        </a>
-
-
-        <!-- DESKTOP NAVIGATION -->
-
-        <nav
-            class="nav"
-            aria-label="Main navigation"
-        >
-
-            <a href="index.html">
-                Home
-            </a>
-
-            <a href="about.html">
-                About
-            </a>
-
-            <a href="programs.html">
-                Programs
-            </a>
-
-            <a
-                href="environment.html"
-                class="active"
-                aria-current="page"
-            >
-                Environment
-            </a>
-
-            <a href="admissions.html">
-                Admissions
-            </a>
-
-        </nav>
-
-
-        <!-- MOBILE MENU BUTTON -->
-
-        <button
-            class="menu-toggle"
-            id="menuToggle"
-            type="button"
-            aria-label="Open menu"
-            aria-expanded="false"
-        >
-            ☰
-        </button>
-
-    </div>
-
-</header>
-
-
-<!-- =======================================================
-     MOBILE BACKDROP
-     ======================================================= -->
-
-<div
-    class="mobile-backdrop"
-    id="mobileBackdrop"
-></div>
-
-
-<!-- =======================================================
-     MOBILE MENU
-     ======================================================= -->
-
-<aside
-    class="mobile-menu"
-    id="mobileMenu"
-    aria-hidden="true"
->
-
-    <button
-        class="mobile-close"
-        id="closeMenu"
-        type="button"
-        aria-label="Close menu"
-    >
-        ✕
-    </button>
-
-
-    <!-- MOBILE LOGO -->
-
-    <div class="mobile-logo">
-
-        <img
-            src="images/kidslogo.jpg"
-            alt="BrightRoots Kids Care"
-        >
-
-    </div>
-
-
-    <!-- LINKS -->
-
-    <a href="index.html">
-        Home
-    </a>
-
-    <a href="about.html">
-        About
-    </a>
-
-    <a href="programs.html">
-        Programs
-    </a>
-
-    <a
-        href="environment.html"
-        class="active"
-        aria-current="page"
-    >
-        Environment
-    </a>
-
-    <a href="admissions.html">
-        Admissions
-    </a>
-
-
-    <!-- MOBILE ACTIONS -->
-
-    <div class="mobile-actions">
-
-        <a href="admissions.html">
-            📅 Book a School Visit
-        </a>
-
-        <a
-            class="whatsapp"
-            href="https://wa.me/918438142540?text=Hello%20BrightRoots%20Kids%20Care%2C%20I%20would%20like%20to%20know%20more%20about%20BrightRoots%20Kids%20Care."
-            target="_blank"
-            rel="noopener"
-        >
-            💬 WhatsApp Us
-        </a>
-
-    </div>
-
-</aside>
-
-
-
-<main>
-
-
-<!-- =======================================================
-     PAGE BANNER
-     ======================================================= -->
-
-<section class="page-banner">
-
-    <div class="container">
-
-        <span class="eyebrow">
-            Our Environment
-        </span>
-
-        <h1>
-            A Safe, Secure &amp;
-            <span class="gradient-text">
-                Loving Environment
-            </span>
-        </h1>
-
-        <p>
-            Safe, Secure &amp; Loving —
-            Where children feel at home
-        </p>
-
-    </div>
-
-</section>
-
-
-
-<!-- =======================================================
-     ENVIRONMENT FEATURES
-     ======================================================= -->
-
-<section class="section-padding">
-
-    <div class="container">
-
-
-        <div class="section-title">
-
-            <span class="eyebrow">
-                Our Space
-            </span>
-
-            <h2>
-                Safe, Secure &amp;
-                <span class="gradient-text">
-                    Loving Environment
+    <!-- ============================================================
+    HEADER (consistent with home page)
+    ============================================================ -->
+    <header class="header" id="header">
+        <div class="container header-inner">
+            <a href="index.html" class="brand-logo" aria-label="BrightRoots Kids Care Home">
+                <img src="images/logo.jpg" alt="BrightRoots Kids Care" />
+                <span class="brand-text">
+                    <span class="main">BrightRoots</span>
+                    <span class="sub">Kids Care</span>
                 </span>
-            </h2>
-
-            <p>
-                Every detail is designed with
-                your child's safety and happiness
-                in mind.
-            </p>
-
-        </div>
-
-
-
-        <div class="env-feature-grid">
-
-
-            <!-- CLASSROOM -->
-
-            <article class="env-feature">
-
-                <img
-                    src="images/classroom.jpg"
-                    alt="BrightRoots child-friendly classrooms"
-                    loading="lazy"
-                >
-
-                <div class="content">
-
-                    <h3>
-                        🏫 Child-Friendly Classrooms
-                    </h3>
-
-                    <p>
-                        Child-safe, modern classrooms
-                        designed for interactive and
-                        engaging learning experiences.
-                    </p>
-
-                </div>
-
-            </article>
-
-
-
-            <!-- PLAY AREA -->
-
-            <article class="env-feature">
-
-                <img
-                    src="images/play-area.jpg"
-                    alt="BrightRoots play area"
-                    loading="lazy"
-                >
-
-                <div class="content">
-
-                    <h3>
-                        🌳 Play Areas
-                    </h3>
-
-                    <p>
-                        Secure indoor and outdoor
-                        spaces for active play,
-                        exploration and physical
-                        development.
-                    </p>
-
-                </div>
-
-            </article>
-
-
-
-            <!-- SAFETY -->
-
-            <article class="env-feature">
-
-                <img
-                    src="images/gallery2.jpg"
-                    alt="BrightRoots safety environment"
-                    loading="lazy"
-                >
-
-                <div class="content">
-
-                    <h3>
-                        🛡️ Safety First
-                    </h3>
-
-                    <p>
-                        Child-safe classrooms with
-                        CCTV, secure entry and trained
-                        staff for complete peace of mind.
-                    </p>
-
-                </div>
-
-            </article>
-
-
-
-            <!-- HYGIENE -->
-
-            <article class="env-feature">
-
-                <img
-                    src="images/gallery3.jpg"
-                    alt="BrightRoots hygienic environment"
-                    loading="lazy"
-                >
-
-                <div class="content">
-
-                    <h3>
-                        🧼 Hygienic Campus
-                    </h3>
-
-                    <p>
-                        Regular sanitation, clean
-                        facilities and strict hygiene
-                        protocols to keep your child
-                        healthy.
-                    </p>
-
-                </div>
-
-            </article>
-
-
-
-            <!-- LEARNING ENVIRONMENT -->
-
-            <article class="env-feature">
-
-                <img
-                    src="images/activities.jpg"
-                    alt="BrightRoots learning activities"
-                    loading="lazy"
-                >
-
-                <div class="content">
-
-                    <h3>
-                        📚 Learning Environment
-                    </h3>
-
-                    <p>
-                        Stimulating, colorful and
-                        resource-rich spaces that
-                        encourage curiosity and discovery.
-                    </p>
-
-                </div>
-
-            </article>
-
-
-
-            <!-- DAY CARE -->
-
-            <article class="env-feature">
-
-                <img
-                    src="images/gallery4.jpg"
-                    alt="BrightRoots day care environment"
-                    loading="lazy"
-                >
-
-                <div class="content">
-
-                    <h3>
-                        🌙 Day Care Area
-                    </h3>
-
-                    <p>
-                        Warm, home-like spaces for
-                        rest, play and care with a
-                        nurturing atmosphere.
-                    </p>
-
-                </div>
-
-            </article>
-
-
-        </div>
-
-
-
-        <!-- SIMPLE ENVIRONMENT MESSAGE -->
-
-        <div class="environment-message">
-
-            <h2>
-                Come &amp; See Our Environment
-            </h2>
-
-            <p>
-                A school visit gives parents an
-                opportunity to see the classrooms,
-                play areas and learning spaces
-                themselves.
-            </p>
-
-            <a
-                href="admissions.html"
-                class="btn btn-primary"
-            >
-                📅 Book a School Visit
             </a>
 
+            <nav class="nav" aria-label="Main navigation">
+                <a href="index.html">Home</a>
+                <a href="about.html">About Us</a>
+                <a href="programs.html">Programs</a>
+                <a href="environment.html" class="active">Environment</a>
+                <a href="franchise.html">Franchise</a>
+                <a href="admissions.html#contact">Admissions</a>
+            </nav>
+
+            <a class="header-phone" href="tel:918438142540">📞 84381 42540</a>
+
+            <button class="menu-toggle" id="menuToggle" type="button" aria-label="Open menu" aria-expanded="false">☰</button>
+        </div>
+    </header>
+
+    <!-- ============================================================
+    MOBILE MENU
+    ============================================================ -->
+    <div class="mobile-backdrop" id="mobileBackdrop"></div>
+    <aside class="mobile-menu" id="mobileMenu" aria-hidden="true">
+        <button class="mobile-close" id="closeMenu" type="button" aria-label="Close menu">✕</button>
+        <div class="mobile-logo">
+            <img src="images/kidslogo.jpg" alt="BrightRoots Kids Care" />
+        </div>
+        <a href="index.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="programs.html">Programs</a>
+        <a href="environment.html" class="active">Environment</a>
+        <a href="franchise.html">Franchise</a>
+        <a href="admissions.html#contact">Admissions</a>
+        <div class="mobile-actions">
+            <a href="admissions.html">📅 Enquire Now</a>
+            <a class="whatsapp" href="https://wa.me/918438142540?text=Hello%20BrightRoots%20Kids%20Care%2C%20I%20would%20like%20to%20know%20more%20about%20admission%20for%20my%20child." target="_blank" rel="noopener">💬 WhatsApp Us</a>
+        </div>
+    </aside>
+
+    <!-- ============================================================
+    PAGE BANNER — COLORFUL HERO
+    ============================================================ -->
+    <section class="page-banner">
+        <span class="deco d1">✦</span>
+        <span class="deco d2">❀</span>
+        <span class="deco d3">★</span>
+        <span class="deco d4">✿</span>
+        <span class="deco d5">✦</span>
+        <span class="deco d6">❀</span>
+
+        <div class="container">
+            <span class="eyebrow">🌿 Our Environment</span>
+            <h1>A Safe, Secure &amp; <span class="gradient-text">Loving Environment</span></h1>
+            <p>Safe, Secure &amp; Loving — Where children feel at home</p>
         </div>
 
+        <div class="banner-shape">
+            <svg viewBox="0 0 1440 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0 50L60 45C120 40 240 30 360 25C480 20 600 20 720 25C840 30 960 40 1080 40C1200 40 1320 35 1380 32.5L1440 30V0H0V50Z" fill="#fff" />
+            </svg>
+        </div>
+    </section>
+
+    <!-- ============================================================
+    ENVIRONMENT FEATURES
+    ============================================================ -->
+    <section class="section-padding">
+        <div class="container">
+            <div class="section-title scroll-animate">
+                <span class="eyebrow blue">Our Space</span>
+                <h2>Safe, Secure &amp; <span class="gradient-text">Loving Environment</span></h2>
+                <p>Every detail is designed with your child's safety and happiness in mind.</p>
+            </div>
+
+            <div class="env-feature-grid">
+                <!-- Classroom -->
+                <article class="env-feature scroll-animate" data-delay="100">
+                    <img src="images/classroom.jpg" alt="BrightRoots child-friendly classrooms" loading="lazy" />
+                    <div class="content">
+                        <h3>🏫 Child-Friendly Classrooms</h3>
+                        <p>Child-safe, modern classrooms designed for interactive and engaging learning experiences.</p>
+                    </div>
+                </article>
+
+                <!-- Play Area -->
+                <article class="env-feature scroll-animate" data-delay="150">
+                    <img src="images/play-area.jpg" alt="BrightRoots play area" loading="lazy" />
+                    <div class="content">
+                        <h3>🌳 Play Areas</h3>
+                        <p>Secure indoor and outdoor spaces for active play, exploration and physical development.</p>
+                    </div>
+                </article>
+
+                <!-- Safety -->
+                <article class="env-feature scroll-animate" data-delay="200">
+                    <img src="images/gallery2.jpg" alt="BrightRoots safety environment" loading="lazy" />
+                    <div class="content">
+                        <h3>🛡️ Safety First</h3>
+                        <p>Child-safe classrooms with CCTV, secure entry and trained staff for complete peace of mind.</p>
+                    </div>
+                </article>
+
+                <!-- Hygiene -->
+                <article class="env-feature scroll-animate" data-delay="250">
+                    <img src="images/gallery3.jpg" alt="BrightRoots hygienic environment" loading="lazy" />
+                    <div class="content">
+                        <h3>🧼 Hygienic Campus</h3>
+                        <p>Regular sanitation, clean facilities and strict hygiene protocols to keep your child healthy.</p>
+                    </div>
+                </article>
+
+                <!-- Learning Environment -->
+                <article class="env-feature scroll-animate" data-delay="300">
+                    <img src="images/activities.jpg" alt="BrightRoots learning activities" loading="lazy" />
+                    <div class="content">
+                        <h3>📚 Learning Environment</h3>
+                        <p>Stimulating, colorful and resource-rich spaces that encourage curiosity and discovery.</p>
+                    </div>
+                </article>
+
+                <!-- Day Care -->
+                <article class="env-feature scroll-animate" data-delay="350">
+                    <img src="images/gallery4.jpg" alt="BrightRoots day care environment" loading="lazy" />
+                    <div class="content">
+                        <h3>🌙 Day Care Area</h3>
+                        <p>Warm, home-like spaces for rest, play and care with a nurturing atmosphere.</p>
+                    </div>
+                </article>
+            </div>
+
+            <!-- Environment CTA Message -->
+            <div class="environment-message scroll-animate" data-delay="400">
+                <h2>Come &amp; See Our Environment</h2>
+                <p>A school visit gives parents an opportunity to see the classrooms, play areas and learning spaces themselves.</p>
+                <a href="admissions.html" class="btn btn-primary">📅 Book a School Visit</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+    FULL GALLERY
+    ============================================================ -->
+    <section class="section-padding bg-cream" id="gallery">
+        <div class="container">
+            <div class="section-title scroll-animate">
+                <span class="eyebrow gold">Gallery</span>
+                <h2>Our <span class="gradient-text">Gallery</span></h2>
+                <p>Moments of joy, learning and growth at BrightRoots.</p>
+            </div>
+
+            <div class="gallery-page-grid">
+                <div class="item scroll-animate" data-delay="100">
+                    <img src="images/gallery1.jpg" alt="BrightRoots classroom activity" loading="lazy" />
+                    <div class="overlay"><span>📸 Activities</span></div>
+                </div>
+                <div class="item scroll-animate" data-delay="150">
+                    <img src="images/gallery2.jpg" alt="BrightRoots learning session" loading="lazy" />
+                    <div class="overlay"><span>📸 Learning</span></div>
+                </div>
+                <div class="item scroll-animate" data-delay="200">
+                    <img src="images/gallery3.jpg" alt="BrightRoots play time" loading="lazy" />
+                    <div class="overlay"><span>📸 Play Time</span></div>
+                </div>
+                <div class="item scroll-animate" data-delay="250">
+                    <img src="images/gallery4.jpg" alt="BrightRoots celebration" loading="lazy" />
+                    <div class="overlay"><span>📸 Celebrations</span></div>
+                </div>
+                <div class="item scroll-animate" data-delay="300">
+                    <img src="images/gallery5.jpg" alt="BrightRoots art and craft" loading="lazy" />
+                    <div class="overlay"><span>📸 Art &amp; Craft</span></div>
+                </div>
+                <div class="item scroll-animate" data-delay="350">
+                    <img src="images/gallery6.jpg" alt="BrightRoots outdoor fun" loading="lazy" />
+                    <div class="overlay"><span>📸 Outdoor Fun</span></div>
+                </div>
+                <div class="item scroll-animate" data-delay="400">
+                    <img src="images/gallery7.jpg" alt="BrightRoots classroom" loading="lazy" />
+                    <div class="overlay"><span>📸 Classroom</span></div>
+                </div>
+                <div class="item scroll-animate" data-delay="450">
+                    <img src="images/gallery8.jpg" alt="BrightRoots play area" loading="lazy" />
+                    <div class="overlay"><span>📸 Play Area</span></div>
+                </div>
+                <div class="item scroll-animate" data-delay="500">
+                    <img src="images/gallery9.jpg" alt="BrightRoots activities" loading="lazy" />
+                    <div class="overlay"><span>📸 Activities</span></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+    FOOTER
+    ============================================================ -->
+    <footer class="footer" id="contact">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="footer-logo-wrap">
+                        <img src="images/logo1.jpg" alt="BrightRoots Kids Care" />
+                        <div class="footer-brand-text">
+                        </div>
+                    </div>
+                    <p>BrightRoots Kids Care — where little minds play, learn, grow and thrive in a safe and caring environment.</p>
+                    <div class="footer-social">
+                        <a href="https://www.facebook.com/people/BrightRoots-Kids-Care-PreSchool-Day-Care/61591009919658/" target="_blank" rel="noopener noreferrer" aria-label="Facebook" class="facebook">
+                            <i class="fa-brands fa-facebook-f"></i>
+                        </a>
+                        <a href="https://www.instagram.com/brightrootskidscare_tirupattur/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="instagram">
+                            <i class="fa-brands fa-instagram"></i>
+                        </a>
+                        <a href="#" aria-label="YouTube" class="youtube">
+                            <i class="fa-brands fa-youtube"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div>
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="programs.html">Programs</a></li>
+                        <li><a href="environment.html">Environment</a></li>
+                        <li><a href="franchise.html">Franchise</a></li>
+                        <li><a href="admissions.html#contact">Admissions</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4>Programs</h4>
+                    <ul>
+                        <li><a href="programs.html#play-group">Play Group</a></li>
+                        <li><a href="programs.html#pre-kg">Pre-KG</a></li>
+                        <li><a href="programs.html#lkg">LKG</a></li>
+                        <li><a href="programs.html#ukg">UKG</a></li>
+                        <li><a href="programs.html#day-care">Day Care</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4>Contact Us</h4>
+                    <ul class="footer-contact">
+                        <li><span class="ic">📞</span> <a href="tel:918438142540">84381 42540</a></li>
+                        <li><span class="ic">✉️</span> <a href="mailto:info@brightrootskidscare.com">info@brightrootskidscare.com</a></li>
+                        <li><span class="ic">📍</span> 19A/170 Ashok Nagar, Near KGG Hospital, Tirupattur 635601</li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4>Our Location</h4>
+                    <div class="footer-map">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3895.0567788403832!2d78.5645547758528!3d12.512395624778083!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bac552135dbe67d%3A0x9c362f811794a828!2sBRIGHTROOTS%20KIDS%20CARE!5e0!3m2!1sen!2sin!4v1787928396020!5m2!1sen!2sin" loading="lazy" title="BrightRoots Kids Care location map"></iframe>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>© <span id="year"></span> BrightRoots Kids Care. All Rights Reserved.</p>
+                <p>Designed with ❤️ for Bright Beginnings.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ============================================================
+    STICKY BAR & WHATSAPP FLOAT
+    ============================================================ -->
+    <div class="sticky-bar">
+        <div class="sticky-grid">
+            <a href="tel:918438142540"><span>📞</span>Call</a>
+            <a class="whatsapp" href="https://wa.me/918438142540?text=Hello%20BrightRoots%20Kids%20Care%2C%20I%20would%20like%20to%20know%20more%20about%20admission%20for%20my%20child." target="_blank" rel="noopener"><span>💬</span>WhatsApp</a>
+            <a href="https://maps.google.com/maps?q=19A/170+Ashok+Nagar,+Tirupattur" target="_blank" rel="noopener"><span>📍</span>Directions</a>
+        </div>
     </div>
 
-</section>
-
-
-
-<!-- =======================================================
-     FULL GALLERY
-     ======================================================= -->
-
-<section
-    class="section-padding bg-cream"
-    id="gallery"
->
-
-    <div class="container">
-
-
-        <div class="section-title">
-
-            <span class="eyebrow gold">
-                Gallery
-            </span>
-
-            <h2>
-                Our
-                <span class="gradient-text">
-                    Gallery
-                </span>
-            </h2>
-
-            <p>
-                Moments of joy, learning and
-                growth at BrightRoots.
-            </p>
-
-        </div>
-
-
-
-        <div class="gallery-page-grid">
-
-
-            <div class="item">
-
-                <img
-                    src="images/gallery1.jpg"
-                    alt="BrightRoots classroom activity"
-                    loading="lazy"
-                >
-
-            </div>
-
-
-            <div class="item">
-
-                <img
-                    src="images/gallery2.jpg"
-                    alt="BrightRoots learning session"
-                    loading="lazy"
-                >
-
-            </div>
-
-
-            <div class="item">
-
-                <img
-                    src="images/gallery3.jpg"
-                    alt="BrightRoots play time"
-                    loading="lazy"
-                >
-
-            </div>
-
-
-            <div class="item">
-
-                <img
-                    src="images/gallery4.jpg"
-                    alt="BrightRoots celebration"
-                    loading="lazy"
-                >
-
-            </div>
-
-
-            <div class="item">
-
-                <img
-                    src="images/gallery5.jpg"
-                    alt="BrightRoots art and craft"
-                    loading="lazy"
-                >
-
-            </div>
-
-
-            <div class="item">
-
-                <img
-                    src="images/gallery6.jpg"
-                    alt="BrightRoots outdoor fun"
-                    loading="lazy"
-                >
-
-            </div>
-
-
-            <div class="item">
-
-                <img
-                    src="images/gallery7.jpg"
-                    alt="BrightRoots classroom"
-                    loading="lazy"
-                >
-
-            </div>
-
-
-            <div class="item">
-
-                <img
-                    src="images/gallery8.jpg"
-                    alt="BrightRoots play area"
-                    loading="lazy"
-                >
-
-            </div>
-
-
-            <div class="item">
-
-                <img
-                    src="images/gallery9.jpg"
-                    alt="BrightRoots activities"
-                    loading="lazy"
-                >
-
-            </div>
-
-
-        </div>
-
-    </div>
-
-</section>
-
-
-</main>
-
-
-
-<!-- =======================================================
-     FOOTER
-     ======================================================= -->
-
-<footer class="footer">
-
-    <div class="container">
-
-        <div class="footer-grid">
-
-
-            <!-- BRAND -->
-
-            <div>
-
-                <img
-                    class="footer-logo"
-                    src="images/kidslogo.jpg"
-                    alt="BrightRoots Kids Care"
-                >
-
-                <p>
-                    BrightRoots Kids Care
-                    <br>
-                    Where Little Minds Grow and Thrive.
-                </p>
-
-            </div>
-
-
-
-            <!-- QUICK LINKS -->
-
-            <div>
-
-                <h3>
-                    Quick Links
-                </h3>
-
-                <ul>
-
-                    <li>
-                        <a href="index.html">
-                            Home
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="about.html">
-                            About Us
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="programs.html">
-                            Programs
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="environment.html">
-                            Environment
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="admissions.html">
-                            Admissions
-                        </a>
-                    </li>
-
-                </ul>
-
-            </div>
-
-
-
-            <!-- PROGRAMS -->
-
-            <div>
-
-                <h3>
-                    Programs
-                </h3>
-
-                <ul>
-
-                    <li>
-                        <a href="programs.html#play-group">
-                            Play Group
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="programs.html#pre-kg">
-                            Pre-KG
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="programs.html#lkg">
-                            LKG
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="programs.html#ukg">
-                            UKG
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="programs.html#day-care">
-                            Day Care
-                        </a>
-                    </li>
-
-                </ul>
-
-            </div>
-
-
-
-            <!-- CONTACT -->
-
-            <div>
-
-                <h3>
-                    Contact
-                </h3>
-
-                <p>
-                    📍 19A/170 Ashok Nagar,
-                    Near KGG Hospital,
-                    Tirupattur 635601
-                </p>
-
-                <p style="margin-top:10px">
-
-                    📞
-
-                    <a href="tel:918438142540">
-                        84381 42540
-                    </a>
-
-                </p>
-
-                <p style="margin-top:10px">
-
-                    ✉️
-
-                    <a href="mailto:info@brightrootskidscare.com">
-                        info@brightrootskidscare.com
-                    </a>
-
-                </p>
-
-            </div>
-
-
-        </div>
-
-
-
-        <!-- FOOTER BOTTOM -->
-
-        <div class="footer-bottom">
-
-            <p>
-                ©
-                <span id="year"></span>
-                BrightRoots Kids Care.
-                All rights reserved.
-            </p>
-
-        </div>
-
-    </div>
-
-</footer>
-
-
-
-<!-- =======================================================
-     FLOATING WHATSAPP
-     ======================================================= -->
-
-<a
-    class="whatsapp-float"
-    href="https://wa.me/918438142540?text=Hello%20BrightRoots%20Kids%20Care%2C%20I%20would%20like%20to%20know%20more%20about%20BrightRoots%20Kids%20Care."
-    target="_blank"
-    rel="noopener"
-    aria-label="WhatsApp"
->
-    💬
-</a>
-
-
-
-<!-- =======================================================
-     MOBILE STICKY BAR
-     ======================================================= -->
-
-<div
-    class="sticky-bar"
-    aria-label="Quick actions"
->
-
-    <div class="sticky-grid">
-
-        <a href="tel:918438142540">
-
-            <span>
-                📞
-            </span>
-
-            Call
-
-        </a>
-
-
-        <a
-            class="whatsapp"
-            href="https://wa.me/918438142540?text=Hello%20BrightRoots%20Kids%20Care%2C%20I%20would%20like%20to%20know%20more%20about%20BrightRoots%20Kids%20Care."
-            target="_blank"
-            rel="noopener"
-        >
-
-            <span>
-                💬
-            </span>
-
-            WhatsApp
-
-        </a>
-
-
-        <a
-            href="https://maps.google.com/maps?q=19A/170+Ashok+Nagar,+Tirupattur"
-            target="_blank"
-            rel="noopener"
-        >
-
-            <span>
-                📍
-            </span>
-
-            Directions
-
-        </a>
-
-    </div>
-
-</div>
-
-
-
-<!-- =======================================================
-     JAVASCRIPT
-     ======================================================= -->
-
-<script>
-
-document.addEventListener(
-    'DOMContentLoaded',
-    function(){
-
-        const header =
-            document.getElementById('header');
-
-        const menuToggle =
-            document.getElementById('menuToggle');
-
-        const mobileMenu =
-            document.getElementById('mobileMenu');
-
-        const mobileBackdrop =
-            document.getElementById('mobileBackdrop');
-
-        const closeMenu =
-            document.getElementById('closeMenu');
-
-
-        /* ===============================================
-           MOBILE MENU
-           =============================================== */
-
-        function setMenu(open){
-
-            mobileMenu.classList.toggle(
-                'open',
-                open
-            );
-
-            mobileBackdrop.classList.toggle(
-                'open',
-                open
-            );
-
-            mobileMenu.setAttribute(
-                'aria-hidden',
-                String(!open)
-            );
-
-            menuToggle.setAttribute(
-                'aria-expanded',
-                String(open)
-            );
-
-            menuToggle.setAttribute(
-                'aria-label',
-                open
-                    ? 'Close menu'
-                    : 'Open menu'
-            );
-
-            document.body.classList.toggle(
-                'menu-open',
-                open
-            );
-
-        }
-
-
-        menuToggle.addEventListener(
-            'click',
-            function(){
-
-                const isOpen =
-                    mobileMenu.classList.contains(
-                        'open'
-                    );
-
-                setMenu(!isOpen);
-
+    <a class="whatsapp-float" href="https://wa.me/918438142540?text=Hello%20BrightRoots%20Kids%20Care%2C%20I%20would%20like%20to%20know%20more%20about%20admission%20for%20my%20child." target="_blank" rel="noopener" aria-label="WhatsApp">💬</a>
+
+    <!-- ============================================================
+    JAVASCRIPT
+    ============================================================ -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+
+            /* ----- Mobile menu ----- */
+            var menuToggle = document.getElementById('menuToggle');
+            var mobileMenu = document.getElementById('mobileMenu');
+            var mobileBackdrop = document.getElementById('mobileBackdrop');
+            var closeMenu = document.getElementById('closeMenu');
+
+            function setMenu(open) {
+                mobileMenu.classList.toggle('open', open);
+                mobileBackdrop.classList.toggle('open', open);
+                mobileMenu.setAttribute('aria-hidden', String(!open));
+                menuToggle.setAttribute('aria-expanded', String(open));
+                document.body.classList.toggle('menu-open', open);
             }
-        );
-
-
-        closeMenu.addEventListener(
-            'click',
-            function(){
-
-                setMenu(false);
-
+            if (menuToggle) {
+                menuToggle.addEventListener('click', function() { setMenu(true); });
             }
-        );
-
-
-        mobileBackdrop.addEventListener(
-            'click',
-            function(){
-
-                setMenu(false);
-
+            if (closeMenu) {
+                closeMenu.addEventListener('click', function() { setMenu(false); });
             }
-        );
-
-
-        /* Close menu after navigation */
-
-        mobileMenu
-            .querySelectorAll('a')
-            .forEach(
-                function(link){
-
-                    link.addEventListener(
-                        'click',
-                        function(){
-
-                            setMenu(false);
-
-                        }
-                    );
-
-                }
-            );
-
-
-        /* ESC closes menu */
-
-        document.addEventListener(
-            'keydown',
-            function(event){
-
-                if(
-                    event.key === 'Escape'
-                ){
-
-                    setMenu(false);
-
-                }
-
+            if (mobileBackdrop) {
+                mobileBackdrop.addEventListener('click', function() { setMenu(false); });
             }
-        );
-
-
-        /* ===============================================
-           HEADER SCROLL
-           =============================================== */
-
-        function updateHeader(){
-
-            if(
-                window.scrollY > 30
-            ){
-
-                header.classList.add(
-                    'scrolled'
-                );
-
-            }else{
-
-                header.classList.remove(
-                    'scrolled'
-                );
-
+            if (mobileMenu) {
+                mobileMenu.querySelectorAll('a').forEach(function(a) {
+                    a.addEventListener('click', function() { setMenu(false); });
+                });
             }
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape') setMenu(false);
+            });
 
-        }
+            /* ----- Footer year ----- */
+            var yearEl = document.getElementById('year');
+            if (yearEl) yearEl.textContent = new Date().getFullYear();
 
+            /* ----- Scroll animations (IntersectionObserver) ----- */
+            var animElements = document.querySelectorAll('.scroll-animate');
 
-        window.addEventListener(
-            'scroll',
-            updateHeader,
-            {
-                passive:true
-            }
-        );
+            var observerOptions = {
+                threshold: 0.12,
+                rootMargin: '0px 0px -20px 0px'
+            };
 
+            var observer = new IntersectionObserver(function(entries) {
+                entries.forEach(function(entry) {
+                    if (entry.isIntersecting) {
+                        var delay = parseInt(entry.target.getAttribute('data-delay')) || 0;
+                        setTimeout(function() {
+                            entry.target.classList.add('visible');
+                        }, delay);
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
 
-        updateHeader();
+            animElements.forEach(function(el) {
+                observer.observe(el);
+            });
 
-
-        /* ===============================================
-           YEAR
-           =============================================== */
-
-        const year =
-            document.getElementById('year');
-
-        if(year){
-
-            year.textContent =
-                new Date().getFullYear();
-
-        }
-
-    }
-);
-
-</script>
-
+        });
+    </script>
 
 </body>
 </html>
