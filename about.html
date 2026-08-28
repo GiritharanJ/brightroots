@@ -19,225 +19,212 @@ h1{font-size:clamp(2.5rem,5vw,4.2rem)} h2{font-size:clamp(2rem,3.5vw,3rem)} h4{f
 p{color:var(--muted)}
 /* ================= HEADER ================= */
 
-.header{
-  position:fixed;
-  top:0;
-  left:0;
-  right:0;
-  z-index:2000;
-  padding:14px 0;
-  transition:all .25s ease;
-}
-.header.scrolled{background:transparent;box-shadow:none;backdrop-filter:none;-webkit-backdrop-filter:none;}
-
-.header-inner{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:25px;
-}
-
-/* ================= HEADER LOGO ================= */
-
-.brand-logo{
-  display:flex;
-  align-items:center;
-  flex-shrink:0;
-}
-
-.brand-logo img{
-  width:180px;
-  height:62px;
-  object-fit:contain;
-  object-position:left center;
-  border-radius:10px;
-  mix-blend-mode:multiply;
-}
-
-/* ================= DESKTOP NAV ================= */
-
-.nav{
-  display:flex;
-  align-items:center;
-  gap:4px;
-
-  background:rgba(255,255,255,.88);
-  border:1px solid rgba(16,38,83,.08);
-  border-radius:999px;
-  padding:5px;
-
-  box-shadow:0 8px 25px rgba(7,26,61,.08);
-}
-
-.nav a{
-  padding:10px 16px;
-  border-radius:999px;
-
-  font-family:Poppins,sans-serif;
-  font-size:.9rem;
-  font-weight:600;
-
-  color:var(--navy);
-
-  transition:all .2s ease;
-}
-
-.nav a:hover,
-.nav a.active{
-  background:var(--pink);
-  color:#fff;
-}
-
-/* ================= MOBILE MENU BUTTON ================= */
-
-.menu-toggle{
-  display:none;
-
-  width:46px;
-  height:46px;
-
-  border:0;
-  border-radius:50%;
-
-  background:var(--pink);
-  color:#fff;
-
-  cursor:pointer;
-  font-size:24px;
-
-  box-shadow:0 8px 20px rgba(215,25,91,.3);
-}
-
-/* ================= MOBILE MENU ================= */
-
-.mobile-backdrop{
-  position:fixed;
-  inset:0;
-
-  background:rgba(5,18,45,.48);
-
-  z-index:2090;
-
-  display:none;
-}
-
-.mobile-backdrop.open{
-  display:block;
-}
-
-.mobile-menu{
-  position:fixed;
-
-  top:0;
-  right:0;
-  bottom:0;
-
-  width:min(340px,88vw);
-
-  background:#fff;
-
-  z-index:2100;
-
-  padding:30px 24px;
-
-  transform:translateX(100%);
-  transition:transform .25s ease;
-
-  box-shadow:-20px 0 50px rgba(0,0,0,.18);
-
-  overflow-y:auto;
-}
-
-.mobile-menu.open{
-  transform:translateX(0);
-}
-
-/* Mobile logo */
-
-.mobile-logo{
-  text-align:center;
-  padding:10px 0 25px;
-}
-
-.mobile-logo img{
-  width:190px;
-  height:70px;
-
-  object-fit:contain;
-  object-position:center;
-
-  margin:auto;
-  border-radius:10px;
-}
-
-/* Close button */
-
-.mobile-close{
-  position:absolute;
-
-  top:18px;
-  right:18px;
-
-  width:42px;
-  height:42px;
-
-  border:0;
-  border-radius:50%;
-
-  background:#f1f3f7;
-  color:var(--navy);
-
-  cursor:pointer;
-  font-size:20px;
-}
-
-/* Mobile links */
-
-.mobile-menu > a{
-  display:block;
-
-  padding:14px 4px;
-
-  border-bottom:1px solid #edf0f4;
-
-  font-family:Poppins,sans-serif;
-  font-weight:600;
-
-  color:var(--navy);
-}
-
-.mobile-menu > a:hover,
-.mobile-menu > a.active{
-  color:var(--pink);
-}
-
-/* Mobile CTA */
-
-.mobile-actions{
-  display:grid;
-  gap:10px;
-  margin-top:24px;
-}
-
-.mobile-actions a{
-  display:block;
-
-  border:0;
-
-  text-align:center;
-
-  border-radius:999px;
-
-  padding:13px 15px;
-
-  color:#fff !important;
-
-  background:var(--pink);
-}
-
-.mobile-actions a.whatsapp{
-  background:var(--green);
-}
+   /* ============================================================
+                   HEADER
+                   ============================================================ */
+        .header {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 2000;
+            padding: 18px 0 0;
+        }
+        .header-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+        }
+
+        .brand-logo {
+            display: flex;
+            align-items: center;
+            flex-shrink: 0;
+            transition: transform .2s ease;
+        }
+        .brand-logo:hover {
+            transform: translateY(-2px);
+        }
+        .brand-logo img {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            object-fit: cover;
+            object-position: center;
+            border: 3px solid rgba(255, 255, 255, 0.6);
+            box-shadow: 0 8px 24px rgba(6, 24, 61, 0.16);
+        }
+        .brand-text {
+            margin-left: 12px;
+            line-height: 1.1;
+        }
+        .brand-text .main {
+            font-family: 'Baloo 2', cursive;
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: #fff;
+            display: block;
+            text-shadow: 0 2px 12px rgba(0, 0, 0, 0.2);
+        }
+        .brand-text .sub {
+            font-family: 'Poppins', sans-serif;
+            font-size: .62rem;
+            font-weight: 700;
+            letter-spacing: .1em;
+            text-transform: uppercase;
+            color: var(--gold);
+            display: block;
+            text-shadow: 0 1px 8px rgba(0, 0, 0, 0.15);
+        }
+
+        /* Desktop Nav */
+        .nav {
+            display: flex;
+            align-items: center;
+            gap: 2px;
+            background: rgba(255, 255, 255, .96);
+            border-radius: 999px;
+            padding: 6px;
+            box-shadow: 0 12px 30px rgba(6, 24, 61, .14);
+        }
+        .nav a {
+            padding: 10px 18px;
+            border-radius: 999px;
+            font-family: 'Poppins', sans-serif;
+            font-size: .88rem;
+            font-weight: 600;
+            color: var(--navy);
+            transition: .2s ease;
+        }
+        .nav a:hover {
+            color: var(--pink);
+        }
+        .nav a.active {
+            background: linear-gradient(135deg, var(--pink), var(--pink-glow));
+            color: #fff;
+        }
+
+        .header-phone {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: linear-gradient(135deg, var(--pink), var(--pink-glow));
+            color: #fff;
+            padding: 12px 22px;
+            border-radius: 999px;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+            font-size: .9rem;
+            box-shadow: var(--shadow-glow);
+            flex-shrink: 0;
+            transition: .2s ease;
+        }
+        .header-phone:hover {
+            transform: translateY(-2px);
+        }
+
+        /* Mobile menu toggle */
+        .menu-toggle {
+            display: none;
+            width: 52px;
+            height: 52px;
+            border: none;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--pink), var(--pink-glow));
+            color: #fff;
+            cursor: pointer;
+            font-size: 24px;
+            line-height: 1;
+            box-shadow: var(--shadow-glow);
+            flex-shrink: 0;
+        }
+
+        /* Mobile menu overlay */
+        .mobile-backdrop {
+            position: fixed;
+            inset: 0;
+            background: rgba(6, 18, 45, .6);
+            z-index: 2090;
+            display: none;
+        }
+        .mobile-backdrop.open {
+            display: block;
+        }
+
+        .mobile-menu {
+            position: fixed;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            width: min(330px, 88vw);
+            background: #fff;
+            z-index: 2100;
+            padding: 32px 24px;
+            transform: translateX(100%);
+            transition: transform .35s cubic-bezier(.22, .68, 0, 1);
+            box-shadow: -20px 0 60px rgba(0, 0, 0, .18);
+            overflow-y: auto;
+        }
+        .mobile-menu.open {
+            transform: translateX(0);
+        }
+        .mobile-close {
+            position: absolute;
+            top: 16px;
+            right: 16px;
+            width: 40px;
+            height: 40px;
+            border: none;
+            border-radius: 50%;
+            background: #f0f2f7;
+            color: var(--navy);
+            cursor: pointer;
+            font-size: 18px;
+        }
+        .mobile-logo {
+            text-align: center;
+            padding: 6px 0 22px;
+        }
+        .mobile-logo img {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin: 0 auto;
+            border: 3px solid var(--pink-light);
+            box-shadow: 0 8px 20px rgba(6, 24, 61, .12);
+        }
+        .mobile-menu>a {
+            display: block;
+            padding: 14px 4px;
+            border-bottom: 1px solid #edf0f4;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            color: var(--navy);
+        }
+        .mobile-menu>a:hover,
+        .mobile-menu>a.active {
+            color: var(--pink);
+        }
+        .mobile-actions {
+            display: grid;
+            gap: 12px;
+            margin-top: 28px;
+        }
+        .mobile-actions a {
+            display: block;
+            text-align: center;
+            border-radius: 999px;
+            padding: 14px 15px;
+            color: #fff !important;
+            background: linear-gradient(135deg, var(--pink), var(--pink-glow));
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+        }
+        .mobile-actions a.whatsapp {
+            background: linear-gradient(135deg, var(--green), var(--green-glow));
+        }
  .page-banner{position:relative;overflow:hidden;padding:95px 0 90px;text-align:center;background:linear-gradient(135deg,#fff7f9 0%,#fff 48%,#fff9e9 100%)}
 .page-banner:before,.page-banner:after{content:"";position:absolute;border-radius:50%;pointer-events:none}
 .page-banner:before{width:260px;height:260px;background:rgba(215,25,91,.08);left:-100px;top:-100px}
@@ -280,22 +267,220 @@ p{color:var(--muted)}
 .photo-ring{width:150px;height:150px;margin:0 auto 18px;border-radius:50%;padding:6px;background:linear-gradient(135deg,var(--pink),var(--gold))}
 .photo-ring img{width:100%;height:100%;object-fit:cover;border-radius:50%;border:5px solid #fff}
 .teacher-card p{font-size:.94rem}.team-note{margin-top:25px;text-align:center}
-.footer{background:var(--navy-deep);color:#fff;padding:65px 0 20px}
-.footer-logo{
-  width:180px;
-  height:72px;
-  object-fit:contain;
-  object-position:left center;
-  border-radius:12px;
-  margin-bottom:14px;
-  background:#fff;
-  padding:4px 8px;
+   /* ============================================================
+                   FOOTER
+                   ============================================================ */
+        .footer {
+            background: var(--navy-dark);
+            color: #fff;
+            padding: 60px 0 0;
+        }
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1.3fr 1fr 1fr 1.1fr 1.1fr;
+            gap: 34px;
+        }
+        .footer-logo-wrap {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 12px;
+        }
+        .footer-logo-wrap img {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid rgba(255, 255, 255, 0.15);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
+        .footer-logo-wrap .footer-brand-text {
+            line-height: 1.1;
+        }
+        .footer-logo-wrap .footer-brand-text .main {
+            font-family: 'Baloo 2', cursive;
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #fff;
+            display: block;
+        }
+        .footer-logo-wrap .footer-brand-text .sub {
+            font-family: 'Poppins', sans-serif;
+            font-size: .6rem;
+            font-weight: 700;
+            letter-spacing: .08em;
+            text-transform: uppercase;
+            color: var(--gold);
+            display: block;
+        }
+        .footer-brand p {
+            color: rgba(255, 255, 255, .7);
+            font-size: .92rem;
+            margin-bottom: 16px;
+        }
+        .footer-social {
+            display: flex;
+            gap: 10px;
+        }
+        .footer-social a {
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, .08);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-size: .95rem;
+            transition: .25s ease;
+        }
+        .footer-social a:hover {
+            background: linear-gradient(135deg, var(--pink), var(--pink-glow));
+        }
+        .footer h4 {
+            color: #fff;
+            font-family: 'Poppins', sans-serif;
+            font-size: .9rem;
+            text-transform: uppercase;
+            letter-spacing: .05em;
+            margin-bottom: 16px;
+        }
+        .footer ul li {
+            margin-bottom: 10px;
+        }
+        .footer ul li a {
+            color: rgba(255, 255, 255, .7);
+            font-size: .9rem;
+            transition: .2s ease;
+        }
+        .footer ul li a:hover {
+            color: var(--gold);
+        }
+        .footer-contact li {
+            display: flex;
+            gap: 10px;
+            align-items: flex-start;
+            color: rgba(255, 255, 255, .75);
+            font-size: .88rem;
+            margin-bottom: 12px;
+        }
+        .footer-contact li a {
+            color: rgba(255, 255, 255, .85);
+        }
+        .footer-contact .ic {
+            color: var(--gold);
+            flex-shrink: 0;
+        }
+        .footer-map {
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 10px 28px rgba(0, 0, 0, .25);
+        }
+        .footer-map iframe {
+            width: 100%;
+            height: 130px;
+            border: 0;
+            display: block;
+            filter: grayscale(.12);
+        }
+        .footer-bottom {
+            margin-top: 42px;
+            padding: 18px 0;
+            border-top: 1px solid rgba(255, 255, 255, .10);
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+        .footer-bottom p {
+            color: rgba(255, 255, 255, .5);
+            font-size: .82rem;
+        }
+       /* ================= FOOTER SOCIAL ICONS ================= */
+
+/* ================= FOOTER SOCIAL ICONS ================= */
+
+.footer-social {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 20px;
 }
-.footer-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1.2fr;gap:35px;margin-bottom:40px}
-.footer h4{color:#fff;font-family:'Poppins',sans-serif;font-size:.95rem;margin-bottom:15px;text-transform:uppercase}.footer p,.footer a{color:rgba(255,255,255,.68);font-size:.94rem}
-.footer ul{list-style:none}.footer li{margin-bottom:8px}.footer a:hover{color:var(--gold)}.footer-brand{font-family:'Baloo 2',cursive;font-size:1.8rem;color:#fff}.footer-sub{color:var(--pink)!important;font-weight:700}
-.contact-item{display:flex;gap:9px;margin-bottom:11px;align-items:flex-start}.contact-item .icon{color:var(--gold)}
-.footer-bottom{border-top:1px solid rgba(255,255,255,.1);padding-top:18px;text-align:center}.footer-bottom p{font-size:.82rem;color:rgba(255,255,255,.42)}
+
+.footer-social a {
+    width: 44px;
+    height: 44px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    text-decoration: none;
+
+    color: #fff;
+
+    font-size: 20px;
+
+    transition:
+        transform .25s ease,
+        box-shadow .25s ease;
+}
+
+/* Facebook */
+
+.footer-social .facebook {
+    background: #1877f2;
+
+    box-shadow:
+        0 8px 18px rgba(24,119,242,.30);
+}
+
+/* Instagram */
+
+.footer-social .instagram {
+    background:
+        linear-gradient(
+            135deg,
+            #833ab4,
+            #fd1d1d,
+            #fcb045
+        );
+
+    box-shadow:
+        0 8px 18px rgba(225,48,108,.30);
+}
+
+/* YouTube */
+
+.footer-social .youtube {
+    background: #ff0000;
+
+    box-shadow:
+        0 8px 18px rgba(255,0,0,.28);
+}
+
+/* Hover */
+
+.footer-social a:hover {
+    transform: translateY(-4px) scale(1.05);
+}
+
+.footer-social .facebook:hover {
+    box-shadow:
+        0 12px 25px rgba(24,119,242,.45);
+}
+
+.footer-social .instagram:hover {
+    box-shadow:
+        0 12px 25px rgba(225,48,108,.45);
+}
+
+.footer-social .youtube:hover {
+    box-shadow:
+        0 12px 25px rgba(255,0,0,.40);
+}
 .whatsapp-float{position:fixed;right:22px;bottom:22px;z-index:900;width:58px;height:58px;border-radius:50%;display:grid;place-items:center;background:#25D366;color:#fff;font-size:26px;box-shadow:0 8px 25px rgba(37,211,102,.35)}
 @media(max-width:900px){
   .header{
@@ -322,76 +507,49 @@ p{color:var(--muted)}
 </head>
 <body>
 
-<header class="header" id="header">
-  <div class="container header-inner">
+    <!-- ===== HEADER ===== -->
+    <header class="header" id="header">
+        <div class="container header-inner">
+            <a href="index.html" class="brand-logo" aria-label="BrightRoots Kids Care Home">
+                <img src="images/logo.jpg" alt="BrightRoots Kids Care" />
+                <span class="brand-text">
+                </span>
+            </a>
 
-    <!-- Logo -->
-    <a href="index.html" class="brand-logo" aria-label="BrightRoots Kids Care Home">
-      <img src="images/kidslogo.jpg" alt="BrightRoots Kids Care">
-    </a>
+            <nav class="nav" aria-label="Main navigation">
+                <a href="index.html" class="active">Home</a>
+                <a href="about.html">About Us</a>
+                <a href="programs.html">Programs</a>
+                <a href="environment.html">Environment</a>
+                <a href="franchise.html">Franchise</a>
+                <a href="admissions.html#contact">Admissions</a>
+            </nav>
 
-    <!-- Desktop Navigation -->
-    <nav class="nav" aria-label="Main navigation">
-      <a href="index.html" class="active">Home</a>
-      <a href="about.html">About</a>
-      <a href="programs.html">Programs</a>
-      <a href="environment.html">Environment</a>
-      <a href="admissions.html">Admissions</a>
-    </nav>
+            <a class="header-phone" href="tel:918438142540">📞 84381 42540</a>
 
-    <!-- Mobile Menu Button -->
-    <button
-      class="menu-toggle"
-      id="menuToggle"
-      type="button"
-      aria-label="Open menu"
-      aria-expanded="false">
-      ☰
-    </button>
+            <button class="menu-toggle" id="menuToggle" type="button" aria-label="Open menu" aria-expanded="false">☰</button>
+        </div>
+    </header>
 
-  </div>
-</header>
+    <!-- ===== MOBILE MENU ===== -->
+    <div class="mobile-backdrop" id="mobileBackdrop"></div>
+    <aside class="mobile-menu" id="mobileMenu" aria-hidden="true">
+        <button class="mobile-close" id="closeMenu" type="button" aria-label="Close menu">✕</button>
+        <div class="mobile-logo">
+            <img src="images/kidslogo.jpg" alt="BrightRoots Kids Care" />
+        </div>
+        <a href="index.html" class="active">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="programs.html">Programs</a>
+        <a href="environment.html">Environment</a>
+        <a href="franchise.html">Franchise</a>
+        <a href="admissions.html#contact">Admissions</a>
+        <div class="mobile-actions">
+            <a href="admissions.html">📅 Enquire Now</a>
+            <a class="whatsapp" href="https://wa.me/918438142540?text=Hello%20BrightRoots%20Kids%20Care%2C%20I%20would%20like%20to%20know%20more%20about%20admission%20for%20my%20child." target="_blank" rel="noopener">💬 WhatsApp Us</a>
+        </div>
+    </aside>
 
-<!-- Mobile backdrop -->
-<div class="mobile-backdrop" id="mobileBackdrop"></div>
-
-<!-- Mobile menu -->
-<aside class="mobile-menu" id="mobileMenu" aria-hidden="true">
-
-  <button
-    class="mobile-close"
-    id="closeMenu"
-    type="button"
-    aria-label="Close menu">
-    ✕
-  </button>
-
-  <!-- Mobile Logo -->
-  <div class="mobile-logo">
-    <img src="images/kidslogo.jpg" alt="BrightRoots Kids Care">
-  </div>
-
-  <a href="index.html" class="active">Home</a>
-  <a href="about.html">About</a>
-  <a href="programs.html">Programs</a>
-  <a href="environment.html">Environment</a>
-  <a href="admissions.html">Admissions</a>
-
-  <div class="mobile-actions">
-    <a href="admissions.html">
-      📅 Book a School Visit
-    </a>
-
-    <a
-      class="whatsapp"
-      href="https://wa.me/918438142540?text=Hello%20BrightRoots%20Kids%20Care%2C%20I%20would%20like%20to%20know%20more%20about%20admission%20for%20my%20child."
-      target="_blank"
-      rel="noopener">
-      💬 WhatsApp Us
-    </a>
-  </div>
-
-</aside>
 <!-- ===== PAGE BANNER ===== -->
     <section class="page-banner">
         <div class="container">
@@ -405,7 +563,7 @@ p{color:var(--muted)}
         <div class="container">
             <div class="grid">
                 <div class="blob-frame scroll-animate">
-                    <img src="images/classroom.jpg" alt="BrightRoots Story" />
+                    <img src="images/home7.jpg" alt="BrightRoots Story" />
                 </div>
                 <div class="content scroll-animate">
                     <span class="eyebrow">Our Story</span>
@@ -505,21 +663,21 @@ p{color:var(--muted)}
             <div class="teachers-grid">
                 <div class="card teacher-card scroll-animate" data-delay="100">
                     <div class="photo-ring">
-                        <img src="images/activities.jpg" alt="Teacher Priya" />
+                        <img src="images/teacher1.jpg" alt="Teacher Priya" />
                     </div>
                     <h4>Ms. Priya</h4>
                     <p>Head Teacher, 8 years experience</p>
                 </div>
                 <div class="card teacher-card scroll-animate" data-delay="150">
                     <div class="photo-ring">
-                        <img src="images/play-area.jpg" alt="Teacher Meena" />
+                        <img src="images/teacher2.jpg" alt="Teacher Meena" />
                     </div>
                     <h4>Ms. Meena</h4>
                     <p>Pre-KG Teacher, 6 years experience</p>
                 </div>
                 <div class="card teacher-card scroll-animate" data-delay="200">
                     <div class="photo-ring">
-                        <img src="images/gallery1.jpg" alt="Teacher Lakshmi" />
+                        <img src="images/teacher3.jpg" alt="Teacher Lakshmi" />
                     </div>
                     <h4>Ms. Lakshmi</h4>
                     <p>LKG Teacher, 5 years experience</p>
@@ -533,78 +691,146 @@ p{color:var(--muted)}
 
     
 
-<footer class="footer">
-  <div class="container">
-    <div class="footer-grid">
-      <div>
-        <img class="footer-logo" src="images/kidslogo.jpg" alt="BrightRoots Kids Care">
-        <p>BrightRoots Kids Care<br>Where Little Minds Grow and Thrive.</p>
-      </div>
+   <!-- ============================================================
+    FOOTER
+    ============================================================ -->
+    <footer class="footer" id="contact">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="footer-logo-wrap">
+                        <img src="images/logo1.jpg" alt="BrightRoots Kids Care" />
+                        <div class="footer-brand-text">
+                        </div>
+                    </div>
+                    <p>BrightRoots Kids Care — where little minds play, learn, grow and thrive in a safe and caring environment.</p>
+                    <div class="footer-social">
 
-      <div>
-        <h3>Quick Links</h3>
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="about.html">About Us</a></li>
-          <li><a href="programs.html">Programs</a></li>
-          <li><a href="environment.html">Environment</a></li>
-          <li><a href="admissions.html">Admissions</a></li>
-        </ul>
-      </div>
+  <a
+    href="https://www.facebook.com/people/BrightRoots-Kids-Care-PreSchool-Day-Care/61591009919658/"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Facebook"
+    class="facebook">
+    <i class="fa-brands fa-facebook-f"></i>
+  </a>
 
-      <div>
-        <h3>Programs</h3>
-        <ul>
-          <li><a href="programs.html#play-group">Play Group</a></li>
-          <li><a href="programs.html#pre-kg">Pre-KG</a></li>
-          <li><a href="programs.html#lkg">LKG</a></li>
-          <li><a href="programs.html#ukg">UKG</a></li>
-          <li><a href="programs.html#day-care">Day Care</a></li>
-        </ul>
-      </div>
+  <a
+    href="https://www.instagram.com/brightrootskidscare_tirupattur/"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Instagram"
+    class="instagram">
+    <i class="fa-brands fa-instagram"></i>
+  </a>
 
-      <div>
-        <h3>Contact</h3>
-        <p>📍 19A/170 Ashok Nagar, Near KGG Hospital, Tirupattur 635601</p>
-        <p style="margin-top:10px">📞 <a href="tel:918438142540">84381 42540</a></p>
-        <p style="margin-top:10px">✉️ <a href="mailto:info@brightrootskidscare.com">info@brightrootskidscare.com</a></p>
-      </div>
+  <a
+    href="#"
+    aria-label="YouTube"
+    class="youtube">
+    <i class="fa-brands fa-youtube"></i>
+  </a>
+
+</div>
+                </div>
+
+                <div>
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="programs.html">Programs</a></li>
+                        <li><a href="environment.html">Environment</a></li>
+                        <li><a href="franchise.html">Franchise</a></li>
+                        <li><a href="admissions.html#contact">Admissions</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4>Programs</h4>
+                    <ul>
+                        <li><a href="programs.html#play-group">Play Group</a></li>
+                        <li><a href="programs.html#pre-kg">Pre-KG</a></li>
+                        <li><a href="programs.html#lkg">LKG</a></li>
+                        <li><a href="programs.html#ukg">UKG</a></li>
+                        <li><a href="programs.html#day-care">Day Care</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4>Contact Us</h4>
+                    <ul class="footer-contact">
+                        <li><span class="ic">📞</span> <a href="tel:918438142540">84381 42540</a></li>
+                        <li><span class="ic">✉️</span> <a href="mailto:info@brightrootskidscare.com">info@brightrootskidscare.com</a></li>
+                        <li><span class="ic">📍</span> 19A/170 Ashok Nagar, Near KGG Hospital, Tirupattur 635601</li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4>Our Location</h4>
+                    <div class="footer-map">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3895.0567788403832!2d78.5645547758528!3d12.512395624778083!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bac552135dbe67d%3A0x9c362f811794a828!2sBRIGHTROOTS%20KIDS%20CARE!5e0!3m2!1sen!2sin!4v1787928396020!5m2!1sen!2sin" loading="lazy" title="BrightRoots Kids Care location map"></iframe>
+                  </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>© <span id="year"></span> BrightRoots Kids Care. All Rights Reserved.</p>
+                <p>Designed with ❤️ for Bright Beginnings.</p>
+            </div>
+        </div>
+    </footer>
+  <!-- ============================================================
+    STICKY BAR & WHATSAPP FLOAT
+    ============================================================ -->
+    <div class="sticky-bar">
+        <div class="sticky-grid">
+            <a href="tel:918438142540"><span>📞</span>Call</a>
+            <a class="whatsapp" href="https://wa.me/918438142540?text=Hello%20BrightRoots%20Kids%20Care%2C%20I%20would%20like%20to%20know%20more%20about%20admission%20for%20my%20child." target="_blank" rel="noopener"><span>💬</span>WhatsApp</a>
+            <a href="https://maps.google.com/maps?q=19A/170+Ashok+Nagar,+Tirupattur" target="_blank" rel="noopener"><span>📍</span>Directions</a>
+        </div>
     </div>
 
-    <div class="footer-bottom">
-      <p>© <span id="year"></span> BrightRoots Kids Care. All rights reserved.</p>
-    </div>
-  </div>
-</footer>
-<a class="whatsapp-float" href="https://wa.me/918438142540?text=Hello%20BrightRoots%20Kids%20Care%2C%20I%20would%20like%20to%20know%20more%20about%20admission%20for%20my%20child." target="_blank" rel="noopener" aria-label="WhatsApp">💬</a>
-<script>
-document.addEventListener('DOMContentLoaded', function(){
-  const header = document.getElementById('header');
-  const menuToggle = document.getElementById('menuToggle');
-  const mobileMenu = document.getElementById('mobileMenu');
-  const mobileBackdrop = document.getElementById('mobileBackdrop');
-  const closeMenu = document.getElementById('closeMenu');
+    <a class="whatsapp-float" href="https://wa.me/918438142540?text=Hello%20BrightRoots%20Kids%20Care%2C%20I%20would%20like%20to%20know%20more%20about%20admission%20for%20my%20child." target="_blank" rel="noopener" aria-label="WhatsApp">💬</a>
 
-  function setMenu(open){
-    mobileMenu.classList.toggle('open', open);
-    mobileBackdrop.classList.toggle('open', open);
-    mobileMenu.setAttribute('aria-hidden', String(!open));
-    menuToggle.setAttribute('aria-expanded', String(open));
-    document.body.classList.toggle('menu-open', open);
-  }
+    <!-- ============================================================
+    JAVASCRIPT
+    ============================================================ -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
 
-  menuToggle.addEventListener('click', function(){ setMenu(true); });
-  closeMenu.addEventListener('click', function(){ setMenu(false); });
-  mobileBackdrop.addEventListener('click', function(){ setMenu(false); });
+            /* ----- Mobile menu ----- */
+            const menuToggle = document.getElementById('menuToggle');
+            const mobileMenu = document.getElementById('mobileMenu');
+            const mobileBackdrop = document.getElementById('mobileBackdrop');
+            const closeMenu = document.getElementById('closeMenu');
 
-  mobileMenu.querySelectorAll('a').forEach(function(link){
-    link.addEventListener('click', function(){ setMenu(false); });
-  });
+            function setMenu(open) {
+                mobileMenu.classList.toggle('open', open);
+                mobileBackdrop.classList.toggle('open', open);
+                mobileMenu.setAttribute('aria-hidden', String(!open));
+                menuToggle.setAttribute('aria-expanded', String(open));
+                document.body.classList.toggle('menu-open', open);
+            }
+            menuToggle && menuToggle.addEventListener('click', () => setMenu(true));
+            closeMenu && closeMenu.addEventListener('click', () => setMenu(false));
+            mobileBackdrop && mobileBackdrop.addEventListener('click', () => setMenu(false));
+            mobileMenu && mobileMenu.querySelectorAll('a').forEach(function(a) {
+                a.addEventListener('click', () => setMenu(false));
+            });
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape') setMenu(false);
+            });
 
-  document.addEventListener('keydown', function(e){
-    if(e.key === 'Escape') setMenu(false);
-  });
-</script>
+            /* ----- Footer year ----- */
+            var yearEl = document.getElementById('year');
+            if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+           
+
+        });
+    </script>
+
 
 </body>
 </html>
