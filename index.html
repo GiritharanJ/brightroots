@@ -1,777 +1,1769 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>BrightRoots Kids Care | Preschool & Daycare in Tirupattur</title>
-<meta name="description" content="BrightRoots Kids Care offers Play Group, Pre-KG, LKG, UKG and Day Care in Tirupattur with play-based learning, phonics and a safe, caring environment.">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BrightRoots Kids Care | Preschool & Daycare in Tirupattur</title>
+    <meta name="description" content="BrightRoots Kids Care offers Play Group, Pre-KG, LKG, UKG and Day Care in Tirupattur with play‑based learning, phonics and a safe, caring environment." />
 
-<style>
-@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Nunito+Sans:wght@400;600;700;800&family=Poppins:wght@500;600;700;800&display=swap');
+    <style>
+        /* ----- FONTS ----- */
+        @import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Nunito+Sans:wght@400;600;700;800&family=Poppins:wght@500;600;700;800&display=swap');
 
-:root{
-  --navy:#102653;
-  --navy-dark:#071a3d;
-  --pink:#d7195b;
-  --pink-light:#fce8f0;
-  --gold:#f5a400;
-  --gold-light:#fff1cf;
-  --green:#25b95a;
-  --green-light:#e6f8ec;
-  --blue:#28a9d6;
-  --blue-light:#e7f5fc;
-  --purple:#8c5fdc;
-  --purple-light:#f1e9ff;
-  --white:#fff;
-  --cream:#fffaf5;
-  --text:#26334f;
-  --muted:#69738c;
-  --shadow:0 18px 45px rgba(7,26,61,.16);
-}
+        /* ----- ROOT VARIABLES — VIBRANT PALETTE ----- */
+        :root {
+            --navy: #0f2b5c;
+            --navy-dark: #06183d;
+            --pink: #e81a6b;
+            --pink-light: #fde8f1;
+            --pink-glow: #ff2d7e;
+            --gold: #f7b731;
+            --gold-light: #fff3d6;
+            --gold-glow: #ffd966;
+            --green: #22b85a;
+            --green-light: #e3f7ec;
+            --green-glow: #4ad97a;
+            --blue: #2ba9d9;
+            --blue-light: #e3f3fa;
+            --blue-glow: #5ac8f0;
+            --purple: #8f5fdf;
+            --purple-light: #f0e9ff;
+            --white: #ffffff;
+            --cream: #fffaf2;
+            --text: #1e2f4a;
+            --muted: #59657a;
+            --shadow: 0 20px 50px rgba(6, 24, 61, 0.18);
+            --shadow-glow: 0 16px 40px rgba(232, 26, 107, 0.30);
+        }
 
-*{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{
-  font-family:'Nunito Sans',sans-serif;
-  color:var(--text);
-  background:var(--white);
-  overflow-x:hidden;
-  line-height:1.6;
-}
-body.menu-open{overflow:hidden}
-a{text-decoration:none;color:inherit}
-img{max-width:100%;display:block}
-button{font:inherit}
-ul{list-style:none}
-.container{width:min(1220px,calc(100% - 32px));margin:auto}
-h1,h2,h3,h4{font-family:'Baloo 2',cursive;color:var(--navy);line-height:1.12}
-p{color:var(--muted)}
+        /* ----- RESET & BASE ----- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+        body {
+            font-family: 'Nunito Sans', sans-serif;
+            color: var(--text);
+            background: var(--white);
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+        body.menu-open {
+            overflow: hidden;
+        }
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+        img {
+            max-width: 100%;
+            display: block;
+        }
+        button {
+            font: inherit;
+        }
+        ul {
+            list-style: none;
+        }
+        .container {
+            width: min(1220px, calc(100% - 32px));
+            margin: 0 auto;
+        }
+        h1,
+        h2,
+        h3,
+        h4 {
+            font-family: 'Baloo 2', cursive;
+            color: var(--navy);
+            line-height: 1.12;
+        }
+        p {
+            color: var(--muted);
+        }
 
-.eyebrow{
-  display:inline-flex;align-items:center;gap:8px;
-  padding:6px 15px;border-radius:999px;
-  background:var(--pink-light);color:var(--pink);
-  font-family:Poppins,sans-serif;font-size:.76rem;font-weight:800;
-  letter-spacing:.08em;text-transform:uppercase;margin-bottom:12px;
-}
-.gradient{
-  background:linear-gradient(135deg,var(--gold),#ffd35e);
-  -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;
-}
-.section-heading{text-align:center;max-width:700px;margin:0 auto 34px}
-.section-heading .flourish{color:var(--pink);opacity:.6;font-size:.85em}
-.section-heading h2{font-size:clamp(1.9rem,3.6vw,2.6rem);margin-bottom:8px;display:flex;align-items:center;justify-content:center;gap:10px}
-.section-heading p{font-size:1.02rem}
+        /* ----- EYEBROW / BADGE ----- */
+        .eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 6px 18px;
+            border-radius: 999px;
+            background: var(--pink-light);
+            color: var(--pink);
+            font-family: 'Poppins', sans-serif;
+            font-size: .76rem;
+            font-weight: 800;
+            letter-spacing: .08em;
+            text-transform: uppercase;
+            margin-bottom: 14px;
+        }
 
-.btn{
-  display:inline-flex;align-items:center;justify-content:center;gap:8px;
-  min-height:48px;padding:12px 24px;border-radius:999px;border:0;
-  cursor:pointer;font-family:Poppins,sans-serif;font-size:.92rem;font-weight:700;
-  transition:.25s ease;white-space:nowrap;
-}
-.btn:hover{transform:translateY(-2px)}
-.btn-pink{background:var(--pink);color:#fff;box-shadow:0 10px 24px rgba(215,25,91,.30)}
-.btn-green{background:var(--green);color:#fff;box-shadow:0 10px 24px rgba(37,185,90,.28)}
-.btn-white{background:#fff;color:var(--pink);box-shadow:0 10px 24px rgba(0,0,0,.14)}
+        /* ----- GRADIENT TEXT ----- */
+        .gradient {
+            background: linear-gradient(135deg, var(--pink), var(--gold));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .gradient-gold {
+            background: linear-gradient(135deg, var(--gold), #ffdb7c);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
 
-/* ================= HEADER ================= */
-.header{
-  position:absolute;top:0;left:0;right:0;z-index:2000;
-  padding:20px 0 0;
-}
-.header-inner{display:flex;align-items:center;justify-content:space-between;gap:16px}
+        /* ----- SECTION HEADINGS ----- */
+        .section-heading {
+            text-align: center;
+            max-width: 720px;
+            margin: 0 auto 38px;
+        }
+        .section-heading .flourish {
+            color: var(--pink);
+            opacity: .5;
+            font-size: .8em;
+        }
+        .section-heading h2 {
+            font-size: clamp(2rem, 3.8vw, 2.8rem);
+            margin-bottom: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+        .section-heading p {
+            font-size: 1.05rem;
+            color: var(--muted);
+        }
 
-.brand-logo{
-  display:flex;align-items:center;flex-shrink:0;
-  box-shadow:0 10px 25px rgba(7,26,61,.14);
-  transition:transform .2s ease;
-}
-.brand-logo:hover{transform:translateY(-2px)}
-.brand-logo img{width:150px;height:56px;object-fit:contain;object-position:center}
+        /* ----- BUTTONS ----- */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            min-height: 50px;
+            padding: 14px 28px;
+            border-radius: 999px;
+            border: none;
+            cursor: pointer;
+            font-family: 'Poppins', sans-serif;
+            font-size: .94rem;
+            font-weight: 700;
+            transition: .3s ease;
+            white-space: nowrap;
+        }
+        .btn:hover {
+            transform: translateY(-3px);
+        }
+        .btn-pink {
+            background: linear-gradient(135deg, var(--pink), var(--pink-glow));
+            color: #fff;
+            box-shadow: var(--shadow-glow);
+        }
+        .btn-pink:hover {
+            box-shadow: 0 20px 44px rgba(232, 26, 107, 0.40);
+        }
+        .btn-green {
+            background: linear-gradient(135deg, var(--green), var(--green-glow));
+            color: #fff;
+            box-shadow: 0 12px 28px rgba(34, 184, 90, 0.30);
+        }
+        .btn-green:hover {
+            box-shadow: 0 18px 38px rgba(34, 184, 90, 0.40);
+        }
+        .btn-white {
+            background: #fff;
+            color: var(--pink);
+            box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
+        }
+        .btn-white:hover {
+            box-shadow: 0 18px 38px rgba(0, 0, 0, 0.18);
+        }
+        .btn-gold {
+            background: linear-gradient(135deg, var(--gold), var(--gold-glow));
+            color: var(--navy);
+            box-shadow: 0 12px 28px rgba(247, 183, 49, 0.35);
+        }
+        .btn-gold:hover {
+            box-shadow: 0 18px 38px rgba(247, 183, 49, 0.45);
+        }
 
-.nav{
-  display:flex;align-items:center;gap:2px;
-  background:rgba(255,255,255,.95);
-  border-radius:999px;padding:6px;
-  box-shadow:0 10px 25px rgba(7,26,61,.12);
-}
-.nav a{
-  padding:11px 17px;border-radius:999px;
-  font-family:Poppins,sans-serif;font-size:.89rem;font-weight:600;
-  color:var(--navy);transition:.2s ease;
-}
-.nav a:hover{color:var(--pink)}
-.nav a.active{background:var(--pink);color:#fff}
+        /* ============================================================
+                   HEADER
+                   ============================================================ */
+        .header {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 2000;
+            padding: 18px 0 0;
+        }
+        .header-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+        }
 
-.header-phone{
-  display:inline-flex;align-items:center;gap:8px;
-  background:var(--pink);color:#fff;padding:12px 20px;border-radius:999px;
-  font-family:Poppins,sans-serif;font-weight:700;font-size:.9rem;
-  box-shadow:0 10px 24px rgba(215,25,91,.32);flex-shrink:0;
-  transition:.2s ease;
-}
-.header-phone:hover{transform:translateY(-2px)}
+        .brand-logo {
+            display: flex;
+            align-items: center;
+            flex-shrink: 0;
+            transition: transform .2s ease;
+        }
+        .brand-logo:hover {
+            transform: translateY(-2px);
+        }
+        .brand-logo img {
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            object-fit: cover;
+            object-position: center;
+            border: 3px solid rgba(255, 255, 255, 0.6);
+            box-shadow: 0 8px 24px rgba(6, 24, 61, 0.16);
+        }
+        .brand-text {
+            margin-left: 12px;
+            line-height: 1.1;
+        }
+        .brand-text .main {
+            font-family: 'Baloo 2', cursive;
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: #fff;
+            display: block;
+            text-shadow: 0 2px 12px rgba(0, 0, 0, 0.2);
+        }
+        .brand-text .sub {
+            font-family: 'Poppins', sans-serif;
+            font-size: .62rem;
+            font-weight: 700;
+            letter-spacing: .1em;
+            text-transform: uppercase;
+            color: var(--gold);
+            display: block;
+            text-shadow: 0 1px 8px rgba(0, 0, 0, 0.15);
+        }
 
-.menu-toggle{
-  display:none;width:52px;height:52px;border:0;border-radius:50%;
-  background:var(--pink);color:#fff;cursor:pointer;font-size:24px;line-height:1;
-  box-shadow:0 8px 22px rgba(215,25,91,.3);flex-shrink:0;
-}
+        /* Desktop Nav */
+        .nav {
+            display: flex;
+            align-items: center;
+            gap: 2px;
+            background: rgba(255, 255, 255, .96);
+            border-radius: 999px;
+            padding: 6px;
+            box-shadow: 0 12px 30px rgba(6, 24, 61, .14);
+        }
+        .nav a {
+            padding: 10px 18px;
+            border-radius: 999px;
+            font-family: 'Poppins', sans-serif;
+            font-size: .88rem;
+            font-weight: 600;
+            color: var(--navy);
+            transition: .2s ease;
+        }
+        .nav a:hover {
+            color: var(--pink);
+        }
+        .nav a.active {
+            background: linear-gradient(135deg, var(--pink), var(--pink-glow));
+            color: #fff;
+        }
 
-/* Mobile menu */
-.mobile-backdrop{position:fixed;inset:0;background:rgba(5,18,45,.5);z-index:2090;display:none}
-.mobile-backdrop.open{display:block}
-.mobile-menu{
-  position:fixed;top:0;right:0;bottom:0;width:min(320px,88vw);background:#fff;
-  z-index:2100;padding:28px 22px;transform:translateX(100%);
-  transition:transform .3s ease;box-shadow:-20px 0 50px rgba(0,0,0,.18);overflow-y:auto;
-}
-.mobile-menu.open{transform:translateX(0)}
-.mobile-close{
-  position:absolute;top:16px;right:16px;width:40px;height:40px;border:0;border-radius:50%;
-  background:#f1f3f7;color:var(--navy);cursor:pointer;font-size:18px;
-}
-.mobile-logo{text-align:center;padding:8px 0 22px}
-.mobile-logo img{width:170px;height:64px;object-fit:contain;margin:auto}
-.mobile-menu>a{
-  display:block;padding:13px 4px;border-bottom:1px solid #edf0f4;
-  font-family:Poppins,sans-serif;font-weight:600;color:var(--navy);
-}
-.mobile-menu>a:hover,.mobile-menu>a.active{color:var(--pink)}
-.mobile-actions{display:grid;gap:10px;margin-top:22px}
-.mobile-actions a{
-  display:block;text-align:center;border-radius:999px;padding:13px 15px;
-  color:#fff!important;background:var(--pink);font-family:Poppins,sans-serif;font-weight:700;
-}
-.mobile-actions a.whatsapp{background:var(--green)}
+        .header-phone {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: linear-gradient(135deg, var(--pink), var(--pink-glow));
+            color: #fff;
+            padding: 12px 22px;
+            border-radius: 999px;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+            font-size: .9rem;
+            box-shadow: var(--shadow-glow);
+            flex-shrink: 0;
+            transition: .2s ease;
+        }
+        .header-phone:hover {
+            transform: translateY(-2px);
+        }
 
-/* ================= HERO ================= */
-.hero{
-  position:relative;min-height:92vh;overflow:hidden;isolation:isolate;
-  display:flex;align-items:flex-end;padding:150px 0 0;background:var(--navy-dark);
-}
-.hero-slide{
-  position:absolute;inset:0;background-size:cover;background-position:center;
-  opacity:0;transition:opacity 1.4s ease;z-index:-2;
-}
-.hero-slide.active{opacity:1}
-.hero::before{
-  content:"";position:absolute;inset:0;z-index:-1;
-  background:
-    linear-gradient(90deg, rgba(7,20,45,.82) 0%, rgba(7,20,45,.55) 42%, rgba(7,20,45,.22) 75%),
-    linear-gradient(0deg, rgba(7,20,45,.55) 0%, rgba(7,20,45,0) 40%);
-}
-.hero-inner{position:relative;z-index:2;padding-bottom:70px;width:100%}
-.hero-content{max-width:640px}
-.hero-content .eyebrow{background:var(--pink);color:#fff}
-.hero h1{
-  color:#fff;font-size:clamp(2.3rem,5.2vw,3.6rem);margin-bottom:14px;
-}
-.hero h1 .accent{
-  background:linear-gradient(135deg,var(--gold),#ffe08a);
-  -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;
-}
-.hero p.hero-sub{color:rgba(255,255,255,.88);font-size:1.05rem;max-width:520px;margin-bottom:24px}
-.hero-buttons{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:28px}
-.hero-buttons .btn-white{color:var(--navy)}
+        /* Mobile menu toggle */
+        .menu-toggle {
+            display: none;
+            width: 52px;
+            height: 52px;
+            border: none;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--pink), var(--pink-glow));
+            color: #fff;
+            cursor: pointer;
+            font-size: 24px;
+            line-height: 1;
+            box-shadow: var(--shadow-glow);
+            flex-shrink: 0;
+        }
 
-.hero-arrow{
-  position:absolute;top:44%;transform:translateY(-50%);z-index:3;
-  width:46px;height:46px;border-radius:50%;border:0;cursor:pointer;
-  background:rgba(255,255,255,.22);color:#fff;font-size:20px;
-  display:flex;align-items:center;justify-content:center;
-  backdrop-filter:blur(6px);transition:.2s ease;
-}
-.hero-arrow:hover{background:rgba(255,255,255,.4)}
-.hero-arrow.prev{left:20px}
-.hero-arrow.next{right:20px}
+        /* Mobile menu overlay */
+        .mobile-backdrop {
+            position: fixed;
+            inset: 0;
+            background: rgba(6, 18, 45, .6);
+            z-index: 2090;
+            display: none;
+        }
+        .mobile-backdrop.open {
+            display: block;
+        }
 
-.hero-dots{display:flex;gap:8px;position:relative;z-index:2}
-.hero-dots button{
-  width:9px;height:9px;border-radius:999px;border:0;background:rgba(255,255,255,.45);
-  cursor:pointer;padding:0;transition:.25s ease;
-}
-.hero-dots button.active{width:26px;background:var(--gold)}
+        .mobile-menu {
+            position: fixed;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            width: min(330px, 88vw);
+            background: #fff;
+            z-index: 2100;
+            padding: 32px 24px;
+            transform: translateX(100%);
+            transition: transform .35s cubic-bezier(.22, .68, 0, 1);
+            box-shadow: -20px 0 60px rgba(0, 0, 0, .18);
+            overflow-y: auto;
+        }
+        .mobile-menu.open {
+            transform: translateX(0);
+        }
+        .mobile-close {
+            position: absolute;
+            top: 16px;
+            right: 16px;
+            width: 40px;
+            height: 40px;
+            border: none;
+            border-radius: 50%;
+            background: #f0f2f7;
+            color: var(--navy);
+            cursor: pointer;
+            font-size: 18px;
+        }
+        .mobile-logo {
+            text-align: center;
+            padding: 6px 0 22px;
+        }
+        .mobile-logo img {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin: 0 auto;
+            border: 3px solid var(--pink-light);
+            box-shadow: 0 8px 20px rgba(6, 24, 61, .12);
+        }
+        .mobile-menu>a {
+            display: block;
+            padding: 14px 4px;
+            border-bottom: 1px solid #edf0f4;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            color: var(--navy);
+        }
+        .mobile-menu>a:hover,
+        .mobile-menu>a.active {
+            color: var(--pink);
+        }
+        .mobile-actions {
+            display: grid;
+            gap: 12px;
+            margin-top: 28px;
+        }
+        .mobile-actions a {
+            display: block;
+            text-align: center;
+            border-radius: 999px;
+            padding: 14px 15px;
+            color: #fff !important;
+            background: linear-gradient(135deg, var(--pink), var(--pink-glow));
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+        }
+        .mobile-actions a.whatsapp {
+            background: linear-gradient(135deg, var(--green), var(--green-glow));
+        }
 
-/* Feature strip overlapping hero */
-.feature-strip-wrap{position:relative;z-index:10;margin-top:-56px}
-.feature-strip{
-  background:#fff;border-radius:26px;box-shadow:var(--shadow);
-  padding:30px 26px;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;
-}
-.feature-item{display:flex;align-items:flex-start;gap:12px;flex:1 1 180px;min-width:150px}
-.feature-icon{
-  width:50px;height:50px;border-radius:50%;flex-shrink:0;
-  display:flex;align-items:center;justify-content:center;font-size:22px;color:#fff;
-}
-.feature-item:nth-child(1) .feature-icon{background:linear-gradient(135deg,var(--pink),#f0538a)}
-.feature-item:nth-child(2) .feature-icon{background:linear-gradient(135deg,var(--gold),#ffc23d)}
-.feature-item:nth-child(3) .feature-icon{background:linear-gradient(135deg,var(--green),#4fd67f)}
-.feature-item:nth-child(4) .feature-icon{background:linear-gradient(135deg,var(--blue),#5cc4ea)}
-.feature-item:nth-child(5) .feature-icon{background:linear-gradient(135deg,var(--purple),#ab84ea)}
-.feature-item h4{font-size:1rem;margin-bottom:3px;font-family:Poppins,sans-serif;color:var(--navy)}
-.feature-item p{font-size:.85rem;line-height:1.45;color:var(--muted)}
+        /* ============================================================
+                   HERO
+                   ============================================================ */
+        .hero {
+            position: relative;
+            min-height: 92vh;
+            overflow: hidden;
+            isolation: isolate;
+            display: flex;
+            align-items: flex-end;
+            padding: 140px 0 0;
+            background: var(--navy-dark);
+        }
+        .hero-slide {
+            position: absolute;
+            inset: 0;
+            background-size: cover;
+            background-position: center;
+            opacity: 0;
+            transition: opacity 1.6s ease;
+            z-index: -2;
+        }
+        .hero-slide.active {
+            opacity: 1;
+        }
+        .hero::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            z-index: -1;
+            background:
+                linear-gradient(90deg, rgba(6, 24, 61, .85) 0%, rgba(6, 24, 61, .50) 45%, rgba(6, 24, 61, .15) 78%),
+                linear-gradient(0deg, rgba(6, 24, 61, .60) 0%, rgba(6, 24, 61, 0) 45%);
+        }
+        .hero-inner {
+            position: relative;
+            z-index: 2;
+            padding-bottom: 60px;
+            width: 100%;
+        }
+        .hero-content {
+            max-width: 660px;
+        }
+        .hero-content .eyebrow {
+            background: linear-gradient(135deg, var(--pink), var(--pink-glow));
+            color: #fff;
+        }
+        .hero h1 {
+            color: #fff;
+            font-size: clamp(2.2rem, 5.4vw, 3.8rem);
+            margin-bottom: 12px;
+        }
+        .hero h1 .accent {
+            background: linear-gradient(135deg, var(--gold), #ffe08a);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .hero-subtitle {
+            color: rgba(255, 255, 255, .92);
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+        .hero-copy {
+            color: rgba(255, 255, 255, .78);
+            font-size: 1rem;
+            max-width: 500px;
+            margin-bottom: 18px;
+        }
+        .hero-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px 18px;
+            margin-bottom: 22px;
+        }
+        .hero-list span {
+            color: rgba(255, 255, 255, .9);
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            font-size: .88rem;
+            background: rgba(255, 255, 255, .10);
+            padding: 4px 14px;
+            border-radius: 999px;
+            border: 1px solid rgba(255, 255, 255, .12);
+        }
+        .buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-bottom: 28px;
+        }
+        .hero-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            color: rgba(255, 255, 255, .7);
+            font-family: 'Poppins', sans-serif;
+            font-size: .92rem;
+            font-weight: 500;
+        }
+        .hero-meta span {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
 
-/* ================= PROGRAMS ================= */
-.programs-section{padding:90px 0 70px;background:#fff}
-.programs-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:16px}
-.program-card{
-  text-align:center;padding:28px 16px;border-radius:22px;
-  border:1px solid #eef0f4;transition:.25s ease;background:#fff;
-}
-.program-card:hover{box-shadow:0 16px 34px rgba(7,26,61,.12);transform:translateY(-5px);border-color:transparent}
-.program-icon{
-  width:66px;height:66px;border-radius:50%;margin:0 auto 14px;
-  display:flex;align-items:center;justify-content:center;font-size:28px;color:#fff;
-}
-.program-card:nth-child(1) .program-icon{background:linear-gradient(135deg,var(--pink),#f0538a)}
-.program-card:nth-child(2) .program-icon{background:linear-gradient(135deg,var(--gold),#ffc23d)}
-.program-card:nth-child(3) .program-icon{background:linear-gradient(135deg,var(--green),#4fd67f)}
-.program-card:nth-child(4) .program-icon{background:linear-gradient(135deg,var(--blue),#5cc4ea)}
-.program-card:nth-child(5) .program-icon{background:linear-gradient(135deg,var(--purple),#ab84ea)}
-.program-card h3{font-size:1.15rem}
-.program-card .age{display:block;color:var(--gold);font-family:Poppins,sans-serif;font-weight:800;font-size:.78rem;margin:4px 0 8px}
-.program-card p{font-size:.87rem}
+        /* Hero arrows */
+        .hero-arrow {
+            position: absolute;
+            top: 44%;
+            transform: translateY(-50%);
+            z-index: 3;
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            border: none;
+            cursor: pointer;
+            background: rgba(255, 255, 255, .18);
+            color: #fff;
+            font-size: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            backdrop-filter: blur(8px);
+            transition: .25s ease;
+        }
+        .hero-arrow:hover {
+            background: rgba(255, 255, 255, .35);
+        }
+        .hero-arrow.prev {
+            left: 20px;
+        }
+        .hero-arrow.next {
+            right: 20px;
+        }
 
-/* ================= APPROACH ================= */
-.approach-section{padding:60px 0 90px;background:#fff}
-.approach-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
-.approach-text ul{margin:18px 0 26px;display:flex;flex-direction:column;gap:10px}
-.approach-text li{display:flex;align-items:center;gap:10px;font-family:Poppins,sans-serif;font-weight:600;font-size:.94rem;color:var(--navy)}
-.approach-text li .check{
-  width:22px;height:22px;border-radius:50%;background:var(--pink-light);color:var(--pink);
-  display:flex;align-items:center;justify-content:center;font-size:12px;flex-shrink:0;
-}
-.approach-visual{position:relative;display:flex;justify-content:center}
-.approach-blob{position:relative;width:min(440px,100%)}
-.approach-blob img{
-  width:100%;aspect-ratio:4/3.1;object-fit:cover;
-  border-radius:46% 54% 38% 62% / 55% 42% 58% 45%;
-  border:8px solid #fff;box-shadow:0 25px 55px rgba(7,26,61,.2);
-}
-.approach-deco{position:absolute;font-size:1.4rem;z-index:2}
-.approach-deco.d1{top:-4%;right:8%;color:var(--pink)}
-.approach-deco.d2{top:14%;right:-4%;color:var(--blue)}
-.approach-deco.d3{bottom:20%;right:-6%;color:var(--gold)}
-.approach-deco.d4{bottom:-2%;right:20%;color:var(--gold)}
-.approach-deco.d5{top:42%;left:-6%;color:var(--pink)}
+        .hero-dots {
+            display: flex;
+            gap: 8px;
+            position: relative;
+            z-index: 2;
+            margin-top: 6px;
+        }
+        .hero-dots button {
+            width: 10px;
+            height: 10px;
+            border-radius: 999px;
+            border: none;
+            background: rgba(255, 255, 255, .40);
+            cursor: pointer;
+            padding: 0;
+            transition: .25s ease;
+        }
+        .hero-dots button.active {
+            width: 30px;
+            background: linear-gradient(90deg, var(--gold), var(--gold-glow));
+        }
 
-/* ================= ENVIRONMENT ================= */
-.environment-section{background:linear-gradient(135deg,#eef7fc 0%,#f3f9ff 100%);padding:80px 0}
-.env-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
-.env-photo img{width:100%;height:340px;object-fit:cover;border-radius:26px;box-shadow:0 22px 48px rgba(7,26,61,.16)}
-.env-text p{margin-bottom:20px;font-size:1rem}
-.env-features{display:flex;flex-wrap:wrap;gap:22px}
-.env-feature{display:flex;align-items:center;gap:10px;flex:1 1 150px}
-.env-feature .icon{
-  width:42px;height:42px;border-radius:50%;flex-shrink:0;color:#fff;
-  display:flex;align-items:center;justify-content:center;font-size:18px;
-}
-.env-feature:nth-child(1) .icon{background:var(--pink)}
-.env-feature:nth-child(2) .icon{background:var(--gold)}
-.env-feature:nth-child(3) .icon{background:var(--green)}
-.env-feature:nth-child(4) .icon{background:var(--blue)}
-.env-feature span.label{font-family:Poppins,sans-serif;font-weight:700;font-size:.85rem;color:var(--navy);line-height:1.3;display:block}
-.env-feature small{color:var(--muted);font-size:.78rem}
+        /* ============================================================
+                   FEATURE STRIP
+                   ============================================================ */
+        .feature-strip-wrap {
+            position: relative;
+            z-index: 10;
+            margin-top: -50px;
+        }
+        .feature-strip {
+            background: #fff;
+            border-radius: 28px;
+            box-shadow: var(--shadow);
+            padding: 32px 28px;
+            display: flex;
+            justify-content: space-between;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+        .feature-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 14px;
+            flex: 1 1 160px;
+            min-width: 150px;
+        }
+        .feature-icon {
+            width: 52px;
+            height: 52px;
+            border-radius: 50%;
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            color: #fff;
+        }
+        .feature-item:nth-child(1) .feature-icon {
+            background: linear-gradient(135deg, var(--pink), var(--pink-glow));
+        }
+        .feature-item:nth-child(2) .feature-icon {
+            background: linear-gradient(135deg, var(--gold), var(--gold-glow));
+        }
+        .feature-item:nth-child(3) .feature-icon {
+            background: linear-gradient(135deg, var(--green), var(--green-glow));
+        }
+        .feature-item:nth-child(4) .feature-icon {
+            background: linear-gradient(135deg, var(--blue), var(--blue-glow));
+        }
+        .feature-item:nth-child(5) .feature-icon {
+            background: linear-gradient(135deg, var(--purple), #b28af0);
+        }
+        .feature-item h4 {
+            font-size: 1rem;
+            margin-bottom: 2px;
+            font-family: 'Poppins', sans-serif;
+            color: var(--navy);
+        }
+        .feature-item p {
+            font-size: .85rem;
+            line-height: 1.4;
+            color: var(--muted);
+        }
 
-/* ================= GALLERY ================= */
-.gallery-section{padding:90px 0;background:#fff}
-.gallery-strip{display:grid;grid-template-columns:repeat(5,1fr);gap:16px}
-.gallery-strip .item{border-radius:20px;overflow:hidden;aspect-ratio:1;box-shadow:0 10px 24px rgba(7,26,61,.1)}
-.gallery-strip .item img{width:100%;height:100%;object-fit:cover;transition:transform .5s ease}
-.gallery-strip .item:hover img{transform:scale(1.08)}
+        /* ============================================================
+                   PROGRAMS
+                   ============================================================ */
+        .programs-section {
+            padding: 80px 0 70px;
+            background: #fff;
+        }
+        .programs-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 18px;
+        }
+        .program-card {
+            text-align: center;
+            padding: 30px 16px;
+            border-radius: 24px;
+            border: 2px solid #f0f2f6;
+            transition: .3s ease;
+            background: #fff;
+        }
+        .program-card:hover {
+            border-color: var(--pink);
+            box-shadow: 0 16px 38px rgba(6, 24, 61, .12);
+            transform: translateY(-6px);
+        }
+        .program-icon {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            margin: 0 auto 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 30px;
+            color: #fff;
+        }
+        .program-card:nth-child(1) .program-icon {
+            background: linear-gradient(135deg, var(--pink), var(--pink-glow));
+        }
+        .program-card:nth-child(2) .program-icon {
+            background: linear-gradient(135deg, var(--gold), var(--gold-glow));
+        }
+        .program-card:nth-child(3) .program-icon {
+            background: linear-gradient(135deg, var(--green), var(--green-glow));
+        }
+        .program-card:nth-child(4) .program-icon {
+            background: linear-gradient(135deg, var(--blue), var(--blue-glow));
+        }
+        .program-card:nth-child(5) .program-icon {
+            background: linear-gradient(135deg, var(--purple), #b28af0);
+        }
+        .program-card h3 {
+            font-size: 1.2rem;
+        }
+        .program-card .age {
+            display: block;
+            color: var(--gold);
+            font-family: 'Poppins', sans-serif;
+            font-weight: 800;
+            font-size: .78rem;
+            margin: 4px 0 8px;
+        }
+        .program-card p {
+            font-size: .88rem;
+        }
 
-/* ================= CTA ================= */
-.cta-band{
-  position:relative;overflow:hidden;
-  background:linear-gradient(135deg,#ffe6f0 0%,#fff0e8 100%);
-  padding:46px 0;
-}
-.cta-deco{position:absolute;font-size:1.6rem;opacity:.5;z-index:0}
-.cta-deco.c1{top:14%;left:6%;color:var(--pink)}
-.cta-deco.c2{bottom:16%;left:16%;color:var(--blue)}
-.cta-deco.c3{top:20%;right:22%;color:var(--gold)}
-.cta-inner{
-  position:relative;z-index:1;display:flex;align-items:center;justify-content:space-between;
-  gap:20px;flex-wrap:wrap;
-}
-.cta-inner h2{font-size:clamp(1.5rem,2.6vw,2rem);margin-bottom:4px}
-.cta-inner p{font-size:.95rem}
-.cta-actions{display:flex;gap:12px;flex-wrap:wrap}
+        /* ============================================================
+                   APPROACH
+                   ============================================================ */
+        .approach-section {
+            padding: 60px 0 90px;
+            background: var(--cream);
+        }
+        .approach-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+        .approach-text ul {
+            margin: 18px 0 28px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        .approach-text li {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            font-size: .94rem;
+            color: var(--navy);
+        }
+        .approach-text li .check {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: var(--pink-light);
+            color: var(--pink);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 13px;
+            flex-shrink: 0;
+        }
+        .approach-visual {
+            position: relative;
+            display: flex;
+            justify-content: center;
+        }
+        .approach-blob {
+            position: relative;
+            width: min(460px, 100%);
+        }
+        .approach-blob img {
+            width: 100%;
+            aspect-ratio: 4/3.1;
+            object-fit: cover;
+            border-radius: 46% 54% 38% 62% / 55% 42% 58% 45%;
+            border: 8px solid #fff;
+            box-shadow: 0 28px 60px rgba(6, 24, 61, .20);
+        }
+        .approach-deco {
+            position: absolute;
+            font-size: 1.6rem;
+            z-index: 2;
+            filter: drop-shadow(0 4px 12px rgba(0, 0, 0, .10));
+        }
+        .approach-deco.d1 {
+            top: -4%;
+            right: 8%;
+            color: var(--pink);
+        }
+        .approach-deco.d2 {
+            top: 14%;
+            right: -4%;
+            color: var(--blue);
+        }
+        .approach-deco.d3 {
+            bottom: 20%;
+            right: -6%;
+            color: var(--gold);
+        }
+        .approach-deco.d4 {
+            bottom: -2%;
+            right: 20%;
+            color: var(--gold);
+        }
+        .approach-deco.d5 {
+            top: 42%;
+            left: -6%;
+            color: var(--pink);
+        }
 
-/* ================= FOOTER ================= */
-.footer{background:var(--navy-dark);color:#fff;padding:60px 0 0}
-.footer-grid{display:grid;grid-template-columns:1.3fr 1fr 1fr 1.1fr 1.1fr;gap:30px}
-.footer-logo-wrap{
-  display:inline-flex;padding:8px 10px;border-radius:10px;margin-bottom:10px;
-.footer-logo-wrap img{width:140px;height:52px;object-fit:contain}
-.footer-brand p{color:rgba(255,255,255,.7);font-size:.92rem;margin-bottom:14px}
-.footer-social{display:flex;gap:10px}
-.footer-social a{
-  width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.1);
-  display:flex;align-items:center;justify-content:center;color:#fff;font-size:.95rem;transition:.2s ease;
-}
-.footer-social a:hover{background:var(--pink)}
-.footer h4{color:#fff;font-family:Poppins,sans-serif;font-size:.92rem;text-transform:uppercase;letter-spacing:.05em;margin-bottom:16px}
-.footer ul li{margin-bottom:9px}
-.footer ul li a{color:rgba(255,255,255,.7);font-size:.9rem;transition:.2s ease}
-.footer ul li a:hover{color:#fff}
-.footer-contact li{display:flex;gap:9px;align-items:flex-start;color:rgba(255,255,255,.75);font-size:.88rem;margin-bottom:12px}
-.footer-contact li a{color:rgba(255,255,255,.85)}
-.footer-contact .ic{color:var(--gold);flex-shrink:0}
-.footer-map{border-radius:14px;overflow:hidden;box-shadow:0 10px 25px rgba(0,0,0,.25)}
-.footer-map iframe{width:100%;height:130px;border:0;display:block;filter:grayscale(.15)}
-.footer-bottom{
-  margin-top:40px;padding:18px 0;border-top:1px solid rgba(255,255,255,.12);
-  display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;
-}
-.footer-bottom p{color:rgba(255,255,255,.55);font-size:.82rem}
+        /* ============================================================
+                   ENVIRONMENT
+                   ============================================================ */
+        .environment-section {
+            background: linear-gradient(135deg, #e8f4fa 0%, #f0f8ff 100%);
+            padding: 80px 0;
+        }
+        .env-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 56px;
+            align-items: center;
+        }
+        .env-photo img {
+            width: 100%;
+            height: 340px;
+            object-fit: cover;
+            border-radius: 28px;
+            box-shadow: 0 22px 50px rgba(6, 24, 61, .16);
+        }
+        .env-text p {
+            margin-bottom: 20px;
+            font-size: 1rem;
+        }
+        .env-features {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 22px;
+        }
+        .env-feature {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex: 1 1 140px;
+        }
+        .env-feature .icon {
+            width: 46px;
+            height: 46px;
+            border-radius: 50%;
+            flex-shrink: 0;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+        }
+        .env-feature:nth-child(1) .icon {
+            background: linear-gradient(135deg, var(--pink), var(--pink-glow));
+        }
+        .env-feature:nth-child(2) .icon {
+            background: linear-gradient(135deg, var(--gold), var(--gold-glow));
+        }
+        .env-feature:nth-child(3) .icon {
+            background: linear-gradient(135deg, var(--green), var(--green-glow));
+        }
+        .env-feature:nth-child(4) .icon {
+            background: linear-gradient(135deg, var(--blue), var(--blue-glow));
+        }
+        .env-feature .label {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+            font-size: .85rem;
+            color: var(--navy);
+            display: block;
+            line-height: 1.3;
+        }
+        .env-feature small {
+            color: var(--muted);
+            font-size: .78rem;
+        }
 
-/* ================= STICKY / WHATSAPP ================= */
-.sticky-bar{
-  display:none;position:fixed;left:0;right:0;bottom:0;z-index:1900;
-  background:rgba(255,255,255,.97);border-top:1px solid #e5e8ee;box-shadow:0 -8px 25px rgba(7,26,61,.1);
-}
-.sticky-grid{display:grid;grid-template-columns:repeat(3,1fr)}
-.sticky-grid a{
-  display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:64px;
-  font-size:.7rem;font-family:Poppins,sans-serif;font-weight:700;color:var(--navy);
-}
-.sticky-grid a span{font-size:20px;line-height:1.2}
-.sticky-grid a.whatsapp{color:#16a34a}
-.whatsapp-float{
-  position:fixed;right:20px;bottom:24px;width:58px;height:58px;border-radius:50%;
-  display:flex;align-items:center;justify-content:center;background:#25d366;color:#fff;
-  font-size:26px;z-index:1950;box-shadow:0 10px 26px rgba(37,211,102,.35);
-}
+        /* ============================================================
+                   GALLERY
+                   ============================================================ */
+        .gallery-section {
+            padding: 80px 0 90px;
+            background: #fff;
+        }
+        .gallery-strip {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 16px;
+        }
+        .gallery-strip .item {
+            border-radius: 22px;
+            overflow: hidden;
+            aspect-ratio: 1;
+            box-shadow: 0 10px 28px rgba(6, 24, 61, .10);
+        }
+        .gallery-strip .item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform .6s ease;
+        }
+        .gallery-strip .item:hover img {
+            transform: scale(1.08);
+        }
 
-/* ================= RESPONSIVE ================= */
-@media(max-width:1100px){
-  .programs-grid{grid-template-columns:repeat(3,1fr)}
-  .footer-grid{grid-template-columns:1fr 1fr 1fr}
-}
-@media(max-width:980px){
-  .approach-grid,.env-grid{grid-template-columns:1fr;gap:36px}
-  .approach-visual{order:-1}
-}
-@media(max-width:900px){
-  .nav{display:none}
-  .header-phone{display:none}
-  .menu-toggle{display:flex;align-items:center;justify-content:center}
-}
-@media(max-width:760px){
-  .header{padding:14px 0 0}
-  .brand-logo img{width:130px;height:48px}
-  .hero{min-height:100svh;padding-top:110px}
-  .hero-arrow{width:38px;height:38px;font-size:16px}
-  .hero-arrow.prev{left:10px}
-  .hero-arrow.next{right:10px}
-  .feature-strip-wrap{margin-top:-40px}
-  .feature-strip{padding:22px 16px;flex-direction:column}
-  .programs-grid{grid-template-columns:repeat(2,1fr)}
-  .gallery-strip{grid-template-columns:repeat(2,1fr)}
-  .footer-grid{grid-template-columns:1fr 1fr;gap:28px}
-  .cta-inner{justify-content:center;text-align:center}
-  .cta-actions{justify-content:center;width:100%}
-  .hero-buttons .btn{flex:1 1 auto}
-  .sticky-bar{display:block}
-  .whatsapp-float{bottom:78px;width:50px;height:50px;font-size:22px;right:14px}
-  .footer{padding-bottom:90px}
-}
-@media(max-width:480px){
-  .programs-grid{grid-template-columns:1fr 1fr}
-  .gallery-strip{grid-template-columns:1fr 1fr}
-  .footer-grid{grid-template-columns:1fr}
-  .env-features{gap:16px}
-}
-@media(prefers-reduced-motion:reduce){
-  html{scroll-behavior:auto}
-  *,*::before,*::after{transition:none!important;animation:none!important}
-}
-</style>
+        /* ============================================================
+                   CTA BAND
+                   ============================================================ */
+        .cta-band {
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(135deg, #fce5ef 0%, #fff0e6 100%);
+            padding: 48px 0;
+        }
+        .cta-deco {
+            position: absolute;
+            font-size: 1.8rem;
+            opacity: .4;
+            z-index: 0;
+        }
+        .cta-deco.c1 {
+            top: 14%;
+            left: 6%;
+            color: var(--pink);
+        }
+        .cta-deco.c2 {
+            bottom: 16%;
+            left: 16%;
+            color: var(--blue);
+        }
+        .cta-deco.c3 {
+            top: 20%;
+            right: 22%;
+            color: var(--gold);
+        }
+        .cta-inner {
+            position: relative;
+            z-index: 1;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        .cta-inner h2 {
+            font-size: clamp(1.6rem, 2.8vw, 2.2rem);
+            margin-bottom: 4px;
+        }
+        .cta-inner p {
+            font-size: .95rem;
+        }
+        .cta-actions {
+            display: flex;
+            gap: 14px;
+            flex-wrap: wrap;
+        }
+
+        /* ============================================================
+                   FOOTER
+                   ============================================================ */
+        .footer {
+            background: var(--navy-dark);
+            color: #fff;
+            padding: 60px 0 0;
+        }
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1.3fr 1fr 1fr 1.1fr 1.1fr;
+            gap: 34px;
+        }
+        .footer-logo-wrap {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 12px;
+        }
+        .footer-logo-wrap img {
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid rgba(255, 255, 255, 0.15);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
+        .footer-logo-wrap .footer-brand-text {
+            line-height: 1.1;
+        }
+        .footer-logo-wrap .footer-brand-text .main {
+            font-family: 'Baloo 2', cursive;
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #fff;
+            display: block;
+        }
+        .footer-logo-wrap .footer-brand-text .sub {
+            font-family: 'Poppins', sans-serif;
+            font-size: .6rem;
+            font-weight: 700;
+            letter-spacing: .08em;
+            text-transform: uppercase;
+            color: var(--gold);
+            display: block;
+        }
+        .footer-brand p {
+            color: rgba(255, 255, 255, .7);
+            font-size: .92rem;
+            margin-bottom: 16px;
+        }
+        .footer-social {
+            display: flex;
+            gap: 10px;
+        }
+        .footer-social a {
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, .08);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-size: .95rem;
+            transition: .25s ease;
+        }
+        .footer-social a:hover {
+            background: linear-gradient(135deg, var(--pink), var(--pink-glow));
+        }
+        .footer h4 {
+            color: #fff;
+            font-family: 'Poppins', sans-serif;
+            font-size: .9rem;
+            text-transform: uppercase;
+            letter-spacing: .05em;
+            margin-bottom: 16px;
+        }
+        .footer ul li {
+            margin-bottom: 10px;
+        }
+        .footer ul li a {
+            color: rgba(255, 255, 255, .7);
+            font-size: .9rem;
+            transition: .2s ease;
+        }
+        .footer ul li a:hover {
+            color: var(--gold);
+        }
+        .footer-contact li {
+            display: flex;
+            gap: 10px;
+            align-items: flex-start;
+            color: rgba(255, 255, 255, .75);
+            font-size: .88rem;
+            margin-bottom: 12px;
+        }
+        .footer-contact li a {
+            color: rgba(255, 255, 255, .85);
+        }
+        .footer-contact .ic {
+            color: var(--gold);
+            flex-shrink: 0;
+        }
+        .footer-map {
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 10px 28px rgba(0, 0, 0, .25);
+        }
+        .footer-map iframe {
+            width: 100%;
+            height: 130px;
+            border: 0;
+            display: block;
+            filter: grayscale(.12);
+        }
+        .footer-bottom {
+            margin-top: 42px;
+            padding: 18px 0;
+            border-top: 1px solid rgba(255, 255, 255, .10);
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+        .footer-bottom p {
+            color: rgba(255, 255, 255, .5);
+            font-size: .82rem;
+        }
+
+        /* ============================================================
+                   STICKY BAR & WHATSAPP FLOAT
+                   ============================================================ */
+        .sticky-bar {
+            display: none;
+            position: fixed;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 1900;
+            background: rgba(255, 255, 255, .98);
+            border-top: 1px solid #e5e8ee;
+            box-shadow: 0 -8px 28px rgba(6, 24, 61, .10);
+        }
+        .sticky-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+        }
+        .sticky-grid a {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 66px;
+            font-size: .7rem;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+            color: var(--navy);
+        }
+        .sticky-grid a span {
+            font-size: 22px;
+            line-height: 1.2;
+        }
+        .sticky-grid a.whatsapp {
+            color: #16a34a;
+        }
+
+        .whatsapp-float {
+            position: fixed;
+            right: 22px;
+            bottom: 24px;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #25d366, #34e07a);
+            color: #fff;
+            font-size: 28px;
+            z-index: 1950;
+            box-shadow: 0 12px 30px rgba(37, 211, 102, .38);
+            transition: .25s ease;
+        }
+        .whatsapp-float:hover {
+            transform: scale(1.08);
+        }
+
+        /* ============================================================
+                   RESPONSIVE
+                   ============================================================ */
+        @media(max-width:1100px) {
+            .programs-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+            .footer-grid {
+                grid-template-columns: 1fr 1fr 1fr;
+            }
+        }
+
+        @media(max-width:980px) {
+            .approach-grid,
+            .env-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            .approach-visual {
+                order: -1;
+            }
+        }
+
+        @media(max-width:900px) {
+            .nav {
+                display: none;
+            }
+            .header-phone {
+                display: none;
+            }
+            .menu-toggle {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            .hero .hero-arrow {
+                display: none;
+            }
+        }
+
+        @media(max-width:760px) {
+            .header {
+                padding: 14px 0 0;
+            }
+            .brand-logo img {
+                width: 46px;
+                height: 46px;
+            }
+            .brand-text .main {
+                font-size: 1.1rem;
+            }
+            .brand-text .sub {
+                font-size: .55rem;
+            }
+
+            .hero {
+                min-height: 100svh;
+                padding-top: 110px;
+            }
+
+            .feature-strip-wrap {
+                margin-top: -36px;
+            }
+            .feature-strip {
+                padding: 20px 16px;
+                flex-direction: column;
+            }
+            .feature-item {
+                flex: 1 1 auto;
+                min-width: 0;
+            }
+
+            .programs-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 14px;
+            }
+            .program-card {
+                padding: 22px 12px;
+            }
+            .program-icon {
+                width: 56px;
+                height: 56px;
+                font-size: 24px;
+            }
+            .program-card h3 {
+                font-size: 1rem;
+            }
+
+            .gallery-strip {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 12px;
+            }
+
+            .cta-inner {
+                justify-content: center;
+                text-align: center;
+            }
+            .cta-actions {
+                justify-content: center;
+                width: 100%;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 28px;
+            }
+
+            .sticky-bar {
+                display: block;
+            }
+            .whatsapp-float {
+                bottom: 80px;
+                width: 52px;
+                height: 52px;
+                font-size: 22px;
+                right: 16px;
+            }
+            .footer {
+                padding-bottom: 90px;
+            }
+
+            .hero-list {
+                gap: 6px 12px;
+            }
+            .hero-list span {
+                font-size: .78rem;
+                padding: 2px 12px;
+            }
+            .buttons .btn {
+                flex: 1 1 auto;
+                min-width: 160px;
+            }
+        }
+
+        @media(max-width:480px) {
+            .programs-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 12px;
+            }
+            .gallery-strip {
+                grid-template-columns: 1fr 1fr;
+                gap: 10px;
+            }
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 24px;
+            }
+            .env-features {
+                gap: 14px;
+            }
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+            .hero-subtitle {
+                font-size: .95rem;
+            }
+            .hero-copy {
+                font-size: .9rem;
+            }
+            .buttons .btn {
+                min-width: 140px;
+                padding: 12px 20px;
+                font-size: .85rem;
+            }
+        }
+
+        @media(prefers-reduced-motion:reduce) {
+            html {
+                scroll-behavior: auto;
+            }
+            *,
+            *::before,
+            *::after {
+                transition: none !important;
+                animation: none !important;
+            }
+        }
+    </style>
 </head>
 <body>
 
-<header class="header" id="header">
-  <div class="container header-inner">
-    <a href="index.html" class="brand-logo" aria-label="BrightRoots Kids Care Home">
-      <img src="images/logo.jpg" alt="BrightRoots Kids Care">
-    </a>
+    <!-- ===== HEADER ===== -->
+    <header class="header" id="header">
+        <div class="container header-inner">
+            <a href="index.html" class="brand-logo" aria-label="BrightRoots Kids Care Home">
+                <img src="images/kidslogo.jpg" alt="BrightRoots Kids Care" />
+                <span class="brand-text">
+                    <span class="main">BrightRoots</span>
+                    <span class="sub">Kids Care</span>
+                </span>
+            </a>
 
-    <nav class="nav" aria-label="Main navigation">
-      <a href="index.html" class="active">Home</a>
-      <a href="about.html">About Us</a>
-      <a href="programs.html">Programs</a>
-      <a href="environment.html">Environment</a>
-       <a href="franchise.html">Franchise</a>
-      <a href="admissions.html#contact">Admissions</a>
-    </nav>
+            <nav class="nav" aria-label="Main navigation">
+                <a href="index.html" class="active">Home</a>
+                <a href="about.html">About Us</a>
+                <a href="programs.html">Programs</a>
+                <a href="environment.html">Environment</a>
+                <a href="franchise.html">Franchise</a>
+                <a href="admissions.html#contact">Admissions</a>
+            </nav>
 
-    <a class="header-phone" href="tel:918438142540">📞 84381 42540</a>
+            <a class="header-phone" href="tel:918438142540">📞 84381 42540</a>
 
-    <button class="menu-toggle" id="menuToggle" type="button" aria-label="Open menu" aria-expanded="false">☰</button>
-  </div>
-</header>
-
-<div class="mobile-backdrop" id="mobileBackdrop"></div>
-<aside class="mobile-menu" id="mobileMenu" aria-hidden="true">
-  <button class="mobile-close" id="closeMenu" type="button" aria-label="Close menu">✕</button>
-  <div class="mobile-logo"><img src="images/kidslogo.jpg" alt="BrightRoots Kids Care"></div>
-  <a href="index.html" class="active">Home</a>
-  <a href="about.html">About Us</a>
-  <a href="programs.html">Programs</a>
-  <a href="environment.html">Environment</a>
-  <a href="franchise.html">Franchise</a>
-  <a href="admissions.html#contact">Admissions</a>
-  <div class="mobile-actions">
-    <a href="admissions.html">📅 Enquire Now</a>
-    <a class="whatsapp" href="https://wa.me/918438142540?text=Hello%20BrightRoots%20Kids%20Care%2C%20I%20would%20like%20to%20know%20more%20about%20admission%20for%20my%20child." target="_blank" rel="noopener">💬 WhatsApp Us</a>
-  </div>
-</aside>
-
-<main>
-
-<!-- ================= HERO ================= -->
-<section class="hero" id="home">
-  <div class="hero-slide active" style="background-image:url('images/home1.jpg')"></div>
-  <div class="hero-slide" style="background-image:url('images/home2.jpg')"></div>
-  <div class="hero-slide" style="background-image:url('images/home3.jpg')"></div>
-  <div class="hero-slide" style="background-image:url('images/home4.jpg')"></div>
-  <div class="hero-slide" style="background-image:url('images/home5.jpg')"></div>
-  <div class="hero-slide" style="background-image:url('images/home6.jpg')"></div>
-  <div class="hero-slide" style="background-image:url('images/home7.jpg')"></div>
-
-
-  <div class="container">
-    <div class="hero-content">
-      <span class="eyebrow">Admissions Open • 2026–27</span>
-      <h1>A Strong Start Today for a <span class="gradient">Brighter Tomorrow</span></h1>
-      <p class="hero-subtitle">Where little minds play, learn, grow and thrive.</p>
-      <p class="hero-copy">BrightRoots blends play-based learning, phonics and a warm, secure environment — so every day feels like a happy step forward for your child.</p>
-
-  <div class="hero-list">
-    <span>🧸 Play Group</span>
-    <span>📚 Pre-KG</span>
-    <span>✏️ LKG</span>
-    <span>🌟 UKG</span>
-    <span>🌙 Day Care</span>
-  </div>
-
-  <div class="buttons">
-    <a class="btn btn-pink" href="admissions.html">📅 Book a School Visit</a>
-    <a class="btn btn-green" href="https://wa.me/918438142540?text=Hello%20BrightRoots%20Kids%20Care%2C%20I%20would%20like%20to%20know%20more%20about%20admission%20for%20my%20child." target="_blank" rel="noopener">💬 WhatsApp Us</a>
-  </div>
-
-  <div class="hero-meta">
-    <span>📍 Tirupattur</span>
-    <span>📞 84381 42540</span>
-  </div>
-</div>
-  </div>
-</section>
-
-<!-- ================= FEATURE STRIP ================= -->
-<div class="feature-strip-wrap">
-  <div class="container">
-    <div class="feature-strip">
-      <div class="feature-item">
-        <div class="feature-icon">❤️</div>
-        <div><h4>Loving &amp; Safe</h4><p>Caring environment for every child</p></div>
-      </div>
-      <div class="feature-item">
-        <div class="feature-icon">🧩</div>
-        <div><h4>Play to Learn</h4><p>Activity based learning approach</p></div>
-      </div>
-      <div class="feature-item">
-        <div class="feature-icon">🍎</div>
-        <div><h4>Expert Educators</h4><p>Trained &amp; experienced teachers</p></div>
-      </div>
-      <div class="feature-item">
-        <div class="feature-icon">🌱</div>
-        <div><h4>Holistic Growth</h4><p>Social, emotional &amp; cognitive development</p></div>
-      </div>
-      <div class="feature-item">
-        <div class="feature-icon">🏠</div>
-        <div><h4>Day Care Support</h4><p>Reliable care while you work</p></div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- ================= PROGRAMS ================= -->
-<section class="programs-section" id="programs">
-  <div class="container">
-    <div class="section-heading">
-      <h2><span class="flourish">✿</span> Our Programs <span class="flourish">✿</span></h2>
-      <p>Age-appropriate programs to spark curiosity and build strong foundations</p>
-    </div>
-    <div class="programs-grid">
-      <article class="program-card">
-        <div class="program-icon">🧸</div>
-        <h3>Play Group</h3>
-        <span class="age">1.5 – 2.5 Years</span>
-        <p>Fun activities, play &amp; interaction</p>
-      </article>
-      <article class="program-card">
-        <div class="program-icon">📚</div>
-        <h3>Pre-KG</h3>
-        <span class="age">2.5 – 3.5 Years</span>
-        <p>Early learning through play &amp; exploration</p>
-      </article>
-      <article class="program-card">
-        <div class="program-icon">✏️</div>
-        <h3>LKG</h3>
-        <span class="age">3.5 – 4.5 Years</span>
-        <p>Building basics in language &amp; numeracy</p>
-      </article>
-      <article class="program-card">
-        <div class="program-icon">🌟</div>
-        <h3>UKG</h3>
-        <span class="age">4.5 – 5.5 Years</span>
-        <p>School readiness &amp; confidence building</p>
-      </article>
-      <article class="program-card">
-        <div class="program-icon">🏠</div>
-        <h3>Day Care</h3>
-        <span class="age">1.5 – 10 Years</span>
-        <p>Safe care, support &amp; engaging activities</p>
-      </article>
-    </div>
-  </div>
-</section>
-
-<!-- ================= OUR APPROACH ================= -->
-<section class="approach-section" id="approach">
-  <div class="container approach-grid">
-    <div class="approach-text">
-      <span class="eyebrow">Our Approach</span>
-      <h2>Learning Through Play &amp; Experience</h2>
-      <p>We believe children learn best when they are happy, engaged and free to explore. Our play-based curriculum nurtures curiosity, creativity and confidence.</p>
-      <ul>
-        <li><span class="check">✓</span> Play-based &amp; activity-oriented learning</li>
-        <li><span class="check">✓</span> Phonics, numeracy &amp; life skills</li>
-        <li><span class="check">✓</span> Focus on character &amp; values</li>
-        <li><span class="check">✓</span> Individual attention &amp; care</li>
-      </ul>
-      <a class="btn btn-pink" href="about.html">Learn More About Us →</a>
-    </div>
-    <div class="approach-visual">
-      <div class="approach-blob">
-        <img src="images/activities.jpg" alt="Children learning at BrightRoots" loading="lazy">
-        <span class="approach-deco d1">✦</span>
-        <span class="approach-deco d2">❀</span>
-        <span class="approach-deco d3">✦</span>
-        <span class="approach-deco d4">★</span>
-        <span class="approach-deco d5">❀</span>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ================= ENVIRONMENT ================= -->
-<section class="environment-section" id="environment">
-  <div class="container env-grid">
-    <div class="env-photo">
-      <img src="images/classroom.jpg" alt="BrightRoots classroom" loading="lazy">
-    </div>
-    <div class="env-text">
-      <span class="eyebrow">Our Environment</span>
-      <h2>A Safe, Colorful &amp; Stimulating Environment</h2>
-      <p>Bright, safe classrooms, engaging learning corners and a hygienic space that encourages curiosity and joy every day.</p>
-      <div class="env-features">
-        <div class="env-feature">
-          <div class="icon">🏫</div>
-          <div><span class="label">Bright</span><small>Classrooms</small></div>
+            <button class="menu-toggle" id="menuToggle" type="button" aria-label="Open menu" aria-expanded="false">☰</button>
         </div>
-        <div class="env-feature">
-          <div class="icon">🛡️</div>
-          <div><span class="label">Safe &amp; Secure</span><small>Premises</small></div>
+    </header>
+
+    <!-- ===== MOBILE MENU ===== -->
+    <div class="mobile-backdrop" id="mobileBackdrop"></div>
+    <aside class="mobile-menu" id="mobileMenu" aria-hidden="true">
+        <button class="mobile-close" id="closeMenu" type="button" aria-label="Close menu">✕</button>
+        <div class="mobile-logo">
+            <img src="images/kidslogo.jpg" alt="BrightRoots Kids Care" />
         </div>
-        <div class="env-feature">
-          <div class="icon">✨</div>
-          <div><span class="label">Hygienic &amp;</span><small>Clean</small></div>
+        <a href="index.html" class="active">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="programs.html">Programs</a>
+        <a href="environment.html">Environment</a>
+        <a href="franchise.html">Franchise</a>
+        <a href="admissions.html#contact">Admissions</a>
+        <div class="mobile-actions">
+            <a href="admissions.html">📅 Enquire Now</a>
+            <a class="whatsapp" href="https://wa.me/918438142540?text=Hello%20BrightRoots%20Kids%20Care%2C%20I%20would%20like%20to%20know%20more%20about%20admission%20for%20my%20child." target="_blank" rel="noopener">💬 WhatsApp Us</a>
         </div>
-        <div class="env-feature">
-          <div class="icon">🌳</div>
-          <div><span class="label">Indoor &amp; Outdoor</span><small>Play Areas</small></div>
+    </aside>
+
+    <!-- ============================================================
+    HERO
+    ============================================================ -->
+    <section class="hero" id="home">
+        <div class="hero-slide active" style="background-image:url('images/home1.jpg')"></div>
+        <div class="hero-slide" style="background-image:url('images/home2.jpg')"></div>
+        <div class="hero-slide" style="background-image:url('images/home3.jpg')"></div>
+        <div class="hero-slide" style="background-image:url('images/home4.jpg')"></div>
+        <div class="hero-slide" style="background-image:url('images/home5.jpg')"></div>
+        <div class="hero-slide" style="background-image:url('images/home6.jpg')"></div>
+        <div class="hero-slide" style="background-image:url('images/home7.jpg')"></div>
+
+        <button class="hero-arrow prev" id="heroPrev" type="button" aria-label="Previous slide">‹</button>
+        <button class="hero-arrow next" id="heroNext" type="button" aria-label="Next slide">›</button>
+
+        <div class="container hero-inner">
+            <div class="hero-content">
+                <span class="eyebrow">✨ Admissions Open • 2026–27</span>
+                <h1>A Strong Start Today for a <span class="gradient">Brighter Tomorrow</span></h1>
+                <p class="hero-subtitle">Where little minds play, learn, grow and thrive.</p>
+                <p class="hero-copy">BrightRoots blends play‑based learning, phonics and a warm, secure environment — so every day feels like a happy step forward for your child.</p>
+
+                <div class="hero-list">
+                    <span>🧸 Play Group</span>
+                    <span>📚 Pre-KG</span>
+                    <span>✏️ LKG</span>
+                    <span>🌟 UKG</span>
+                    <span>🌙 Day Care</span>
+                </div>
+
+                <div class="buttons">
+                    <a class="btn btn-pink" href="admissions.html">📅 Book a School Visit</a>
+                    <a class="btn btn-green" href="https://wa.me/918438142540?text=Hello%20BrightRoots%20Kids%20Care%2C%20I%20would%20like%20to%20know%20more%20about%20admission%20for%20my%20child." target="_blank" rel="noopener">💬 WhatsApp Us</a>
+                </div>
+
+                <div class="hero-meta">
+                    <span>📍 Tirupattur</span>
+                    <span>📞 84381 42540</span>
+                </div>
+
+                <div class="hero-dots" id="heroDots">
+                    <button class="active" data-slide="0" aria-label="Slide 1"></button>
+                    <button data-slide="1" aria-label="Slide 2"></button>
+                    <button data-slide="2" aria-label="Slide 3"></button>
+                    <button data-slide="3" aria-label="Slide 4"></button>
+                    <button data-slide="4" aria-label="Slide 5"></button>
+                    <button data-slide="5" aria-label="Slide 6"></button>
+                    <button data-slide="6" aria-label="Slide 7"></button>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-  </div>
-</section>
+    </section>
 
-<!-- ================= GALLERY GLIMPSE ================= -->
-<section class="gallery-section" id="gallery">
-  <div class="container">
-    <div class="section-heading">
-      <h2><span class="flourish">✿</span> A Glimpse of BrightRoots <span class="flourish">✿</span></h2>
-    </div>
-    <div class="gallery-strip">
-      <div class="item"><img src="images/gallery1.jpg" alt="Children playing" loading="lazy"></div>
-      <div class="item"><img src="images/gallery2.jpg" alt="Classroom activity" loading="lazy"></div>
-      <div class="item"><img src="images/gallery3.jpg" alt="Outdoor play" loading="lazy"></div>
-      <div class="item"><img src="images/gallery4.jpg" alt="Craft activity" loading="lazy"></div>
-      <div class="item"><img src="images/gallery5.jpg" alt="Children drawing" loading="lazy"></div>
-    </div>
-  </div>
-</section>
-
-<!-- ================= CTA ================= -->
-<section class="cta-band" id="visit">
-  <span class="cta-deco c1">✈️</span>
-  <span class="cta-deco c2">✦</span>
-  <span class="cta-deco c3">★</span>
-  <div class="container cta-inner">
-    <div>
-      <h2>Ready to Give Your Child the Best Start?</h2>
-      <p>Admissions open for Play Group to UKG &amp; Day Care.</p>
-    </div>
-    <div class="cta-actions">
-      <a class="btn btn-white" href="admissions.html">Enquire Now →</a>
-      <a class="btn btn-green" href="https://wa.me/918438142540?text=Hello%20BrightRoots%20Kids%20Care%2C%20I%20would%20like%20to%20know%20more%20about%20admission%20for%20my%20child." target="_blank" rel="noopener">💬 WhatsApp Us</a>
-    </div>
-  </div>
-</section>
-
-</main>
-
-<footer class="footer" id="contact">
-  <div class="container">
-    <div class="footer-grid">
-      <div class="footer-brand">
-        <div class="footer-logo-wrap"><img src="images/logo.jpg" alt="BrightRoots Kids Care"></div>
-        <p>BrightRoots Kids Care — where little minds play, learn, grow and thrive in a safe and caring environment.</p>
-        <div class="footer-social">
-          <a href="#" aria-label="Facebook">f</a>
-          <a href="#" aria-label="Instagram">◎</a>
-          <a href="#" aria-label="YouTube">▶</a>
+    <!-- ============================================================
+    FEATURE STRIP
+    ============================================================ -->
+    <div class="feature-strip-wrap">
+        <div class="container">
+            <div class="feature-strip">
+                <div class="feature-item">
+                    <div class="feature-icon">❤️</div>
+                    <div>
+                        <h4>Loving &amp; Safe</h4>
+                        <p>Caring environment for every child</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">🧩</div>
+                    <div>
+                        <h4>Play to Learn</h4>
+                        <p>Activity based learning approach</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">🍎</div>
+                    <div>
+                        <h4>Expert Educators</h4>
+                        <p>Trained &amp; experienced teachers</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">🌱</div>
+                    <div>
+                        <h4>Holistic Growth</h4>
+                        <p>Social, emotional &amp; cognitive development</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">🏠</div>
+                    <div>
+                        <h4>Day Care Support</h4>
+                        <p>Reliable care while you work</p>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
+    </div>
 
-      <div>
-        <h4>Quick Links</h4>
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="about.html">About Us</a></li>
-          <li><a href="programs.html">Programs</a></li>
-          <li><a href="environment.html">Environment</a></li>
-          <li><a href="admissions.html">Admissions</a></li>
-          <li><a href="admissions.html#contact">Contact Us</a></li>
-        </ul>
-      </div>
-
-      <div>
-        <h4>Programs</h4>
-        <ul>
-          <li><a href="programs.html#play-group">Play Group</a></li>
-          <li><a href="programs.html#pre-kg">Pre-KG</a></li>
-          <li><a href="programs.html#lkg">LKG</a></li>
-          <li><a href="programs.html#ukg">UKG</a></li>
-          <li><a href="programs.html#day-care">Day Care</a></li>
-        </ul>
-      </div>
-
-      <div>
-        <h4>Contact Us</h4>
-        <ul class="footer-contact">
-          <li><span class="ic">📞</span> <a href="tel:918438142540">84381 42540</a></li>
-          <li><span class="ic">✉️</span> <a href="mailto:info@brightrootskidscare.com">info@brightrootskidscare.com</a></li>
-          <li><span class="ic">📍</span> 19A/170 Ashok Nagar, Near KGG Hospital, Tirupattur 635601</li>
-        </ul>
-      </div>
-
-      <div>
-        <h4>Our Location</h4>
-        <div class="footer-map">
-          <iframe src="https://maps.google.com/maps?q=19A%2F170%20Ashok%20Nagar%2C%20Tirupattur&t=&z=14&ie=UTF8&iwloc=&output=embed" loading="lazy" title="BrightRoots Kids Care location map"></iframe>
+    <!-- ============================================================
+    PROGRAMS
+    ============================================================ -->
+    <section class="programs-section" id="programs">
+        <div class="container">
+            <div class="section-heading">
+                <h2><span class="flourish">✿</span> Our Programs <span class="flourish">✿</span></h2>
+                <p>Age‑appropriate programs to spark curiosity and build strong foundations</p>
+            </div>
+            <div class="programs-grid">
+                <article class="program-card">
+                    <div class="program-icon">🧸</div>
+                    <h3>Play Group</h3>
+                    <span class="age">1.5 – 2.5 Years</span>
+                    <p>Fun activities, play &amp; interaction</p>
+                </article>
+                <article class="program-card">
+                    <div class="program-icon">📚</div>
+                    <h3>Pre-KG</h3>
+                    <span class="age">2.5 – 3.5 Years</span>
+                    <p>Early learning through play &amp; exploration</p>
+                </article>
+                <article class="program-card">
+                    <div class="program-icon">✏️</div>
+                    <h3>LKG</h3>
+                    <span class="age">3.5 – 4.5 Years</span>
+                    <p>Building basics in language &amp; numeracy</p>
+                </article>
+                <article class="program-card">
+                    <div class="program-icon">🌟</div>
+                    <h3>UKG</h3>
+                    <span class="age">4.5 – 5.5 Years</span>
+                    <p>School readiness &amp; confidence building</p>
+                </article>
+                <article class="program-card">
+                    <div class="program-icon">🏠</div>
+                    <h3>Day Care</h3>
+                    <span class="age">1.5 – 10 Years</span>
+                    <p>Safe care, support &amp; engaging activities</p>
+                </article>
+            </div>
         </div>
-      </div>
+    </section>
+
+    <!-- ============================================================
+    APPROACH
+    ============================================================ -->
+    <section class="approach-section" id="approach">
+        <div class="container approach-grid">
+            <div class="approach-text">
+                <span class="eyebrow">Our Approach</span>
+                <h2>Learning Through Play &amp; Experience</h2>
+                <p>We believe children learn best when they are happy, engaged and free to explore. Our play‑based curriculum nurtures curiosity, creativity and confidence.</p>
+                <ul>
+                    <li><span class="check">✓</span> Play‑based &amp; activity‑oriented learning</li>
+                    <li><span class="check">✓</span> Phonics, numeracy &amp; life skills</li>
+                    <li><span class="check">✓</span> Focus on character &amp; values</li>
+                    <li><span class="check">✓</span> Individual attention &amp; care</li>
+                </ul>
+                <a class="btn btn-pink" href="about.html">Learn More About Us →</a>
+            </div>
+            <div class="approach-visual">
+                <div class="approach-blob">
+                    <img src="images/activities.jpg" alt="Children learning at BrightRoots" loading="lazy" />
+                    <span class="approach-deco d1">✦</span>
+                    <span class="approach-deco d2">❀</span>
+                    <span class="approach-deco d3">✦</span>
+                    <span class="approach-deco d4">★</span>
+                    <span class="approach-deco d5">❀</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+    ENVIRONMENT
+    ============================================================ -->
+    <section class="environment-section" id="environment">
+        <div class="container env-grid">
+            <div class="env-photo">
+                <img src="images/classroom.jpg" alt="BrightRoots classroom" loading="lazy" />
+            </div>
+            <div class="env-text">
+                <span class="eyebrow">Our Environment</span>
+                <h2>A Safe, Colorful &amp; Stimulating Environment</h2>
+                <p>Bright, safe classrooms, engaging learning corners and a hygienic space that encourages curiosity and joy every day.</p>
+                <div class="env-features">
+                    <div class="env-feature">
+                        <div class="icon">🏫</div>
+                        <div>
+                            <span class="label">Bright</span>
+                            <small>Classrooms</small>
+                        </div>
+                    </div>
+                    <div class="env-feature">
+                        <div class="icon">🛡️</div>
+                        <div>
+                            <span class="label">Safe &amp; Secure</span>
+                            <small>Premises</small>
+                        </div>
+                    </div>
+                    <div class="env-feature">
+                        <div class="icon">✨</div>
+                        <div>
+                            <span class="label">Hygienic &amp;</span>
+                            <small>Clean</small>
+                        </div>
+                    </div>
+                    <div class="env-feature">
+                        <div class="icon">🌳</div>
+                        <div>
+                            <span class="label">Indoor &amp; Outdoor</span>
+                            <small>Play Areas</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+    GALLERY
+    ============================================================ -->
+    <section class="gallery-section" id="gallery">
+        <div class="container">
+            <div class="section-heading">
+                <h2><span class="flourish">✿</span> A Glimpse of BrightRoots <span class="flourish">✿</span></h2>
+            </div>
+            <div class="gallery-strip">
+                <div class="item"><img src="images/gallery1.jpg" alt="Children playing" loading="lazy" /></div>
+                <div class="item"><img src="images/gallery2.jpg" alt="Classroom activity" loading="lazy" /></div>
+                <div class="item"><img src="images/gallery3.jpg" alt="Outdoor play" loading="lazy" /></div>
+                <div class="item"><img src="images/gallery4.jpg" alt="Craft activity" loading="lazy" /></div>
+                <div class="item"><img src="images/gallery5.jpg" alt="Children drawing" loading="lazy" /></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+    CTA BAND
+    ============================================================ -->
+    <section class="cta-band" id="visit">
+        <span class="cta-deco c1">✈️</span>
+        <span class="cta-deco c2">✦</span>
+        <span class="cta-deco c3">★</span>
+        <div class="container cta-inner">
+            <div>
+                <h2>Ready to Give Your Child the Best Start?</h2>
+                <p>Admissions open for Play Group to UKG &amp; Day Care.</p>
+            </div>
+            <div class="cta-actions">
+                <a class="btn btn-pink" href="admissions.html">Enquire Now →</a>
+                <a class="btn btn-green" href="https://wa.me/918438142540?text=Hello%20BrightRoots%20Kids%20Care%2C%20I%20would%20like%20to%20know%20more%20about%20admission%20for%20my%20child." target="_blank" rel="noopener">💬 WhatsApp Us</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+    FOOTER
+    ============================================================ -->
+    <footer class="footer" id="contact">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="footer-logo-wrap">
+                        <img src="images/kidslogo.jpg" alt="BrightRoots Kids Care" />
+                        <div class="footer-brand-text">
+                            <span class="main">BrightRoots</span>
+                            <span class="sub">Kids Care</span>
+                        </div>
+                    </div>
+                    <p>BrightRoots Kids Care — where little minds play, learn, grow and thrive in a safe and caring environment.</p>
+                    <div class="footer-social">
+                        <a href="#" aria-label="Facebook">f</a>
+                        <a href="#" aria-label="Instagram">◎</a>
+                        <a href="#" aria-label="YouTube">▶</a>
+                    </div>
+                </div>
+
+                <div>
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="programs.html">Programs</a></li>
+                        <li><a href="environment.html">Environment</a></li>
+                        <li><a href="admissions.html">Admissions</a></li>
+                        <li><a href="admissions.html#contact">Contact Us</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4>Programs</h4>
+                    <ul>
+                        <li><a href="programs.html#play-group">Play Group</a></li>
+                        <li><a href="programs.html#pre-kg">Pre-KG</a></li>
+                        <li><a href="programs.html#lkg">LKG</a></li>
+                        <li><a href="programs.html#ukg">UKG</a></li>
+                        <li><a href="programs.html#day-care">Day Care</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4>Contact Us</h4>
+                    <ul class="footer-contact">
+                        <li><span class="ic">📞</span> <a href="tel:918438142540">84381 42540</a></li>
+                        <li><span class="ic">✉️</span> <a href="mailto:info@brightrootskidscare.com">info@brightrootskidscare.com</a></li>
+                        <li><span class="ic">📍</span> 19A/170 Ashok Nagar, Near KGG Hospital, Tirupattur 635601</li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4>Our Location</h4>
+                    <div class="footer-map">
+                        <iframe src="https://maps.google.com/maps?q=19A%2F170%20Ashok%20Nagar%2C%20Tirupattur&t=&z=14&ie=UTF8&iwloc=&output=embed" loading="lazy" title="BrightRoots Kids Care location map"></iframe>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>© <span id="year"></span> BrightRoots Kids Care. All Rights Reserved.</p>
+                <p>Designed with ❤️ for Bright Beginnings.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ============================================================
+    STICKY BAR & WHATSAPP FLOAT
+    ============================================================ -->
+    <div class="sticky-bar">
+        <div class="sticky-grid">
+            <a href="tel:918438142540"><span>📞</span>Call</a>
+            <a class="whatsapp" href="https://wa.me/918438142540?text=Hello%20BrightRoots%20Kids%20Care%2C%20I%20would%20like%20to%20know%20more%20about%20admission%20for%20my%20child." target="_blank" rel="noopener"><span>💬</span>WhatsApp</a>
+            <a href="https://maps.google.com/maps?q=19A/170+Ashok+Nagar,+Tirupattur" target="_blank" rel="noopener"><span>📍</span>Directions</a>
+        </div>
     </div>
 
-    <div class="footer-bottom">
-      <p>© <span id="year"></span> BrightRoots Kids Care. All Rights Reserved.</p>
-      <p>Designed with ❤️ for Bright Beginnings.</p>
-    </div>
-  </div>
-</footer>
+    <a class="whatsapp-float" href="https://wa.me/918438142540?text=Hello%20BrightRoots%20Kids%20Care%2C%20I%20would%20like%20to%20know%20more%20about%20admission%20for%20my%20child." target="_blank" rel="noopener" aria-label="WhatsApp">💬</a>
 
-<div class="sticky-bar">
-  <div class="sticky-grid">
-    <a href="tel:918438142540"><span>📞</span>Call</a>
-    <a class="whatsapp" href="https://wa.me/918438142540?text=Hello%20BrightRoots%20Kids%20Care%2C%20I%20would%20like%20to%20know%20more%20about%20admission%20for%20my%20child." target="_blank" rel="noopener"><span>💬</span>WhatsApp</a>
-    <a href="https://maps.google.com/maps?q=19A/170+Ashok+Nagar,+Tirupattur" target="_blank" rel="noopener"><span>📍</span>Directions</a>
-  </div>
-</div>
+    <!-- ============================================================
+    JAVASCRIPT
+    ============================================================ -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
 
-<a class="whatsapp-float" href="https://wa.me/918438142540?text=Hello%20BrightRoots%20Kids%20Care%2C%20I%20would%20like%20to%20know%20more%20about%20admission%20for%20my%20child." target="_blank" rel="noopener" aria-label="WhatsApp">💬</a>
+            /* ----- Mobile menu ----- */
+            const menuToggle = document.getElementById('menuToggle');
+            const mobileMenu = document.getElementById('mobileMenu');
+            const mobileBackdrop = document.getElementById('mobileBackdrop');
+            const closeMenu = document.getElementById('closeMenu');
 
-<script>
-document.addEventListener('DOMContentLoaded', function(){
+            function setMenu(open) {
+                mobileMenu.classList.toggle('open', open);
+                mobileBackdrop.classList.toggle('open', open);
+                mobileMenu.setAttribute('aria-hidden', String(!open));
+                menuToggle.setAttribute('aria-expanded', String(open));
+                document.body.classList.toggle('menu-open', open);
+            }
+            menuToggle && menuToggle.addEventListener('click', () => setMenu(true));
+            closeMenu && closeMenu.addEventListener('click', () => setMenu(false));
+            mobileBackdrop && mobileBackdrop.addEventListener('click', () => setMenu(false));
+            mobileMenu && mobileMenu.querySelectorAll('a').forEach(function(a) {
+                a.addEventListener('click', () => setMenu(false));
+            });
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape') setMenu(false);
+            });
 
-  /* Mobile menu */
-  const menuToggle = document.getElementById('menuToggle');
-  const mobileMenu = document.getElementById('mobileMenu');
-  const mobileBackdrop = document.getElementById('mobileBackdrop');
-  const closeMenu = document.getElementById('closeMenu');
+            /* ----- Footer year ----- */
+            var yearEl = document.getElementById('year');
+            if (yearEl) yearEl.textContent = new Date().getFullYear();
 
-  function setMenu(open){
-    mobileMenu.classList.toggle('open', open);
-    mobileBackdrop.classList.toggle('open', open);
-    mobileMenu.setAttribute('aria-hidden', String(!open));
-    menuToggle.setAttribute('aria-expanded', String(open));
-    document.body.classList.toggle('menu-open', open);
-  }
-  menuToggle && menuToggle.addEventListener('click', () => setMenu(true));
-  closeMenu && closeMenu.addEventListener('click', () => setMenu(false));
-  mobileBackdrop && mobileBackdrop.addEventListener('click', () => setMenu(false));
-  mobileMenu && mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => setMenu(false)));
-  document.addEventListener('keydown', e => { if(e.key === 'Escape') setMenu(false); });
+            /* ----- Hero slider ----- */
+            var slides = document.querySelectorAll('.hero-slide');
+            var dots = document.querySelectorAll('#heroDots button');
+            var prevBtn = document.getElementById('heroPrev');
+            var nextBtn = document.getElementById('heroNext');
+            var current = 0;
+            var timer = null;
+            var SLIDE_TIME = 5000;
+            var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  /* Footer year */
-  const year = document.getElementById('year');
-  if(year) year.textContent = new Date().getFullYear();
+            function goTo(index) {
+                slides[current].classList.remove('active');
+                if (dots[current]) dots[current].classList.remove('active');
+                current = (index + slides.length) % slides.length;
+                slides[current].classList.add('active');
+                if (dots[current]) dots[current].classList.add('active');
+            }
 
-  /* ================= HERO SLIDER ================= */
-  const slides = document.querySelectorAll('.hero-slide');
-  const dots = document.querySelectorAll('#heroDots button');
-  const prevBtn = document.getElementById('heroPrev');
-  const nextBtn = document.getElementById('heroNext');
-  let current = 0;
-  let timer = null;
-  const SLIDE_TIME = 5000;
-  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+            function next() { goTo(current + 1); }
 
-  function goTo(index){
-    slides[current].classList.remove('active');
-    dots[current] && dots[current].classList.remove('active');
-    current = (index + slides.length) % slides.length;
-    slides[current].classList.add('active');
-    dots[current] && dots[current].classList.add('active');
-  }
+            function prev() { goTo(current - 1); }
 
-  function next(){ goTo(current + 1); }
-  function prev(){ goTo(current - 1); }
+            function startAuto() {
+                if (reduceMotion) return;
+                stopAuto();
+                timer = setInterval(next, SLIDE_TIME);
+            }
 
-  function startAuto(){
-    if(reduceMotion) return;
-    stopAuto();
-    timer = setInterval(next, SLIDE_TIME);
-  }
-  function stopAuto(){ if(timer) clearInterval(timer); }
-  function restartAuto(){ stopAuto(); startAuto(); }
+            function stopAuto() {
+                if (timer) clearInterval(timer);
+            }
 
-  if(slides.length){
-    nextBtn && nextBtn.addEventListener('click', () => { next(); restartAuto(); });
-    prevBtn && prevBtn.addEventListener('click', () => { prev(); restartAuto(); });
-    dots.forEach(btn => btn.addEventListener('click', () => {
-      goTo(parseInt(btn.dataset.slide, 10));
-      restartAuto();
-    }));
-    startAuto();
-  }
+            function restartAuto() { stopAuto();
+                startAuto(); }
 
-});
-</script>
+            if (slides.length) {
+                nextBtn && nextBtn.addEventListener('click', function() { next();
+                    restartAuto(); });
+                prevBtn && prevBtn.addEventListener('click', function() { prev();
+                    restartAuto(); });
+                dots.forEach(function(btn) {
+                    btn.addEventListener('click', function() {
+                        goTo(parseInt(this.dataset.slide, 10));
+                        restartAuto();
+                    });
+                });
+                startAuto();
+            }
+
+        });
+    </script>
 
 </body>
 </html>
