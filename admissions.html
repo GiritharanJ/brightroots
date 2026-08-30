@@ -18,21 +18,25 @@
 
         :root {
             --navy: #142A5A;
-            --navy-deep: #0A1A3A;
+            --navy-dark: #0A1A3A;
             --pink: #D7195B;
             --pink-dark: #B01345;
             --pink-glow: #f03a7a;
             --pink-light: #fde8f1;
             --gold: #F5A400;
+            --gold-glow: #ffd966;
             --gold-light: #fff3d6;
             --green: #4A9B45;
             --green-glow: #5fd07a;
+            --green-light: #e3f7ec;
             --blue: #28A9D6;
+            --blue-glow: #5ac8f0;
             --blue-light: #eaf8fd;
             --cream: #FFFCF8;
             --white: #fff;
             --text: #374151;
             --muted: #6B7280;
+            --gray-500: #6B7280;
             --line: #E8EAF0;
             --shadow: 0 10px 30px rgba(20, 42, 90, .09);
             --shadow-lg: 0 18px 45px rgba(20, 42, 90, .14);
@@ -67,6 +71,9 @@
             width: min(1180px, calc(100% - 40px));
             margin: auto;
         }
+        .text-center {
+            text-align: center;
+        }
 
         h1,
         h2,
@@ -100,10 +107,7 @@
         }
 
         /* ============================================================
-                   HEADER (fixed for inner pages)
-                   ============================================================ */
-          /* ============================================================
-                   HEADER
+                   HEADER (consistent with home page)
                    ============================================================ */
         .header {
             position: absolute;
@@ -130,8 +134,8 @@
             transform: translateY(-2px);
         }
         .brand-logo img {
-            width: 90px;
-            height: 90px;
+            width: 70px;
+            height: 70px;
             border-radius: 50%;
             object-fit: cover;
             border: 3px solid rgba(255, 255, 255, 0.6);
@@ -220,7 +224,6 @@
             flex-shrink: 0;
         }
 
-        /* Mobile menu */
         .mobile-backdrop {
             position: fixed;
             inset: 0;
@@ -307,47 +310,142 @@
         }
 
         /* ============================================================
-                   PAGE BANNER
+                   ADMISSIONS HERO — COLORFUL
                    ============================================================ */
-        .page-banner {
+        .admissions-hero {
             position: relative;
             overflow: hidden;
-            padding: 82px 0;
+            min-height: 430px;
+            display: flex;
+            align-items: center;
             text-align: center;
-            background: linear-gradient(135deg, #fff7f9 0%, #fff 48%, #fff9e9 100%);
+            background:
+                radial-gradient(circle at 15% 25%, rgba(245, 164, 0, .18), transparent 30%),
+                radial-gradient(circle at 85% 30%, rgba(215, 25, 91, .15), transparent 32%),
+                radial-gradient(circle at 50% 70%, rgba(40, 169, 214, .12), transparent 30%),
+                linear-gradient(135deg, #fff8e7 0%, #fff 48%, #fff3f7 100%);
         }
-        .page-banner:before,
-        .page-banner:after {
+        .admissions-hero:before,
+        .admissions-hero:after {
             content: "";
             position: absolute;
             border-radius: 50%;
             pointer-events: none;
         }
-        .page-banner:before {
-            width: 260px;
-            height: 260px;
-            background: rgba(215, 25, 91, .08);
-            left: -100px;
-            top: -100px;
-        }
-        .page-banner:after {
+        .admissions-hero:before {
             width: 300px;
             height: 300px;
-            background: rgba(245, 164, 0, .09);
-            right: -120px;
+            background: rgba(215, 25, 91, .06);
+            left: -120px;
+            top: -120px;
+        }
+        .admissions-hero:after {
+            width: 340px;
+            height: 340px;
+            background: rgba(245, 164, 0, .07);
+            right: -130px;
             bottom: -150px;
         }
-        .page-banner .container {
+
+        .admissions-hero .deco {
+            position: absolute;
+            font-size: 2rem;
+            opacity: .25;
+            z-index: 0;
+            pointer-events: none;
+            animation: float-deco 6s ease-in-out infinite;
+        }
+        .admissions-hero .deco.d1 {
+            top: 15%;
+            left: 6%;
+            color: var(--pink);
+            animation-delay: 0s;
+        }
+        .admissions-hero .deco.d2 {
+            top: 20%;
+            right: 8%;
+            color: var(--gold);
+            animation-delay: 1.2s;
+        }
+        .admissions-hero .deco.d3 {
+            bottom: 20%;
+            left: 10%;
+            color: var(--blue);
+            animation-delay: 2.4s;
+        }
+        .admissions-hero .deco.d4 {
+            bottom: 12%;
+            right: 6%;
+            color: var(--green);
+            animation-delay: 0.8s;
+        }
+
+        @keyframes float-deco {
+            0%,
+            100% {
+                transform: translateY(0) rotate(0deg);
+            }
+            50% {
+                transform: translateY(-16px) rotate(6deg);
+            }
+        }
+
+        .admissions-hero-content {
+            max-width: 850px;
+            margin: auto;
+            padding: 70px 0;
             position: relative;
             z-index: 1;
         }
-        .page-banner h1 {
-            margin-bottom: 10px;
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 9px;
+            padding: 9px 17px;
+            border-radius: 999px;
+            font-family: 'Poppins', sans-serif;
+            font-size: .85rem;
+            font-weight: 700;
+            margin-bottom: 18px;
+            box-shadow: 0 8px 18px rgba(245, 164, 0, .18);
         }
-        .page-banner p {
-            font-size: 1.1rem;
+        .hero-badge .dot {
+            width: 9px;
+            height: 9px;
+            border-radius: 50%;
+            background: var(--pink);
+            animation: pulse-dot 1.5s ease-in-out infinite;
+        }
+        @keyframes pulse-dot {
+            0%,
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+            50% {
+                opacity: 0.5;
+                transform: scale(0.8);
+            }
+        }
+        .admissions-hero h1 {
+            margin-bottom: 15px;
+        }
+        .hero-subtitle {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: var(--navy);
+        }
+        .hero-actions {
+            display: flex;
+            justify-content: center;
+            gap: 14px;
+            margin-top: 26px;
+            flex-wrap: wrap;
         }
 
+        /* ============================================================
+                   SECTION UTILITIES
+                   ============================================================ */
         .section-padding {
             padding: 82px 0;
         }
@@ -378,7 +476,7 @@
             display: inline-block;
             padding: 7px 15px;
             border-radius: 999px;
-            background: #fff0f5;
+            background: var(--pink-light);
             color: var(--pink);
             font-family: 'Poppins', sans-serif;
             font-size: .78rem;
@@ -388,14 +486,17 @@
             margin-bottom: 14px;
         }
         .eyebrow.gold {
-            background: #fff7df;
+            background: var(--gold-light);
             color: #9a6800;
         }
         .eyebrow.blue {
-            background: #eaf8fd;
+            background: var(--blue-light);
             color: #1782aa;
         }
 
+        /* ============================================================
+                   BUTTONS
+                   ============================================================ */
         .btn {
             display: inline-flex;
             align-items: center;
@@ -413,17 +514,20 @@
             transform: translateY(-2px);
         }
         .btn-primary {
-            background: var(--pink);
+            background: linear-gradient(135deg, var(--pink), var(--pink-glow));
             color: #fff;
             box-shadow: 0 8px 20px rgba(215, 25, 91, .25);
         }
         .btn-primary:hover {
-            background: var(--pink-dark);
+            box-shadow: 0 14px 30px rgba(215, 25, 91, .35);
         }
         .btn-white {
             background: #fff;
             color: var(--navy);
             box-shadow: 0 8px 20px rgba(0, 0, 0, .08);
+        }
+        .btn-white:hover {
+            box-shadow: 0 14px 30px rgba(0, 0, 0, .14);
         }
         .btn-outline {
             background: transparent;
@@ -451,60 +555,6 @@
         }
 
         /* ============================================================
-                   ADMISSIONS HERO
-                   ============================================================ */
-        .admissions-hero {
-            position: relative;
-            overflow: hidden;
-            min-height: 430px;
-            display: flex;
-            align-items: center;
-            text-align: center;
-            background:
-                radial-gradient(circle at 15% 25%, rgba(245, 164, 0, .16), transparent 30%),
-                radial-gradient(circle at 85% 30%, rgba(215, 25, 91, .12), transparent 32%),
-                linear-gradient(135deg, #fff8e7 0%, #fff 48%, #fff3f7 100%);
-        }
-        .admissions-hero-content {
-            max-width: 850px;
-            margin: auto;
-            padding: 70px 0;
-        }
-        .hero-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 9px;
-            padding: 9px 17px;
-            border-radius: 999px;
-            font-family: 'Poppins', sans-serif;
-            font-size: .85rem;
-            font-weight: 700;
-            margin-bottom: 18px;
-            box-shadow: 0 8px 18px rgba(245, 164, 0, .18);
-        }
-        .hero-badge .dot {
-            width: 9px;
-            height: 9px;
-            border-radius: 50%;
-            background: var(--pink);
-        }
-        .admissions-hero h1 {
-            margin-bottom: 15px;
-        }
-        .hero-subtitle {
-            font-size: 1.15rem;
-            font-weight: 700;
-            color: var(--navy);
-        }
-        .hero-actions {
-            display: flex;
-            justify-content: center;
-            gap: 14px;
-            margin-top: 26px;
-            flex-wrap: wrap;
-        }
-
-        /* ============================================================
                    PROCESS FLOW
                    ============================================================ */
         .process-flow {
@@ -521,6 +571,10 @@
             padding: 28px 20px;
             text-align: center;
             box-shadow: var(--shadow);
+        }
+        .process-step:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
         }
         .step-number {
             position: absolute;
@@ -573,11 +627,18 @@
             gap: 10px;
             margin: 20px 0 25px;
         }
+        .enquiry-benefits li {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            color: var(--navy);
+            font-size: .98rem;
+        }
         .enquiry-quick-contact {
             padding: 18px 20px;
             border-left: 4px solid var(--pink);
             background: #fff;
             border-radius: 0 15px 15px 0;
+            box-shadow: var(--shadow-sm);
         }
         .enquiry-quick-contact p {
             margin: 6px 0;
@@ -667,6 +728,11 @@
             padding: 22px;
             box-shadow: var(--shadow);
             min-height: 150px;
+            transition: transform .25s ease, box-shadow .25s ease;
+        }
+        .contact-card:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-lg);
         }
         .contact-card:nth-child(1) {
             border-top: 5px solid var(--pink);
@@ -684,7 +750,7 @@
             border-radius: 50%;
             display: grid;
             place-items: center;
-            background: #fff0f5;
+            background: var(--pink-light);
             font-size: 1.5rem;
         }
         .contact-card h4 {
@@ -728,7 +794,7 @@
             border-radius: 50%;
             display: grid;
             place-items: center;
-            background: #fff7df;
+            background: var(--gold-light);
             font-size: 1.5rem;
             flex: 0 0 54px;
         }
@@ -762,12 +828,13 @@
             height: 100%;
             min-height: 400px;
             border: 0;
+            display: block;
         }
 
         /* ============================================================
                    FOOTER
                    ============================================================ */
-     .footer {
+        .footer {
             background: var(--navy-dark);
             color: #fff;
             padding: 60px 0 0;
@@ -787,9 +854,10 @@
             height: 60px;
             width: auto;
             object-fit: contain;
-            border-radius: 50%;
-            border: 3px solid rgba(255, 255, 255, 0.15);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+            border-radius: 0;
+            border: none;
+            box-shadow: none;
+            background: transparent;
         }
         .footer-logo-wrap .footer-brand-text {
             line-height: 1.1;
@@ -914,6 +982,7 @@
             color: rgba(255, 255, 255, .5);
             font-size: .82rem;
         }
+
         @media (max-width: 1100px) {
             .footer-grid {
                 grid-template-columns: 1fr 1fr 1fr;
@@ -1046,13 +1115,16 @@
             .header .container {
                 justify-content: space-between;
             }
+            .header-phone {
+                display: none;
+            }
             .contact-cards {
                 grid-template-columns: 1fr;
             }
             .footer-grid {
                 grid-template-columns: 1fr 1fr;
             }
-            .header-phone {
+            .admissions-hero .deco {
                 display: none;
             }
         }
@@ -1060,12 +1132,6 @@
         @media (max-width: 600px) {
             .container {
                 width: min(100% - 28px, 1180px);
-            }
-            .page-banner {
-                padding: 65px 0;
-            }
-            .section-padding {
-                padding: 60px 0;
             }
             .admissions-hero {
                 min-height: 420px;
@@ -1094,6 +1160,7 @@
             }
             .footer-grid {
                 grid-template-columns: 1fr;
+                gap: 28px;
             }
             .whatsapp-float {
                 right: 15px;
@@ -1111,8 +1178,11 @@
             .footer {
                 padding-bottom: 90px;
             }
-            .footer-grid {
-                gap: 28px;
+            .admissions-hero h1 {
+                font-size: 2.2rem;
+            }
+            .hero-subtitle {
+                font-size: 1rem;
             }
         }
 
@@ -1134,19 +1204,23 @@
     <!-- ============================================================
     HEADER
     ============================================================ -->
-      <header class="header" id="header">
+    <header class="header" id="header">
         <div class="container header-inner">
             <a href="index.html" class="brand-logo" aria-label="BrightRoots Kids Care Home">
                 <img src="images/logo.jpg" alt="BrightRoots Kids Care" />
+                <span class="brand-text">
+                    <span class="main">BrightRoots</span>
+                    <span class="sub">Kids Care</span>
+                </span>
             </a>
 
             <nav class="nav" aria-label="Main navigation">
-                <a href="index.html" class="active">Home</a>
+                <a href="index.html">Home</a>
                 <a href="about.html">About Us</a>
                 <a href="programs.html">Programs</a>
                 <a href="whybrightroots.html">Why BrightRoots</a>
                 <a href="gallery.html">Gallery</a>
-                <a href="admissions.html">Admissions</a>
+                <a href="admissions.html" class="active">Admissions</a>
             </nav>
 
             <a class="header-phone" href="tel:918438142540">📞 84381 42540</a>
@@ -1164,23 +1238,27 @@
         <div class="mobile-logo">
             <img src="images/logo.jpg" alt="BrightRoots Kids Care" />
         </div>
-        <a href="index.html" class="active">Home</a>
+        <a href="index.html">Home</a>
         <a href="about.html">About Us</a>
         <a href="programs.html">Programs</a>
         <a href="whybrightroots.html">Why BrightRoots</a>
         <a href="gallery.html">Gallery</a>
-        <a href="admissions.html">Admissions</a>
+        <a href="admissions.html" class="active">Admissions</a>
         <div class="mobile-actions">
-            <a href="admissions.html">📅 Enquire Now</a>
+            <a href="#enquire">📅 Enquire Now</a>
             <a class="whatsapp" href="https://wa.me/918438142540?text=Hello%20BrightRoots%20Kids%20Care%2C%20I%20would%20like%20to%20know%20more%20about%20admission%20for%20my%20child." target="_blank" rel="noopener">💬 WhatsApp Us</a>
         </div>
     </aside>
 
-
     <!-- ============================================================
-    ADMISSIONS HERO
+    ADMISSIONS HERO — COLORFUL
     ============================================================ -->
     <section class="admissions-hero">
+        <span class="deco d1">✦</span>
+        <span class="deco d2">❀</span>
+        <span class="deco d3">★</span>
+        <span class="deco d4">✿</span>
+
         <div class="container">
             <div class="admissions-hero-content scroll-animate">
                 <div class="hero-badge" style="background: var(--gold); color: var(--navy);">
@@ -1381,28 +1459,32 @@
                 </div>
                 <div class="visit-map scroll-animate" data-delay="200">
                     <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4807.960808907397!2d78.56455477591646!3d12.5123903877623!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bac552135dbe67d%3A0x9c362f811794a828!2sBRIGHTROOTS%20KIDS%20CARE%20-%20PRESCHOOL%20%26%20DAY%20CARE%20CENTER%20IN%20TIRUPATTUR!5e1!3m2!1sen!2sin!4v1787749579902!5m2!1sen!2sin"
-                    width="100%"
-                    height="400"
-                    style="border:0;border-radius:1rem;"
-                    allowfullscreen=""
-                    loading="lazy"
-                    referrerpolicy="strict-origin-when-cross-origin">
-                </iframe>
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4807.960808907397!2d78.56455477591646!3d12.5123903877623!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bac552135dbe67d%3A0x9c362f811794a828!2sBRIGHTROOTS%20KIDS%20CARE%20-%20PRESCHOOL%20%26%20DAY%20CARE%20CENTER%20IN%20TIRUPATTUR!5e1!3m2!1sen!2sin!4v1787749579902!5m2!1sen!2sin"
+                        width="100%"
+                        height="400"
+                        style="border:0;border-radius:1rem;"
+                        allowfullscreen=""
+                        loading="lazy"
+                        referrerpolicy="strict-origin-when-cross-origin">
+                    </iframe>
+                </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
-<!-- ============================================================
-FOOTER
-============================================================ -->
- <footer class="footer" id="contact">
+    <!-- ============================================================
+    FOOTER
+    ============================================================ -->
+    <footer class="footer" id="contact">
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-brand">
                     <div class="footer-logo-wrap">
                         <img src="images/logo1.jpg" alt="BrightRoots Kids Care" />
+                        <div class="footer-brand-text">
+                            <span class="main">BrightRoots</span>
+                            <span class="sub">Kids Care</span>
+                        </div>
                     </div>
                     <p>BrightRoots Kids Care — where little minds play, learn, grow and thrive in a safe and caring environment.</p>
                     <div class="footer-social">
@@ -1478,113 +1560,113 @@ FOOTER
 
     <a class="whatsapp-float" href="https://wa.me/918438142540?text=Hello%20BrightRoots%20Kids%20Care%2C%20I%20would%20like%20to%20know%20more%20about%20admission%20for%20my%20child." target="_blank" rel="noopener" aria-label="WhatsApp">💬</a>
 
-<!-- ============================================================
-JAVASCRIPT
-============================================================ -->
-<script>
-    document.addEventListener('DOMContentLoaded', function() {
+    <!-- ============================================================
+    JAVASCRIPT
+    ============================================================ -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
 
-        /* ----- Mobile menu ----- */
-        var menuToggle = document.getElementById('menuToggle');
-        var mobileMenu = document.getElementById('mobileMenu');
-        var mobileBackdrop = document.getElementById('mobileBackdrop');
-        var closeMenu = document.getElementById('closeMenu');
+            /* ----- Mobile menu ----- */
+            var menuToggle = document.getElementById('menuToggle');
+            var mobileMenu = document.getElementById('mobileMenu');
+            var mobileBackdrop = document.getElementById('mobileBackdrop');
+            var closeMenu = document.getElementById('closeMenu');
 
-        function setMenu(open) {
-            mobileMenu.classList.toggle('open', open);
-            mobileBackdrop.classList.toggle('open', open);
-            mobileMenu.setAttribute('aria-hidden', String(!open));
-            menuToggle.setAttribute('aria-expanded', String(open));
-            document.body.classList.toggle('menu-open', open);
-        }
-        if (menuToggle) {
-            menuToggle.addEventListener('click', function() { setMenu(true); });
-        }
-        if (closeMenu) {
-            closeMenu.addEventListener('click', function() { setMenu(false); });
-        }
-        if (mobileBackdrop) {
-            mobileBackdrop.addEventListener('click', function() { setMenu(false); });
-        }
-        if (mobileMenu) {
-            mobileMenu.querySelectorAll('a').forEach(function(a) {
-                a.addEventListener('click', function() { setMenu(false); });
+            function setMenu(open) {
+                mobileMenu.classList.toggle('open', open);
+                mobileBackdrop.classList.toggle('open', open);
+                mobileMenu.setAttribute('aria-hidden', String(!open));
+                menuToggle.setAttribute('aria-expanded', String(open));
+                document.body.classList.toggle('menu-open', open);
+            }
+            if (menuToggle) {
+                menuToggle.addEventListener('click', function() { setMenu(true); });
+            }
+            if (closeMenu) {
+                closeMenu.addEventListener('click', function() { setMenu(false); });
+            }
+            if (mobileBackdrop) {
+                mobileBackdrop.addEventListener('click', function() { setMenu(false); });
+            }
+            if (mobileMenu) {
+                mobileMenu.querySelectorAll('a').forEach(function(a) {
+                    a.addEventListener('click', function() { setMenu(false); });
+                });
+            }
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape') setMenu(false);
             });
-        }
-        document.addEventListener('keydown', function(e) {
-            if (e.key === 'Escape') setMenu(false);
-        });
 
-        /* ----- Footer year ----- */
-        var yearEl = document.getElementById('year');
-        if (yearEl) yearEl.textContent = new Date().getFullYear();
+            /* ----- Footer year ----- */
+            var yearEl = document.getElementById('year');
+            if (yearEl) yearEl.textContent = new Date().getFullYear();
 
-        /* ----- Scroll animations (IntersectionObserver) ----- */
-        var animElements = document.querySelectorAll('.scroll-animate');
+            /* ----- Scroll animations (IntersectionObserver) ----- */
+            var animElements = document.querySelectorAll('.scroll-animate');
 
-        var observerOptions = {
-            threshold: 0.12,
-            rootMargin: '0px 0px -20px 0px'
-        };
+            var observerOptions = {
+                threshold: 0.12,
+                rootMargin: '0px 0px -20px 0px'
+            };
 
-        var observer = new IntersectionObserver(function(entries) {
-            entries.forEach(function(entry) {
-                if (entry.isIntersecting) {
-                    var delay = parseInt(entry.target.getAttribute('data-delay')) || 0;
+            var observer = new IntersectionObserver(function(entries) {
+                entries.forEach(function(entry) {
+                    if (entry.isIntersecting) {
+                        var delay = parseInt(entry.target.getAttribute('data-delay')) || 0;
+                        setTimeout(function() {
+                            entry.target.classList.add('visible');
+                        }, delay);
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            animElements.forEach(function(el) {
+                observer.observe(el);
+            });
+
+            /* ----- Form submission (demo) ----- */
+            var enquiryForm = document.getElementById('enquiryForm');
+            if (enquiryForm) {
+                enquiryForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    var btn = this.querySelector('button[type="submit"]');
+                    var original = btn.textContent;
+                    btn.textContent = '⏳ Sending...';
+                    btn.disabled = true;
                     setTimeout(function() {
-                        entry.target.classList.add('visible');
-                    }, delay);
-                    observer.unobserve(entry.target);
-                }
-            });
-        }, observerOptions);
+                        btn.textContent = '✅ Sent!';
+                        btn.style.background = '#22b85a';
+                        setTimeout(function() {
+                            btn.textContent = original;
+                            btn.style.background = '';
+                            btn.disabled = false;
+                            enquiryForm.reset();
+                        }, 2500);
+                    }, 1500);
+                });
+            }
 
-        animElements.forEach(function(el) {
-            observer.observe(el);
+            /* ----- WhatsApp enquiry button ----- */
+            var waBtn = document.getElementById('whatsappEnquiry');
+            if (waBtn) {
+                waBtn.addEventListener('click', function() {
+                    var parentName = document.getElementById('parentName').value || 'Parent';
+                    var childName = document.getElementById('childName').value || 'Child';
+                    var program = document.getElementById('program').value || 'Not specified';
+                    var phone = document.getElementById('phone').value || '';
+                    var msg = 'Hello BrightRoots Kids Care! I would like to enquire about admission.%0A%0A';
+                    msg += '👤 Parent: ' + encodeURIComponent(parentName) + '%0A';
+                    msg += '👶 Child: ' + encodeURIComponent(childName) + '%0A';
+                    msg += '📚 Program: ' + encodeURIComponent(program) + '%0A';
+                    if (phone) msg += '📞 Phone: ' + encodeURIComponent(phone) + '%0A';
+                    var url = 'https://wa.me/918438142540?text=' + msg;
+                    window.open(url, '_blank');
+                });
+            }
+
         });
-
-        /* ----- Form submission (demo) ----- */
-        var enquiryForm = document.getElementById('enquiryForm');
-        if (enquiryForm) {
-            enquiryForm.addEventListener('submit', function(e) {
-                e.preventDefault();
-                var btn = this.querySelector('button[type="submit"]');
-                var original = btn.textContent;
-                btn.textContent = '⏳ Sending...';
-                btn.disabled = true;
-                setTimeout(function() {
-                    btn.textContent = '✅ Sent!';
-                    btn.style.background = '#22b85a';
-                    setTimeout(function() {
-                        btn.textContent = original;
-                        btn.style.background = '';
-                        btn.disabled = false;
-                        enquiryForm.reset();
-                    }, 2500);
-                }, 1500);
-            });
-        }
-
-        /* ----- WhatsApp enquiry button ----- */
-        var waBtn = document.getElementById('whatsappEnquiry');
-        if (waBtn) {
-            waBtn.addEventListener('click', function() {
-                var parentName = document.getElementById('parentName').value || 'Parent';
-                var childName = document.getElementById('childName').value || 'Child';
-                var program = document.getElementById('program').value || 'Not specified';
-                var phone = document.getElementById('phone').value || '';
-                var msg = 'Hello BrightRoots Kids Care! I would like to enquire about admission.%0A%0A';
-                msg += '👤 Parent: ' + encodeURIComponent(parentName) + '%0A';
-                msg += '👶 Child: ' + encodeURIComponent(childName) + '%0A';
-                msg += '📚 Program: ' + encodeURIComponent(program) + '%0A';
-                if (phone) msg += '📞 Phone: ' + encodeURIComponent(phone) + '%0A';
-                var url = 'https://wa.me/918438142540?text=' + msg;
-                window.open(url, '_blank');
-            });
-        }
-
-    });
-</script>
+    </script>
 
 </body>
 </html>
