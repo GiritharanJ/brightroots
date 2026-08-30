@@ -834,7 +834,7 @@
         /* ============================================================
                    FOOTER
                    ============================================================ */
-        .footer {
+           .footer {
             background: var(--navy-dark);
             color: #fff;
             padding: 60px 0 0;
@@ -854,10 +854,9 @@
             height: 60px;
             width: auto;
             object-fit: contain;
-            border-radius: 0;
-            border: none;
-            box-shadow: none;
-            background: transparent;
+            border-radius: 50%;
+            border: 3px solid rgba(255, 255, 255, 0.15);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
         }
         .footer-logo-wrap .footer-brand-text {
             line-height: 1.1;
@@ -982,7 +981,6 @@
             color: rgba(255, 255, 255, .5);
             font-size: .82rem;
         }
-
         @media (max-width: 1100px) {
             .footer-grid {
                 grid-template-columns: 1fr 1fr 1fr;
@@ -1070,6 +1068,7 @@
                 right: 16px;
             }
         }
+
 
         /* ============================================================
                    SCROLL ANIMATIONS
@@ -1208,10 +1207,6 @@
         <div class="container header-inner">
             <a href="index.html" class="brand-logo" aria-label="BrightRoots Kids Care Home">
                 <img src="images/logo.jpg" alt="BrightRoots Kids Care" />
-                <span class="brand-text">
-                    <span class="main">BrightRoots</span>
-                    <span class="sub">Kids Care</span>
-                </span>
             </a>
 
             <nav class="nav" aria-label="Main navigation">
@@ -1475,16 +1470,12 @@
     <!-- ============================================================
     FOOTER
     ============================================================ -->
-    <footer class="footer" id="contact">
+     <footer class="footer" id="contact">
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-brand">
                     <div class="footer-logo-wrap">
                         <img src="images/logo1.jpg" alt="BrightRoots Kids Care" />
-                        <div class="footer-brand-text">
-                            <span class="main">BrightRoots</span>
-                            <span class="sub">Kids Care</span>
-                        </div>
                     </div>
                     <p>BrightRoots Kids Care — where little minds play, learn, grow and thrive in a safe and caring environment.</p>
                     <div class="footer-social">
