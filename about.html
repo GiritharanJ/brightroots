@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>About Us | BrightRoots Kids Care</title>
-    <meta name="description" content="Learn about BrightRoots Kids Care, our philosophy, values, learning approach and caring educators in Tirupattur." />
+    <meta name="description" content="Learn about BrightRoots Kids Care — our story, vision, mission, philosophy, values, founder and what makes us different. Preschool & Day Care in Tirupattur." />
 
     <!-- Font Awesome for social icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
@@ -32,6 +32,8 @@
             --blue: #28A9D6;
             --blue-glow: #5ac8f0;
             --blue-light: #eaf8fd;
+            --purple: #8b5cf6;
+            --purple-light: #f0e9ff;
             --cream: #FFFCF8;
             --white: #fff;
             --text: #374151;
@@ -42,6 +44,7 @@
             --shadow-lg: 0 18px 45px rgba(20, 42, 90, .14);
             --shadow-glow: 0 12px 28px rgba(215, 25, 91, .30);
             --radius: 22px;
+            --radius-blob: 46% 54% 38% 62% / 55% 42% 58% 45%;
         }
 
         * {
@@ -105,9 +108,15 @@
             background-clip: text;
             color: transparent;
         }
+        .gradient-gold {
+            background: linear-gradient(135deg, var(--gold), #ffdb7c);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
 
         /* ============================================================
-                   HEADER (consistent with home page)
+                   HEADER
                    ============================================================ */
         .header {
             position: relative;
@@ -135,8 +144,8 @@
             transform: translateY(-2px);
         }
         .brand-logo img {
-            width: 70px;
-            height: 70px;
+            width: 56px;
+            height: 56px;
             border-radius: 50%;
             object-fit: cover;
             object-position: center;
@@ -224,7 +233,6 @@
             flex-shrink: 0;
         }
 
-        /* Mobile menu */
         .mobile-backdrop {
             position: fixed;
             inset: 0;
@@ -346,7 +354,6 @@
             bottom: -160px;
         }
 
-        /* Decorative floating elements */
         .page-banner .deco {
             position: absolute;
             font-size: 2.2rem;
@@ -434,10 +441,10 @@
             background-clip: text;
             color: transparent;
         }
-        .page-banner p {
+        .page-banner .banner-subtitle {
             font-size: 1.15rem;
             color: var(--muted);
-            max-width: 580px;
+            max-width: 650px;
             margin: 0 auto;
             font-weight: 500;
         }
@@ -465,12 +472,22 @@
         .bg-cream {
             background: var(--cream);
         }
+        .bg-navy {
+            background: var(--navy);
+            color: #fff;
+        }
+        .bg-navy h2 {
+            color: #fff;
+        }
+        .bg-navy p {
+            color: rgba(255, 255, 255, .75);
+        }
 
         .eyebrow {
             display: inline-block;
             padding: 7px 15px;
             border-radius: 999px;
-            background: #fff0f5;
+            background: var(--pink-light);
             color: var(--pink);
             font-family: 'Poppins', sans-serif;
             font-size: .78rem;
@@ -480,30 +497,75 @@
             margin-bottom: 14px;
         }
         .eyebrow.gold {
-            background: #fff7df;
+            background: var(--gold-light);
             color: #9a6800;
         }
         .eyebrow.green {
-            background: #edf8eb;
+            background: var(--green-light);
             color: #3d8239;
         }
         .eyebrow.blue {
-            background: #eaf8fd;
+            background: var(--blue-light);
             color: #1782aa;
+        }
+        .eyebrow.purple {
+            background: var(--purple-light);
+            color: #7c3aed;
+        }
+        .eyebrow.on-dark {
+            background: rgba(255, 255, 255, .15);
+            color: var(--gold);
         }
 
         .section-title {
             text-align: center;
-            max-width: 720px;
+            max-width: 780px;
             margin: 0 auto 45px;
         }
         .section-title p {
             margin-top: 10px;
-            font-size: 1.05rem;
+            font-size: 1.06rem;
         }
 
         /* ============================================================
-                   ABOUT STORY
+                   BUTTONS
+                   ============================================================ */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            min-height: 50px;
+            padding: 12px 28px;
+            border: 0;
+            border-radius: 999px;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+            cursor: pointer;
+            transition: transform .2s ease, box-shadow .2s ease;
+        }
+        .btn:hover {
+            transform: translateY(-2px);
+        }
+        .btn-primary {
+            background: linear-gradient(135deg, var(--pink), var(--pink-glow));
+            color: #fff;
+            box-shadow: 0 10px 25px rgba(215, 25, 91, .28);
+        }
+        .btn-primary:hover {
+            box-shadow: 0 16px 35px rgba(215, 25, 91, .38);
+        }
+        .btn-white {
+            background: #fff;
+            color: var(--navy);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, .08);
+        }
+        .btn-white:hover {
+            box-shadow: 0 14px 30px rgba(0, 0, 0, .14);
+        }
+
+        /* ============================================================
+                   OUR STORY
                    ============================================================ */
         .about-story {
             background:
@@ -515,12 +577,13 @@
         .about-story .grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 70px;
+            gap: 60px;
             align-items: center;
         }
 
         .blob-frame {
-            border-radius: 34px;
+            position: relative;
+            border-radius: var(--radius-blob);
             overflow: hidden;
             box-shadow: var(--shadow-lg);
             border: 8px solid #fff;
@@ -528,8 +591,9 @@
         }
         .blob-frame img {
             width: 100%;
-            height: 470px;
+            height: 450px;
             object-fit: cover;
+            border-radius: var(--radius-blob);
         }
 
         .about-story .content h2 {
@@ -542,191 +606,226 @@
         }
 
         /* ============================================================
-                   PHILOSOPHY
+                   VISION & MISSION
                    ============================================================ */
-        .philosophy-grid {
+        .vision-mission-grid {
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 20px;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-top: 10px;
         }
-
-        .philosophy-card {
+        .vision-card,
+        .mission-card {
             background: #fff;
             border: 1px solid var(--line);
             border-radius: var(--radius);
-            padding: 30px 22px;
-            text-align: center;
+            padding: 36px 28px;
             box-shadow: var(--shadow);
-            transition: .25s ease;
+            transition: transform .25s ease, box-shadow .25s ease;
         }
-        .philosophy-card:hover {
+        .vision-card:hover,
+        .mission-card:hover {
             transform: translateY(-5px);
             box-shadow: var(--shadow-lg);
         }
-        .philosophy-card .icon {
-            font-size: 2.5rem;
+        .vision-card {
+            border-top: 5px solid var(--pink);
+        }
+        .mission-card {
+            border-top: 5px solid var(--gold);
+        }
+        .vision-card .icon,
+        .mission-card .icon {
+            font-size: 3rem;
             margin-bottom: 12px;
         }
-        .philosophy-card h4 {
-            margin-bottom: 7px;
+        .vision-card h3,
+        .mission-card h3 {
+            margin-bottom: 10px;
         }
-        .philosophy-card p {
-            font-size: .95rem;
+        .vision-card p,
+        .mission-card p {
+            font-size: 1rem;
         }
 
-        .philosophy-card:nth-child(1) {
-            border-top: 5px solid var(--pink);
+        .mission-list {
+            list-style: none;
+            margin-top: 14px;
+            display: grid;
+            gap: 8px;
         }
-        .philosophy-card:nth-child(2) {
-            border-top: 5px solid var(--green);
+        .mission-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 500;
+            font-size: .92rem;
+            color: var(--text);
         }
-        .philosophy-card:nth-child(3) {
-            border-top: 5px solid var(--blue);
-        }
-        .philosophy-card:nth-child(4) {
-            border-top: 5px solid var(--gold);
+        .mission-list li .check {
+            color: var(--green);
+            font-weight: 700;
+            flex-shrink: 0;
         }
 
         /* ============================================================
-                   VALUES
+                   WHAT MAKES US DIFFERENT
                    ============================================================ */
-        .values-grid {
+        .diff-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 20px;
         }
-
-        .card {
+        .diff-card {
             background: #fff;
             border: 1px solid var(--line);
             border-radius: var(--radius);
-            padding: 30px 22px;
+            padding: 28px 22px;
             text-align: center;
             box-shadow: var(--shadow);
-            transition: .25s ease;
+            transition: transform .25s ease, box-shadow .25s ease;
         }
-        .card:hover {
+        .diff-card:hover {
             transform: translateY(-5px);
             box-shadow: var(--shadow-lg);
         }
-
-        .value-card {
-            padding: 28px 18px;
+        .diff-card .icon {
+            font-size: 2.6rem;
+            margin-bottom: 10px;
         }
-        .value-card .icon-circle {
-            width: 62px;
-            height: 62px;
-            border-radius: 50%;
-            margin: 0 auto 15px;
-            display: grid;
-            place-items: center;
-            background: var(--pink-light);
-            font-size: 1.7rem;
-            color: var(--pink);
-        }
-        .value-card h4 {
+        .diff-card h4 {
             margin-bottom: 6px;
         }
-        .value-card p {
-            font-size: .92rem;
+        .diff-card p {
+            font-size: .94rem;
         }
-
-        .value-card:nth-child(1) {
-            border-top: 5px solid var(--blue);
-        }
-        .value-card:nth-child(2) {
+        .diff-card:nth-child(1) {
             border-top: 5px solid var(--pink);
         }
-        .value-card:nth-child(3) {
+        .diff-card:nth-child(2) {
             border-top: 5px solid var(--gold);
         }
-        .value-card:nth-child(4) {
+        .diff-card:nth-child(3) {
             border-top: 5px solid var(--green);
         }
-        .value-card:nth-child(5) {
-            border-top: 5px solid #8b5cf6;
-        }
-        .value-card:nth-child(6) {
+        .diff-card:nth-child(4) {
             border-top: 5px solid var(--blue);
         }
-
-        .value-card:nth-child(2) .icon-circle {
-            background: #fce8f0;
-            color: var(--pink);
+        .diff-card:nth-child(5) {
+            border-top: 5px solid var(--purple);
         }
-        .value-card:nth-child(3) .icon-circle {
-            background: #fff7df;
-            color: #a06800;
-        }
-        .value-card:nth-child(4) .icon-circle {
-            background: #edf8eb;
-            color: var(--green);
-        }
-        .value-card:nth-child(5) .icon-circle {
-            background: #f0e9ff;
-            color: #8b5cf6;
-        }
-        .value-card:nth-child(6) .icon-circle {
-            background: #eaf8fd;
-            color: var(--blue);
+        .diff-card:nth-child(6) {
+            border-top: 5px solid var(--pink);
         }
 
         /* ============================================================
-                   TEACHERS
+                   FOUNDER
                    ============================================================ */
-        .teachers-grid {
+        .founder-grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
+            grid-template-columns: 1fr 2fr;
+            gap: 50px;
+            align-items: center;
         }
-
-        .teacher-card {
-            padding: 28px 18px;
-            text-align: center;
+        .founder-photo {
+            position: relative;
         }
-        .teacher-card:nth-child(1) {
-            border-top: 5px solid var(--pink);
+        .founder-photo .blob-frame {
+            border-radius: var(--radius-blob);
+            overflow: hidden;
+            border: 8px solid #fff;
+            box-shadow: var(--shadow-lg);
+            background: linear-gradient(135deg, var(--gold-light), var(--pink-light));
         }
-        .teacher-card:nth-child(2) {
-            border-top: 5px solid var(--gold);
-        }
-        .teacher-card:nth-child(3) {
-            border-top: 5px solid var(--green);
-        }
-
-        .photo-ring {
-            width: 150px;
-            height: 150px;
-            margin: 0 auto 18px;
-            border-radius: 50%;
-            padding: 6px;
-            background: linear-gradient(135deg, var(--pink), var(--gold));
-        }
-        .teacher-card:nth-child(2) .photo-ring {
-            background: linear-gradient(135deg, var(--gold), var(--green));
-        }
-        .teacher-card:nth-child(3) .photo-ring {
-            background: linear-gradient(135deg, var(--green), var(--blue));
-        }
-        .photo-ring img {
+        .founder-photo .blob-frame img {
             width: 100%;
-            height: 100%;
+            aspect-ratio: 1;
             object-fit: cover;
-            border-radius: 50%;
-            border: 5px solid #fff;
+            border-radius: var(--radius-blob);
         }
-        .teacher-card h4 {
-            margin-bottom: 4px;
+        .founder-photo .founder-badge {
+            position: absolute;
+            bottom: 10px;
+            right: -10px;
+            background: linear-gradient(135deg, var(--gold), var(--gold-glow));
+            color: var(--navy);
+            padding: 8px 16px;
+            border-radius: 999px;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+            font-size: .8rem;
+            box-shadow: 0 8px 20px rgba(245, 164, 0, .3);
         }
-        .teacher-card p {
-            font-size: .94rem;
-            color: var(--muted);
+        .founder-info h2 {
+            margin-bottom: 6px;
+        }
+        .founder-info .founder-title {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+            color: var(--pink);
+            font-size: 1.05rem;
+            margin-bottom: 14px;
+        }
+        .founder-info p {
+            font-size: 1.02rem;
+            line-height: 1.75;
+            margin-bottom: 14px;
         }
 
-        .team-note {
-            margin-top: 25px;
+        /* ============================================================
+                   OUR PROMISE
+                   ============================================================ */
+        .promise-section {
+            background: linear-gradient(135deg, var(--navy), #243d7a);
+            color: #fff;
             text-align: center;
-            color: var(--muted);
+            position: relative;
+            overflow: hidden;
+        }
+        .promise-section:before {
+            content: "";
+            position: absolute;
+            width: 400px;
+            height: 400px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, .05);
+            top: -200px;
+            right: -100px;
+        }
+        .promise-section:after {
+            content: "";
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, .04);
+            bottom: -150px;
+            left: -80px;
+        }
+        .promise-section .container {
+            position: relative;
+            z-index: 1;
+        }
+        .promise-section h2 {
+            color: #fff;
+            margin-bottom: 12px;
+        }
+        .promise-section p {
+            color: rgba(255, 255, 255, .85);
+            max-width: 700px;
+            margin: 0 auto 8px;
+            font-size: 1.05rem;
+        }
+        .promise-section .promise-tagline {
+            font-family: 'Baloo 2', cursive;
+            font-size: 1.6rem;
+            color: var(--gold);
+            margin-top: 16px;
+            letter-spacing: .04em;
+        }
+        .promise-section .promise-tagline span {
+            display: inline-block;
         }
 
         /* ============================================================
@@ -749,8 +848,8 @@
             margin-bottom: 12px;
         }
         .footer-logo-wrap img {
-            width: 70px;
-            height: 70px;
+            width: 56px;
+            height: 56px;
             border-radius: 50%;
             object-fit: cover;
             border: 3px solid rgba(255, 255, 255, 0.15);
@@ -960,6 +1059,9 @@
             .footer-grid {
                 grid-template-columns: 1fr 1fr 1fr;
             }
+            .diff-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
         }
 
         @media (max-width: 900px) {
@@ -982,12 +1084,24 @@
                 grid-template-columns: 1fr;
                 gap: 35px;
             }
-            .philosophy-grid {
-                grid-template-columns: repeat(2, 1fr);
+            .vision-mission-grid {
+                grid-template-columns: 1fr;
             }
-            .values-grid,
-            .teachers-grid {
-                grid-template-columns: repeat(2, 1fr);
+            .founder-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+                text-align: center;
+            }
+            .founder-photo .blob-frame {
+                max-width: 320px;
+                margin: 0 auto;
+            }
+            .founder-photo .founder-badge {
+                right: 20px;
+                bottom: 20px;
+            }
+            .diff-grid {
+                grid-template-columns: 1fr 1fr;
             }
             .footer-grid {
                 grid-template-columns: 1fr 1fr;
@@ -997,26 +1111,34 @@
             }
         }
 
-        @media (max-width: 600px) {
+        @media (max-width: 760px) {
             .container {
-                width: min(100% - 28px, 1180px);
+                width: min(100% - 28px, 600px);
             }
             .page-banner {
                 padding: 75px 0 60px;
             }
+            .page-banner h1 {
+                font-size: 2.2rem;
+            }
             .section-padding {
                 padding: 60px 0;
+            }
+            .section-title h2 {
+                font-size: 2rem;
             }
             .blob-frame img {
                 height: 280px;
             }
-            .philosophy-grid,
-            .values-grid,
-            .teachers-grid {
+            .diff-grid {
                 grid-template-columns: 1fr;
             }
             .footer-grid {
                 grid-template-columns: 1fr;
+                gap: 28px;
+            }
+            .footer {
+                padding-bottom: 90px;
             }
             .whatsapp-float {
                 right: 15px;
@@ -1028,20 +1150,45 @@
             .sticky-bar {
                 display: block;
             }
-            .footer {
-                padding-bottom: 90px;
-            }
-            .footer-grid {
-                gap: 28px;
-            }
             .footer-brand p {
                 max-width: 100%;
             }
-            .page-banner h1 {
-                font-size: 2rem;
+            .promise-section .promise-tagline {
+                font-size: 1.3rem;
             }
-            .page-banner p {
-                font-size: 1rem;
+            .founder-photo .blob-frame {
+                max-width: 260px;
+            }
+            .founder-info .founder-title {
+                font-size: .95rem;
+            }
+        }
+
+        @media (max-width: 430px) {
+            .container {
+                width: calc(100% - 22px);
+            }
+            .page-banner {
+                padding: 70px 0 55px;
+            }
+            .page-banner h1 {
+                font-size: 1.9rem;
+            }
+            .section-padding {
+                padding: 50px 0;
+            }
+            .mobile-menu {
+                width: 90vw;
+            }
+            .about-story .content p {
+                font-size: .95rem;
+            }
+            .vision-card,
+            .mission-card {
+                padding: 24px 18px;
+            }
+            .diff-card {
+                padding: 22px 16px;
             }
         }
 
@@ -1061,13 +1208,15 @@
 <body>
 
     <!-- ============================================================
-    HEADER (consistent with home page)
+    HEADER
     ============================================================ -->
     <header class="header" id="header">
         <div class="container header-inner">
             <a href="index.html" class="brand-logo" aria-label="BrightRoots Kids Care Home">
                 <img src="images/kidslogo.jpg" alt="BrightRoots Kids Care" />
                 <span class="brand-text">
+                    <span class="main">BrightRoots</span>
+                    <span class="sub">Kids Care</span>
                 </span>
             </a>
 
@@ -1120,8 +1269,8 @@
 
         <div class="container">
             <span class="eyebrow">✨ About Us</span>
-            <h1>About <span class="gradient-text">BrightRoots</span></h1>
-            <p>Nurturing bright minds with love, care, and excellence — every day, in every way.</p>
+            <h1>Building <span class="gradient-text">Strong Roots</span> for a Brighter Future</h1>
+            <p class="banner-subtitle">Where little minds play, learn, grow and thrive — every day, in every way.</p>
         </div>
 
         <div class="banner-shape">
@@ -1138,134 +1287,153 @@
         <div class="container">
             <div class="grid">
                 <div class="blob-frame scroll-animate">
-                    <img src="images/home7.jpg" alt="BrightRoots Story" />
+                    <img src="images/home7.jpg" alt="BrightRoots Kids Care Story" loading="lazy" />
                 </div>
                 <div class="content scroll-animate">
                     <span class="eyebrow">Our Story</span>
                     <h2>Our <span class="gradient-text">Story</span></h2>
-                    <p>BrightRoots Kids Care was founded with a simple yet powerful mission: to provide every child with a nurturing, safe, and stimulating environment where they can grow, learn, and thrive.</p>
-                    <p>We believe that the early years are the most critical in a child's development. That's why we've created a space where learning is joyful, curiosity is celebrated, and every child feels valued.</p>
-                    <p>With our EdSmart™ curriculum, trained educators, and child-first approach, we're committed to giving your child the best start in life.</p>
+                    <p><strong>BrightRoots Kids Care</strong> began its journey in <strong>2024</strong> as <strong>BrightRoots Academy</strong>, offering SpellBee International and Olympiad International coaching to help children strengthen their academic skills, confidence and competitive abilities.</p>
+                    <p>Through our experience working closely with children, we came to understand something important — <strong>a child's learning journey begins much earlier than formal academics.</strong> The early years play a vital role in shaping a child's curiosity, communication, confidence, independence and approach towards learning.</p>
+                    <p>This inspired us to take BrightRoots to the next level.</p>
+                    <p>In <strong>2026</strong>, <strong>BrightRoots Kids Care</strong> was established as a <strong>Preschool &amp; Day Care in Tirupattur</strong>, with the aim of providing children with a strong foundation through meaningful early learning experiences.</p>
+                    <p>We believe children in growing cities like Tirupattur deserve access to a well-structured, engaging and child-focused preschool experience. At BrightRoots, our goal is to combine quality early education with the warmth, care and individual attention every young child needs.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- ============================================================
-    PHILOSOPHY
+    VISION & MISSION
     ============================================================ -->
     <section class="section-padding">
         <div class="container">
             <div class="section-title scroll-animate">
-                <span class="eyebrow gold">Our Philosophy</span>
-                <h2>Our <span class="gradient-text">Philosophy</span></h2>
-                <p>Nurturing Bright Minds — Every day, in every way</p>
+                <span class="eyebrow gold">Our Vision &amp; Mission</span>
+                <h2>Our <span class="gradient-text">Vision</span> &amp; <span class="gradient-gold">Mission</span></h2>
+                <p>Guiding everything we do — from curriculum to care</p>
             </div>
-            <div class="philosophy-grid">
-                <div class="philosophy-card scroll-animate" data-delay="100">
-                    <div class="icon">❤️</div>
-                    <h4>Care</h4>
-                    <p>Every child receives individual attention and affection</p>
+
+            <div class="vision-mission-grid">
+                <!-- Vision -->
+                <div class="vision-card scroll-animate" data-delay="100">
+                    <div class="icon">🔭</div>
+                    <h3>Our Vision</h3>
+                    <p>To build strong foundations in every child by nurturing curiosity, confidence, creativity and a lifelong love for learning.</p>
+                    <p style="margin-top:10px;font-style:italic;color:var(--muted);">We envision BrightRoots as a place where children feel happy to come to school, confident to express themselves and excited to discover something new every day.</p>
                 </div>
-                <div class="philosophy-card scroll-animate" data-delay="150">
-                    <div class="icon">🌱</div>
-                    <h4>Growth</h4>
-                    <p>Fostering development in all areas</p>
-                </div>
-                <div class="philosophy-card scroll-animate" data-delay="200">
-                    <div class="icon">🧠</div>
-                    <h4>Curiosity</h4>
-                    <p>Encouraging questions, exploration, and discovery</p>
-                </div>
-                <div class="philosophy-card scroll-animate" data-delay="250">
-                    <div class="icon">🎨</div>
-                    <h4>Creativity</h4>
-                    <p>Nurturing imagination and self-expression</p>
+
+                <!-- Mission -->
+                <div class="mission-card scroll-animate" data-delay="150">
+                    <div class="icon">🎯</div>
+                    <h3>Our Mission</h3>
+                    <p>To provide a safe, caring and stimulating early-learning environment where every child has the opportunity to learn, explore and grow at their own pace.</p>
+                    <ul class="mission-list">
+                        <li><span class="check">✓</span> Make learning meaningful through play, activities and hands-on experiences</li>
+                        <li><span class="check">✓</span> Build strong foundations in communication, early literacy, numeracy and essential life skills</li>
+                        <li><span class="check">✓</span> Encourage creativity, curiosity, confidence and independent thinking</li>
+                        <li><span class="check">✓</span> Support the social and emotional development of every child</li>
+                        <li><span class="check">✓</span> Provide individual attention and care while respecting each child's unique learning journey</li>
+                        <li><span class="check">✓</span> Create a positive partnership between children, parents and educators</li>
+                    </ul>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- ============================================================
-    OUR VALUES
+    WHAT MAKES BRIGHTROOTS DIFFERENT
     ============================================================ -->
     <section class="section-padding bg-cream">
         <div class="container">
             <div class="section-title scroll-animate">
-                <span class="eyebrow green">Our Values</span>
-                <h2>Our <span class="gradient-text">Values</span></h2>
-                <p>The principles that guide everything we do</p>
+                <span class="eyebrow blue">What Makes Us Different</span>
+                <h2>What Makes <span class="gradient-text">BrightRoots</span> Different?</h2>
+                <p>Six pillars that set us apart</p>
             </div>
-            <div class="values-grid">
-                <div class="card value-card scroll-animate" data-delay="100">
-                    <div class="icon-circle">🛡️</div>
-                    <h4>Safety</h4>
-                    <p>Secure environment for every child</p>
+
+            <div class="diff-grid">
+                <div class="diff-card scroll-animate" data-delay="100">
+                    <div class="icon">🌱</div>
+                    <h4>Strong Foundation, Not Just School Readiness</h4>
+                    <p>Our focus goes beyond preparing children for their next grade. We work towards developing communication, confidence, curiosity, independence, social skills and a positive attitude towards learning.</p>
                 </div>
-                <div class="card value-card scroll-animate" data-delay="150">
-                    <div class="icon-circle">🤝</div>
-                    <h4>Respect</h4>
-                    <p>Treating every child with dignity</p>
+
+                <div class="diff-card scroll-animate" data-delay="150">
+                    <div class="icon">🎨</div>
+                    <h4>Learning Through Experience</h4>
+                    <p>Children learn best when they actively participate. Our approach combines play, stories, phonics, numeracy, creative activities, movement, exploration and age-appropriate hands-on experiences.</p>
                 </div>
-                <div class="card value-card scroll-animate" data-delay="200">
-                    <div class="icon-circle">📚</div>
-                    <h4>Excellence</h4>
-                    <p>Commitment to quality education</p>
+
+                <div class="diff-card scroll-animate" data-delay="200">
+                    <div class="icon">👩‍🏫</div>
+                    <h4>Qualified &amp; Experienced Educators</h4>
+                    <p>Our children are guided by experienced educators with postgraduate qualifications who understand the importance of patience, encouragement and individual attention during the early years.</p>
                 </div>
-                <div class="card value-card scroll-animate" data-delay="250">
-                    <div class="icon-circle">❤️</div>
-                    <h4>Compassion</h4>
-                    <p>Love and care in every interaction</p>
+
+                <div class="diff-card scroll-animate" data-delay="250">
+                    <div class="icon">🧒</div>
+                    <h4>Individual Attention</h4>
+                    <p>Every child develops differently. We encourage children to learn and participate at their own pace while providing the guidance and support they need.</p>
                 </div>
-                <div class="card value-card scroll-animate" data-delay="300">
-                    <div class="icon-circle">🌟</div>
-                    <h4>Joy</h4>
-                    <p>Making learning a happy experience</p>
+
+                <div class="diff-card scroll-animate" data-delay="300">
+                    <div class="icon">🛡️</div>
+                    <h4>Safe &amp; Child-Friendly Environment</h4>
+                    <p>Our facilities include child-friendly classrooms, activity spaces, a play area, CCTV monitoring, security, a dedicated nap area and caring caregivers to provide children with a comfortable and supportive environment.</p>
                 </div>
-                <div class="card value-card scroll-animate" data-delay="350">
-                    <div class="icon-circle">🌍</div>
-                    <h4>Innovation</h4>
-                    <p>Embracing new ways to teach and learn</p>
+
+                <div class="diff-card scroll-animate" data-delay="350">
+                    <div class="icon">🏠</div>
+                    <h4>Preschool + Day Care</h4>
+                    <p>With preschool and day care under one roof, BrightRoots provides continuity of care and learning for children throughout their day.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- ============================================================
-    OUR TEACHERS
+    OUR FOUNDER
     ============================================================ -->
     <section class="section-padding">
         <div class="container">
             <div class="section-title scroll-animate">
-                <span class="eyebrow blue">Our Team</span>
-                <h2>Our <span class="gradient-text">Teachers</span></h2>
-                <p>Dedicated educators who care for your child's growth</p>
+                <span class="eyebrow gold">Our Founder</span>
+                <h2>Meet Our <span class="gradient-text">Founder</span></h2>
+                <p>The vision behind BrightRoots Kids Care</p>
             </div>
-            <div class="teachers-grid">
-                <div class="card teacher-card scroll-animate" data-delay="100">
-                    <div class="photo-ring">
-                        <img src="images/teacher1.jpg" alt="Teacher Priya" />
+
+            <div class="founder-grid">
+                <div class="founder-photo scroll-animate" data-delay="100">
+                    <div class="blob-frame">
+                        <img src="images/founder.jpg" alt="Janani G - Founder & CEO of BrightRoots Kids Care" loading="lazy" />
                     </div>
-                    <h4>Ms. Priya</h4>
-                    <p>Head Teacher, 8 years experience</p>
+                    <span class="founder-badge">✦ Founder &amp; CEO</span>
                 </div>
-                <div class="card teacher-card scroll-animate" data-delay="150">
-                    <div class="photo-ring">
-                        <img src="images/teacher2.jpg" alt="Teacher Meena" />
-                    </div>
-                    <h4>Ms. Meena</h4>
-                    <p>Pre-KG Teacher, 6 years experience</p>
-                </div>
-                <div class="card teacher-card scroll-animate" data-delay="200">
-                    <div class="photo-ring">
-                        <img src="images/teacher3.jpg" alt="Teacher Lakshmi" />
-                    </div>
-                    <h4>Ms. Lakshmi</h4>
-                    <p>LKG Teacher, 5 years experience</p>
+                <div class="founder-info scroll-animate" data-delay="200">
+                    <h2>Janani G</h2>
+                    <p class="founder-title">Founder &amp; CEO, BrightRoots Kids Care</p>
+                    <p>BrightRoots was founded with a belief that <strong>quality education should begin with a strong foundation.</strong></p>
+                    <p>What started as <strong>BrightRoots Academy</strong> in <strong>2024</strong>, supporting children through SpellBee International and Olympiad International coaching, evolved into a larger vision after experiencing first-hand how significantly the early years influence a child's future learning and development.</p>
+                    <p>That vision led to the establishment of <strong>BrightRoots Kids Care Preschool &amp; Day Care</strong> in <strong>2026</strong> — creating a space where children in Tirupattur can receive quality early education in an environment built around learning, exploration, care and confidence.</p>
                 </div>
             </div>
-            <div class="team-note">
-                <p>All our teachers are trained, certified, and passionate about early childhood education.</p>
+        </div>
+    </section>
+
+    <!-- ============================================================
+    OUR PROMISE
+    ============================================================ -->
+    <section class="section-padding promise-section">
+        <div class="container">
+            <div class="scroll-animate">
+                <span class="eyebrow on-dark">Our Promise</span>
+                <h2>Our Promise to Every Child</h2>
+                <p>At BrightRoots, we want children to do more than simply prepare for school.</p>
+                <p>We want them to <strong>ask questions, express themselves, explore confidently, become independent</strong> and <strong>enjoy the process of learning.</strong></p>
+                <p style="margin-top:6px;">Because when the roots are strong, children are better prepared to grow, learn and thrive.</p>
+                <div class="promise-tagline">
+                    <span>🌳</span> Strong Roots. <span style="color:var(--gold);">Bright Futures.</span> <span>🌳</span>
+                </div>
             </div>
         </div>
     </section>
@@ -1278,8 +1446,10 @@
             <div class="footer-grid">
                 <div class="footer-brand">
                     <div class="footer-logo-wrap">
-                        <img src="images/logo1.jpg" alt="BrightRoots Kids Care" />
+                        <img src="images/kidslogo.jpg" alt="BrightRoots Kids Care" />
                         <div class="footer-brand-text">
+                            <span class="main">BrightRoots</span>
+                            <span class="sub">Kids Care</span>
                         </div>
                     </div>
                     <p>BrightRoots Kids Care — where little minds play, learn, grow and thrive in a safe and caring environment.</p>
