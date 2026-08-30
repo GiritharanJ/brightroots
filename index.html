@@ -5,9 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>BrightRoots Kids Care | Preschool & Daycare in Tirupattur</title>
     <meta name="description" content="BrightRoots Kids Care offers Play Group, Pre-KG, LKG, UKG and Day Care in Tirupattur with play‑based learning, phonics and a safe, caring environment." />
-<link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
     <style>
         /* ----- FONTS ----- */
         @import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Nunito+Sans:wght@400;600;700;800&family=Poppins:wght@500;600;700;800&display=swap');
@@ -36,6 +35,8 @@
             --muted: #59657a;
             --shadow: 0 20px 50px rgba(6, 24, 61, 0.18);
             --shadow-glow: 0 16px 40px rgba(232, 26, 107, 0.30);
+            --radius: 22px;
+            --line: #e8ecf2;
         }
 
         /* ----- RESET & BASE ----- */
@@ -111,12 +112,6 @@
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
-        .gradient-gold {
-            background: linear-gradient(135deg, var(--gold), #ffdb7c);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
 
         /* ----- SECTION HEADINGS ----- */
         .section-heading {
@@ -187,14 +182,6 @@
         .btn-white:hover {
             box-shadow: 0 18px 38px rgba(0, 0, 0, 0.18);
         }
-        .btn-gold {
-            background: linear-gradient(135deg, var(--gold), var(--gold-glow));
-            color: var(--navy);
-            box-shadow: 0 12px 28px rgba(247, 183, 49, 0.35);
-        }
-        .btn-gold:hover {
-            box-shadow: 0 18px 38px rgba(247, 183, 49, 0.45);
-        }
 
         /* ============================================================
                    HEADER
@@ -224,11 +211,10 @@
             transform: translateY(-2px);
         }
         .brand-logo img {
-            width: 90px;
-            height: 90px;
+            width: 70px;
+            height: 70px;
             border-radius: 50%;
             object-fit: cover;
-            object-position: center;
             border: 3px solid rgba(255, 255, 255, 0.6);
             box-shadow: 0 8px 24px rgba(6, 24, 61, 0.16);
         }
@@ -255,7 +241,6 @@
             text-shadow: 0 1px 8px rgba(0, 0, 0, 0.15);
         }
 
-        /* Desktop Nav */
         .nav {
             display: flex;
             align-items: center;
@@ -301,7 +286,6 @@
             transform: translateY(-2px);
         }
 
-        /* Mobile menu toggle */
         .menu-toggle {
             display: none;
             width: 52px;
@@ -317,7 +301,7 @@
             flex-shrink: 0;
         }
 
-        /* Mobile menu overlay */
+        /* Mobile menu */
         .mobile-backdrop {
             position: fixed;
             inset: 0;
@@ -406,806 +390,340 @@
         /* ============================================================
                    HERO
                    ============================================================ */
-      /* =========================================================
-   HERO SECTION
-   ========================================================= */
-
-.hero {
-    position: relative;
-
-    min-height: 92vh;
-    min-height: 92svh;
-
-    width: 100%;
-
-    overflow: hidden;
-    isolation: isolate;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    background: var(--navy-dark);
-
-    padding: 120px 20px 90px;
-}
-
-
-/* =========================================================
-   BACKGROUND SLIDES
-   ========================================================= */
-
-.hero-slide {
-    position: absolute;
-
-    inset: 0;
-
-    width: 100%;
-    height: 100%;
-
-    background-size: cover;
-
-    /* Important:
-       Keeps the important center portion visible */
-    background-position: center center;
-
-    background-repeat: no-repeat;
-
-    opacity: 0;
-
-    transform: scale(1.02);
-
-    transition:
-        opacity 1.4s ease-in-out,
-        transform 6s ease;
-
-    z-index: -3;
-
-    pointer-events: none;
-}
-
-
-.hero-slide.active {
-    opacity: 1;
-
-    transform: scale(1);
-}
-
-
-/* =========================================================
-   HERO OVERLAY
-   ========================================================= */
-
-.hero::before {
-    content: "";
-
-    position: absolute;
-
-    inset: 0;
-
-    z-index: -2;
-
-    pointer-events: none;
-
-    background:
-        linear-gradient(
-            90deg,
-            rgba(6,24,61,.72) 0%,
-            rgba(6,24,61,.48) 35%,
-            rgba(6,24,61,.30) 60%,
-            rgba(6,24,61,.42) 100%
-        ),
-
-        linear-gradient(
-            180deg,
-            rgba(6,24,61,.22) 0%,
-            rgba(6,24,61,.05) 35%,
-            rgba(6,24,61,.58) 100%
-        );
-}
-
-
-/*
-   Soft center readability layer.
-   It doesn't create a large white box.
-*/
-.hero::after {
-    content: "";
-
-    position: absolute;
-
-    width: 850px;
-    height: 600px;
-
-    left: 50%;
-    top: 50%;
-
-    transform: translate(-50%, -50%);
-
-    z-index: -1;
-
-    pointer-events: none;
-
-    background:
-        radial-gradient(
-            ellipse,
-            rgba(6,24,61,.42) 0%,
-            rgba(6,24,61,.20) 42%,
-            rgba(6,24,61,0) 72%
-        );
-}
-
-
-/* =========================================================
-   HERO INNER
-   ========================================================= */
-
-.hero-inner {
-    position: relative;
-
-    z-index: 5;
-
-    width: 100%;
-    max-width: 1200px;
-
-    margin: 0 auto;
-
-    display: flex;
-
-    align-items: center;
-    justify-content: center;
-
-    text-align: center;
-}
-
-
-/* =========================================================
-   HERO CONTENT
-   ========================================================= */
-
-.hero-content {
-
-    width: 100%;
-
-    max-width: 820px;
-
-    margin: 0 auto;
-
-    display: flex;
-
-    flex-direction: column;
-
-    align-items: center;
-
-    justify-content: center;
-}
-
-
-/* =========================================================
-   EYEBROW
-   ========================================================= */
-
-.hero-eyebrow {
-
-    display: inline-flex;
-
-    align-items: center;
-    justify-content: center;
-
-    margin-bottom: 18px;
-
-    padding: 9px 18px;
-
-    border-radius: 999px;
-
-    background:
-        linear-gradient(
-            135deg,
-            var(--pink),
-            #ff4f91
-        );
-
-    color: #fff;
-
-    font-family: 'Poppins', sans-serif;
-
-    font-size: .82rem;
-
-    font-weight: 800;
-
-    letter-spacing: .04em;
-
-    box-shadow:
-        0 8px 25px rgba(215,25,91,.30);
-}
-
-
-/* =========================================================
-   HERO TITLE
-   ========================================================= */
-
-.hero h1 {
-
-    max-width: 850px;
-
-    margin: 0 auto 16px;
-
-    color: #fff;
-
-    font-family: 'Baloo 2', cursive;
-
-    font-size:
-        clamp(
-            2.6rem,
-            5.5vw,
-            5rem
-        );
-
-    font-weight: 800;
-
-    line-height: 1.02;
-
-    letter-spacing: -.02em;
-
-    text-shadow:
-        0 4px 18px rgba(0,0,0,.28);
-}
-
-
-/* =========================================================
-   GRADIENT TEXT
-   ========================================================= */
-
-.hero h1 .gradient {
-
-    background:
-        linear-gradient(
-            135deg,
-            #ff2b72,
-            #ff6935,
-            #ffc928
-        );
-
-    -webkit-background-clip: text;
-    background-clip: text;
-
-    -webkit-text-fill-color: transparent;
-
-    color: transparent;
-}
-
-
-/* =========================================================
-   HERO SUBTITLE
-   ========================================================= */
-
-.hero-subtitle {
-
-    margin: 0 auto 8px;
-
-    color: #fff;
-
-    font-family: 'Poppins', sans-serif;
-
-    font-size: clamp(
-        1rem,
-        2vw,
-        1.25rem
-    );
-
-    font-weight: 700;
-
-    line-height: 1.5;
-
-    text-shadow:
-        0 2px 10px rgba(0,0,0,.35);
-}
-
-
-/* =========================================================
-   HERO DESCRIPTION
-   ========================================================= */
-
-.hero-copy {
-
-    width: 100%;
-
-    max-width: 680px;
-
-    margin: 0 auto 20px;
-
-    color: rgba(255,255,255,.92);
-
-    font-family: 'Poppins', sans-serif;
-
-    font-size: 1rem;
-
-    line-height: 1.7;
-
-    text-shadow:
-        0 2px 8px rgba(0,0,0,.45);
-}
-
-
-/* =========================================================
-   PROGRAM PILLS
-   ========================================================= */
-
-.hero-list {
-
-    display: flex;
-
-    flex-wrap: wrap;
-
-    align-items: center;
-    justify-content: center;
-
-    gap: 9px;
-
-    width: 100%;
-
-    margin: 4px auto 24px;
-}
-
-
-.hero-list span {
-
-    display: inline-flex;
-
-    align-items: center;
-    justify-content: center;
-
-    min-height: 38px;
-
-    padding: 7px 15px;
-
-    border-radius: 999px;
-
-    background:
-        rgba(255,255,255,.16);
-
-    border:
-        1px solid rgba(255,255,255,.30);
-
-    backdrop-filter: blur(8px);
-
-    -webkit-backdrop-filter: blur(8px);
-
-    color: #fff;
-
-    font-family: 'Poppins', sans-serif;
-
-    font-size: .86rem;
-
-    font-weight: 700;
-
-    box-shadow:
-        0 5px 18px rgba(0,0,0,.12);
-
-    transition:
-        transform .2s ease,
-        background .2s ease;
-}
-
-
-.hero-list span:hover {
-
-    transform: translateY(-2px);
-
-    background:
-        rgba(255,255,255,.26);
-}
-
-
-/* =========================================================
-   HERO BUTTONS
-   ========================================================= */
-
-.hero-buttons {
-
-    display: flex;
-
-    align-items: center;
-    justify-content: center;
-
-    flex-wrap: wrap;
-
-    gap: 12px;
-
-    width: 100%;
-
-    margin: 0 auto 22px;
-}
-
-
-.hero-buttons .btn {
-
-    min-width: 190px;
-
-    min-height: 50px;
-}
-
-
-/* =========================================================
-   HERO META
-   ========================================================= */
-
-.hero-meta {
-
-    display: flex;
-
-    align-items: center;
-    justify-content: center;
-
-    flex-wrap: wrap;
-
-    gap: 24px;
-
-    color: rgba(255,255,255,.90);
-
-    font-family: 'Poppins', sans-serif;
-
-    font-size: .9rem;
-
-    font-weight: 600;
-
-    text-shadow:
-        0 2px 8px rgba(0,0,0,.35);
-}
-
-
-.hero-meta span {
-
-    display: inline-flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    gap: 6px;
-}
-
-
-/* =========================================================
-   SLIDE DOTS
-   ========================================================= */
-
-.hero-dots {
-
-    position: absolute;
-
-    left: 50%;
-    bottom: 28px;
-
-    transform: translateX(-50%);
-
-    z-index: 10;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    gap: 7px;
-}
-
-
-.hero-dot {
-
-    width: 9px;
-    height: 9px;
-
-    padding: 0;
-
-    border: 0;
-
-    border-radius: 50%;
-
-    background:
-        rgba(255,255,255,.55);
-
-    cursor: pointer;
-
-    transition:
-        width .25s ease,
-        background .25s ease,
-        transform .25s ease;
-}
-
-
-.hero-dot:hover {
-
-    transform: scale(1.2);
-
-    background: #fff;
-}
-
-
-.hero-dot.active {
-
-    width: 27px;
-
-    border-radius: 999px;
-
-    background:
-        linear-gradient(
-            90deg,
-            var(--pink),
-            var(--gold)
-        );
-}
-
-
-/* =========================================================
-   TABLET
-   ========================================================= */
-
-@media (max-width: 900px) {
-
-    .hero {
-
-        min-height: 88vh;
-
-        padding:
-            120px 20px
-            80px;
-    }
-
-    .hero-content {
-
-        max-width: 720px;
-    }
-
-    .hero h1 {
-
-        font-size:
-            clamp(
-                2.5rem,
-                7vw,
-                4rem
-            );
-    }
-
-    .hero-copy {
-
-        max-width: 620px;
-    }
-
-}
-
-
-/* =========================================================
-   MOBILE
-   ========================================================= */
-
-@media (max-width: 600px) {
-
-    .hero {
-
-        min-height: 88svh;
-
-        padding:
-            110px 16px
-            70px;
-
-        align-items: center;
-    }
-
-
-    /*
-       Mobile background positioning.
-       Center keeps children/activity visible better
-       than left or right alignment.
-    */
-
-    .hero-slide {
-
-        background-position: center center;
-
-        transition:
-            opacity 1.2s ease-in-out,
-            transform 5s ease;
-    }
-
-
-    /*
-       Stronger mobile overlay for text readability.
-    */
-
-    .hero::before {
-
-        background:
-            linear-gradient(
-                180deg,
-                rgba(6,24,61,.48) 0%,
-                rgba(6,24,61,.38) 40%,
-                rgba(6,24,61,.68) 100%
-            );
-    }
-
-
-    .hero::after {
-
-        width: 100%;
-        height: 500px;
-
-        background:
-            radial-gradient(
-                ellipse,
-                rgba(6,24,61,.42) 0%,
-                rgba(6,24,61,.16) 48%,
-                rgba(6,24,61,0) 75%
-            );
-    }
-
-
-    .hero-inner {
-
-        width: 100%;
-
-        padding: 0;
-
-        display: flex;
-
-        align-items: center;
-        justify-content: center;
-    }
-
-
-    .hero-content {
-
-        max-width: 100%;
-
-        padding: 0 5px;
-    }
-
-
-    .hero-eyebrow {
-
-        font-size: .70rem;
-
-        padding:
-            8px 13px;
-
-        margin-bottom: 14px;
-    }
-
-
-    .hero h1 {
-
-        font-size:
-            clamp(
-                2.15rem,
-                10vw,
-                3.1rem
-            );
-
-        line-height: 1.02;
-
-        margin-bottom: 14px;
-    }
-
-
-    .hero-subtitle {
-
-        font-size: .96rem;
-
-        line-height: 1.45;
-
-        margin-bottom: 8px;
-    }
-
-
-    .hero-copy {
-
-        max-width: 440px;
-
-        font-size: .84rem;
-
-        line-height: 1.55;
-
-        margin-bottom: 15px;
-    }
-
-
-    .hero-list {
-
-        gap: 6px;
-
-        margin-bottom: 19px;
-    }
-
-
-    .hero-list span {
-
-        min-height: 34px;
-
-        padding:
-            6px 10px;
-
-        font-size: .72rem;
-    }
-
-
-    .hero-buttons {
-
-        width: 100%;
-
-        flex-direction: column;
-
-        gap: 9px;
-
-        margin-bottom: 17px;
-    }
-
-
-    .hero-buttons .btn {
-
-        width: min(100%, 330px);
-
-        min-width: 0;
-
-        min-height: 48px;
-
-        font-size: .88rem;
-    }
-
-
-    .hero-meta {
-
-        gap: 12px;
-
-        font-size: .78rem;
-
-        flex-direction: column;
-    }
-}
-
-
-/* =========================================================
-   VERY SMALL MOBILE
-   ========================================================= */
-
-@media (max-width: 380px) {
-
-    .hero {
-
-        padding:
-            100px 12px
-            62px;
-    }
-
-
-    .hero h1 {
-
-        font-size: 2rem;
-    }
-
-
-    .hero-subtitle {
-
-        font-size: .88rem;
-    }
-
-
-    .hero-copy {
-
-        font-size: .78rem;
-    }
-
-
-    .hero-list span {
-
-        font-size: .68rem;
-
-        padding:
-            5px 8px;
-    }
-
-}
-       
-    
+        .hero {
+            position: relative;
+            min-height: 92vh;
+            min-height: 92svh;
+            width: 100%;
+            overflow: hidden;
+            isolation: isolate;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--navy-dark);
+            padding: 120px 20px 90px;
+        }
+
+        .hero-slide {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center center;
+            background-repeat: no-repeat;
+            opacity: 0;
+            transform: scale(1.02);
+            transition: opacity 1.4s ease-in-out, transform 6s ease;
+            z-index: -3;
+            pointer-events: none;
+        }
+        .hero-slide.active {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        /* NO OVERLAY — removed */
+        .hero::before {
+            content: none;
+        }
+        .hero::after {
+            content: none;
+        }
+
+        .hero-inner {
+            position: relative;
+            z-index: 5;
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .hero-content {
+            width: 100%;
+            max-width: 820px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hero-eyebrow {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 18px;
+            padding: 9px 18px;
+            border-radius: 999px;
+            background: linear-gradient(135deg, var(--pink), #ff4f91);
+            color: #fff;
+            font-family: 'Poppins', sans-serif;
+            font-size: .82rem;
+            font-weight: 800;
+            letter-spacing: .04em;
+            box-shadow: 0 8px 25px rgba(215, 25, 91, .30);
+        }
+
+        .hero h1 {
+            max-width: 850px;
+            margin: 0 auto 16px;
+            color: #fff;
+            font-family: 'Baloo 2', cursive;
+            font-size: clamp(2.6rem, 5.5vw, 5rem);
+            font-weight: 800;
+            line-height: 1.02;
+            letter-spacing: -.02em;
+            text-shadow: 0 4px 18px rgba(0, 0, 0, .28);
+        }
+        .hero h1 .gradient {
+            background: linear-gradient(135deg, #ff2b72, #ff6935, #ffc928);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            color: transparent;
+        }
+
+        .hero-subtitle {
+            margin: 0 auto 8px;
+            color: #fff;
+            font-family: 'Poppins', sans-serif;
+            font-size: clamp(1rem, 2vw, 1.25rem);
+            font-weight: 700;
+            line-height: 1.5;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, .35);
+        }
+
+        .hero-copy {
+            width: 100%;
+            max-width: 680px;
+            margin: 0 auto 20px;
+            color: rgba(255, 255, 255, .92);
+            font-family: 'Poppins', sans-serif;
+            font-size: 1rem;
+            line-height: 1.7;
+            text-shadow: 0 2px 8px rgba(0, 0, 0, .45);
+        }
+
+        .hero-list {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            gap: 9px;
+            width: 100%;
+            margin: 4px auto 24px;
+        }
+        .hero-list span {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 38px;
+            padding: 7px 15px;
+            border-radius: 999px;
+            background: rgba(255, 255, 255, .16);
+            border: 1px solid rgba(255, 255, 255, .30);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            color: #fff;
+            font-family: 'Poppins', sans-serif;
+            font-size: .86rem;
+            font-weight: 700;
+            box-shadow: 0 5px 18px rgba(0, 0, 0, .12);
+            transition: transform .2s ease, background .2s ease;
+        }
+        .hero-list span:hover {
+            transform: translateY(-2px);
+            background: rgba(255, 255, 255, .26);
+        }
+
+        .hero-buttons {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 12px;
+            width: 100%;
+            margin: 0 auto 22px;
+        }
+        .hero-buttons .btn {
+            min-width: 190px;
+            min-height: 50px;
+        }
+
+        .hero-meta {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 24px;
+            color: rgba(255, 255, 255, .90);
+            font-family: 'Poppins', sans-serif;
+            font-size: .9rem;
+            font-weight: 600;
+            text-shadow: 0 2px 8px rgba(0, 0, 0, .35);
+        }
+        .hero-meta span {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+        }
+
+        /* Slide dots */
+        .hero-dots {
+            position: absolute;
+            left: 50%;
+            bottom: 28px;
+            transform: translateX(-50%);
+            z-index: 10;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 7px;
+        }
+        .hero-dot {
+            width: 9px;
+            height: 9px;
+            padding: 0;
+            border: 0;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, .55);
+            cursor: pointer;
+            transition: width .25s ease, background .25s ease, transform .25s ease;
+        }
+        .hero-dot:hover {
+            transform: scale(1.2);
+            background: #fff;
+        }
+        .hero-dot.active {
+            width: 27px;
+            border-radius: 999px;
+            background: linear-gradient(90deg, var(--pink), var(--gold));
+        }
+
+        @media (max-width: 900px) {
+            .hero {
+                min-height: 88vh;
+                padding: 120px 20px 80px;
+            }
+            .hero-content {
+                max-width: 720px;
+            }
+            .hero h1 {
+                font-size: clamp(2.5rem, 7vw, 4rem);
+            }
+            .hero-copy {
+                max-width: 620px;
+            }
+            .nav {
+                display: none;
+            }
+            .header-phone {
+                display: none;
+            }
+            .menu-toggle {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            .header .container {
+                justify-content: space-between;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .hero {
+                min-height: 88svh;
+                padding: 110px 16px 70px;
+                align-items: center;
+            }
+            .hero-slide {
+                background-position: center center;
+                transition: opacity 1.2s ease-in-out, transform 5s ease;
+            }
+            .hero-inner {
+                width: 100%;
+                padding: 0;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            .hero-content {
+                max-width: 100%;
+                padding: 0 5px;
+            }
+            .hero-eyebrow {
+                font-size: .70rem;
+                padding: 8px 13px;
+                margin-bottom: 14px;
+            }
+            .hero h1 {
+                font-size: clamp(2.15rem, 10vw, 3.1rem);
+                line-height: 1.02;
+                margin-bottom: 14px;
+            }
+            .hero-subtitle {
+                font-size: .96rem;
+                line-height: 1.45;
+                margin-bottom: 8px;
+            }
+            .hero-copy {
+                max-width: 440px;
+                font-size: .84rem;
+                line-height: 1.55;
+                margin-bottom: 15px;
+            }
+            .hero-list {
+                gap: 6px;
+                margin-bottom: 19px;
+            }
+            .hero-list span {
+                min-height: 34px;
+                padding: 6px 10px;
+                font-size: .72rem;
+            }
+            .hero-buttons {
+                width: 100%;
+                flex-direction: column;
+                gap: 9px;
+                margin-bottom: 17px;
+            }
+            .hero-buttons .btn {
+                width: min(100%, 330px);
+                min-width: 0;
+                min-height: 48px;
+                font-size: .88rem;
+            }
+            .hero-meta {
+                gap: 12px;
+                font-size: .78rem;
+                flex-direction: column;
+            }
+        }
+
+        @media (max-width: 380px) {
+            .hero {
+                padding: 100px 12px 62px;
+            }
+            .hero h1 {
+                font-size: 2rem;
+            }
+            .hero-subtitle {
+                font-size: .88rem;
+            }
+            .hero-copy {
+                font-size: .78rem;
+            }
+            .hero-list span {
+                font-size: .68rem;
+                padding: 5px 8px;
+            }
+        }
 
         /* ============================================================
                    FEATURE STRIP
@@ -1274,7 +792,7 @@
                    PROGRAMS
                    ============================================================ */
         .programs-section {
-            padding: 80px 0 70px;
+            padding: 70px 0 60px;
             background: #fff;
         }
         .programs-grid {
@@ -1336,949 +854,523 @@
             font-size: .88rem;
         }
 
+        @media (max-width: 1100px) {
+            .programs-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+        @media (max-width: 760px) {
+            .programs-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 14px;
+            }
+            .program-card {
+                padding: 22px 12px;
+            }
+            .program-icon {
+                width: 56px;
+                height: 56px;
+                font-size: 24px;
+            }
+            .program-card h3 {
+                font-size: 1rem;
+            }
+        }
+
         /* ============================================================
                    APPROACH
                    ============================================================ */
-      
-.approach-section {
-    position: relative;
-    padding: 100px 0;
-    overflow: hidden;
-
-    background:
-        radial-gradient(
-            circle at 10% 20%,
-            rgba(255, 91, 145, .12),
-            transparent 30%
-        ),
-        radial-gradient(
-            circle at 90% 80%,
-            rgba(49, 168, 255, .12),
-            transparent 30%
-        ),
-        #fff;
-}
- .approach-heading {
-    max-width: 850px;
-    margin: 0 auto 55px;
-    text-align: center;
-}
-.approach-heading h2 {
-    margin: 10px 0 15px;
-    font-size: clamp(2.2rem, 5vw, 3.5rem);
-}
-
-.approach-heading p {
-    max-width: 760px;
-    margin: 0 auto;
-    font-size: 1.05rem;
-    line-height: 1.8;
-}
-  /* ================= MAIN GRID ================= */
-
-.approach-content {
-    display: grid;
-    grid-template-columns: .85fr 1.15fr;
-    align-items: center;
-    gap: 65px;
-}
-
-
-/* ================= IMAGE ================= */
-
-.approach-visual {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.approach-blob {
-    position: relative;
-    width: min(100%, 500px);
-    aspect-ratio: 1 / 1;
-}
-
-.approach-blob::before {
-    content: "";
-    position: absolute;
-    inset: -18px;
-
-    border-radius: 48% 52% 58% 42% / 45% 44% 56% 55%;
-
-    background:
-        linear-gradient(
-            135deg,
-            rgba(255, 55, 120, .18),
-            rgba(255, 190, 55, .20),
-            rgba(44, 170, 240, .18)
-        );
-
-    animation: blobRotate 10s ease-in-out infinite;
-}
-
-.approach-blob img {
-    position: relative;
-    z-index: 2;
-
-    width: 100%;
-    height: 100%;
-
-    object-fit: cover;
-
-    border-radius:
-        48% 52% 58% 42% /
-        45% 44% 56% 55%;
-
-    display: block;
-
-    box-shadow:
-        0 25px 55px rgba(7, 26, 61, .18);
-
-    border: 8px solid rgba(255, 255, 255, .9);
-}
-
-
-@keyframes blobRotate {
-
-    0%,
-    100% {
-        transform: rotate(-2deg) scale(1);
-    }
-
-    50% {
-        transform: rotate(3deg) scale(1.025);
-    }
-}
-
-
-/* ================= DECORATIONS ================= */
-
-.approach-deco {
-    position: absolute;
-    z-index: 4;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    width: 42px;
-    height: 42px;
-
-    border-radius: 50%;
-
-    font-size: 22px;
-
-    background: #fff;
-
-    box-shadow:
-        0 10px 25px rgba(7, 26, 61, .15);
-
-    animation: floatDeco 4s ease-in-out infinite;
-}
-
-.d1 {
-    top: 8%;
-    right: 2%;
-    color: #ec1763;
-}
-
-.d2 {
-    top: 38%;
-    right: -7%;
-    color: #f5b400;
-    animation-delay: .7s;
-}
-
-.d3 {
-    bottom: 12%;
-    right: 5%;
-    color: #27a9e8;
-    animation-delay: 1.2s;
-}
-
-.d4 {
-    bottom: 5%;
-    left: 12%;
-    color: #16b957;
-    animation-delay: 1.8s;
-}
-
-.d5 {
-    top: 15%;
-    left: 4%;
-    color: #f47b20;
-    animation-delay: 2.2s;
-}
-
-
-@keyframes floatDeco {
-
-    0%,
-    100% {
-        transform: translateY(0) rotate(0deg);
-    }
-
-    50% {
-        transform: translateY(-10px) rotate(8deg);
-    }
-}
-
-
-/* ================= TEXT ================= */
-
-.approach-text h3 {
-    margin-bottom: 20px;
-
-    font-family: 'Baloo 2', cursive;
-
-    font-size: 1.8rem;
-    color: var(--navy);
-}
-
-
-/* ================= CARDS ================= */
-
-.approach-cards {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 14px;
-}
-
-
-.approach-card {
-    display: flex;
-    align-items: flex-start;
-    gap: 14px;
-
-    padding: 18px;
-
-    border-radius: 20px;
-
-    background: rgba(255, 255, 255, .95);
-
-    border: 1px solid rgba(7, 26, 61, .07);
-
-    box-shadow:
-        0 10px 30px rgba(7, 26, 61, .07);
-
-    transition:
-        transform .25s ease,
-        box-shadow .25s ease;
-}
-
-
-.approach-card:hover {
-    transform: translateY(-5px);
-
-    box-shadow:
-        0 18px 35px rgba(7, 26, 61, .13);
-}
-
-
-/* ================= ICON ================= */
-
-.approach-icon {
-    flex: 0 0 50px;
-
-    width: 50px;
-    height: 50px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    border-radius: 16px;
-
-    font-size: 25px;
-}
-
-
-/* ================= CARD COLORS ================= */
-
-.card-pink .approach-icon {
-    background: #ffe5ef;
-}
-
-.card-blue .approach-icon {
-    background: #e2f4ff;
-}
-
-.card-yellow .approach-icon {
-    background: #fff3c9;
-}
-
-.card-orange .approach-icon {
-    background: #ffeadb;
-}
-
-.card-green .approach-icon {
-    background: #e0f8e8;
-}
-
-.card-red .approach-icon {
-    background: #ffe4e7;
-}
-
-
-/* ================= CARD TEXT ================= */
-
-.approach-card h4 {
-    margin: 2px 0 5px;
-
-    font-family: 'Baloo 2', cursive;
-
-    font-size: 1.15rem;
-
-    color: var(--navy);
-}
-
-
-.approach-card p {
-    margin: 0;
-
-    font-size: .88rem;
-
-    line-height: 1.55;
-
-    color: var(--muted);
-}
-
-
-/* ================= BUTTON ================= */
-
-.approach-text .btn {
-    margin-top: 25px;
-}
-
-
-/* =====================================================
-   TABLET
-===================================================== */
-
-@media (max-width: 950px) {
-
-    .approach-content {
-        grid-template-columns: 1fr;
-        gap: 50px;
-    }
-
-    .approach-visual {
-        order: 1;
-    }
-
-    .approach-text {
-        order: 2;
-    }
-
-    .approach-blob {
-        width: min(100%, 460px);
-    }
-
-}
-
-
-/* =====================================================
-   MOBILE
-===================================================== */
-
-@media (max-width: 650px) {
-
-    .approach-section {
-        padding: 70px 0;
-    }
-
-    .approach-heading {
-        margin-bottom: 40px;
-    }
-
-    .approach-heading h2 {
-        font-size: 2.3rem;
-    }
-
-    .approach-heading p {
-        font-size: .95rem;
-        line-height: 1.7;
-    }
-
-    .approach-content {
-        gap: 35px;
-    }
-
-    .approach-blob {
-        width: 88vw;
-        max-width: 390px;
-    }
-
-    .approach-deco {
-        width: 36px;
-        height: 36px;
-        font-size: 18px;
-    }
-
-    .approach-cards {
-        grid-template-columns: 1fr;
-        gap: 12px;
-    }
-
-    .approach-card {
-        padding: 16px;
-    }
-
-    .approach-icon {
-        width: 46px;
-        height: 46px;
-        flex-basis: 46px;
-        font-size: 22px;
-    }
-
-    .approach-card h4 {
-        font-size: 1.1rem;
-    }
-
-    .approach-card p {
-        font-size: .86rem;
-    }
-
-    .approach-text .btn {
-        width: 100%;
-    }
-
-}
-        
-        .approach-grid {
+        .approach-section {
+            padding: 70px 0 60px;
+            background:
+                radial-gradient(circle at 10% 20%, rgba(255, 91, 145, .12), transparent 30%),
+                radial-gradient(circle at 90% 80%, rgba(49, 168, 255, .12), transparent 30%),
+                #fff;
+        }
+        .approach-heading {
+            max-width: 850px;
+            margin: 0 auto 45px;
+            text-align: center;
+        }
+        .approach-heading h2 {
+            margin: 10px 0 15px;
+            font-size: clamp(2.2rem, 5vw, 3.5rem);
+        }
+        .approach-heading p {
+            max-width: 760px;
+            margin: 0 auto;
+            font-size: 1.05rem;
+            line-height: 1.8;
+        }
+        .approach-content {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 60px;
+            grid-template-columns: .85fr 1.15fr;
             align-items: center;
-        }
-        .approach-text ul {
-            margin: 18px 0 28px;
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-        }
-        .approach-text li {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            font-family: 'Poppins', sans-serif;
-            font-weight: 600;
-            font-size: .94rem;
-            color: var(--navy);
-        }
-        .approach-text li .check {
-            width: 24px;
-            height: 24px;
-            border-radius: 50%;
-            background: var(--pink-light);
-            color: var(--pink);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 13px;
-            flex-shrink: 0;
+            gap: 65px;
         }
         .approach-visual {
-            position: relative;
             display: flex;
             justify-content: center;
+            align-items: center;
         }
         .approach-blob {
             position: relative;
-            width: min(460px, 100%);
+            width: min(100%, 500px);
+            aspect-ratio: 1 / 1;
+        }
+        .approach-blob::before {
+            content: "";
+            position: absolute;
+            inset: -18px;
+            border-radius: 48% 52% 58% 42% / 45% 44% 56% 55%;
+            background: linear-gradient(135deg, rgba(255, 55, 120, .18), rgba(255, 190, 55, .20), rgba(44, 170, 240, .18));
+            animation: blobRotate 10s ease-in-out infinite;
         }
         .approach-blob img {
+            position: relative;
+            z-index: 2;
             width: 100%;
-            aspect-ratio: 4/3.1;
+            height: 100%;
             object-fit: cover;
-            border-radius: 46% 54% 38% 62% / 55% 42% 58% 45%;
-            border: 8px solid #fff;
-            box-shadow: 0 28px 60px rgba(6, 24, 61, .20);
+            border-radius: 48% 52% 58% 42% / 45% 44% 56% 55%;
+            display: block;
+            box-shadow: 0 25px 55px rgba(7, 26, 61, .18);
+            border: 8px solid rgba(255, 255, 255, .9);
+        }
+        @keyframes blobRotate {
+            0%,
+            100% {
+                transform: rotate(-2deg) scale(1);
+            }
+            50% {
+                transform: rotate(3deg) scale(1.025);
+            }
         }
         .approach-deco {
             position: absolute;
-            font-size: 1.6rem;
+            z-index: 4;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            font-size: 22px;
+            background: #fff;
+            box-shadow: 0 10px 25px rgba(7, 26, 61, .15);
+            animation: floatDeco 4s ease-in-out infinite;
+        }
+        .d1 {
+            top: 8%;
+            right: 2%;
+            color: #ec1763;
+        }
+        .d2 {
+            top: 38%;
+            right: -7%;
+            color: #f5b400;
+            animation-delay: .7s;
+        }
+        .d3 {
+            bottom: 12%;
+            right: 5%;
+            color: #27a9e8;
+            animation-delay: 1.2s;
+        }
+        .d4 {
+            bottom: 5%;
+            left: 12%;
+            color: #16b957;
+            animation-delay: 1.8s;
+        }
+        .d5 {
+            top: 15%;
+            left: 4%;
+            color: #f47b20;
+            animation-delay: 2.2s;
+        }
+        @keyframes floatDeco {
+            0%,
+            100% {
+                transform: translateY(0) rotate(0deg);
+            }
+            50% {
+                transform: translateY(-10px) rotate(8deg);
+            }
+        }
+        .approach-text h3 {
+            margin-bottom: 20px;
+            font-family: 'Baloo 2', cursive;
+            font-size: 1.8rem;
+            color: var(--navy);
+        }
+        .approach-cards {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 14px;
+        }
+        .approach-card {
+            display: flex;
+            align-items: flex-start;
+            gap: 14px;
+            padding: 18px;
+            border-radius: 20px;
+            background: rgba(255, 255, 255, .95);
+            border: 1px solid rgba(7, 26, 61, .07);
+            box-shadow: 0 10px 30px rgba(7, 26, 61, .07);
+            transition: transform .25s ease, box-shadow .25s ease;
+        }
+        .approach-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 18px 35px rgba(7, 26, 61, .13);
+        }
+        .approach-icon {
+            flex: 0 0 50px;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 16px;
+            font-size: 25px;
+        }
+        .card-pink .approach-icon {
+            background: #ffe5ef;
+        }
+        .card-blue .approach-icon {
+            background: #e2f4ff;
+        }
+        .card-yellow .approach-icon {
+            background: #fff3c9;
+        }
+        .card-orange .approach-icon {
+            background: #ffeadb;
+        }
+        .card-green .approach-icon {
+            background: #e0f8e8;
+        }
+        .card-red .approach-icon {
+            background: #ffe4e7;
+        }
+        .approach-card h4 {
+            margin: 2px 0 5px;
+            font-family: 'Baloo 2', cursive;
+            font-size: 1.15rem;
+            color: var(--navy);
+        }
+        .approach-card p {
+            margin: 0;
+            font-size: .88rem;
+            line-height: 1.55;
+            color: var(--muted);
+        }
+        .approach-text .btn {
+            margin-top: 25px;
+        }
+        @media (max-width: 950px) {
+            .approach-content {
+                grid-template-columns: 1fr;
+                gap: 50px;
+            }
+            .approach-visual {
+                order: 1;
+            }
+            .approach-text {
+                order: 2;
+            }
+            .approach-blob {
+                width: min(100%, 460px);
+            }
+        }
+        @media (max-width: 650px) {
+            .approach-section {
+                padding: 60px 0 50px;
+            }
+            .approach-heading {
+                margin-bottom: 40px;
+            }
+            .approach-heading h2 {
+                font-size: 2.3rem;
+            }
+            .approach-heading p {
+                font-size: .95rem;
+                line-height: 1.7;
+            }
+            .approach-content {
+                gap: 35px;
+            }
+            .approach-blob {
+                width: 88vw;
+                max-width: 390px;
+            }
+            .approach-deco {
+                width: 36px;
+                height: 36px;
+                font-size: 18px;
+            }
+            .approach-cards {
+                grid-template-columns: 1fr;
+                gap: 12px;
+            }
+            .approach-card {
+                padding: 16px;
+            }
+            .approach-icon {
+                width: 46px;
+                height: 46px;
+                flex-basis: 46px;
+                font-size: 22px;
+            }
+            .approach-card h4 {
+                font-size: 1.1rem;
+            }
+            .approach-card p {
+                font-size: .86rem;
+            }
+            .approach-text .btn {
+                width: 100%;
+            }
+        }
+
+        /* ============================================================
+                   ENVIRONMENT
+                   ============================================================ */
+        .environment-section {
+            padding: 70px 0 60px;
+            background:
+                radial-gradient(circle at 5% 20%, rgba(255, 91, 145, .12), transparent 28%),
+                radial-gradient(circle at 95% 75%, rgba(39, 169, 232, .12), transparent 30%),
+                linear-gradient(135deg, #fffafc 0%, #f8fbff 50%, #fffdf4 100%);
+        }
+        .env-heading {
+            max-width: 800px;
+            margin: 0 auto 45px;
+            text-align: center;
+        }
+        .env-heading h2 {
+            margin: 10px 0 15px;
+            font-size: clamp(2.2rem, 5vw, 3.5rem);
+        }
+        .env-heading p {
+            max-width: 700px;
+            margin: 0 auto;
+            font-size: 1.05rem;
+            line-height: 1.8;
+            color: var(--muted);
+        }
+        .env-grid {
+            display: grid;
+            grid-template-columns: .95fr 1.05fr;
+            align-items: center;
+            gap: 65px;
+        }
+        .env-photo {
+            display: flex;
+            justify-content: center;
+        }
+        .env-photo-frame {
+            position: relative;
+            width: min(100%, 520px);
+            aspect-ratio: 4 / 4.4;
+        }
+        .env-photo-frame::before {
+            content: "";
+            position: absolute;
+            inset: -16px;
+            border-radius: 40px;
+            background: linear-gradient(135deg, rgba(239, 27, 101, .18), rgba(255, 191, 53, .18), rgba(42, 171, 235, .18));
+            transform: rotate(-4deg);
+        }
+        .env-photo-frame::after {
+            content: "";
+            position: absolute;
+            inset: 12px -12px -12px 12px;
+            border-radius: 40px;
+            border: 3px dashed rgba(239, 27, 101, .18);
+            pointer-events: none;
+        }
+        .env-photo-frame img {
+            position: relative;
             z-index: 2;
-            filter: drop-shadow(0 4px 12px rgba(0, 0, 0, .10));
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            border-radius: 38px;
+            border: 8px solid rgba(255, 255, 255, .95);
+            box-shadow: 0 25px 60px rgba(7, 26, 61, .16);
         }
-        .approach-deco.d1 {
-            top: -4%;
-            right: 8%;
-            color: var(--pink);
+        .env-decoration {
+            position: absolute;
+            z-index: 5;
+            width: 48px;
+            height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background: #fff;
+            font-size: 24px;
+            box-shadow: 0 10px 25px rgba(7, 26, 61, .15);
+            animation: envFloat 4s ease-in-out infinite;
         }
-        .approach-deco.d2 {
-            top: 14%;
+        .env-d1 {
+            top: 7%;
             right: -4%;
-            color: var(--blue);
         }
-        .approach-deco.d3 {
-            bottom: 20%;
-            right: -6%;
-            color: var(--gold);
+        .env-d2 {
+            bottom: 25%;
+            left: -7%;
+            animation-delay: .8s;
         }
-        .approach-deco.d4 {
-            bottom: -2%;
-            right: 20%;
-            color: var(--gold);
+        .env-d3 {
+            bottom: 5%;
+            right: 8%;
+            animation-delay: 1.5s;
         }
-        .approach-deco.d5 {
-            top: 42%;
-            left: -6%;
-            color: var(--pink);
+        @keyframes envFloat {
+            0%,
+            100% {
+                transform: translateY(0) rotate(0deg);
+            }
+            50% {
+                transform: translateY(-10px) rotate(8deg);
+            }
         }
-
-    
-    /* =====================================================
-   ENVIRONMENT SECTION
-===================================================== */
-
-.environment-section {
-    position: relative;
-    padding: 100px 0;
-    overflow: hidden;
-
-    background:
-        radial-gradient(
-            circle at 5% 20%,
-            rgba(255, 91, 145, .12),
-            transparent 28%
-        ),
-        radial-gradient(
-            circle at 95% 75%,
-            rgba(39, 169, 232, .12),
-            transparent 30%
-        ),
-        linear-gradient(
-            135deg,
-            #fffafc 0%,
-            #f8fbff 50%,
-            #fffdf4 100%
-        );
-}
-
-
-/* ================= HEADING ================= */
-
-.env-heading {
-    max-width: 800px;
-    margin: 0 auto 55px;
-    text-align: center;
-}
-
-.env-heading h2 {
-    margin: 10px 0 15px;
-
-    font-size: clamp(
-        2.2rem,
-        5vw,
-        3.5rem
-    );
-}
-
-.env-heading p {
-    max-width: 700px;
-    margin: 0 auto;
-
-    font-size: 1.05rem;
-    line-height: 1.8;
-
-    color: var(--muted);
-}
-
-
-/* ================= MAIN GRID ================= */
-
-.env-grid {
-    display: grid;
-
-    grid-template-columns:
-        .95fr
-        1.05fr;
-
-    align-items: center;
-
-    gap: 65px;
-}
-
-
-/* ================= IMAGE ================= */
-
-.env-photo {
-    display: flex;
-    justify-content: center;
-}
-
-.env-photo-frame {
-    position: relative;
-
-    width: min(
-        100%,
-        520px
-    );
-
-    aspect-ratio: 4 / 4.4;
-}
-
-.env-photo-frame::before {
-    content: "";
-
-    position: absolute;
-
-    inset: -16px;
-
-    border-radius: 40px;
-
-    background:
-        linear-gradient(
-            135deg,
-            rgba(239, 27, 101, .18),
-            rgba(255, 191, 53, .18),
-            rgba(42, 171, 235, .18)
-        );
-
-    transform: rotate(-4deg);
-}
-
-.env-photo-frame::after {
-    content: "";
-
-    position: absolute;
-
-    inset: 12px -12px -12px 12px;
-
-    border-radius: 40px;
-
-    border: 3px dashed
-        rgba(239, 27, 101, .18);
-
-    pointer-events: none;
-}
-
-.env-photo-frame img {
-    position: relative;
-
-    z-index: 2;
-
-    width: 100%;
-    height: 100%;
-
-    object-fit: cover;
-
-    display: block;
-
-    border-radius: 38px;
-
-    border: 8px solid
-        rgba(255, 255, 255, .95);
-
-    box-shadow:
-        0 25px 60px
-        rgba(7, 26, 61, .16);
-}
-
-
-/* ================= DECORATIONS ================= */
-
-.env-decoration {
-    position: absolute;
-
-    z-index: 5;
-
-    width: 48px;
-    height: 48px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    border-radius: 50%;
-
-    background: #fff;
-
-    font-size: 24px;
-
-    box-shadow:
-        0 10px 25px
-        rgba(7, 26, 61, .15);
-
-    animation:
-        envFloat 4s ease-in-out infinite;
-}
-
-.env-d1 {
-    top: 7%;
-    right: -4%;
-}
-
-.env-d2 {
-    bottom: 25%;
-    left: -7%;
-
-    animation-delay: .8s;
-}
-
-.env-d3 {
-    bottom: 5%;
-    right: 8%;
-
-    animation-delay: 1.5s;
-}
-
-@keyframes envFloat {
-
-    0%,
-    100% {
-        transform:
-            translateY(0)
-            rotate(0deg);
-    }
-
-    50% {
-        transform:
-            translateY(-10px)
-            rotate(8deg);
-    }
-}
-
-
-/* ================= FEATURES ================= */
-
-.env-features {
-    display: grid;
-
-    grid-template-columns:
-        repeat(2, 1fr);
-
-    gap: 15px;
-}
-
-
-/* ================= FEATURE CARD ================= */
-
-.env-feature {
-    position: relative;
-
-    display: flex;
-    align-items: flex-start;
-
-    gap: 14px;
-
-    padding: 20px;
-
-    min-height: 145px;
-
-    background:
-        rgba(255, 255, 255, .95);
-
-    border-radius: 22px;
-
-    border: 1px solid
-        rgba(7, 26, 61, .06);
-
-    box-shadow:
-        0 12px 30px
-        rgba(7, 26, 61, .07);
-
-    transition:
-        transform .25s ease,
-        box-shadow .25s ease;
-}
-
-.env-feature:hover {
-    transform: translateY(-5px);
-
-    box-shadow:
-        0 18px 38px
-        rgba(7, 26, 61, .12);
-}
-
-
-/* Last card full width */
-
-.env-feature:last-child {
-    grid-column: 1 / -1;
-}
-
-
-/* ================= ICON ================= */
-
-.env-icon {
-    flex: 0 0 52px;
-
-    width: 52px;
-    height: 52px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    border-radius: 17px;
-
-    font-size: 25px;
-}
-
-
-/* ================= ICON COLORS ================= */
-
-.env-pink .env-icon {
-    background: #ffe5ef;
-}
-
-.env-blue .env-icon {
-    background: #e2f4ff;
-}
-
-.env-yellow .env-icon {
-    background: #fff3c8;
-}
-
-.env-green .env-icon {
-    background: #e2f8e9;
-}
-
-.env-orange .env-icon {
-    background: #ffeadc;
-}
-
-
-/* ================= TEXT ================= */
-
-.env-feature h3 {
-    margin: 2px 0 6px;
-
-    font-family:
-        'Baloo 2',
-        cursive;
-
-    font-size: 1.18rem;
-
-    color: var(--navy);
-}
-
-.env-feature p {
-    margin: 0;
-
-    font-size: .88rem;
-
-    line-height: 1.55;
-
-    color: var(--muted);
-}
-
-
-/* =====================================================
-   TABLET
-===================================================== */
-
-@media (max-width: 950px) {
-
-    .environment-section {
-        padding: 80px 0;
-    }
-
-    .env-grid {
-        grid-template-columns: 1fr;
-
-        gap: 50px;
-    }
-
-    .env-photo {
-        order: 1;
-    }
-
-    .env-text {
-        order: 2;
-    }
-
-    .env-photo-frame {
-        width: min(
-            100%,
-            480px
-        );
-    }
-}
-
-
-/* =====================================================
-   MOBILE
-===================================================== */
-
-@media (max-width: 650px) {
-
-    .environment-section {
-        padding: 70px 0;
-    }
-
-    .env-heading {
-        margin-bottom: 40px;
-    }
-
-    .env-heading h2 {
-        font-size: 2.3rem;
-    }
-
-    .env-heading p {
-        font-size: .94rem;
-        line-height: 1.7;
-    }
-
-    .env-grid {
-        gap: 38px;
-    }
-
-    .env-photo-frame {
-        width: 88vw;
-        max-width: 390px;
-    }
-
-    .env-decoration {
-        width: 38px;
-        height: 38px;
-
-        font-size: 19px;
-    }
-
-    .env-features {
-        grid-template-columns: 1fr;
-
-        gap: 12px;
-    }
-
-    .env-feature {
-        min-height: auto;
-
-        padding: 17px;
-
-        border-radius: 20px;
-    }
-
-    .env-feature:last-child {
-        grid-column: auto;
-    }
-
-    .env-icon {
-        flex-basis: 46px;
-
-        width: 46px;
-        height: 46px;
-
-        font-size: 22px;
-    }
-
-    .env-feature h3 {
-        font-size: 1.08rem;
-    }
-
-    .env-feature p {
-        font-size: .84rem;
-    }
-}
+        .env-features {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+        }
+        .env-feature {
+            position: relative;
+            display: flex;
+            align-items: flex-start;
+            gap: 14px;
+            padding: 20px;
+            min-height: 145px;
+            background: rgba(255, 255, 255, .95);
+            border-radius: 22px;
+            border: 1px solid rgba(7, 26, 61, .06);
+            box-shadow: 0 12px 30px rgba(7, 26, 61, .07);
+            transition: transform .25s ease, box-shadow .25s ease;
+        }
+        .env-feature:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 18px 38px rgba(7, 26, 61, .12);
+        }
+        .env-feature:last-child {
+            grid-column: 1 / -1;
+        }
+        .env-icon {
+            flex: 0 0 52px;
+            width: 52px;
+            height: 52px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 17px;
+            font-size: 25px;
+        }
+        .env-pink .env-icon {
+            background: #ffe5ef;
+        }
+        .env-blue .env-icon {
+            background: #e2f4ff;
+        }
+        .env-yellow .env-icon {
+            background: #fff3c8;
+        }
+        .env-green .env-icon {
+            background: #e2f8e9;
+        }
+        .env-orange .env-icon {
+            background: #ffeadc;
+        }
+        .env-feature h3 {
+            margin: 2px 0 6px;
+            font-family: 'Baloo 2', cursive;
+            font-size: 1.18rem;
+            color: var(--navy);
+        }
+        .env-feature p {
+            margin: 0;
+            font-size: .88rem;
+            line-height: 1.55;
+            color: var(--muted);
+        }
+        @media (max-width: 950px) {
+            .environment-section {
+                padding: 60px 0 50px;
+            }
+            .env-grid {
+                grid-template-columns: 1fr;
+                gap: 50px;
+            }
+            .env-photo {
+                order: 1;
+            }
+            .env-text {
+                order: 2;
+            }
+            .env-photo-frame {
+                width: min(100%, 480px);
+            }
+        }
+        @media (max-width: 650px) {
+            .env-heading {
+                margin-bottom: 40px;
+            }
+            .env-heading h2 {
+                font-size: 2.3rem;
+            }
+            .env-heading p {
+                font-size: .94rem;
+                line-height: 1.7;
+            }
+            .env-grid {
+                gap: 38px;
+            }
+            .env-photo-frame {
+                width: 88vw;
+                max-width: 390px;
+            }
+            .env-decoration {
+                width: 38px;
+                height: 38px;
+                font-size: 19px;
+            }
+            .env-features {
+                grid-template-columns: 1fr;
+                gap: 12px;
+            }
+            .env-feature {
+                min-height: auto;
+                padding: 17px;
+                border-radius: 20px;
+            }
+            .env-feature:last-child {
+                grid-column: auto;
+            }
+            .env-icon {
+                flex-basis: 46px;
+                width: 46px;
+                height: 46px;
+                font-size: 22px;
+            }
+            .env-feature h3 {
+                font-size: 1.08rem;
+            }
+            .env-feature p {
+                font-size: .84rem;
+            }
+        }
 
         /* ============================================================
                    GALLERY
                    ============================================================ */
         .gallery-section {
-            padding: 80px 0 90px;
+            padding: 70px 0 60px;
             background: #fff;
         }
         .gallery-strip {
@@ -2301,9 +1393,20 @@
         .gallery-strip .item:hover img {
             transform: scale(1.08);
         }
-   /* ============================================================
-                   GOOGLE REVIEWS / TESTIMONIALS
+        @media (max-width: 760px) {
+            .gallery-strip {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 12px;
+            }
+        }
+
+        /* ============================================================
+                   REVIEWS
                    ============================================================ */
+        .reviews-section {
+            padding: 70px 0 60px;
+            background: #fafbfc;
+        }
         .reviews-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -2314,13 +1417,12 @@
             border: 1px solid var(--line);
             border-radius: var(--radius);
             padding: 28px 24px;
-            box-shadow: var(--shadow);
+            box-shadow: 0 10px 28px rgba(6, 24, 61, .08);
             transition: transform .25s ease, box-shadow .25s ease;
-            position: relative;
         }
         .review-card:hover {
             transform: translateY(-4px);
-            box-shadow: var(--shadow-lg);
+            box-shadow: 0 18px 38px rgba(6, 24, 61, .12);
         }
         .review-card .stars {
             color: var(--gold);
@@ -2340,10 +1442,6 @@
             font-weight: 700;
             color: var(--navy);
         }
-        .review-card .review-source {
-            font-size: .8rem;
-            color: var(--muted);
-        }
         .review-card .google-badge {
             display: inline-flex;
             align-items: center;
@@ -2360,16 +1458,33 @@
             color: #4285f4;
             font-size: .9rem;
         }
+        @media (max-width: 1100px) {
+            .reviews-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        @media (max-width: 760px) {
+            .reviews-grid {
+                grid-template-columns: 1fr;
+            }
+            .review-card {
+                padding: 22px 18px;
+            }
+        }
 
         /* ============================================================
                    GOOGLE BUSINESS PROFILE
                    ============================================================ */
+        .google-business-section {
+            padding: 60px 0;
+            background: #fff;
+        }
         .google-business-card {
             background: #fff;
             border: 1px solid var(--line);
             border-radius: var(--radius);
             padding: 28px 32px;
-            box-shadow: var(--shadow);
+            box-shadow: 0 10px 28px rgba(6, 24, 61, .08);
             display: flex;
             align-items: center;
             justify-content: space-between;
@@ -2379,7 +1494,7 @@
         }
         .google-business-card:hover {
             transform: translateY(-3px);
-            box-shadow: var(--shadow-lg);
+            box-shadow: 0 18px 38px rgba(6, 24, 61, .12);
         }
         .google-business-card .gb-left {
             display: flex;
@@ -2411,6 +1526,17 @@
         .google-business-card .btn {
             flex-shrink: 0;
         }
+        @media (max-width: 760px) {
+            .google-business-card {
+                flex-direction: column;
+                text-align: center;
+            }
+            .google-business-card .gb-left {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+
         /* ============================================================
                    CTA BAND
                    ============================================================ */
@@ -2462,6 +1588,16 @@
             gap: 14px;
             flex-wrap: wrap;
         }
+        @media (max-width: 760px) {
+            .cta-inner {
+                justify-content: center;
+                text-align: center;
+            }
+            .cta-actions {
+                justify-content: center;
+                width: 100%;
+            }
+        }
 
         /* ============================================================
                    FOOTER
@@ -2477,18 +1613,19 @@
             gap: 34px;
         }
         .footer-logo-wrap {
-            display: inline-flex;
+            display: flex;
             align-items: center;
             gap: 12px;
             margin-bottom: 12px;
         }
         .footer-logo-wrap img {
-            width: 70px;
-            height: 70px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 3px solid rgba(255, 255, 255, 0.15);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+            height: 60px;
+            width: auto;
+            object-fit: contain;
+            border-radius: 0;
+            border: none;
+            box-shadow: none;
+            background: transparent;
         }
         .footer-logo-wrap .footer-brand-text {
             line-height: 1.1;
@@ -2516,22 +1653,43 @@
         }
         .footer-social {
             display: flex;
-            gap: 10px;
+            gap: 12px;
+            margin-top: 12px;
         }
         .footer-social a {
-            width: 38px;
-            height: 38px;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, .08);
+            width: 44px;
+            height: 44px;
             display: flex;
             align-items: center;
             justify-content: center;
+            border-radius: 50%;
             color: #fff;
-            font-size: .95rem;
-            transition: .25s ease;
+            font-size: 20px;
+            transition: transform .25s ease, box-shadow .25s ease;
+        }
+        .footer-social .facebook {
+            background: #1877f2;
+            box-shadow: 0 8px 18px rgba(24, 119, 242, .30);
+        }
+        .footer-social .instagram {
+            background: linear-gradient(135deg, #833ab4, #fd1d1d, #fcb045);
+            box-shadow: 0 8px 18px rgba(225, 48, 108, .30);
+        }
+        .footer-social .youtube {
+            background: #ff0000;
+            box-shadow: 0 8px 18px rgba(255, 0, 0, .28);
         }
         .footer-social a:hover {
-            background: linear-gradient(135deg, var(--pink), var(--pink-glow));
+            transform: translateY(-4px) scale(1.05);
+        }
+        .footer-social .facebook:hover {
+            box-shadow: 0 12px 25px rgba(24, 119, 242, .45);
+        }
+        .footer-social .instagram:hover {
+            box-shadow: 0 12px 25px rgba(225, 48, 108, .45);
+        }
+        .footer-social .youtube:hover {
+            box-shadow: 0 12px 25px rgba(255, 0, 0, .40);
         }
         .footer h4 {
             color: #fff;
@@ -2592,91 +1750,24 @@
             color: rgba(255, 255, 255, .5);
             font-size: .82rem;
         }
-       /* ================= FOOTER SOCIAL ICONS ================= */
+        @media (max-width: 1100px) {
+            .footer-grid {
+                grid-template-columns: 1fr 1fr 1fr;
+            }
+        }
+        @media (max-width: 760px) {
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 28px;
+            }
+            .footer {
+                padding-bottom: 90px;
+            }
+            .footer-logo-wrap img {
+                height: 50px;
+            }
+        }
 
-/* ================= FOOTER SOCIAL ICONS ================= */
-
-.footer-social {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    margin-top: 20px;
-}
-
-.footer-social a {
-    width: 44px;
-    height: 44px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    border-radius: 50%;
-
-    text-decoration: none;
-
-    color: #fff;
-
-    font-size: 20px;
-
-    transition:
-        transform .25s ease,
-        box-shadow .25s ease;
-}
-
-/* Facebook */
-
-.footer-social .facebook {
-    background: #1877f2;
-
-    box-shadow:
-        0 8px 18px rgba(24,119,242,.30);
-}
-
-/* Instagram */
-
-.footer-social .instagram {
-    background:
-        linear-gradient(
-            135deg,
-            #833ab4,
-            #fd1d1d,
-            #fcb045
-        );
-
-    box-shadow:
-        0 8px 18px rgba(225,48,108,.30);
-}
-
-/* YouTube */
-
-.footer-social .youtube {
-    background: #ff0000;
-
-    box-shadow:
-        0 8px 18px rgba(255,0,0,.28);
-}
-
-/* Hover */
-
-.footer-social a:hover {
-    transform: translateY(-4px) scale(1.05);
-}
-
-.footer-social .facebook:hover {
-    box-shadow:
-        0 12px 25px rgba(24,119,242,.45);
-}
-
-.footer-social .instagram:hover {
-    box-shadow:
-        0 12px 25px rgba(225,48,108,.45);
-}
-
-.footer-social .youtube:hover {
-    box-shadow:
-        0 12px 25px rgba(255,0,0,.40);
-}
         /* ============================================================
                    STICKY BAR & WHATSAPP FLOAT
                    ============================================================ */
@@ -2734,20 +1825,23 @@
         .whatsapp-float:hover {
             transform: scale(1.08);
         }
-
-        /* ============================================================
-                   RESPONSIVE
-                   ============================================================ */
-        @media(max-width:1100px) {
-            .programs-grid {
-                grid-template-columns: repeat(3, 1fr);
+        @media (max-width: 760px) {
+            .sticky-bar {
+                display: block;
             }
-            .footer-grid {
-                grid-template-columns: 1fr 1fr 1fr;
+            .whatsapp-float {
+                bottom: 80px;
+                width: 52px;
+                height: 52px;
+                font-size: 22px;
+                right: 16px;
             }
         }
 
-        @media(max-width:980px) {
+        /* ============================================================
+                   RESPONSIVE OVERRIDES
+                   ============================================================ */
+        @media (max-width: 980px) {
             .approach-grid,
             .env-grid {
                 grid-template-columns: 1fr;
@@ -2757,8 +1851,7 @@
                 order: -1;
             }
         }
-
-        @media(max-width:900px) {
+        @media (max-width: 900px) {
             .nav {
                 display: none;
             }
@@ -2770,18 +1863,17 @@
                 align-items: center;
                 justify-content: center;
             }
-            .hero .hero-arrow {
-                display: none;
+            .header .container {
+                justify-content: space-between;
             }
         }
-
-        @media(max-width:760px) {
+        @media (max-width: 760px) {
             .header {
                 padding: 14px 0 0;
             }
             .brand-logo img {
-                width: 46px;
-                height: 46px;
+                width: 50px;
+                height: 50px;
             }
             .brand-text .main {
                 font-size: 1.1rem;
@@ -2789,12 +1881,10 @@
             .brand-text .sub {
                 font-size: .55rem;
             }
-
             .hero {
                 min-height: 100svh;
                 padding-top: 110px;
             }
-
             .feature-strip-wrap {
                 margin-top: -36px;
             }
@@ -2806,7 +1896,6 @@
                 flex: 1 1 auto;
                 min-width: 0;
             }
-
             .programs-grid {
                 grid-template-columns: repeat(2, 1fr);
                 gap: 14px;
@@ -2822,40 +1911,14 @@
             .program-card h3 {
                 font-size: 1rem;
             }
-
             .gallery-strip {
                 grid-template-columns: repeat(2, 1fr);
                 gap: 12px;
             }
-
-            .cta-inner {
-                justify-content: center;
-                text-align: center;
-            }
-            .cta-actions {
-                justify-content: center;
-                width: 100%;
-            }
-
             .footer-grid {
                 grid-template-columns: 1fr 1fr;
                 gap: 28px;
             }
-
-            .sticky-bar {
-                display: block;
-            }
-            .whatsapp-float {
-                bottom: 80px;
-                width: 52px;
-                height: 52px;
-                font-size: 22px;
-                right: 16px;
-            }
-            .footer {
-                padding-bottom: 90px;
-            }
-
             .hero-list {
                 gap: 6px 12px;
             }
@@ -2863,13 +1926,12 @@
                 font-size: .78rem;
                 padding: 2px 12px;
             }
-            .buttons .btn {
+            .hero-buttons .btn {
                 flex: 1 1 auto;
                 min-width: 160px;
             }
         }
-
-        @media(max-width:480px) {
+        @media (max-width: 480px) {
             .programs-grid {
                 grid-template-columns: 1fr 1fr;
                 gap: 12px;
@@ -2882,9 +1944,6 @@
                 grid-template-columns: 1fr;
                 gap: 24px;
             }
-            .env-features {
-                gap: 14px;
-            }
             .hero h1 {
                 font-size: 1.8rem;
             }
@@ -2894,14 +1953,13 @@
             .hero-copy {
                 font-size: .9rem;
             }
-            .buttons .btn {
+            .hero-buttons .btn {
                 min-width: 140px;
                 padding: 12px 20px;
                 font-size: .85rem;
             }
         }
-
-        @media(prefers-reduced-motion:reduce) {
+        @media (prefers-reduced-motion: reduce) {
             html {
                 scroll-behavior: auto;
             }
@@ -2917,19 +1975,23 @@
 <body>
 
     <!-- ===== HEADER ===== -->
- <header class="header" id="header">
+    <header class="header" id="header">
         <div class="container header-inner">
             <a href="index.html" class="brand-logo" aria-label="BrightRoots Kids Care Home">
                 <img src="images/logo.jpg" alt="BrightRoots Kids Care" />
+                <span class="brand-text">
+                    <span class="main">BrightRoots</span>
+                    <span class="sub">Kids Care</span>
+                </span>
             </a>
 
             <nav class="nav" aria-label="Main navigation">
-               <a href="index.html" class="active">Home</a>
-        <a href="about.html" class="active">About Us</a>
-        <a href="programs.html">Programs</a>
-        <a href="whybrightroots.html">Why BrightRoots</a>
-        <a href="gallery.html">Gallery</a>
-        <a href="admissions.html">Admissions</a>
+                <a href="index.html" class="active">Home</a>
+                <a href="about.html">About Us</a>
+                <a href="programs.html">Programs</a>
+                <a href="whybrightroots.html">Why BrightRoots</a>
+                <a href="gallery.html">Gallery</a>
+                <a href="admissions.html">Admissions</a>
             </nav>
 
             <a class="header-phone" href="tel:918438142540">📞 84381 42540</a>
@@ -2945,7 +2007,7 @@
     <aside class="mobile-menu" id="mobileMenu" aria-hidden="true">
         <button class="mobile-close" id="closeMenu" type="button" aria-label="Close menu">✕</button>
         <div class="mobile-logo">
-            <img src="images/kidslogo.jpg" alt="BrightRoots Kids Care" />
+            <img src="images/logo.jpg" alt="BrightRoots Kids Care" />
         </div>
         <a href="index.html" class="active">Home</a>
         <a href="about.html">About Us</a>
@@ -2954,113 +2016,62 @@
         <a href="gallery.html">Gallery</a>
         <a href="admissions.html">Admissions</a>
         <div class="mobile-actions">
-            <a href="admissions.html#contact">📅 Enquire Now</a>
+            <a href="admissions.html">📅 Enquire Now</a>
             <a class="whatsapp" href="https://wa.me/918438142540?text=Hello%20BrightRoots%20Kids%20Care%2C%20I%20would%20like%20to%20know%20more%20about%20admission%20for%20my%20child." target="_blank" rel="noopener">💬 WhatsApp Us</a>
         </div>
     </aside>
+
     <!-- ============================================================
     HERO
     ============================================================ -->
-   <!-- ================= HERO ================= -->
-<section class="hero" id="home">
+    <section class="hero" id="home">
+        <!-- Background Slides -->
+        <div class="hero-slide active" style="background-image:url('images/home1.jpg')"></div>
+        <div class="hero-slide" style="background-image:url('images/home2.jpg')"></div>
+        <div class="hero-slide" style="background-image:url('images/home3.jpg')"></div>
+        <div class="hero-slide" style="background-image:url('images/home4.jpg')"></div>
+        <div class="hero-slide" style="background-image:url('images/home5.jpg')"></div>
+        <div class="hero-slide" style="background-image:url('images/home6.jpg')"></div>
+        <div class="hero-slide" style="background-image:url('images/home7.jpg')"></div>
 
-    <!-- Background Slides -->
-    <div class="hero-slide active"
-         style="background-image:url('images/home1.jpg')"></div>
+        <div class="container hero-inner">
+            <div class="hero-content">
+                <span class="eyebrow hero-eyebrow">✨ Admissions Open • 2026–27</span>
+                <h1>BrightRoots <span class="gradient">Kids Care</span></h1>
+                <p class="hero-subtitle">A Happy Place to Learn, Play &amp; Grow</p>
+                <p class="hero-copy">A safe, caring and engaging environment where children learn through play, activities and everyday experiences.</p>
 
-    <div class="hero-slide"
-         style="background-image:url('images/home2.jpg')"></div>
+                <div class="hero-list">
+                    <span>🧸 Play Group</span>
+                    <span>📚 Pre-KG</span>
+                    <span>✏️ LKG</span>
+                    <span>🌟 UKG</span>
+                    <span>🌙 Day Care</span>
+                </div>
 
-    <div class="hero-slide"
-         style="background-image:url('images/home3.jpg')"></div>
+                <div class="hero-buttons">
+                    <a class="btn btn-pink" href="admissions.html">📅 Book a School Visit</a>
+                    <a class="btn btn-green" href="https://wa.me/918438142540?text=Hello%20BrightRoots%20Kids%20Care%2C%20I%20would%20like%20to%20know%20more%20about%20admission%20for%20my%20child." target="_blank" rel="noopener">💬 WhatsApp Us</a>
+                </div>
 
-    <div class="hero-slide"
-         style="background-image:url('images/home4.jpg')"></div>
-
-    <div class="hero-slide"
-         style="background-image:url('images/home5.jpg')"></div>
-
-    <div class="hero-slide"
-         style="background-image:url('images/home6.jpg')"></div>
-
-    <div class="hero-slide"
-         style="background-image:url('images/home7.jpg')"></div>
-
-
-    <!-- Hero Content -->
-    <div class="container hero-inner">
-
-        <div class="hero-content">
-
-            <span class="eyebrow hero-eyebrow">
-                    ✨ Admissions Open • 2026–27
-            </span>
-
-            <h1>
-                BrightRoots
-                <span class="gradient">Kids Care</span>
-            </h1>
-
-            <p class="hero-subtitle">
-                A Happy Place to Learn, Play & Grow
-            </p>
-
-            <p class="hero-copy">
-                A safe, caring and engaging environment where children learn through play, activities and everyday experiences.
-            </p>
-
-
-            <!-- Programs -->
-            <div class="hero-list">
-
-                <span>🧸 Play Group</span>
-                <span>📚 Pre-KG</span>
-                <span>✏️ LKG</span>
-                <span>🌟 UKG</span>
-                <span>🌙 Day Care</span>
-
+                <div class="hero-meta">
+                    <span>📍 Tirupattur</span>
+                    <span>📞 84381 42540</span>
+                </div>
             </div>
-
-
-            <!-- CTA Buttons -->
-            <div class="buttons hero-buttons">
-
-                <a
-                    class="btn btn-pink"
-                    href="admissions.html">
-                    📅 Book a School Visit
-                </a>
-
-                <a
-                    class="btn btn-green"
-                    href="https://wa.me/918438142540?text=Hello%20BrightRoots%20Kids%20Care%2C%20I%20would%20like%20to%20know%20more%20about%20admission%20for%20my%20child."
-                    target="_blank"
-                    rel="noopener noreferrer">
-                    💬 WhatsApp Us
-                </a>
-
-            </div>
-
-
-            <!-- Contact Information -->
-            <div class="hero-meta">
-
-                <span>
-                    📍 Tirupattur
-                </span>
-
-                <span>
-                    📞 84381 42540
-                </span>
-
-            </div>
-
         </div>
 
-    </div>
-
-
-</section>
+        <!-- Dots -->
+        <div class="hero-dots" id="heroDots">
+            <button class="hero-dot active" data-slide="0" aria-label="Slide 1"></button>
+            <button class="hero-dot" data-slide="1" aria-label="Slide 2"></button>
+            <button class="hero-dot" data-slide="2" aria-label="Slide 3"></button>
+            <button class="hero-dot" data-slide="3" aria-label="Slide 4"></button>
+            <button class="hero-dot" data-slide="4" aria-label="Slide 5"></button>
+            <button class="hero-dot" data-slide="5" aria-label="Slide 6"></button>
+            <button class="hero-dot" data-slide="6" aria-label="Slide 7"></button>
+        </div>
+    </section>
 
     <!-- ============================================================
     FEATURE STRIP
@@ -3085,15 +2096,15 @@
                 <div class="feature-item">
                     <div class="feature-icon">🍎</div>
                     <div>
-                        <h4>Caring & Trained Teachers</h4>
-                        <p>Patient guidance &amp; and individual attention for every child</p>
+                        <h4>Caring &amp; Trained Teachers</h4>
+                        <p>Patient guidance &amp; individual attention</p>
                     </div>
                 </div>
                 <div class="feature-item">
                     <div class="feature-icon">🌱</div>
                     <div>
                         <h4>Growing With Confidence</h4>
-                        <p>Building communication, &amp; independence, social skills and confidence</p>
+                        <p>Building communication, independence &amp; social skills</p>
                     </div>
                 </div>
                 <div class="feature-item">
@@ -3121,25 +2132,25 @@
                     <div class="program-icon">🧸</div>
                     <h3>Play Group</h3>
                     <span class="age">2 – 3 Years</span>
-                    <p>A gentle first step into school through play, &amp; music, movement and social interaction.</p>
+                    <p>A gentle first step into school through play, music, movement and social interaction.</p>
                 </article>
                 <article class="program-card">
                     <div class="program-icon">📚</div>
                     <h3>Pre-KG</h3>
                     <span class="age">3 – 4 Years</span>
-                    <p>Learning through stories, &amp; activities, exploration and hands-on experiences.</p>
+                    <p>Learning through stories, activities, exploration and hands-on experiences.</p>
                 </article>
                 <article class="program-card">
                     <div class="program-icon">✏️</div>
                     <h3>LKG</h3>
                     <span class="age">4 – 5 Years</span>
-                    <p>Developing early language, &amp;  numeracy, communication and everyday skills.</p>
+                    <p>Developing early language, numeracy, communication and everyday skills.</p>
                 </article>
                 <article class="program-card">
                     <div class="program-icon">🌟</div>
                     <h3>UKG</h3>
                     <span class="age">5 – 6 Years</span>
-                    <p>Building confidence,  &amp; independence and essential skills for the next stage of schooling.</p>
+                    <p>Building confidence, independence and essential skills for the next stage.</p>
                 </article>
                 <article class="program-card">
                     <div class="program-icon">🏠</div>
@@ -3154,268 +2165,137 @@
     <!-- ============================================================
     APPROACH
     ============================================================ -->
-   <section class="approach-section" id="approach">
-    <div class="container">
-
-        <div class="approach-heading">
-            <span class="eyebrow">Our Approach</span>
-
-            <h2>
-                Learning That
-                <span class="gradient">Feels Like Play</span>
-            </h2>
-
-            <p>
-                At BrightRoots, children learn best when they are happy, curious
-                and actively involved. Our learning experiences encourage
-                children to explore, ask questions, communicate and discover
-                new things at their own pace.
-            </p>
-        </div>
-
-        <div class="approach-content">
-
-            <!-- LEFT IMAGE -->
-            <div class="approach-visual">
-                <div class="approach-blob">
-
-                    <img
-                        src="images/activities.jpg"
-                        alt="Children learning through play at BrightRoots Kids Care"
-                        loading="lazy"
-                    >
-
-                    <span class="approach-deco d1">✦</span>
-                    <span class="approach-deco d2">❀</span>
-                    <span class="approach-deco d3">✦</span>
-                    <span class="approach-deco d4">★</span>
-                    <span class="approach-deco d5">❀</span>
-
+    <section class="approach-section" id="approach">
+        <div class="container">
+            <div class="approach-heading">
+                <span class="eyebrow">Our Approach</span>
+                <h2>Learning That <span class="gradient">Feels Like Play</span></h2>
+                <p>At BrightRoots, children learn best when they are happy, curious and actively involved. Our learning experiences encourage children to explore, ask questions, communicate and discover new things at their own pace.</p>
+            </div>
+            <div class="approach-content">
+                <div class="approach-visual">
+                    <div class="approach-blob">
+                        <img src="images/activities.jpg" alt="Children learning through play at BrightRoots" loading="lazy" />
+                        <span class="approach-deco d1">✦</span>
+                        <span class="approach-deco d2">❀</span>
+                        <span class="approach-deco d3">✦</span>
+                        <span class="approach-deco d4">★</span>
+                        <span class="approach-deco d5">❀</span>
+                    </div>
+                </div>
+                <div class="approach-text">
+                    <h3>Our approach includes:</h3>
+                    <div class="approach-cards">
+                        <article class="approach-card card-pink">
+                            <div class="approach-icon">🧩</div>
+                            <div>
+                                <h4>Learning Through Play</h4>
+                                <p>Activities that make learning enjoyable and meaningful.</p>
+                            </div>
+                        </article>
+                        <article class="approach-card card-blue">
+                            <div class="approach-icon">📚</div>
+                            <div>
+                                <h4>Early Literacy &amp; Phonics</h4>
+                                <p>Building vocabulary, listening and early reading skills.</p>
+                            </div>
+                        </article>
+                        <article class="approach-card card-yellow">
+                            <div class="approach-icon">🔢</div>
+                            <div>
+                                <h4>Early Numeracy</h4>
+                                <p>Developing number sense through practical activities and games.</p>
+                            </div>
+                        </article>
+                        <article class="approach-card card-orange">
+                            <div class="approach-icon">🎨</div>
+                            <div>
+                                <h4>Creative Expression</h4>
+                                <p>Art, craft, music and activities that encourage imagination.</p>
+                            </div>
+                        </article>
+                        <article class="approach-card card-green">
+                            <div class="approach-icon">🌱</div>
+                            <div>
+                                <h4>Life Skills &amp; Independence</h4>
+                                <p>Helping children develop confidence and age-appropriate independence.</p>
+                            </div>
+                        </article>
+                        <article class="approach-card card-red">
+                            <div class="approach-icon">❤️</div>
+                            <div>
+                                <h4>Values &amp; Social Skills</h4>
+                                <p>Learning to share, communicate, cooperate and care for others.</p>
+                            </div>
+                        </article>
+                    </div>
+                    <a class="btn btn-pink" href="about.html">Learn More About Us →</a>
                 </div>
             </div>
-
-            <!-- RIGHT CONTENT -->
-            <div class="approach-text">
-
-                <h3>Our approach includes:</h3>
-
-                <div class="approach-cards">
-
-                    <article class="approach-card card-pink">
-                        <div class="approach-icon">🧩</div>
-
-                        <div>
-                            <h4>Learning Through Play</h4>
-                            <p>
-                                Activities that make learning enjoyable
-                                and meaningful.
-                            </p>
-                        </div>
-                    </article>
-
-
-                    <article class="approach-card card-blue">
-                        <div class="approach-icon">📚</div>
-
-                        <div>
-                            <h4>Early Literacy &amp; Phonics</h4>
-                            <p>
-                                Building vocabulary, listening and early
-                                reading skills.
-                            </p>
-                        </div>
-                    </article>
-
-
-                    <article class="approach-card card-yellow">
-                        <div class="approach-icon">🔢</div>
-
-                        <div>
-                            <h4>Early Numeracy</h4>
-                            <p>
-                                Developing number sense through practical
-                                activities and games.
-                            </p>
-                        </div>
-                    </article>
-
-
-                    <article class="approach-card card-orange">
-                        <div class="approach-icon">🎨</div>
-
-                        <div>
-                            <h4>Creative Expression</h4>
-                            <p>
-                                Art, craft, music and activities that
-                                encourage imagination.
-                            </p>
-                        </div>
-                    </article>
-
-
-                    <article class="approach-card card-green">
-                        <div class="approach-icon">🌱</div>
-
-                        <div>
-                            <h4>Life Skills &amp; Independence</h4>
-                            <p>
-                                Helping children develop confidence and
-                                age-appropriate independence.
-                            </p>
-                        </div>
-                    </article>
-
-
-                    <article class="approach-card card-red">
-                        <div class="approach-icon">❤️</div>
-
-                        <div>
-                            <h4>Values &amp; Social Skills</h4>
-                            <p>
-                                Learning to share, communicate, cooperate
-                                and care for others.
-                            </p>
-                        </div>
-                    </article>
-
-                </div>
-
-                <a class="btn btn-pink" href="about.html">
-                    Learn More About Us →
-                </a>
-
-            </div>
-
         </div>
-
-    </div>
-</section>
+    </section>
 
     <!-- ============================================================
     ENVIRONMENT
     ============================================================ -->
     <section class="environment-section" id="environment">
-    <div class="container">
-
-        <div class="env-heading">
-            <span class="eyebrow">Our Environment</span>
-
-            <h2>
-                A Space Designed for
-                <span class="gradient">Little Learners</span>
-            </h2>
-
-            <p>
-                Every part of our environment is thoughtfully designed to
-                make children feel safe, comfortable, curious and ready to learn.
-            </p>
-        </div>
-
-        <div class="env-grid">
-
-            <!-- IMAGE -->
-            <div class="env-photo">
-                <div class="env-photo-frame">
-                    <img
-                        src="images/classroom.jpg"
-                        alt="BrightRoots child-friendly classroom"
-                        loading="lazy"
-                    >
-
-                    <span class="env-decoration env-d1">🌈</span>
-                    <span class="env-decoration env-d2">⭐</span>
-                    <span class="env-decoration env-d3">🌱</span>
+        <div class="container">
+            <div class="env-heading">
+                <span class="eyebrow">Our Environment</span>
+                <h2>A Space Designed for <span class="gradient">Little Learners</span></h2>
+                <p>Every part of our environment is thoughtfully designed to make children feel safe, comfortable, curious and ready to learn.</p>
+            </div>
+            <div class="env-grid">
+                <div class="env-photo">
+                    <div class="env-photo-frame">
+                        <img src="images/classroom.jpg" alt="BrightRoots child-friendly classroom" loading="lazy" />
+                        <span class="env-decoration env-d1">🌈</span>
+                        <span class="env-decoration env-d2">⭐</span>
+                        <span class="env-decoration env-d3">🌱</span>
+                    </div>
+                </div>
+                <div class="env-text">
+                    <div class="env-features">
+                        <article class="env-feature env-pink">
+                            <div class="env-icon">🏫</div>
+                            <div>
+                                <h3>Bright Classrooms</h3>
+                                <p>Child-friendly spaces designed for comfortable learning.</p>
+                            </div>
+                        </article>
+                        <article class="env-feature env-blue">
+                            <div class="env-icon">🛡️</div>
+                            <div>
+                                <h3>Safe &amp; Secure</h3>
+                                <p>24/7 CCTV surveillance to help maintain a secure environment.</p>
+                            </div>
+                        </article>
+                        <article class="env-feature env-yellow">
+                            <div class="env-icon">📚</div>
+                            <div>
+                                <h3>Learning Corners</h3>
+                                <p>Dedicated spaces for reading, creative activities and exploration.</p>
+                            </div>
+                        </article>
+                        <article class="env-feature env-green">
+                            <div class="env-icon">⚽</div>
+                            <div>
+                                <h3>Indoor &amp; Outdoor Play</h3>
+                                <p>Opportunities for children to move, play and develop physical skills.</p>
+                            </div>
+                        </article>
+                        <article class="env-feature env-orange">
+                            <div class="env-icon">✨</div>
+                            <div>
+                                <h3>Clean &amp; Child-Friendly Spaces</h3>
+                                <p>A clean environment designed with children's comfort in mind.</p>
+                            </div>
+                        </article>
+                    </div>
                 </div>
             </div>
-
-
-            <!-- FEATURES -->
-            <div class="env-text">
-
-                <div class="env-features">
-
-                    <!-- 1 -->
-                    <article class="env-feature env-pink">
-                        <div class="env-icon">🏫</div>
-
-                        <div>
-                            <h3>Bright Classrooms</h3>
-
-                            <p>
-                                Child-friendly spaces designed for
-                                comfortable learning.
-                            </p>
-                        </div>
-                    </article>
-
-
-                    <!-- 2 -->
-                    <article class="env-feature env-blue">
-                        <div class="env-icon">🛡️</div>
-
-                        <div>
-                            <h3>Safe &amp; Secure</h3>
-
-                            <p>
-                                24/7 CCTV surveillance to help maintain
-                                a secure environment.
-                            </p>
-                        </div>
-                    </article>
-
-
-                    <!-- 3 -->
-                    <article class="env-feature env-yellow">
-                        <div class="env-icon">📚</div>
-
-                        <div>
-                            <h3>Learning Corners</h3>
-
-                            <p>
-                                Dedicated spaces for reading, creative
-                                activities and exploration.
-                            </p>
-                        </div>
-                    </article>
-
-
-                    <!-- 4 -->
-                    <article class="env-feature env-green">
-                        <div class="env-icon">⚽</div>
-
-                        <div>
-                            <h3>Indoor &amp; Outdoor Play</h3>
-
-                            <p>
-                                Opportunities for children to move, play
-                                and develop physical skills.
-                            </p>
-                        </div>
-                    </article>
-
-
-                    <!-- 5 -->
-                    <article class="env-feature env-orange">
-                        <div class="env-icon">✨</div>
-
-                        <div>
-                            <h3>Clean &amp; Child-Friendly Spaces</h3>
-
-                            <p>
-                                A clean environment designed with
-                                children's comfort in mind.
-                            </p>
-                        </div>
-                    </article>
-
-                </div>
-
-            </div>
-
         </div>
-
-    </div>
-</section>
+    </section>
 
     <!-- ============================================================
     GALLERY
@@ -3434,33 +2314,31 @@
             </div>
         </div>
     </section>
- <!-- ============================================================
-    GOOGLE REVIEWS / TESTIMONIALS
+
+    <!-- ============================================================
+    GOOGLE REVIEWS
     ============================================================ -->
-    <section class="section-padding">
+    <section class="reviews-section" id="reviews">
         <div class="container">
-            <div class="section-title scroll-animate">
+            <div class="section-heading">
                 <span class="eyebrow gold">Google Reviews</span>
-                <h2>What Parents <span class="gradient-text">Say</span></h2>
+                <h2>What Parents <span class="gradient">Say</span></h2>
                 <p>Real reviews from families who trust BrightRoots Kids Care</p>
             </div>
-
             <div class="reviews-grid">
-                <div class="review-card scroll-animate" data-delay="100">
+                <div class="review-card">
                     <div class="stars">⭐⭐⭐⭐⭐</div>
                     <p class="review-text">"A nice and caring preschool setup in Tirupattur. The classrooms and learning materials are well arranged and child-friendly."</p>
                     <div class="review-author">— Rajakumari R</div>
                     <div class="google-badge"><i class="fab fa-google"></i> Google Review</div>
                 </div>
-
-                <div class="review-card scroll-animate" data-delay="150">
+                <div class="review-card">
                     <div class="stars">⭐⭐⭐⭐⭐</div>
                     <p class="review-text">"This Place is just the real care, which is given to every single kid out there with making the kids understand from scratch to high level. The teaching and clarifying is on high. One of the Best Preschool in the Town."</p>
                     <div class="review-author">— Preethi Viji</div>
                     <div class="google-badge"><i class="fab fa-google"></i> Google Review</div>
                 </div>
-
-                <div class="review-card scroll-animate" data-delay="200">
+                <div class="review-card">
                     <div class="stars">⭐⭐⭐⭐⭐</div>
                     <p class="review-text">"Best place for preschool and daycare in Tirupattur. Clean infrastructure, safe environment, engaging activities, supporting teachers and care takers. Kids enjoy learning here."</p>
                     <div class="review-author">— Nandhini Palani</div>
@@ -3473,20 +2351,18 @@
     <!-- ============================================================
     GOOGLE BUSINESS PROFILE
     ============================================================ -->
-    <section class="section-padding bg-cream">
+    <section class="google-business-section">
         <div class="container">
-            <div class="google-business-card scroll-animate">
+            <div class="google-business-card">
                 <div class="gb-left">
-                    <div class="gb-icon">
-                        <i class="fab fa-google"></i>
-                    </div>
+                    <div class="gb-icon"><i class="fab fa-google"></i></div>
                     <div class="gb-text">
                         <h4>BrightRoots Kids Care on Google</h4>
                         <p><span class="rating">★★★★★ 5.0</span> — See what parents are saying</p>
                         <p style="font-size:.85rem;color:var(--muted);">View our Google Business Profile</p>
                     </div>
                 </div>
-                <a href="https://share.google/kBOoEJ16yiPq338v0" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+                <a href="https://share.google/kBOoEJ16yiPq338v0" target="_blank" rel="noopener noreferrer" class="btn btn-pink">
                     <i class="fab fa-google"></i> View on Google
                 </a>
             </div>
@@ -3522,37 +2398,22 @@
                     <div class="footer-logo-wrap">
                         <img src="images/logo1.jpg" alt="BrightRoots Kids Care" />
                         <div class="footer-brand-text">
+                            <span class="main">BrightRoots</span>
+                            <span class="sub">Kids Care</span>
                         </div>
                     </div>
                     <p>BrightRoots Kids Care — where little minds play, learn, grow and thrive in a safe and caring environment.</p>
                     <div class="footer-social">
-
-  <a
-    href="https://www.facebook.com/people/BrightRoots-Kids-Care-PreSchool-Day-Care/61591009919658/"
-    target="_blank"
-    rel="noopener noreferrer"
-    aria-label="Facebook"
-    class="facebook">
-    <i class="fa-brands fa-facebook-f"></i>
-  </a>
-
-  <a
-    href="https://www.instagram.com/brightrootskidscare_tirupattur/"
-    target="_blank"
-    rel="noopener noreferrer"
-    aria-label="Instagram"
-    class="instagram">
-    <i class="fa-brands fa-instagram"></i>
-  </a>
-
-  <a
-    href="#"
-    aria-label="YouTube"
-    class="youtube">
-    <i class="fa-brands fa-youtube"></i>
-  </a>
-
-</div>
+                        <a href="https://www.facebook.com/people/BrightRoots-Kids-Care-PreSchool-Day-Care/61591009919658/" target="_blank" rel="noopener noreferrer" aria-label="Facebook" class="facebook">
+                            <i class="fa-brands fa-facebook-f"></i>
+                        </a>
+                        <a href="https://www.instagram.com/brightrootskidscare_tirupattur/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="instagram">
+                            <i class="fa-brands fa-instagram"></i>
+                        </a>
+                        <a href="#" aria-label="YouTube" class="youtube">
+                            <i class="fa-brands fa-youtube"></i>
+                        </a>
+                    </div>
                 </div>
 
                 <div>
@@ -3563,7 +2424,7 @@
                         <li><a href="programs.html">Programs</a></li>
                         <li><a href="environment.html">Environment</a></li>
                         <li><a href="franchise.html">Franchise</a></li>
-                        <li><a href="admissions.html#contact">Admissions</a></li>
+                        <li><a href="admissions.html">Admissions</a></li>
                     </ul>
                 </div>
 
@@ -3591,7 +2452,7 @@
                     <h4>Our Location</h4>
                     <div class="footer-map">
                         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3895.0567788403832!2d78.5645547758528!3d12.512395624778083!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bac552135dbe67d%3A0x9c362f811794a828!2sBRIGHTROOTS%20KIDS%20CARE!5e0!3m2!1sen!2sin!4v1787928396020!5m2!1sen!2sin" loading="lazy" title="BrightRoots Kids Care location map"></iframe>
-                  </div>
+                    </div>
                 </div>
             </div>
 
@@ -3650,9 +2511,7 @@
 
             /* ----- Hero slider ----- */
             var slides = document.querySelectorAll('.hero-slide');
-            var dots = document.querySelectorAll('#heroDots button');
-            var prevBtn = document.getElementById('heroPrev');
-            var nextBtn = document.getElementById('heroNext');
+            var dots = document.querySelectorAll('.hero-dot');
             var current = 0;
             var timer = null;
             var SLIDE_TIME = 5000;
@@ -3668,8 +2527,6 @@
 
             function next() { goTo(current + 1); }
 
-            function prev() { goTo(current - 1); }
-
             function startAuto() {
                 if (reduceMotion) return;
                 stopAuto();
@@ -3684,10 +2541,6 @@
                 startAuto(); }
 
             if (slides.length) {
-                nextBtn && nextBtn.addEventListener('click', function() { next();
-                    restartAuto(); });
-                prevBtn && prevBtn.addEventListener('click', function() { prev();
-                    restartAuto(); });
                 dots.forEach(function(btn) {
                     btn.addEventListener('click', function() {
                         goTo(parseInt(this.dataset.slide, 10));
