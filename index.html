@@ -470,22 +470,33 @@
         }
 
         .hero h1 {
-            max-width: 850px;
-            margin: 0 auto 16px;
-            color: #fff;
-            font-family: 'Baloo 2', cursive;
-            font-size: clamp(2.6rem, 5.5vw, 5rem);
-            font-weight: 800;
-            line-height: 1.02;
-            letter-spacing: -.02em;
-            text-shadow: 0 4px 18px rgba(0, 0, 0, .28);
-        }
-        .hero h1 .gradient {
+    color: #06265c;
+
+    font-family: 'Baloo 2', cursive;
+
+    font-size: clamp(
+        2.5rem,
+        5.5vw,
+        4.8rem
+    );
+
+    font-weight: 800;
+    line-height: 1.05;
+
+    margin-bottom: 16px;
+
+    text-shadow:
+        0 2px 5px rgba(255,255,255,.65);
+}
+
+
+.hero h1 .gradient {
     background:
         linear-gradient(
             135deg,
-            #e81763 0%,
-            #f47b20 45%,
+            #e71962 0%,
+            #ef4b32 35%,
+            #f47c20 65%,
             #f5b400 100%
         );
 
@@ -493,54 +504,71 @@
     background-clip: text;
 
     -webkit-text-fill-color: transparent;
-
     color: transparent;
 }
 
-       .hero-subtitle {
-    margin: 0 auto 8px;
+  .hero-subtitle {
+    display: inline-block;
 
-    color: #082451;   /* Deep Blue */
+    margin: 0 auto 12px;
+    padding: 8px 18px;
+
+    color: #06265c;
 
     font-family: 'Poppins', sans-serif;
-
-    font-size: clamp(
-        1rem,
-        2vw,
-        1.25rem
-    );
-
+    font-size: clamp(1rem, 2vw, 1.25rem);
     font-weight: 800;
-
     line-height: 1.5;
 
-    text-shadow:
-        0 1px 3px rgba(255,255,255,.55);
+    /* Soft white background */
+    background: rgba(255, 255, 255, 0.78);
+
+    border: 1px solid rgba(255, 255, 255, 0.85);
+    border-radius: 999px;
+
+    box-shadow:
+        0 6px 20px rgba(7, 26, 61, 0.12);
+
+    text-shadow: none;
+
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
 }
 
 
-/* ================= HERO DESCRIPTION ================= */
+/* =====================================================
+   HERO DESCRIPTION
+===================================================== */
 
 .hero-copy {
     width: 100%;
-
     max-width: 680px;
 
     margin: 0 auto 20px;
+    padding: 12px 20px;
 
-    color: #173968;   /* Deep Blue */
+    color: #082b63;
 
     font-family: 'Poppins', sans-serif;
-
     font-size: 1rem;
-
-    font-weight: 500;
-
+    font-weight: 600;
     line-height: 1.7;
 
-    text-shadow:
-        0 1px 3px rgba(255,255,255,.55);
+    /* Readable translucent panel */
+    background: rgba(255, 255, 255, 0.70);
+
+    border: 1px solid rgba(255, 255, 255, 0.72);
+    border-radius: 16px;
+
+    box-shadow:
+        0 8px 25px rgba(7, 26, 61, 0.10);
+
+    text-shadow: none;
+
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
 }
+
 
 
         .hero-list {
@@ -589,40 +617,46 @@
             min-height: 50px;
         }
 
-      .hero-meta {
+     .hero-meta {
     display: flex;
-
     align-items: center;
-
     justify-content: center;
 
     flex-wrap: wrap;
+    gap: 12px;
 
-    gap: 24px;
-
-    color: #082451;   /* Deep Blue */
+    margin-top: 8px;
 
     font-family: 'Poppins', sans-serif;
-
     font-size: .9rem;
-
     font-weight: 700;
 
-    text-shadow:
-        0 1px 3px rgba(255,255,255,.55);
+    color: #06265c;
+
+    text-shadow: none;
 }
 
 
 .hero-meta span {
     display: inline-flex;
-
     align-items: center;
-
-    justify-content: center;
-
     gap: 6px;
 
-    color: #082451;
+    padding: 7px 14px;
+
+    color: #06265c;
+
+    background: rgba(255, 255, 255, 0.78);
+
+    border: 1px solid rgba(255, 255, 255, 0.85);
+
+    border-radius: 999px;
+
+    box-shadow:
+        0 5px 15px rgba(7, 26, 61, 0.10);
+
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
 }
 
         /* Slide dots */
@@ -2465,7 +2499,7 @@
                         <li><a href="about.html">About Us</a></li>
                         <li><a href="programs.html">Programs</a></li>
                         <li><a href="environment.html">Environment</a></li>
-                        <li><a href="franchise.html">Franchise</a></li>
+                        <li><a href="whybrightroots.html">Why BrightRoots</a></li>
                         <li><a href="admissions.html">Admissions</a></li>
                     </ul>
                 </div>
