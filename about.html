@@ -118,14 +118,16 @@
         /* ============================================================
                    HEADER
                    ============================================================ */
+           /* ============================================================
+                   HEADER
+                   ============================================================ */
         .header {
-            position: relative;
+            position: absolute;
             top: 0;
             left: 0;
             right: 0;
             z-index: 2000;
             padding: 18px 0 0;
-            background: transparent;
         }
         .header-inner {
             display: flex;
@@ -148,7 +150,6 @@
             height: 90px;
             border-radius: 50%;
             object-fit: cover;
-            object-position: center;
             border: 3px solid rgba(255, 255, 255, 0.6);
             box-shadow: 0 8px 24px rgba(6, 24, 61, 0.16);
         }
@@ -160,8 +161,9 @@
             font-family: 'Baloo 2', cursive;
             font-size: 1.4rem;
             font-weight: 700;
-            color: var(--navy);
+            color: #fff;
             display: block;
+            text-shadow: 0 2px 12px rgba(0, 0, 0, 0.2);
         }
         .brand-text .sub {
             font-family: 'Poppins', sans-serif;
@@ -169,8 +171,9 @@
             font-weight: 700;
             letter-spacing: .1em;
             text-transform: uppercase;
-            color: var(--pink);
+            color: var(--gold);
             display: block;
+            text-shadow: 0 1px 8px rgba(0, 0, 0, 0.15);
         }
 
         .nav {
@@ -233,6 +236,7 @@
             flex-shrink: 0;
         }
 
+        /* Mobile menu */
         .mobile-backdrop {
             position: fixed;
             inset: 0;
@@ -317,6 +321,7 @@
         .mobile-actions a.whatsapp {
             background: linear-gradient(135deg, var(--green), var(--green-glow));
         }
+
 
         /* ============================================================
                    PAGE BANNER — COLORFUL HERO
@@ -831,6 +836,9 @@
         /* ============================================================
                    FOOTER
                    ============================================================ */
+     /* ============================================================
+                   FOOTER
+                   ============================================================ */
         .footer {
             background: var(--navy-dark);
             color: #fff;
@@ -842,16 +850,16 @@
             gap: 34px;
         }
         .footer-logo-wrap {
-            display: inline-flex;
+            display: flex;
             align-items: center;
             gap: 12px;
             margin-bottom: 12px;
         }
         .footer-logo-wrap img {
-            width: 80px;
-            height: 80px;
+            height: 60px;
+            width: auto;
+            object-fit: contain;
             border-radius: 50%;
-            object-fit: cover;
             border: 3px solid rgba(255, 255, 255, 0.15);
             box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
         }
@@ -878,7 +886,6 @@
             color: rgba(255, 255, 255, .7);
             font-size: .92rem;
             margin-bottom: 16px;
-            max-width: 300px;
         }
         .footer-social {
             display: flex;
@@ -920,7 +927,6 @@
         .footer-social .youtube:hover {
             box-shadow: 0 12px 25px rgba(255, 0, 0, .40);
         }
-
         .footer h4 {
             color: #fff;
             font-family: 'Poppins', sans-serif;
@@ -980,6 +986,23 @@
             color: rgba(255, 255, 255, .5);
             font-size: .82rem;
         }
+        @media (max-width: 1100px) {
+            .footer-grid {
+                grid-template-columns: 1fr 1fr 1fr;
+            }
+        }
+        @media (max-width: 760px) {
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 28px;
+            }
+            .footer {
+                padding-bottom: 90px;
+            }
+            .footer-logo-wrap img {
+                height: 50px;
+            }
+        }
 
         /* ============================================================
                    STICKY BAR & WHATSAPP FLOAT
@@ -1038,31 +1061,20 @@
         .whatsapp-float:hover {
             transform: scale(1.08);
         }
-
-        /* ============================================================
-                   SCROLL ANIMATIONS
-                   ============================================================ */
-        .scroll-animate {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: opacity .7s ease, transform .7s ease;
-        }
-        .scroll-animate.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        /* ============================================================
-                   RESPONSIVE
-                   ============================================================ */
-        @media (max-width: 1100px) {
-            .footer-grid {
-                grid-template-columns: 1fr 1fr 1fr;
+        @media (max-width: 760px) {
+            .sticky-bar {
+                display: block;
             }
-            .diff-grid {
-                grid-template-columns: repeat(2, 1fr);
+            .whatsapp-float {
+                bottom: 80px;
+                width: 52px;
+                height: 52px;
+                font-size: 22px;
+                right: 16px;
             }
         }
+
+    
 
         @media (max-width: 900px) {
             .nav {
@@ -1210,19 +1222,19 @@
     <!-- ============================================================
     HEADER
     ============================================================ -->
-    <header class="header" id="header">
+ <header class="header" id="header">
         <div class="container header-inner">
             <a href="index.html" class="brand-logo" aria-label="BrightRoots Kids Care Home">
                 <img src="images/logo.jpg" alt="BrightRoots Kids Care" />
             </a>
 
             <nav class="nav" aria-label="Main navigation">
-               <a href="index.html">Home</a>
-        <a href="about.html" class="active">About Us</a>
-        <a href="programs.html">Programs</a>
-        <a href="whybrightroots.html">Why BrightRoots</a>
-        <a href="gallery.html">Gallery</a>
-        <a href="admissions.html">Admissions</a>
+                <a href="index.html" class="active">Home</a>
+                <a href="about.html">About Us</a>
+                <a href="programs.html">Programs</a>
+                <a href="whybrightroots.html">Why BrightRoots</a>
+                <a href="gallery.html">Gallery</a>
+                <a href="admissions.html">Admissions</a>
             </nav>
 
             <a class="header-phone" href="tel:918438142540">📞 84381 42540</a>
@@ -1238,16 +1250,16 @@
     <aside class="mobile-menu" id="mobileMenu" aria-hidden="true">
         <button class="mobile-close" id="closeMenu" type="button" aria-label="Close menu">✕</button>
         <div class="mobile-logo">
-            <img src="images/kidslogo.jpg" alt="BrightRoots Kids Care" />
+            <img src="images/logo.jpg" alt="BrightRoots Kids Care" />
         </div>
-        <a href="index.html">Home</a>
-        <a href="about.html" class="active">About Us</a>
+        <a href="index.html" class="active">Home</a>
+        <a href="about.html">About Us</a>
         <a href="programs.html">Programs</a>
-        <a href="whybrightroots">Why BrightRoots</a>
+        <a href="whybrightroots.html">Why BrightRoots</a>
         <a href="gallery.html">Gallery</a>
         <a href="admissions.html">Admissions</a>
         <div class="mobile-actions">
-            <a href="admissions.html#contact">📅 Enquire Now</a>
+            <a href="admissions.html">📅 Enquire Now</a>
             <a class="whatsapp" href="https://wa.me/918438142540?text=Hello%20BrightRoots%20Kids%20Care%2C%20I%20would%20like%20to%20know%20more%20about%20admission%20for%20my%20child." target="_blank" rel="noopener">💬 WhatsApp Us</a>
         </div>
     </aside>
@@ -1434,7 +1446,7 @@
         </div>
     </section>
 
-    <!-- ============================================================
+   <!-- ============================================================
     FOOTER
     ============================================================ -->
     <footer class="footer" id="contact">
@@ -1465,8 +1477,8 @@
                         <li><a href="about.html">About Us</a></li>
                         <li><a href="programs.html">Programs</a></li>
                         <li><a href="environment.html">Environment</a></li>
-                        <li><a href="franchise.html">Franchise</a></li>
-                        <li><a href="admissions.html#contact">Admissions</a></li>
+                        <li><a href="whybrightroots.html">Why BrightRoots</a></li>
+                        <li><a href="admissions.html">Admissions</a></li>
                     </ul>
                 </div>
 
@@ -1525,10 +1537,10 @@
         document.addEventListener('DOMContentLoaded', function() {
 
             /* ----- Mobile menu ----- */
-            var menuToggle = document.getElementById('menuToggle');
-            var mobileMenu = document.getElementById('mobileMenu');
-            var mobileBackdrop = document.getElementById('mobileBackdrop');
-            var closeMenu = document.getElementById('closeMenu');
+            const menuToggle = document.getElementById('menuToggle');
+            const mobileMenu = document.getElementById('mobileMenu');
+            const mobileBackdrop = document.getElementById('mobileBackdrop');
+            const closeMenu = document.getElementById('closeMenu');
 
             function setMenu(open) {
                 mobileMenu.classList.toggle('open', open);
@@ -1537,20 +1549,12 @@
                 menuToggle.setAttribute('aria-expanded', String(open));
                 document.body.classList.toggle('menu-open', open);
             }
-            if (menuToggle) {
-                menuToggle.addEventListener('click', function() { setMenu(true); });
-            }
-            if (closeMenu) {
-                closeMenu.addEventListener('click', function() { setMenu(false); });
-            }
-            if (mobileBackdrop) {
-                mobileBackdrop.addEventListener('click', function() { setMenu(false); });
-            }
-            if (mobileMenu) {
-                mobileMenu.querySelectorAll('a').forEach(function(a) {
-                    a.addEventListener('click', function() { setMenu(false); });
-                });
-            }
+            menuToggle && menuToggle.addEventListener('click', () => setMenu(true));
+            closeMenu && closeMenu.addEventListener('click', () => setMenu(false));
+            mobileBackdrop && mobileBackdrop.addEventListener('click', () => setMenu(false));
+            mobileMenu && mobileMenu.querySelectorAll('a').forEach(function(a) {
+                a.addEventListener('click', () => setMenu(false));
+            });
             document.addEventListener('keydown', function(e) {
                 if (e.key === 'Escape') setMenu(false);
             });
@@ -1559,29 +1563,46 @@
             var yearEl = document.getElementById('year');
             if (yearEl) yearEl.textContent = new Date().getFullYear();
 
-            /* ----- Scroll animations (IntersectionObserver) ----- */
-            var animElements = document.querySelectorAll('.scroll-animate');
+            /* ----- Hero slider ----- */
+            var slides = document.querySelectorAll('.hero-slide');
+            var dots = document.querySelectorAll('.hero-dot');
+            var current = 0;
+            var timer = null;
+            var SLIDE_TIME = 5000;
+            var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-            var observerOptions = {
-                threshold: 0.12,
-                rootMargin: '0px 0px -20px 0px'
-            };
+            function goTo(index) {
+                slides[current].classList.remove('active');
+                if (dots[current]) dots[current].classList.remove('active');
+                current = (index + slides.length) % slides.length;
+                slides[current].classList.add('active');
+                if (dots[current]) dots[current].classList.add('active');
+            }
 
-            var observer = new IntersectionObserver(function(entries) {
-                entries.forEach(function(entry) {
-                    if (entry.isIntersecting) {
-                        var delay = parseInt(entry.target.getAttribute('data-delay')) || 0;
-                        setTimeout(function() {
-                            entry.target.classList.add('visible');
-                        }, delay);
-                        observer.unobserve(entry.target);
-                    }
+            function next() { goTo(current + 1); }
+
+            function startAuto() {
+                if (reduceMotion) return;
+                stopAuto();
+                timer = setInterval(next, SLIDE_TIME);
+            }
+
+            function stopAuto() {
+                if (timer) clearInterval(timer);
+            }
+
+            function restartAuto() { stopAuto();
+                startAuto(); }
+
+            if (slides.length) {
+                dots.forEach(function(btn) {
+                    btn.addEventListener('click', function() {
+                        goTo(parseInt(this.dataset.slide, 10));
+                        restartAuto();
+                    });
                 });
-            }, observerOptions);
-
-            animElements.forEach(function(el) {
-                observer.observe(el);
-            });
+                startAuto();
+            }
 
         });
     </script>
