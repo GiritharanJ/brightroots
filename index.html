@@ -224,8 +224,8 @@
             transform: translateY(-2px);
         }
         .brand-logo img {
-            width: 70px;
-            height: 70px;
+            width: 90px;
+            height: 90px;
             border-radius: 50%;
             object-fit: cover;
             object-position: center;
@@ -1339,10 +1339,412 @@
         /* ============================================================
                    APPROACH
                    ============================================================ */
-        .approach-section {
-            padding: 60px 0 90px;
-            background: var(--cream);
-        }
+      
+.approach-section {
+    position: relative;
+    padding: 100px 0;
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at 10% 20%,
+            rgba(255, 91, 145, .12),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 90% 80%,
+            rgba(49, 168, 255, .12),
+            transparent 30%
+        ),
+        #fff;
+}
+ .approach-heading {
+    max-width: 850px;
+    margin: 0 auto 55px;
+    text-align: center;
+}
+.approach-heading h2 {
+    margin: 10px 0 15px;
+    font-size: clamp(2.2rem, 5vw, 3.5rem);
+}
+
+.approach-heading p {
+    max-width: 760px;
+    margin: 0 auto;
+    font-size: 1.05rem;
+    line-height: 1.8;
+}
+  /* ================= MAIN GRID ================= */
+
+.approach-content {
+    display: grid;
+    grid-template-columns: .85fr 1.15fr;
+    align-items: center;
+    gap: 65px;
+}
+
+
+/* ================= IMAGE ================= */
+
+.approach-visual {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.approach-blob {
+    position: relative;
+    width: min(100%, 500px);
+    aspect-ratio: 1 / 1;
+}
+
+.approach-blob::before {
+    content: "";
+    position: absolute;
+    inset: -18px;
+
+    border-radius: 48% 52% 58% 42% / 45% 44% 56% 55%;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255, 55, 120, .18),
+            rgba(255, 190, 55, .20),
+            rgba(44, 170, 240, .18)
+        );
+
+    animation: blobRotate 10s ease-in-out infinite;
+}
+
+.approach-blob img {
+    position: relative;
+    z-index: 2;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    border-radius:
+        48% 52% 58% 42% /
+        45% 44% 56% 55%;
+
+    display: block;
+
+    box-shadow:
+        0 25px 55px rgba(7, 26, 61, .18);
+
+    border: 8px solid rgba(255, 255, 255, .9);
+}
+
+
+@keyframes blobRotate {
+
+    0%,
+    100% {
+        transform: rotate(-2deg) scale(1);
+    }
+
+    50% {
+        transform: rotate(3deg) scale(1.025);
+    }
+}
+
+
+/* ================= DECORATIONS ================= */
+
+.approach-deco {
+    position: absolute;
+    z-index: 4;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 42px;
+    height: 42px;
+
+    border-radius: 50%;
+
+    font-size: 22px;
+
+    background: #fff;
+
+    box-shadow:
+        0 10px 25px rgba(7, 26, 61, .15);
+
+    animation: floatDeco 4s ease-in-out infinite;
+}
+
+.d1 {
+    top: 8%;
+    right: 2%;
+    color: #ec1763;
+}
+
+.d2 {
+    top: 38%;
+    right: -7%;
+    color: #f5b400;
+    animation-delay: .7s;
+}
+
+.d3 {
+    bottom: 12%;
+    right: 5%;
+    color: #27a9e8;
+    animation-delay: 1.2s;
+}
+
+.d4 {
+    bottom: 5%;
+    left: 12%;
+    color: #16b957;
+    animation-delay: 1.8s;
+}
+
+.d5 {
+    top: 15%;
+    left: 4%;
+    color: #f47b20;
+    animation-delay: 2.2s;
+}
+
+
+@keyframes floatDeco {
+
+    0%,
+    100% {
+        transform: translateY(0) rotate(0deg);
+    }
+
+    50% {
+        transform: translateY(-10px) rotate(8deg);
+    }
+}
+
+
+/* ================= TEXT ================= */
+
+.approach-text h3 {
+    margin-bottom: 20px;
+
+    font-family: 'Baloo 2', cursive;
+
+    font-size: 1.8rem;
+    color: var(--navy);
+}
+
+
+/* ================= CARDS ================= */
+
+.approach-cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+}
+
+
+.approach-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+
+    padding: 18px;
+
+    border-radius: 20px;
+
+    background: rgba(255, 255, 255, .95);
+
+    border: 1px solid rgba(7, 26, 61, .07);
+
+    box-shadow:
+        0 10px 30px rgba(7, 26, 61, .07);
+
+    transition:
+        transform .25s ease,
+        box-shadow .25s ease;
+}
+
+
+.approach-card:hover {
+    transform: translateY(-5px);
+
+    box-shadow:
+        0 18px 35px rgba(7, 26, 61, .13);
+}
+
+
+/* ================= ICON ================= */
+
+.approach-icon {
+    flex: 0 0 50px;
+
+    width: 50px;
+    height: 50px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 16px;
+
+    font-size: 25px;
+}
+
+
+/* ================= CARD COLORS ================= */
+
+.card-pink .approach-icon {
+    background: #ffe5ef;
+}
+
+.card-blue .approach-icon {
+    background: #e2f4ff;
+}
+
+.card-yellow .approach-icon {
+    background: #fff3c9;
+}
+
+.card-orange .approach-icon {
+    background: #ffeadb;
+}
+
+.card-green .approach-icon {
+    background: #e0f8e8;
+}
+
+.card-red .approach-icon {
+    background: #ffe4e7;
+}
+
+
+/* ================= CARD TEXT ================= */
+
+.approach-card h4 {
+    margin: 2px 0 5px;
+
+    font-family: 'Baloo 2', cursive;
+
+    font-size: 1.15rem;
+
+    color: var(--navy);
+}
+
+
+.approach-card p {
+    margin: 0;
+
+    font-size: .88rem;
+
+    line-height: 1.55;
+
+    color: var(--muted);
+}
+
+
+/* ================= BUTTON ================= */
+
+.approach-text .btn {
+    margin-top: 25px;
+}
+
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 950px) {
+
+    .approach-content {
+        grid-template-columns: 1fr;
+        gap: 50px;
+    }
+
+    .approach-visual {
+        order: 1;
+    }
+
+    .approach-text {
+        order: 2;
+    }
+
+    .approach-blob {
+        width: min(100%, 460px);
+    }
+
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 650px) {
+
+    .approach-section {
+        padding: 70px 0;
+    }
+
+    .approach-heading {
+        margin-bottom: 40px;
+    }
+
+    .approach-heading h2 {
+        font-size: 2.3rem;
+    }
+
+    .approach-heading p {
+        font-size: .95rem;
+        line-height: 1.7;
+    }
+
+    .approach-content {
+        gap: 35px;
+    }
+
+    .approach-blob {
+        width: 88vw;
+        max-width: 390px;
+    }
+
+    .approach-deco {
+        width: 36px;
+        height: 36px;
+        font-size: 18px;
+    }
+
+    .approach-cards {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .approach-card {
+        padding: 16px;
+    }
+
+    .approach-icon {
+        width: 46px;
+        height: 46px;
+        flex-basis: 46px;
+        font-size: 22px;
+    }
+
+    .approach-card h4 {
+        font-size: 1.1rem;
+    }
+
+    .approach-card p {
+        font-size: .86rem;
+    }
+
+    .approach-text .btn {
+        width: 100%;
+    }
+
+}
+        
         .approach-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -1428,73 +1830,451 @@
         /* ============================================================
                    ENVIRONMENT
                    ============================================================ */
-        .environment-section {
-            background: linear-gradient(135deg, #e8f4fa 0%, #f0f8ff 100%);
-            padding: 80px 0;
-        }
-        .env-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 56px;
-            align-items: center;
-        }
-        .env-photo img {
-            width: 100%;
-            height: 340px;
-            object-fit: cover;
-            border-radius: 28px;
-            box-shadow: 0 22px 50px rgba(6, 24, 61, .16);
-        }
-        .env-text p {
-            margin-bottom: 20px;
-            font-size: 1rem;
-        }
-        .env-features {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 22px;
-        }
-        .env-feature {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            flex: 1 1 140px;
-        }
-        .env-feature .icon {
-            width: 46px;
-            height: 46px;
-            border-radius: 50%;
-            flex-shrink: 0;
-            color: #fff;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 20px;
-        }
-        .env-feature:nth-child(1) .icon {
-            background: linear-gradient(135deg, var(--pink), var(--pink-glow));
-        }
-        .env-feature:nth-child(2) .icon {
-            background: linear-gradient(135deg, var(--gold), var(--gold-glow));
-        }
-        .env-feature:nth-child(3) .icon {
-            background: linear-gradient(135deg, var(--green), var(--green-glow));
-        }
-        .env-feature:nth-child(4) .icon {
-            background: linear-gradient(135deg, var(--blue), var(--blue-glow));
-        }
-        .env-feature .label {
-            font-family: 'Poppins', sans-serif;
-            font-weight: 700;
-            font-size: .85rem;
-            color: var(--navy);
-            display: block;
-            line-height: 1.3;
-        }
-        .env-feature small {
-            color: var(--muted);
-            font-size: .78rem;
-        }
+    /* =====================================================
+   ENVIRONMENT SECTION
+===================================================== */
+
+.environment-section {
+    position: relative;
+    padding: 100px 0;
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at 5% 20%,
+            rgba(255, 91, 145, .12),
+            transparent 28%
+        ),
+        radial-gradient(
+            circle at 95% 75%,
+            rgba(39, 169, 232, .12),
+            transparent 30%
+        ),
+        linear-gradient(
+            135deg,
+            #fffafc 0%,
+            #f8fbff 50%,
+            #fffdf4 100%
+        );
+}
+
+
+/* ================= HEADING ================= */
+
+.env-heading {
+    max-width: 800px;
+    margin: 0 auto 55px;
+    text-align: center;
+}
+
+.env-heading h2 {
+    margin: 10px 0 15px;
+
+    font-size: clamp(
+        2.2rem,
+        5vw,
+        3.5rem
+    );
+}
+
+.env-heading p {
+    max-width: 700px;
+    margin: 0 auto;
+
+    font-size: 1.05rem;
+    line-height: 1.8;
+
+    color: var(--muted);
+}
+
+
+/* ================= MAIN GRID ================= */
+
+.env-grid {
+    display: grid;
+
+    grid-template-columns:
+        .95fr
+        1.05fr;
+
+    align-items: center;
+
+    gap: 65px;
+}
+
+
+/* ================= IMAGE ================= */
+
+.env-photo {
+    display: flex;
+    justify-content: center;
+}
+
+.env-photo-frame {
+    position: relative;
+
+    width: min(
+        100%,
+        520px
+    );
+
+    aspect-ratio: 4 / 4.4;
+}
+
+.env-photo-frame::before {
+    content: "";
+
+    position: absolute;
+
+    inset: -16px;
+
+    border-radius: 40px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(239, 27, 101, .18),
+            rgba(255, 191, 53, .18),
+            rgba(42, 171, 235, .18)
+        );
+
+    transform: rotate(-4deg);
+}
+
+.env-photo-frame::after {
+    content: "";
+
+    position: absolute;
+
+    inset: 12px -12px -12px 12px;
+
+    border-radius: 40px;
+
+    border: 3px dashed
+        rgba(239, 27, 101, .18);
+
+    pointer-events: none;
+}
+
+.env-photo-frame img {
+    position: relative;
+
+    z-index: 2;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+
+    border-radius: 38px;
+
+    border: 8px solid
+        rgba(255, 255, 255, .95);
+
+    box-shadow:
+        0 25px 60px
+        rgba(7, 26, 61, .16);
+}
+
+
+/* ================= DECORATIONS ================= */
+
+.env-decoration {
+    position: absolute;
+
+    z-index: 5;
+
+    width: 48px;
+    height: 48px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #fff;
+
+    font-size: 24px;
+
+    box-shadow:
+        0 10px 25px
+        rgba(7, 26, 61, .15);
+
+    animation:
+        envFloat 4s ease-in-out infinite;
+}
+
+.env-d1 {
+    top: 7%;
+    right: -4%;
+}
+
+.env-d2 {
+    bottom: 25%;
+    left: -7%;
+
+    animation-delay: .8s;
+}
+
+.env-d3 {
+    bottom: 5%;
+    right: 8%;
+
+    animation-delay: 1.5s;
+}
+
+@keyframes envFloat {
+
+    0%,
+    100% {
+        transform:
+            translateY(0)
+            rotate(0deg);
+    }
+
+    50% {
+        transform:
+            translateY(-10px)
+            rotate(8deg);
+    }
+}
+
+
+/* ================= FEATURES ================= */
+
+.env-features {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 15px;
+}
+
+
+/* ================= FEATURE CARD ================= */
+
+.env-feature {
+    position: relative;
+
+    display: flex;
+    align-items: flex-start;
+
+    gap: 14px;
+
+    padding: 20px;
+
+    min-height: 145px;
+
+    background:
+        rgba(255, 255, 255, .95);
+
+    border-radius: 22px;
+
+    border: 1px solid
+        rgba(7, 26, 61, .06);
+
+    box-shadow:
+        0 12px 30px
+        rgba(7, 26, 61, .07);
+
+    transition:
+        transform .25s ease,
+        box-shadow .25s ease;
+}
+
+.env-feature:hover {
+    transform: translateY(-5px);
+
+    box-shadow:
+        0 18px 38px
+        rgba(7, 26, 61, .12);
+}
+
+
+/* Last card full width */
+
+.env-feature:last-child {
+    grid-column: 1 / -1;
+}
+
+
+/* ================= ICON ================= */
+
+.env-icon {
+    flex: 0 0 52px;
+
+    width: 52px;
+    height: 52px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 17px;
+
+    font-size: 25px;
+}
+
+
+/* ================= ICON COLORS ================= */
+
+.env-pink .env-icon {
+    background: #ffe5ef;
+}
+
+.env-blue .env-icon {
+    background: #e2f4ff;
+}
+
+.env-yellow .env-icon {
+    background: #fff3c8;
+}
+
+.env-green .env-icon {
+    background: #e2f8e9;
+}
+
+.env-orange .env-icon {
+    background: #ffeadc;
+}
+
+
+/* ================= TEXT ================= */
+
+.env-feature h3 {
+    margin: 2px 0 6px;
+
+    font-family:
+        'Baloo 2',
+        cursive;
+
+    font-size: 1.18rem;
+
+    color: var(--navy);
+}
+
+.env-feature p {
+    margin: 0;
+
+    font-size: .88rem;
+
+    line-height: 1.55;
+
+    color: var(--muted);
+}
+
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 950px) {
+
+    .environment-section {
+        padding: 80px 0;
+    }
+
+    .env-grid {
+        grid-template-columns: 1fr;
+
+        gap: 50px;
+    }
+
+    .env-photo {
+        order: 1;
+    }
+
+    .env-text {
+        order: 2;
+    }
+
+    .env-photo-frame {
+        width: min(
+            100%,
+            480px
+        );
+    }
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 650px) {
+
+    .environment-section {
+        padding: 70px 0;
+    }
+
+    .env-heading {
+        margin-bottom: 40px;
+    }
+
+    .env-heading h2 {
+        font-size: 2.3rem;
+    }
+
+    .env-heading p {
+        font-size: .94rem;
+        line-height: 1.7;
+    }
+
+    .env-grid {
+        gap: 38px;
+    }
+
+    .env-photo-frame {
+        width: 88vw;
+        max-width: 390px;
+    }
+
+    .env-decoration {
+        width: 38px;
+        height: 38px;
+
+        font-size: 19px;
+    }
+
+    .env-features {
+        grid-template-columns: 1fr;
+
+        gap: 12px;
+    }
+
+    .env-feature {
+        min-height: auto;
+
+        padding: 17px;
+
+        border-radius: 20px;
+    }
+
+    .env-feature:last-child {
+        grid-column: auto;
+    }
+
+    .env-icon {
+        flex-basis: 46px;
+
+        width: 46px;
+        height: 46px;
+
+        font-size: 22px;
+    }
+
+    .env-feature h3 {
+        font-size: 1.08rem;
+    }
+
+    .env-feature p {
+        font-size: .84rem;
+    }
+}
 
         /* ============================================================
                    GALLERY
@@ -2107,22 +2887,20 @@
         <div class="hero-content">
 
             <span class="eyebrow hero-eyebrow">
-                ✨ Admissions Open • 2026–27
+                    ✨ Admissions Open • 2026–27
             </span>
 
             <h1>
-                A Strong Start Today for a
-                <span class="gradient">Brighter Tomorrow</span>
+                BrightRoots
+                <span class="gradient">Kids Care</span>
             </h1>
 
             <p class="hero-subtitle">
-                Where little minds play, learn, grow and thrive.
+                A Happy Place to Learn, Play & Grow
             </p>
 
             <p class="hero-copy">
-                BrightRoots blends play-based learning, phonics and a
-                warm, secure environment — so every day feels like a
-                happy step forward for your child.
+                A safe, caring and engaging environment where children learn through play, activities and everyday experiences.
             </p>
 
 
@@ -2201,15 +2979,15 @@
                 <div class="feature-item">
                     <div class="feature-icon">🍎</div>
                     <div>
-                        <h4>Expert Educators</h4>
-                        <p>Trained &amp; experienced teachers</p>
+                        <h4>Caring & Trained Teachers</h4>
+                        <p>Patient guidance &amp; and individual attention for every child</p>
                     </div>
                 </div>
                 <div class="feature-item">
                     <div class="feature-icon">🌱</div>
                     <div>
-                        <h4>Holistic Growth</h4>
-                        <p>Social, emotional &amp; cognitive development</p>
+                        <h4>Growing With Confidence</h4>
+                        <p>Building communication, &amp; independence, social skills and confidence</p>
                     </div>
                 </div>
                 <div class="feature-item">
@@ -2236,32 +3014,32 @@
                 <article class="program-card">
                     <div class="program-icon">🧸</div>
                     <h3>Play Group</h3>
-                    <span class="age">1.5 – 2.5 Years</span>
-                    <p>Fun activities, play &amp; interaction</p>
+                    <span class="age">2 – 3 Years</span>
+                    <p>A gentle first step into school through play, &amp; music, movement and social interaction.</p>
                 </article>
                 <article class="program-card">
                     <div class="program-icon">📚</div>
                     <h3>Pre-KG</h3>
-                    <span class="age">2.5 – 3.5 Years</span>
-                    <p>Early learning through play &amp; exploration</p>
+                    <span class="age">3 – 4 Years</span>
+                    <p>Learning through stories, &amp; activities, exploration and hands-on experiences.</p>
                 </article>
                 <article class="program-card">
                     <div class="program-icon">✏️</div>
                     <h3>LKG</h3>
-                    <span class="age">3.5 – 4.5 Years</span>
-                    <p>Building basics in language &amp; numeracy</p>
+                    <span class="age">4 – 5 Years</span>
+                    <p>Developing early language, &amp;  numeracy, communication and everyday skills.</p>
                 </article>
                 <article class="program-card">
                     <div class="program-icon">🌟</div>
                     <h3>UKG</h3>
-                    <span class="age">4.5 – 5.5 Years</span>
-                    <p>School readiness &amp; confidence building</p>
+                    <span class="age">5 – 6 Years</span>
+                    <p>Building confidence,  &amp; independence and essential skills for the next stage of schooling.</p>
                 </article>
                 <article class="program-card">
                     <div class="program-icon">🏠</div>
                     <h3>Day Care</h3>
-                    <span class="age">1.5 – 10 Years</span>
-                    <p>Safe care, support &amp; engaging activities</p>
+                    <span class="age">1.5 – 8 Years</span>
+                    <p>A safe and caring space with engaging activities &amp; supervised care.</p>
                 </article>
             </div>
         </div>
@@ -2270,78 +3048,268 @@
     <!-- ============================================================
     APPROACH
     ============================================================ -->
-    <section class="approach-section" id="approach">
-        <div class="container approach-grid">
-            <div class="approach-text">
-                <span class="eyebrow">Our Approach</span>
-                <h2>Learning Through Play &amp; Experience</h2>
-                <p>We believe children learn best when they are happy, engaged and free to explore. Our play‑based curriculum nurtures curiosity, creativity and confidence.</p>
-                <ul>
-                    <li><span class="check">✓</span> Play‑based &amp; activity‑oriented learning</li>
-                    <li><span class="check">✓</span> Phonics, numeracy &amp; life skills</li>
-                    <li><span class="check">✓</span> Focus on character &amp; values</li>
-                    <li><span class="check">✓</span> Individual attention &amp; care</li>
-                </ul>
-                <a class="btn btn-pink" href="about.html">Learn More About Us →</a>
-            </div>
+   <section class="approach-section" id="approach">
+    <div class="container">
+
+        <div class="approach-heading">
+            <span class="eyebrow">Our Approach</span>
+
+            <h2>
+                Learning That
+                <span class="gradient">Feels Like Play</span>
+            </h2>
+
+            <p>
+                At BrightRoots, children learn best when they are happy, curious
+                and actively involved. Our learning experiences encourage
+                children to explore, ask questions, communicate and discover
+                new things at their own pace.
+            </p>
+        </div>
+
+        <div class="approach-content">
+
+            <!-- LEFT IMAGE -->
             <div class="approach-visual">
                 <div class="approach-blob">
-                    <img src="images/activities.jpg" alt="Children learning at BrightRoots" loading="lazy" />
+
+                    <img
+                        src="images/activities.jpg"
+                        alt="Children learning through play at BrightRoots Kids Care"
+                        loading="lazy"
+                    >
+
                     <span class="approach-deco d1">✦</span>
                     <span class="approach-deco d2">❀</span>
                     <span class="approach-deco d3">✦</span>
                     <span class="approach-deco d4">★</span>
                     <span class="approach-deco d5">❀</span>
+
                 </div>
             </div>
+
+            <!-- RIGHT CONTENT -->
+            <div class="approach-text">
+
+                <h3>Our approach includes:</h3>
+
+                <div class="approach-cards">
+
+                    <article class="approach-card card-pink">
+                        <div class="approach-icon">🧩</div>
+
+                        <div>
+                            <h4>Learning Through Play</h4>
+                            <p>
+                                Activities that make learning enjoyable
+                                and meaningful.
+                            </p>
+                        </div>
+                    </article>
+
+
+                    <article class="approach-card card-blue">
+                        <div class="approach-icon">📚</div>
+
+                        <div>
+                            <h4>Early Literacy &amp; Phonics</h4>
+                            <p>
+                                Building vocabulary, listening and early
+                                reading skills.
+                            </p>
+                        </div>
+                    </article>
+
+
+                    <article class="approach-card card-yellow">
+                        <div class="approach-icon">🔢</div>
+
+                        <div>
+                            <h4>Early Numeracy</h4>
+                            <p>
+                                Developing number sense through practical
+                                activities and games.
+                            </p>
+                        </div>
+                    </article>
+
+
+                    <article class="approach-card card-orange">
+                        <div class="approach-icon">🎨</div>
+
+                        <div>
+                            <h4>Creative Expression</h4>
+                            <p>
+                                Art, craft, music and activities that
+                                encourage imagination.
+                            </p>
+                        </div>
+                    </article>
+
+
+                    <article class="approach-card card-green">
+                        <div class="approach-icon">🌱</div>
+
+                        <div>
+                            <h4>Life Skills &amp; Independence</h4>
+                            <p>
+                                Helping children develop confidence and
+                                age-appropriate independence.
+                            </p>
+                        </div>
+                    </article>
+
+
+                    <article class="approach-card card-red">
+                        <div class="approach-icon">❤️</div>
+
+                        <div>
+                            <h4>Values &amp; Social Skills</h4>
+                            <p>
+                                Learning to share, communicate, cooperate
+                                and care for others.
+                            </p>
+                        </div>
+                    </article>
+
+                </div>
+
+                <a class="btn btn-pink" href="about.html">
+                    Learn More About Us →
+                </a>
+
+            </div>
+
         </div>
-    </section>
+
+    </div>
+</section>
 
     <!-- ============================================================
     ENVIRONMENT
     ============================================================ -->
     <section class="environment-section" id="environment">
-        <div class="container env-grid">
+    <div class="container">
+
+        <div class="env-heading">
+            <span class="eyebrow">Our Environment</span>
+
+            <h2>
+                A Space Designed for
+                <span class="gradient">Little Learners</span>
+            </h2>
+
+            <p>
+                Every part of our environment is thoughtfully designed to
+                make children feel safe, comfortable, curious and ready to learn.
+            </p>
+        </div>
+
+        <div class="env-grid">
+
+            <!-- IMAGE -->
             <div class="env-photo">
-                <img src="images/classroom.jpg" alt="BrightRoots classroom" loading="lazy" />
-            </div>
-            <div class="env-text">
-                <span class="eyebrow">Our Environment</span>
-                <h2>A Safe, Colorful &amp; Stimulating Environment</h2>
-                <p>Bright, safe classrooms, engaging learning corners and a hygienic space that encourages curiosity and joy every day.</p>
-                <div class="env-features">
-                    <div class="env-feature">
-                        <div class="icon">🏫</div>
-                        <div>
-                            <span class="label">Bright</span>
-                            <small>Classrooms</small>
-                        </div>
-                    </div>
-                    <div class="env-feature">
-                        <div class="icon">🛡️</div>
-                        <div>
-                            <span class="label">Safe &amp; Secure</span>
-                            <small>Premises</small>
-                        </div>
-                    </div>
-                    <div class="env-feature">
-                        <div class="icon">✨</div>
-                        <div>
-                            <span class="label">Hygienic &amp;</span>
-                            <small>Clean</small>
-                        </div>
-                    </div>
-                    <div class="env-feature">
-                        <div class="icon">🌳</div>
-                        <div>
-                            <span class="label">Indoor &amp; Outdoor</span>
-                            <small>Play Areas</small>
-                        </div>
-                    </div>
+                <div class="env-photo-frame">
+                    <img
+                        src="images/classroom.jpg"
+                        alt="BrightRoots child-friendly classroom"
+                        loading="lazy"
+                    >
+
+                    <span class="env-decoration env-d1">🌈</span>
+                    <span class="env-decoration env-d2">⭐</span>
+                    <span class="env-decoration env-d3">🌱</span>
                 </div>
             </div>
+
+
+            <!-- FEATURES -->
+            <div class="env-text">
+
+                <div class="env-features">
+
+                    <!-- 1 -->
+                    <article class="env-feature env-pink">
+                        <div class="env-icon">🏫</div>
+
+                        <div>
+                            <h3>Bright Classrooms</h3>
+
+                            <p>
+                                Child-friendly spaces designed for
+                                comfortable learning.
+                            </p>
+                        </div>
+                    </article>
+
+
+                    <!-- 2 -->
+                    <article class="env-feature env-blue">
+                        <div class="env-icon">🛡️</div>
+
+                        <div>
+                            <h3>Safe &amp; Secure</h3>
+
+                            <p>
+                                24/7 CCTV surveillance to help maintain
+                                a secure environment.
+                            </p>
+                        </div>
+                    </article>
+
+
+                    <!-- 3 -->
+                    <article class="env-feature env-yellow">
+                        <div class="env-icon">📚</div>
+
+                        <div>
+                            <h3>Learning Corners</h3>
+
+                            <p>
+                                Dedicated spaces for reading, creative
+                                activities and exploration.
+                            </p>
+                        </div>
+                    </article>
+
+
+                    <!-- 4 -->
+                    <article class="env-feature env-green">
+                        <div class="env-icon">⚽</div>
+
+                        <div>
+                            <h3>Indoor &amp; Outdoor Play</h3>
+
+                            <p>
+                                Opportunities for children to move, play
+                                and develop physical skills.
+                            </p>
+                        </div>
+                    </article>
+
+
+                    <!-- 5 -->
+                    <article class="env-feature env-orange">
+                        <div class="env-icon">✨</div>
+
+                        <div>
+                            <h3>Clean &amp; Child-Friendly Spaces</h3>
+
+                            <p>
+                                A clean environment designed with
+                                children's comfort in mind.
+                            </p>
+                        </div>
+                    </article>
+
+                </div>
+
+            </div>
+
         </div>
-    </section>
+
+    </div>
+</section>
 
     <!-- ============================================================
     GALLERY
